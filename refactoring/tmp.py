@@ -44,7 +44,6 @@ import re
 # 정규표현식 패턴
 pattern = r"'((?:[^']*?\${.*?}.*?|[^']*?[가-힣][^']*?))'"
 
-
 def extract_text_from_file(file_path):
     try:
         with open(file_path, "r", encoding="utf-8") as file:
@@ -66,7 +65,6 @@ def extract_text_from_file(file_path):
     except Exception as e:
         print(f"Error: 파일 읽기 중 문제가 발생했습니다: {e}")
         return []
-
 
 # 실행
 if __name__ == "__main__":
