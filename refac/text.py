@@ -44,13 +44,16 @@ class TextFinder:
         """파일에서 한글이 포함된 라인을 추출"""
         results = []
         lines = read_doc(self.file_path)
+        print(sheet_records)
+
         for line in lines:
             matches = self.pattern_x.findall(line)
             if matches:
                 phrases = [" ".join(self.pattern_y.findall(match)) for match in matches]
                 for phrase in phrases:
                     for sheet_record in sheet_records:
-                        if phrase == sheet_record.get("key"):
+                        if phrase == sheet_record.get("ko"):
+
                             replacement = f"localization.{sheet_record.get('key')}"
 
                             if "'" in line:
@@ -59,6 +62,7 @@ class TextFinder:
                                 line = line.replace(f'"{phrase}"', replacement)
 
                             results.append(line)
+        print(results)
         with open(self.file_path, "w", encoding="utf-8") as output:
             output.writelines(results)
 
