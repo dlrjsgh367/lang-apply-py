@@ -12,8 +12,8 @@ def map_to_string(file, sheet_records):
         results.append(result)
         # print(line)
 
-    # with open(file, "w", encoding="utf-8") as output:
-    #     output.writelines()
+    with open(file, "w", encoding="utf-8") as output:
+        output.writelines()
 
 
 def process_line(line, output, sheet_records, basename="localization.{}"):
@@ -27,9 +27,9 @@ def process_line(line, output, sheet_records, basename="localization.{}"):
             if match == sheet_record.get("ko"):
                 key = sheet_record.get("key")
                 replacement = basename.format(key)
-                print(line)
+
                 if "'" in line:
                     line = line.replace(f"'{match}'", replacement)
                 elif '"' in line:
                     line = line.replace(f'"{match}"', replacement)
-                print(line)
+    return line
