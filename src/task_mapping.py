@@ -13,7 +13,7 @@ def map_to_string(file, sheet_records):
         # print(line)
 
     with open(file, "w", encoding="utf-8") as output:
-        output.writelines()
+        output.writelines(results)
 
 
 def process_line(line, output, sheet_records, basename="localization.{}"):
