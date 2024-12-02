@@ -132,8 +132,8 @@ class KoreanTextPipeline:
 
 
 if __name__ == "__main__":
-    path_dir = r"C:\Users\HAMA\workspace\tmp\lang-apply-py\src\features"
+    path_dir = r"C:\Users\HAMA\workspace\tmp\lang-apply-py\src\features\worker"
 
     pipeline = KoreanTextPipeline(path_dir)
     pipeline.process_files()
-    pipeline.remove_duplicated()
+    # pipeline.remove_duplicated()
