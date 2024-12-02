@@ -1,0 +1,7 @@
+,Key,Description,en,ko,origin
+0,,,,${ConditionCareerEnum.entry.label} $minCareer ~ $maxCareer 년,result = '${ConditionCareerEnum.entry.label} $minCareer ~ $maxCareer 년';
+1,,,,${ConditionCareerEnum.experienced.label} $minCareer ~ $maxCareer 년,'${ConditionCareerEnum.experienced.label} $minCareer ~ $maxCareer 년';
+2,,,,${ConvertService.returnStringWithCommaFormat(jobpostData!.workCondition.salary)}원,"'${ConvertService.returnStringWithCommaFormat(jobpostData!.workCondition.salary)}원',"
+3,,,,${jobpostData!.workCondition.restHour}분 / ${ConvertService.returnNegotiable(jobpostData!.workCondition.restHourNegotiable)},? '${jobpostData!.workCondition.restHour}분 / ${ConvertService.returnNegotiable(jobpostData!.workCondition.restHourNegotiable)}'
+4,,,,${jobpostData!.workCondition.restHour}분,": '${jobpostData!.workCondition.restHour}분',"
+5,,,,${jobpostData!.recruitmentCondition.recruitCount}명,"'${jobpostData!.recruitmentCondition.recruitCount}명',"

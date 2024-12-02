@@ -1,0 +1,17 @@
+,Key,Description,en,ko,origin
+0,,,,수정이 완료되었어요!,showDefaultToast('수정이 완료되었어요!');
+1,,,,회원정보 수정,"title: '회원정보 수정',"
+2,,,,계정 아이디,"title: '계정 아이디',"
+3,,,,이름,"title: '이름',"
+4,,,,생년월일,"title: '생년월일',"
+5,,,,휴대폰번호,"'휴대폰번호',"
+6,,,,인증 요청,"text: '인증 요청',"
+7,,,,재전송,"text: '재전송',"
+8,,,,휴대폰 인증이 완료되었습니다.,phoneNumberErrorMessage == '휴대폰 인증이 완료되었습니다.'
+9,,,,휴대폰 인증이 완료되었습니다.,"'휴대폰 인증이 완료되었습니다.',"
+10,,,,인증,"text: '인증',"
+11,,,,주소,"'주소',"
+12,,,,주소 검색,"text: '주소 검색',"
+13,,,,휴대폰 인증이 완료되었습니다.,".text.isNotEmpty && phoneNumberErrorMessage.isEmpty || phoneNumberErrorMessage == '휴대폰 인증이 완료되었습니다.'),"
+14,,,,휴대폰 인증이 완료되었습니다.,.text.isNotEmpty && (phoneNumberErrorMessage.isEmpty || phoneNumberErrorMessage == '휴대폰 인증이 완료되었습니다.') && !isConfirmLoading) {
+15,,,,수정하기,"text: '수정하기',"

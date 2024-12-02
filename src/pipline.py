@@ -4,11 +4,12 @@ from task_collect import TextFinder
 from task_mapping import map_to_string
 from task_gspread import add_multiple_rows_to_sheet, sheet
 
-index = 0
+index = -1
 
 
 def get_index():
     global index
+    index += 1
     return index
 
 
@@ -27,11 +28,13 @@ def pl(dir_path, mode=None):
                 # 파일 처리
                 processor = TextFinder(file_path)
                 processor.process_korean_lines()
+
                 manual, automatic = processor.split_results()
 
                 data_manual.extend(manual)
                 data_automatic.extend(automatic)
 
+        index = 0
         for rows in (data_automatic, data_manual):
             d = {row[3]: set() for row in rows}
             for row in rows:
@@ -41,10 +44,8 @@ def pl(dir_path, mode=None):
             for key in d:
                 d[key] = "|".join(d[key])
 
-            add_multiple_rows_to_sheet(
-                [[get_index(), "", "", k, v] for k, v in d.items()]
-            )
-            index += 1
+            rows = [[get_index(), "", "", k, v] for k, v in d.items()]
+            add_multiple_rows_to_sheet(rows)
 
     elif mode == "m":
         for folder, _, file_names in os.walk(dir_path):
@@ -57,5 +58,5 @@ def pl(dir_path, mode=None):
 
 
 if __name__ == "__main__":
-    dir_path = r"C:\Users\HAMA\workspace\lang-apply-py\features"
+    dir_path = r"C:\Users\HAMA\workspace\lang-apply-py\src\features"
     pl(dir_path, "m")

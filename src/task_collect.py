@@ -18,7 +18,12 @@ class TextFinder:
     pattern_x = re.compile(r"['\"]([^'\"]*?[가-힣]+[^'\"]*?)['\"]")
     pattern_y = re.compile(r"[A-Za-z0-9가-힣~!@#$%^&*()_+\-={}\[\]:\";'<>?,./]+")
 
-    exclude_patterns = [r"\$\{", r"\{"]
+    # 정규식 패턴 리스트
+    exclude_patterns = [
+        "\\$",
+        "\\{",
+    ]
+    # OR 연산자로 결합된 정규식 생성
     exclude_pattern_regex = "|".join(exclude_patterns)
 
     def __init__(self, file_path: str):
@@ -29,18 +34,24 @@ class TextFinder:
         """파일에서 한글이 포함된 라인을 추출"""
         lines = read_doc(self.file_path)
         for line in lines:
-            matches = self.pattern_x.findall(line)
-            if matches:
-                phrases = [" ".join(self.pattern_y.findall(match)) for match in matches]
-                for phrase in phrases:
-                    self.extracted_results.append(
-                        {
-                            "original_line": line.strip(),
-                            "korean_phrases": phrase.strip(),
-                        }
-                    )
+            # 주석 아닌 것만
+            if re.match(r"[^//]", line.strip()):
+                matches = self.pattern_x.findall(line)
+                if matches:
+                    phrases = [
+                        " ".join(self.pattern_y.findall(match)) for match in matches
+                    ]
+                    for phrase in phrases:
+                        self.extracted_results.append(
+                            {
+                                "original_line": line.strip(),
+                                "korean_phrases": phrase.strip(),
+                            }
+                        )
 
-    def split_results(self) -> Tuple[List, List]:
+    def split_results(
+        self,
+    ) -> Tuple[List, List]:
         """추출된 결과를 수동 및 자동 처리 리스트로 분리"""
         # 데이터프레임 초기화
         df_columns = ["Key", "Description", "en", "ko", "origin"]
@@ -49,19 +60,23 @@ class TextFinder:
         # 데이터프레임 값 할당
         results_df["ko"] = [x["korean_phrases"] for x in self.extracted_results]
         results_df["origin"] = [x["original_line"] for x in self.extracted_results]
+
+        results_df["ko"] = results_df["ko"].fillna("").astype(str)
         results_df["origin"] = results_df["origin"].fillna("").astype(str)
 
         # nan -> None 변환
         results_df = results_df.replace({np.nan: None})
+        # results_df.to_csv(f"exam_{idx}.csv")
 
         # 수동 및 자동 처리 구분
         manual_entries_df = results_df[
             results_df["origin"].str.contains(self.exclude_pattern_regex, regex=True)
+            & results_df["ko"].str.contains(self.exclude_pattern_regex, regex=True)
         ]
         automatic_entries_df = results_df[
             ~results_df["origin"].str.contains(self.exclude_pattern_regex, regex=True)
+            & ~results_df["ko"].str.contains(self.exclude_pattern_regex, regex=True)
         ]
-
         # 리스트로 변환
         return manual_entries_df.values.tolist(), automatic_entries_df.values.tolist()
 

@@ -1,0 +1,4 @@
+,Key,Description,en,ko,origin
+0,,,,응모 완료,"text: '응모 완료',"
+1,,,,응모하기,"text: '응모하기',"
+2,,,,댓글을 남겨보세요.,"decoration: commonInput(hintText: '댓글을 남겨보세요.'),"

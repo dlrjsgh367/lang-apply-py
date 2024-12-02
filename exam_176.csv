@@ -1,0 +1,11 @@
+,Key,Description,en,ko,origin
+0,,,,연령 무관,static String anyAge = '연령 무관';
+1,,,,최대 연령,static String maxAge = '최대 연령';
+2,,,,최소 연령,static String minAge = '최소 연령';
+3,,,,중장년층 채용,static String middleAgeHiring = '중장년층 채용';
+4,,,,중장년층 미채용,static String noMiddleAgeHiring = '중장년층 미채용';
+5,,,,경력,static String career = '경력';
+6,,,,수습 없음,static String noProbationPeriod = '수습 없음';
+7,,,,근무시간 없음,"static String noWorkHour = ""근무시간 없음"";"
+8,,,,휴게시간 없음,"static String noRestHour = ""휴게시간 없음"";"
+9,,,,무관,"static String noMatter = ""무관"";"

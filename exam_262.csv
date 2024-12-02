@@ -1,0 +1,19 @@
+,Key,Description,en,ko,origin
+0,,,,내용을 입력해주세요.,static String contentEnter = '내용을 입력해주세요.';
+1,,,,"모집분야를 입력해주세요. (예: R&D, 사무보조)","static String jobPositionEnter = '모집분야를 입력해주세요. (예: R&D, 사무보조)';"
+2,,,,최소연령을 입력해주세요.,static String minAgeEnter = '최소연령을 입력해주세요.';
+3,,,,최대연령을 입력해주세요.,static String maxAgeEnter = '최대연령을 입력해주세요.';
+4,,,,최소 경력,static String minCareerEnter = '최소 경력';
+5,,,,최대 경력,static String maxCareerEnter = '최대 경력';
+6,,,,입력하신 정보를 다시 확인해주세요.,static String contentFormat = '입력하신 정보를 다시 확인해주세요.';
+7,,,,학력은 필수입니다.,static String educationEmpty = '학력은 필수입니다.';
+8,,,,학교명을 입력해주세요.,static String schoolNameEnter = '학교명을 입력해주세요.';
+9,,,,졸업 여부는 필수입니다.,static String educationStatusEmpty = '졸업 여부는 필수입니다.';
+10,,,,업체명은 필수입니다.,static String companyNameEmpty = '업체명은 필수입니다.';
+11,,,,업체명을 입력해주세요.,static String companyNameEnter = '업체명을 입력해주세요.';
+12,,,,근무 형태는 필수입니다.,static String workTypeEmpty = '근무 형태는 필수입니다.';
+13,,,,직종은 필수입니다.,static String jobEmpty = '직종은 필수입니다.';
+14,,,,근무 기간은 필수입니다.,static String workDateEmpty = '근무 기간은 필수입니다.';
+15,,,,담당 업무는 필수입니다.,static String jobDescriptionEmpty = '담당 업무는 필수입니다.';
+16,,,,담당 업무를 입력해주세요.,static String jobDescriptionEnter = '담당 업무를 입력해주세요.';
+17,,,,다시 시도해 주세요.,static String retry = '다시 시도해 주세요.';

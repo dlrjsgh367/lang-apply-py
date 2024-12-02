@@ -1,0 +1,6 @@
+,Key,Description,en,ko,origin
+0,,,,$billions억,salary = '$billions억';
+1,,,,$billions억+,salary = '$billions억+';
+2,,,,$millions만,salary = '$millions만';
+3,,,,$millions만+,salary = '$millions만+';
+4,,,,${formatCurrency.format(data)}원,salary = '${formatCurrency.format(data)}원'; // 100만 미만

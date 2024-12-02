@@ -1,0 +1,5 @@
+,Key,Description,en,ko,origin
+0,,,,신고 사유,"const TitleBottomSheet(title: '신고 사유'),"
+1,,,,신고하기,"text: '신고하기',"
+2,,,,신고 사유,"const Text('신고 사유'),"
+3,,,,신고하기,"child: const Text('신고하기')),"

@@ -1,0 +1,22 @@
+,Key,Description,en,ko,origin
+0,,,,$day / 요일 협의,//       day = '$day / 요일 협의';
+1,,,,요일 협의,//       day = '요일 협의';
+2,,,,월,"List<String> dayOrder = ['월', '화', '수', '목', '금','토','일'];"
+3,,,,화,"List<String> dayOrder = ['월', '화', '수', '목', '금','토','일'];"
+4,,,,수,"List<String> dayOrder = ['월', '화', '수', '목', '금','토','일'];"
+5,,,,목,"List<String> dayOrder = ['월', '화', '수', '목', '금','토','일'];"
+6,,,,금,"List<String> dayOrder = ['월', '화', '수', '목', '금','토','일'];"
+7,,,,토,"List<String> dayOrder = ['월', '화', '수', '목', '금','토','일'];"
+8,,,,일,"List<String> dayOrder = ['월', '화', '수', '목', '금','토','일'];"
+9,,,,$day / 요일 협의,day = '$day / 요일 협의';
+10,,,,요일 협의,day = '요일 협의';
+11,,,,$hour 시간 협의,hour = '$hour  시간 협의';
+12,,,,$hour / 시간 협의,hour = '$hour / 시간 협의';
+13,,,,${formatCurrency.format(widget.jobpostData.salary)}원,"'${formatCurrency.format(widget.jobpostData.salary)}원',"
+14,,,,근무형태,"'근무형태',"
+15,,,,시간,"'시간',"
+16,,,,요일,"'요일',"
+17,,,,위치,"'위치',"
+18,,,,스크랩,"'스크랩',"
+19,,,,이미 지원한 채용공고입니다.,showDefaultToast('이미 지원한 채용공고입니다.');
+20,,,,지원하기,"text: '지원하기',"

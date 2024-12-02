@@ -1,0 +1,12 @@
+,Key,Description,en,ko,origin
+0,,,,)}년,"formattedDate = '${dateTime.year.toString().padLeft(4, '0')}년 '"
+1,,,,)}월,"'${dateTime.month.toString().padLeft(2, '0')}월 '"
+2,,,,)}일,"'${dateTime.day.toString().padLeft(2, '0')}일';"
+3,,,,)}년,"formattedDate = '${dateTime.year.toString().padLeft(4, '0')}년 '"
+4,,,,)}월,"'${dateTime.month.toString().padLeft(2, '0')}월 '"
+5,,,,)}일,"'${dateTime.day.toString().padLeft(2, '0')}일';"
+6,,,,계약서/사직서,"title: '계약서/사직서',"
+7,,,,계약서,"tabTitleArr: const ['계약서', '사직서'],"
+8,,,,사직서,"tabTitleArr: const ['계약서', '사직서'],"
+9,,,,작성된 계약서가 없습니다.,": const CommonEmpty(text: '작성된 계약서가 없습니다.'),"
+10,,,,작성된 사직서가 없습니다.,": const CommonEmpty(text: '작성된 사직서가 없습니다.'),"

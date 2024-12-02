@@ -1,0 +1,5 @@
+,Key,Description,en,ko,origin
+0,,,,아직 프로필이 완성되지 않았어요!,"title: '아직 프로필이 완성되지 않았어요! ',"
+1,,,,${widget.percent}% 완료,"'${widget.percent}% 완료',"
+2,,,,내일 다시 하기,"text: '내일 다시 하기',"
+3,,,,시작하기,"text: '시작하기',"

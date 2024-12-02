@@ -1,0 +1,9 @@
+,Key,Description,en,ko,origin
+0,,,,이메일로 전송되었어요!,showDefaultToast('이메일로 전송되었어요!');
+1,,,,최신 서류가 아닙니다.,showDefaultToast('최신 서류가 아닙니다.');
+2,,,,이메일로 전송에 실패했습니다.,showDefaultToast('이메일로 전송에 실패했습니다.');
+3,,,,이메일로 전송,"const TitleBottomSheet(title: '이메일로 전송'),"
+4,,,,전송 받을 이메일 주소를 입력해주세요.,"'전송 받을 이메일 주소를 입력해주세요.',"
+5,,,,이메일 주소를 입력해주세요.,"hintText: '이메일 주소를 입력해주세요.',"
+6,,,,이메일 형식을 확인해주세요.,"email.isNotEmpty && !isEmailActive ? '이메일 형식을 확인해주세요.' : '',"
+7,,,,전송하기,"text: '전송하기',"

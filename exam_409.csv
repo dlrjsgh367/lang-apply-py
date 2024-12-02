@@ -1,0 +1,4 @@
+,Key,Description,en,ko,origin
+0,,,,데이터 통신에 실패하였습니다.,showDefaultToast('데이터 통신에 실패하였습니다.');
+1,,,,AI 추천 인재,"tabTitleArr: const ['AI 추천 인재'],"
+2,,,,추천인재가 없습니다.,: const CommonEmpty(text: '추천인재가 없습니다.')

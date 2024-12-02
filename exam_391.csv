@@ -1,0 +1,9 @@
+,Key,Description,en,ko,origin
+0,,,,우리 기업의 업종과 임직원수를 입력해주세요!,"'우리 기업의 업종과 임직원수를 입력해주세요!',"
+1,,,,업종 선택,"await DefineDialog.showIndustryBottom2(context, '업종 선택', industryList, addIndustry, selectedIndustry, industryMaxLength);"
+2,,,,업종을 선택해주세요.,"text: industryName, hintText: '업종을 선택해주세요.',"
+3,,,,직원수,"'직원수',"
+4,,,,직원수를 입력해주세요.,"hintText: '직원수를 입력해주세요.',"
+5,,,,명,"'명',"
+6,,,,건너뛰기,"text: '건너뛰기',"
+7,,,,다음,"text: '다음',"

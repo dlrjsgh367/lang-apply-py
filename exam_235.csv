@@ -1,0 +1,28 @@
+,Key,Description,en,ko,origin
+0,,,,취업활동증명서 발급,"title: '취업활동증명서 발급',"
+1,,,,취업활동 증명서,"'취업활동 증명서',"
+2,,,,성명,"'성명',"
+3,,,,생년월일,"'생년월일',"
+4,,,,주소,"'주소',"
+5,,,,연락처,"'연락처',"
+6,,,,${userInfo!.name} 님의 취업활동 결과입니다.,"'${userInfo!.name} 님의 취업활동 결과입니다.',"
+7,,,,지원일,"'지원일',"
+8,,,,기업명,"'기업명',"
+9,,,,주소,"'주소',"
+10,,,,연락처,"'연락처',"
+11,,,,활동결과,"'활동결과',"
+12,,,,지원,"'지원',"
+13,,,,${userInfo!.name} 님은 ${userInfo!.createdAt} 부터 ${DateFormat(,'${userInfo!.name} 님은 ${userInfo!.createdAt} 부터 ${DateFormat('yyyy-MM-dd').format(DateTime.now())} 까지\n'
+14,,,,).format(DateTime.now())} 까지 n,'${userInfo!.name} 님은 ${userInfo!.createdAt} 부터 ${DateFormat('yyyy-MM-dd').format(DateTime.now())} 까지\n'
+15,,,,초단알바를 통해 위 기업에 입사지원 하였음을 증명합니다.,"'초단알바를 통해 위 기업에 입사지원 하였음을 증명합니다.',"
+16,,,,yyyy년 MM월 dd일,"DateFormat('yyyy년 MM월 dd일').format(DateTime.now()),"
+17,,,,취업활동증명서.pdf,"return await PdfApi.saveDocumentMap(name: '취업활동증명서.pdf', pdf: pdf);"
+18,,,,이메일로 전송에 실패했습니다. 다시 시도해 주세요.,"alertContent: '이메일로 전송에 실패했습니다. 다시 시도해 주세요.',"
+19,,,,확인,"alertConfirm: '확인',"
+20,,,,알림,"alertTitle: '알림',"
+21,,,,이메일로 전송되었어요!,showDefaultToast('이메일로 전송되었어요!');
+22,,,,이메일로 전송에 실패했습니다.,showDefaultToast('이메일로 전송에 실패했습니다.');
+23,,,,취업활동증명서 발급,"title: '취업활동증명서 발급',"
+24,,,,지원한 프로필 ${jobPostData.profileTitle},"'지원한 프로필 | ${jobPostData.profileTitle}',"
+25,,,,발급하기,"text: '발급하기',"
+26,,,,최근 지원한 공고가 없습니다.,"text: '최근 지원한 공고가 없습니다.',"

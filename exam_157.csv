@@ -1,0 +1,2 @@
+,Key,Description,en,ko,origin
+0,,,,${ConvertService.returnStringWithCommaFormat(widget.jobpostItem.salary)} 원,"'${ConvertService.returnStringWithCommaFormat(widget.jobpostItem.salary)} 원',"

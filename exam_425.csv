@@ -1,0 +1,14 @@
+,Key,Description,en,ko,origin
+0,,,,"(${ConvertService.calculateAge(profileData.userInfo.birth)}세, ${returnConditionGenderNameFromParam(profileData.userInfo.gender)})","'(${ConvertService.calculateAge(profileData.userInfo.birth)}세, ${returnConditionGenderNameFromParam(profileData.userInfo.gender)})',"
+1,,,,주소,"'주소',"
+2,,,,연락처,"'연락처',"
+3,,,,이메일,"'이메일',"
+4,,,,첨부파일,"'첨부파일',"
+5,,,,대화가 시작 된 후 확인 가능합니다.,showDefaultToast('대화가 시작 된 후 확인 가능합니다.');
+6,,,,외 ${profileData.files.length - 1}개,"'외 ${profileData.files.length - 1}개',"
+7,,,,학력,"'학력',"
+8,,,,미기재,"'미기재',"
+9,,,,경력,"'경력',"
+10,,,,신입,"'신입',"
+11,,,,요일,"'요일',"
+12,,,,시간,"'시간',"

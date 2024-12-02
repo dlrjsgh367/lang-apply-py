@@ -1,0 +1,7 @@
+,Key,Description,en,ko,origin
+0,,,,계정 찾기가 완료되었어요!,"'계정 찾기가 완료되었어요!',"
+1,,,,가입된 아이디는 총 ${userRegisteredIdList.length}개 있어요.,"'가입된 아이디는 총 ${userRegisteredIdList.length}개 있어요.',"
+2,,,,가입일,"'가입일',"
+3,,,,이메일,"'이메일',"
+4,,,,비밀번호 찾기,"text: '비밀번호 찾기',"
+5,,,,로그인,"text: '로그인',"

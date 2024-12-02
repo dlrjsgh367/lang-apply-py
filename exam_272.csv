@@ -1,0 +1,5 @@
+,Key,Description,en,ko,origin
+0,,,,연도 선택,"title: '연도 선택',"
+1,,,,월 선택,"title: '월 선택',"
+2,,,,연도 선택,"hintText: '연도 선택',"
+3,,,,월 선택,"hintText: '월 선택',"

@@ -1,0 +1,2 @@
+,Key,Description,en,ko,origin
+0,,,,"(${ConvertService.calculateAge(widget.workerItem.userInfo.birth)}세, ${returnConditionGenderNameFromParam(widget.workerItem.userInfo.gender)})","'(${ConvertService.calculateAge(widget.workerItem.userInfo.birth)}세, ${returnConditionGenderNameFromParam(widget.workerItem.userInfo.gender)})',"

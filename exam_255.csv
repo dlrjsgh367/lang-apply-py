@@ -1,0 +1,42 @@
+,Key,Description,en,ko,origin
+0,,,,데이터 통신에 실패하였습니다.,showDefaultToast('데이터 통신에 실패하였습니다.');
+1,,,,데이터 통신에 실패하였습니다.,showDefaultToast('데이터 통신에 실패하였습니다.');
+2,,,,데이터 통신에 실패하였습니다.,showDefaultToast('데이터 통신에 실패하였습니다.');
+3,,,,알림,"showErrorAlert(context, '알림', '결제에 실패했습니다.');"
+4,,,,결제에 실패했습니다.,"showErrorAlert(context, '알림', '결제에 실패했습니다.');"
+5,,,,결제 취소하였습니다.,showDefaultToast('결제 취소하였습니다.');
+6,,,,결제 취소하였습니다.,showDefaultToast('결제 취소하였습니다.');
+7,,,,결제가 완료되었습니다..,showDefaultToast('결제가 완료되었습니다..');
+8,,,,나의 초단 코인,"title: '나의 초단 코인',"
+9,,,,사용내역,"tabTitleArr: const ['사용내역', '초단코인샵'],"
+10,,,,초단코인샵,"tabTitleArr: const ['사용내역', '초단코인샵'],"
+11,,,,보유 초단코인,"'보유 초단코인',"
+12,,,,0 초코,? '0 초코'
+13,,,,${ConvertService.returnStringWithCommaFormat(myChocoData!.totalChoco)} 초코,": '${ConvertService.returnStringWithCommaFormat(myChocoData!.totalChoco)} 초코',"
+14,,,,결제 초코,"'결제 초코',"
+15,,,,0 초코,? '0 초코'
+16,,,,${ConvertService.returnStringWithCommaFormat(myChocoData!.totalPaidChoco)} 초코,": '${ConvertService.returnStringWithCommaFormat(myChocoData!.totalPaidChoco)} 초코',"
+17,,,,획득 초코,"'획득 초코',"
+18,,,,0 초코,? '0 초코'
+19,,,,${ConvertService.returnStringWithCommaFormat(myChocoData!.totalFreeChoco)} 초코,": '${ConvertService.returnStringWithCommaFormat(myChocoData!.totalFreeChoco)} 초코',"
+20,,,,30일 이내 소멸 초단코인,"'30일 이내 소멸 초단코인',"
+21,,,,0 초코,? '0 초코'
+22,,,,${ConvertService.returnStringWithCommaFormat(myChocoData!.toExpireChoco)} 초코,": '${ConvertService.returnStringWithCommaFormat(myChocoData!.toExpireChoco)} 초코',"
+23,,,,결제 초코,"'결제 초코',"
+24,,,,0 초코,? '0 초코'
+25,,,,${ConvertService.returnStringWithCommaFormat(myChocoData!.toExpirePaidChoco)} 초코,": '${ConvertService.returnStringWithCommaFormat(myChocoData!.toExpirePaidChoco)} 초코',"
+26,,,,획득 초코,"'획득 초코',"
+27,,,,0 초코,? '0 초코'
+28,,,,${ConvertService.returnStringWithCommaFormat(myChocoData!.toExpireFreeChoco)} 초코,": '${ConvertService.returnStringWithCommaFormat(myChocoData!.toExpireFreeChoco)} 초코',"
+29,,,,초코 사용 내역,"Text('초코 사용 내역',"
+30,,,,초코 사용내역이 존재하지않습니다.,"'초코 사용내역이 존재하지않습니다.'),"
+31,,,,+${ConvertService.returnStringWithCommaFormat(chocoList[index].chocoCnt)} 초코,? '+${ConvertService.returnStringWithCommaFormat(chocoList[index].chocoCnt)} 초코'
+32,,,,${ConvertService.returnStringWithCommaFormat(chocoList[index].chocoCnt)} 초코,": '${ConvertService.returnStringWithCommaFormat(chocoList[index].chocoCnt)} 초코',"
+33,,,,보유 초단코인,"'보유 초단코인',"
+34,,,,0 초코,? '0 초코'
+35,,,,${ConvertService.returnStringWithCommaFormat(myChocoData!.totalChoco)} 초코,": '${ConvertService.returnStringWithCommaFormat(myChocoData!.totalChoco)} 초코',"
+36,,,,초단코인(초코)은 초단알바 내 결제 수단입니다.,"'초단코인(초코)은 초단알바 내 결제 수단입니다.',"
+37,,,,얼마 충전할까요?,"'얼마 충전할까요?',"
+38,,,,${ConvertService.returnStringWithCommaFormat(chocoProductList[index].chocoCnt)} 초코,"'${ConvertService.returnStringWithCommaFormat(chocoProductList[index].chocoCnt)} 초코',"
+39,,,,+${ConvertService.returnStringWithCommaFormat(chocoProductList[index].chocoExtraCnt)} 보너스,"'+${ConvertService.returnStringWithCommaFormat(chocoProductList[index].chocoExtraCnt)} 보너스',"
+40,,,,"- 추가 금액 충전은 고객센터 (help@chodan.co.kr, 연락 받을 전화번호도 기재)로 문의 주세요. n- 유료 충전한 초단코인은 유효기간이 1년입니다. 유효기간이 지나면 미사용된 초단코인은 소멸합니다. (무료지급 및 보너스 초단코인 유효기간 45일) n- 유료 충전한 초단코인은 미사용시 구매후 7일이내 청약을 철회할 수 있습니다. (세부내용은 기업회원이용약관 참고) n- 단 구매한 초단코인 또는 보너스로 추가 지급된 초단코인을 이미 사용했다면 청약철회가 불가능합니다.","'- 추가 금액 충전은 고객센터 (help@chodan.co.kr, 연락 받을 전화번호도 기재)로 문의 주세요.\n- 유료 충전한 초단코인은 유효기간이 1년입니다. 유효기간이 지나면 미사용된 초단코인은 소멸합니다. (무료지급 및 보너스 초단코인 유효기간 45일)\n- 유료 충전한 초단코인은 미사용시 구매후 7일이내 청약을 철회할 수 있습니다. (세부내용은 기업회원이용약관 참고)\n- 단 구매한 초단코인 또는 보너스로 추가 지급된 초단코인을 이미 사용했다면 청약철회가 불가능합니다.',"

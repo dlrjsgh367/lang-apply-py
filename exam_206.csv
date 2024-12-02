@@ -1,0 +1,4 @@
+,Key,Description,en,ko,origin
+0,,,,이벤트,"title: '이벤트',"
+1,,,,이벤트가 없습니다.,? const CommonEmpty(text: '이벤트가 없습니다.')
+2,,,,총 $total건,"""총 $total건"","

@@ -1,0 +1,7 @@
+,Key,Description,en,ko,origin
+0,,,,구직,return '구직';
+1,,,,채용,return '채용';
+2,,,,변경이 완료 되었어요!,showDefaultToast('변경이 완료 되었어요!');
+3,,,,${checkMemberString()} 상태 변경,"title: '${checkMemberString()} 상태 변경',"
+4,,,,${checkMemberString()} 상태,"TitleItem(title: '${checkMemberString()} 상태'),"
+5,,,,변경하기,"text: '변경하기',"

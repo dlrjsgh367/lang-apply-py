@@ -1,0 +1,5 @@
+,Key,Description,en,ko,origin
+0,,,,진행중인 공고,"'진행중인 공고',"
+1,,,,${widget.companyItem.jobPostingCount}건,"'${widget.companyItem.jobPostingCount}건',"
+2,,,,차단됨,? '차단됨'
+3,,,,차단해제,": '차단해제',"

@@ -1,0 +1,25 @@
+,Key,Description,en,ko,origin
+0,,,,아이템 정보를 가져오지 못했습니다.,showDefaultToast('아이템 정보를 가져오지 못했습니다.');
+1,,,,초코 부족!,"alertTitle: '초코 부족!',"
+2,,,,보유한 초단 코인이 부족해요. n지금 바로 충전 하시겠어요?,"alertContent: '보유한 초단 코인이 부족해요.\n지금 바로 충전 하시겠어요?',"
+3,,,,충전하기,"alertConfirm: '충전하기',"
+4,,,,취소,"alertCancel: '취소',"
+5,,,,아이템 정보를 가져오지 못했습니다.,showDefaultToast('아이템 정보를 가져오지 못했습니다.');
+6,,,,대화방 자동 연장이 설정되었습니다.,autoExtend == 1 ? '대화방 자동 연장이 설정되었습니다.' : '대화방 자동 연장이 해제되었습니다.';
+7,,,,대화방 자동 연장이 해제되었습니다.,autoExtend == 1 ? '대화방 자동 연장이 설정되었습니다.' : '대화방 자동 연장이 해제되었습니다.';
+8,,,,대화방 자동 연장 설정에 실패하였습니다.,autoExtend == 1 ? '대화방 자동 연장 설정에 실패하였습니다.' : '대화방 자동 연장 해제에 실패하였습니다.';
+9,,,,대화방 자동 연장 해제에 실패하였습니다.,autoExtend == 1 ? '대화방 자동 연장 설정에 실패하였습니다.' : '대화방 자동 연장 해제에 실패하였습니다.';
+10,,,,대화기간이 연장되었습니다.,showDefaultToast('대화기간이 연장되었습니다.');
+11,,,,대화기간 연장에 실패했습니다. n다시 시도해주세요.,showDefaultToast('대화기간 연장에 실패했습니다.\n다시 시도해주세요.');
+12,,,,${item!.expireDay}일,day = '${item!.expireDay}일';
+13,,,,평생,day = '평생';
+14,,,,대화기간 연장하기,"const TitleBottomSheet(title: '대화기간 연장하기'),"
+15,,,,현재 ${returnEndTime()}까지 대화 가능 해요 n대화 기간을 더 연장 하시겠어요? n${ConvertService.returnStringWithCommaFormat(item!.finalPrice)}초코 결제시 ${returnExpireDate()} 더 대화할 수 있어요.,"'현재 ${returnEndTime()}까지 대화 가능 해요\n대화 기간을 더 연장 하시겠어요?\n${ConvertService.returnStringWithCommaFormat(item!.finalPrice)}초코 결제시 ${returnExpireDate()} 더 대화할 수 있어요.',"
+16,,,,보유 초단코인,"'보유 초단코인',"
+17,,,,${ConvertService.returnStringWithCommaFormat(userInfo!.choco)} 초코,"'${ConvertService.returnStringWithCommaFormat(userInfo!.choco)} 초코',"
+18,,,,대화기간 자동연장,"'대화기간 자동연장',"
+19,,,,대화기간 종료 전 초단코인 잔액 한도내에서 ${item!.price}초코가 자동 결제 되어 대화기간을 연장합니다.,"'대화기간 종료 전 초단코인 잔액 한도내에서 ${item!.price}초코가 자동 결제 되어 대화기간을 연장합니다.',"
+20,,,,(필수),"requireText: '(필수)',"
+21,,,,서비스 이용약관,"text: '서비스 이용약관',"
+22,,,,취소,"text: '취소',"
+23,,,,결제하기,"text: '결제하기',"

@@ -1,0 +1,6 @@
+,Key,Description,en,ko,origin
+0,,,,"${ConvertService.returnMaskingName(matchedProfileKeyList.contains(widget.workerItem.key), widget.workerItem.name)} (${ConvertService.calculateAge(widget.workerItem.birth)}세, ${widget.workerItem.gender.label})","'${ConvertService.returnMaskingName(matchedProfileKeyList.contains(widget.workerItem.key), widget.workerItem.name)}  (${ConvertService.calculateAge(widget.workerItem.birth)}세, ${widget.workerItem.gender.label})',"
+1,,,,차단됨,"'차단됨',"
+2,,,,차단해제,"'차단해제',"
+3,,,,희망 근무 지역,"'희망 근무 지역',"
+4,,,,프로필,"'프로필',"
