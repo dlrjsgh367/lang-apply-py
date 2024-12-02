@@ -62,6 +62,8 @@ class TextFinder:
                                 line = line.replace(f'"{phrase}"', replacement)
 
                             results.append(line)
+            else:
+                results.append(line)
         print(results)
         with open(self.file_path, "w", encoding="utf-8") as output:
             output.writelines(results)
