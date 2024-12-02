@@ -5,7 +5,7 @@ from typing import List, Tuple
 import numpy as np
 import pandas as pd
 
-from sheet import add_multiple_rows_to_sheet
+from sheet import add_multiple_rows_to_sheet, get_sheet_records
 
 
 def read_doc(file_path: str) -> List[str]:
@@ -40,6 +40,28 @@ class TextFinder:
                         }
                     )
 
+    def map_korean_lines(self, sheet_records) -> None:
+        """파일에서 한글이 포함된 라인을 추출"""
+        results = []
+        lines = read_doc(self.file_path)
+        for line in lines:
+            matches = self.pattern_x.findall(line)
+            if matches:
+                phrases = [" ".join(self.pattern_y.findall(match)) for match in matches]
+                for phrase in phrases:
+                    for sheet_record in sheet_records:
+                        if phrase == sheet_record.get("key"):
+                            replacement = f"localization.{sheet_record.get('key')}"
+
+                            if "'" in line:
+                                line = line.replace(f"'{phrase}'", replacement)
+                            else:
+                                line = line.replace(f'"{phrase}"', replacement)
+
+                            results.append(line)
+        with open(self.file_path, "w", encoding="utf-8") as output:
+            output.writelines(results)
+
     def split_results(self) -> Tuple[List, List]:
         """추출된 결과를 수동 및 자동 처리 리스트로 분리"""
         # 데이터프레임 초기화
@@ -72,6 +94,7 @@ class KoreanTextPipeline:
 
         self.data_manual = []
         self.data_automatic = []
+        self.sheet_records = get_sheet_records()
 
     def process_files(self):
         """디렉토리의 모든 파일을 처리"""
@@ -81,11 +104,12 @@ class KoreanTextPipeline:
 
                 # 파일 처리
                 processor = TextFinder(file_path)
-                processor.process_korean_lines()
-                manual, automatic = processor.split_results()
+                processor.map_korean_lines(self.sheet_records)
+                # processor.process_korean_lines()
+                # manual, automatic = processor.split_results()
 
-                self.data_manual.extend(manual)
-                self.data_automatic.extend(automatic)
+                # self.data_manual.extend(manual)
+                # self.data_automatic.extend(automatic)
 
     def remove_duplicated(self):
         for rows in (pipeline.data_automatic, pipeline.data_manual):
