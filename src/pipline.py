@@ -4,8 +4,16 @@ from task_collect import TextFinder
 from task_mapping import map_to_string
 from task_gspread import add_multiple_rows_to_sheet, sheet
 
+index = 0
+
+
+def get_index():
+    global index
+    return index
+
 
 def pl(dir_path, mode=None):
+    global index
     sheet_records = sheet.get_all_records()
     if mode == "c":
 
@@ -33,7 +41,10 @@ def pl(dir_path, mode=None):
             for key in d:
                 d[key] = "|".join(d[key])
 
-            add_multiple_rows_to_sheet([["", "", "", k, v] for k, v in d.items()])
+            add_multiple_rows_to_sheet(
+                [[get_index(), "", "", k, v] for k, v in d.items()]
+            )
+            index += 1
 
     elif mode == "m":
         for folder, _, file_names in os.walk(dir_path):
@@ -46,5 +57,5 @@ def pl(dir_path, mode=None):
 
 
 if __name__ == "__main__":
-    dir_path = r"C:\Users\HAMA\workspace\lang-apply-py\features\worker"
+    dir_path = r"C:\Users\HAMA\workspace\lang-apply-py\features"
     pl(dir_path, "m")
