@@ -130,8 +130,8 @@ def map_string(
 
 
 if __name__ == "__main__":
-    path_dir = "src/features"
-    is_copy = True
+    path_dir = r"C:\Users\HAMA\workspace\tmp\lang-apply-py\src\features_01"
+    is_copy = False
 
     def contains_korean(string):
         """
@@ -159,4 +159,3 @@ if __name__ == "__main__":
                 sheet_records=sheet_records,
                 contain_check_func=contains_korean,
             )
-            quit()

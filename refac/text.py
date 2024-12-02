@@ -96,19 +96,19 @@ class KoreanTextPipeline:
 
             # origin 목록의 내용을 |로 구분한다.
             for key in d:
-                d[key] = " | ".join(d[key])
+                d[key] = "|".join(d[key])
 
             add_multiple_rows_to_sheet([["", "", "", k, v] for k, v in d.items()])
 
-    def save_to_sheet(self):
-        """결과를 시트에 저장"""
+    # def save_to_sheet(self):
+    #     """결과를 시트에 저장"""
 
-        add_multiple_rows_to_sheet(self.data_automatic)
-        add_multiple_rows_to_sheet(self.data_manual)
+    #     add_multiple_rows_to_sheet(self.data_automatic)
+    #     add_multiple_rows_to_sheet(self.data_manual)
 
 
 if __name__ == "__main__":
-    path_dir = r"C:\Users\HAMA\workspace\tmp\lang-apply-py\src\features\mypage\screens"
+    path_dir = r"C:\Users\HAMA\workspace\tmp\lang-apply-py\src\features"
 
     pipeline = KoreanTextPipeline(path_dir)
     pipeline.process_files()
