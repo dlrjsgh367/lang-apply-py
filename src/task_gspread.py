@@ -24,7 +24,7 @@ spreadsheet_url = "https://docs.google.com/spreadsheets/d/1ZybrYhGOaH4OgzVJ1PDCJ
 spreadsheet = client.open_by_url(spreadsheet_url)
 
 # 특정 시트 선택
-sheet = spreadsheet.worksheet("시트3")
+sheet = spreadsheet.worksheet("시트4")
 
 
 def add_multiple_rows_to_sheet(rows: list):
@@ -34,16 +34,16 @@ def add_multiple_rows_to_sheet(rows: list):
     Args:
         rows (list): 추가할 데이터 목록 (2D 리스트 형태).
     """
-    # 현재 시트의 gotText 열 값 가져오기
-    existing_texts = set(sheet.col_values(5))  # 5번 열 (gotText) 데이터
+    # # 현재 시트의 gotText 열 값 가져오기
+    # existing_texts = set(sheet.col_values(5))  # 5번 열 (gotText) 데이터
 
-    # 중복되지 않은 데이터 필터링
-    new_rows = [row for row in rows if row[4] not in existing_texts]
+    # # 중복되지 않은 데이터 필터링
+    # new_rows = [row for row in rows if row[4] not in existing_texts]
 
-    if not new_rows:
-        print("추가할 새로운 데이터가 없습니다.")
-        return
+    # if not new_rows:
+    #     print("추가할 새로운 데이터가 없습니다.")
+    #     return
 
-    # 여러 행 추가
-    sheet.insert_rows(new_rows, row=len(sheet.get_all_values()) + 1)  # 마지막에 삽입
-    print(f"{len(new_rows)}개의 새로운 행이 추가되었습니다.")
+    # # 여러 행 추가
+    sheet.insert_rows(rows, row=len(sheet.get_all_values()) + 1)  # 마지막에 삽입
+    # print(f"{len(new_rows)}개의 새로운 행이 추가되었습니다.")
