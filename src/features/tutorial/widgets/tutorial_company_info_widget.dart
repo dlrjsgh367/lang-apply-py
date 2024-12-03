@@ -118,7 +118,7 @@ class _TutorialCompanyInfoWidgetState extends ConsumerState<TutorialCompanyInfoW
                           ),
                           alignment: Alignment.center,
                           child: Text(
-                            '우리 기업의 기본정보를 입력해 주세요!',
+                            localization.761,
                             style: TextStyle(
                               color: CommonColors.red,
                               fontWeight: FontWeight.w700,
@@ -128,7 +128,7 @@ class _TutorialCompanyInfoWidgetState extends ConsumerState<TutorialCompanyInfoW
                         ),
                         SizedBox(height: 20.w),
                         Text(
-                          '기업명',
+                          localization.companyName,
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             fontSize: 16.sp,
@@ -144,7 +144,7 @@ class _TutorialCompanyInfoWidgetState extends ConsumerState<TutorialCompanyInfoW
                           cursorColor: CommonColors.black,
                           style: commonInputText(),
                           decoration: commonInput(
-                            hintText: '기업명을 입력해 주세요.',
+                            hintText: localization.762,
                           ),
                           minLines: 1,
                           maxLines: 1,
@@ -158,7 +158,7 @@ class _TutorialCompanyInfoWidgetState extends ConsumerState<TutorialCompanyInfoW
                         ),
                         SizedBox(height:36.w),
                         Text(
-                          '기업주소',
+                          localization.companyAddress,
                           style: commonTitleAuth(),
                         ),
                         SizedBox(height: 12.w),
@@ -172,7 +172,7 @@ class _TutorialCompanyInfoWidgetState extends ConsumerState<TutorialCompanyInfoW
                             style: commonInputText(),
                             maxLength: null,
                             decoration: commonInput(
-                              hintText: '[주소 검색] 도로명 또는 지번 주소를 입력해 주세요.',
+                              hintText: localization.searchAddressEnterRoadOrLotNumberAddress,
                               disable: true,
                             ),
                             minLines: 1,
@@ -192,7 +192,7 @@ class _TutorialCompanyInfoWidgetState extends ConsumerState<TutorialCompanyInfoW
                                 style: commonInputText(),
                                 maxLength: 100,
                                 decoration: suffixInput(
-                                  hintText: '(선택) 층, 동, 호수 등 상세 주소를 입력해 주세요.',
+                                  hintText: localization.optionalEnterDetailedAddress,
                                 ),
                                 minLines: 1,
                                 maxLines: 1,
@@ -211,7 +211,7 @@ class _TutorialCompanyInfoWidgetState extends ConsumerState<TutorialCompanyInfoW
                               height: 48.w,
                               confirm: true,
                               onPressed: showPost,
-                              text: '주소검색',
+                              text: localization.766,
                             ),*/
                           ],
                         ),
@@ -235,7 +235,7 @@ class _TutorialCompanyInfoWidgetState extends ConsumerState<TutorialCompanyInfoW
                   onPressed: () {
                     widget.onPress();
                   },
-                  text: '건너뛰기',
+                  text: localization.755,
                   width: 96.w,
                 ),
                 SizedBox(
@@ -251,7 +251,7 @@ class _TutorialCompanyInfoWidgetState extends ConsumerState<TutorialCompanyInfoW
 
                       }
                     },
-                    text: '다음',
+                    text: localization.next,
                     fontSize: 15,
                     confirm: companyNameController.text.isNotEmpty &&
                         companyAddressController.text.isNotEmpty,

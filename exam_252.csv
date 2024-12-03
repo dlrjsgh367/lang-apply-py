@@ -1,8 +1,0 @@
-,Key,Description,en,ko,origin
-0,,,,별점관리,"title: '별점관리',"
-1,,,,미평가,"tabTitleArr: const ['미평가', '평가완료'],"
-2,,,,평가완료,"tabTitleArr: const ['미평가', '평가완료'],"
-3,,,,사직일 ${getDateTimeString(unratedData.resignDate)},"'사직일 ${getDateTimeString(unratedData.resignDate)}',"
-4,,,,데이터가 없습니다.,"text: '데이터가 없습니다.',"
-5,,,,사직일 ${getDateTimeString(ratedData.resignDate)},"'사직일 ${getDateTimeString(ratedData.resignDate)}',"
-6,,,,데이터가 없습니다.,"text: '데이터가 없습니다.',"

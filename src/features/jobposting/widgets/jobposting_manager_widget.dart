@@ -157,7 +157,7 @@ class _JobpostingManagerWidgetState extends ConsumerState<JobpostingManagerWidge
           children: [
         Scaffold(
           appBar: const CommonAppbar(
-            title: '담당자 정보',
+            title: localization.contactPersonInfo,
           ),
           body:
               CustomScrollView(
@@ -173,7 +173,7 @@ class _JobpostingManagerWidgetState extends ConsumerState<JobpostingManagerWidge
                         ),
                         alignment: Alignment.center,
                         child: Text(
-                          '공고 등록 시 수정한 내용은 기업정보에 반영되지 않아요!',
+                          localization.changesNotAppliedToCompanyInfoWhenPosting,
                           style: TextStyle(
                             color: CommonColors.red,
                             fontWeight: FontWeight.w700,
@@ -184,7 +184,7 @@ class _JobpostingManagerWidgetState extends ConsumerState<JobpostingManagerWidge
                     ),
                   ),
                   ProfileTitle(
-                    title: '담당자명',
+                    title: localization.contactPersonName,
                     required: true,
                     text: '',
                     onTap: () {},
@@ -217,7 +217,7 @@ class _JobpostingManagerWidgetState extends ConsumerState<JobpostingManagerWidge
                             },
                           ),
                           if(!ValidateService.isValidName(managerNameController.text))
-                            Text('* 담당자명을 확인해주세요.',
+                            Text(localization.24,
                               style: commonErrorAuth(),
                             )
                         ],
@@ -230,10 +230,10 @@ class _JobpostingManagerWidgetState extends ConsumerState<JobpostingManagerWidge
                     },
                     groupValue: isManagerNameDisplay,
                     value: DisplayTypeEnum.hidden,
-                    label: '담당자명 비공개',
+                    label: localization.contactPersonNamePrivate,
                   ),
                   ProfileTitle(
-                    title: '담당자 연락처',
+                    title: localization.contactPersonPhone,
                     required: true,
                     text: '',
                     onTap: () {},
@@ -269,7 +269,7 @@ class _JobpostingManagerWidgetState extends ConsumerState<JobpostingManagerWidge
                             },
                           ),
                           if(!ValidateService.phoneNumberRegex(managerHpController.text))
-                            Text('* 휴대폰 번호를 확인해주세요.',
+                            Text(localization.27,
                               style: commonErrorAuth(),
                             )
                         ],
@@ -282,10 +282,10 @@ class _JobpostingManagerWidgetState extends ConsumerState<JobpostingManagerWidge
                     },
                     groupValue: isManagerHpDisplay,
                     value: DisplayTypeEnum.hidden,
-                    label: '담당자 연락처 비공개',
+                    label: localization.contactNumberPrivate,
                   ),
                   ProfileTitle(
-                    title: '담당자 이메일',
+                    title: localization.contactPersonEmail,
                     required: true,
                     text: '',
                     onTap: () {},
@@ -318,7 +318,7 @@ class _JobpostingManagerWidgetState extends ConsumerState<JobpostingManagerWidge
                             },
                           ),
                           if(!ValidateService.emailRegex(managerEmailController.text))
-                            Text('* 이메일을 확인해주세요.',
+                            Text(localization.30,
                               style: commonErrorAuth(),
                             )
                         ],
@@ -332,7 +332,7 @@ class _JobpostingManagerWidgetState extends ConsumerState<JobpostingManagerWidge
                     },
                     groupValue: isManagerEmailDisplay,
                     value: DisplayTypeEnum.hidden,
-                    label: '담당자 이메일 비공개',
+                    label: localization.emailPrivate,
                   ),
                   BottomPadding(
                     extra: 100,
@@ -371,7 +371,7 @@ class _JobpostingManagerWidgetState extends ConsumerState<JobpostingManagerWidge
                   }
                 },
                 confirm: isConfirm,
-                text: '입력하기',
+                text: localization.32,
                 width: CommonSize.vw,
               ),
             ),

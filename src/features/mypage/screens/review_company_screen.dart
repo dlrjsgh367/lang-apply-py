@@ -221,7 +221,7 @@ class _ReviewCompanyScreenState extends ConsumerState<ReviewCompanyScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CommonAppbar(
-        title: '별점관리',
+        title: localization.368,
       ),
       body: !isLoading
           ? Column(
@@ -232,7 +232,7 @@ class _ReviewCompanyScreenState extends ConsumerState<ReviewCompanyScreen> {
                   child: CommonTab(
                     setTab: setTab,
                     activeTab: activeTab,
-                    tabTitleArr: const ['미평가', '평가완료'],
+                    tabTitleArr: const [localization.369, localization.370],
                   ),
                 ),
                 activeTab == 0
@@ -343,7 +343,7 @@ class _ReviewCompanyScreenState extends ConsumerState<ReviewCompanyScreen> {
                               )
                             : const CommonEmpty(
                                 // TODO 디자인
-                                text: '데이터가 없습니다.',
+                                text: localization.371,
                               ))
                     : Expanded(
                         child: ratedList.isNotEmpty
@@ -450,7 +450,7 @@ class _ReviewCompanyScreenState extends ConsumerState<ReviewCompanyScreen> {
                               )
                             : const CommonEmpty(
                                 // TODO 디자인
-                                text: '데이터가 없습니다.',
+                                text: localization.371,
                               ),
                       ),
               ],

@@ -206,7 +206,7 @@ class _JobSeekerMypageScreenState extends ConsumerState<JobSeekerMypageScreen>
             },
             setTab: setTab,
             activeTab: activeTab,
-            tabTitleArr: ['마이페이지', '설정'],
+            tabTitleArr: [localization.216, localization.217],
           ),
           bottomNavigationBar: CommonBottomAppbar(type: 'mypage'),
           body: activeTab == 0
@@ -405,7 +405,7 @@ class _JobSeekerMypageScreenState extends ConsumerState<JobSeekerMypageScreen>
                                               child: Row(
                                             children: [
                                               Text(
-                                                '포인트',
+                                                localization.218,
                                                 style: TextStyle(
                                                     fontSize: 13.sp,
                                                     color: CommonColors.gray80),
@@ -457,7 +457,7 @@ class _JobSeekerMypageScreenState extends ConsumerState<JobSeekerMypageScreen>
                                                   width: 12.w,
                                                 ),
                                                 Text(
-                                                  '프로필 관리',
+                                                  localization.219,
                                                   style: TextStyle(
                                                       fontSize: 11.sp,
                                                       color:
@@ -532,7 +532,7 @@ class _JobSeekerMypageScreenState extends ConsumerState<JobSeekerMypageScreen>
                                             // iconRedHeart.png
                                             // iconRedClock.png
                                             Text(
-                                              '스크랩',
+                                              localization.scrap,
                                               style: TextStyle(
                                                   fontSize: 12.sp,
                                                   fontWeight: FontWeight.w500,
@@ -577,7 +577,7 @@ class _JobSeekerMypageScreenState extends ConsumerState<JobSeekerMypageScreen>
                                             // iconRedHeart.png
                                             // iconRedClock.png
                                             Text(
-                                              '최근본공고',
+                                              localization.221,
                                               style: TextStyle(
                                                   fontSize: 12.sp,
                                                   fontWeight: FontWeight.w500,
@@ -617,7 +617,7 @@ class _JobSeekerMypageScreenState extends ConsumerState<JobSeekerMypageScreen>
                                             // iconRedHeart.png
                                             // iconRedClock.png
                                             Text(
-                                              '관심기업',
+                                              localization.interestedCompanies,
                                               style: TextStyle(
                                                   fontSize: 12.sp,
                                                   fontWeight: FontWeight.w500,
@@ -654,7 +654,7 @@ class _JobSeekerMypageScreenState extends ConsumerState<JobSeekerMypageScreen>
                                               height: 8.w,
                                             ),
                                             Text(
-                                              '차단기업',
+                                              localization.blockedCompanies,
                                               style: TextStyle(
                                                   fontSize: 12.sp,
                                                   fontWeight: FontWeight.w500,
@@ -675,7 +675,7 @@ class _JobSeekerMypageScreenState extends ConsumerState<JobSeekerMypageScreen>
                             onTap: () {
                               context.push('/my/certificate');
                             },
-                            text: '취업활동증명서 발급',
+                            text: localization.224,
                           ),
                         ),
                         SliverToBoxAdapter(
@@ -683,7 +683,7 @@ class _JobSeekerMypageScreenState extends ConsumerState<JobSeekerMypageScreen>
                             onTap: () {
                               context.push('/my/consult');
                             },
-                            text: '노무 상담 하기',
+                            text: localization.225,
                           ),
                         ),
                         SliverToBoxAdapter(
@@ -691,7 +691,7 @@ class _JobSeekerMypageScreenState extends ConsumerState<JobSeekerMypageScreen>
                             onTap: () {
                               context.push('/my/document');
                             },
-                            text: '계약서/사직서',
+                            text: localization.210,
                           ),
                         ),
                         SliverToBoxAdapter(
@@ -699,7 +699,7 @@ class _JobSeekerMypageScreenState extends ConsumerState<JobSeekerMypageScreen>
                             onTap: () {
                               context.push('/review');
                             },
-                            text: '별점 관리',
+                            text: localization.226,
                           ),
                         ),
                         SliverToBoxAdapter(
@@ -709,7 +709,7 @@ class _JobSeekerMypageScreenState extends ConsumerState<JobSeekerMypageScreen>
                                 pushAfterFunc();
                               });
                             },
-                            text: '활동 포인트 관리',
+                            text: localization.227,
                           ),
                         ),
                         SliverPadding(
@@ -721,7 +721,7 @@ class _JobSeekerMypageScreenState extends ConsumerState<JobSeekerMypageScreen>
                                   saveInviteLog();
                                   openShare('?id=${userInfo.id}');
                                 },
-                                text: '친구 초대하기',
+                                text: localization.228,
                                 confirm: true,
                                 childWidget: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -735,7 +735,7 @@ class _JobSeekerMypageScreenState extends ConsumerState<JobSeekerMypageScreen>
                                       width: 4.w,
                                     ),
                                     Text(
-                                      '친구 초대하기',
+                                      localization.228,
                                       style: TextStyles.commonButton(
                                           color: CommonColors.white,
                                           fontSize: 15),

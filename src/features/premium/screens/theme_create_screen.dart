@@ -113,12 +113,12 @@ class _ThemeCreateScreenState extends ConsumerState<ThemeCreateScreen>
         builder: (BuildContext context) {
           return AlertConfirmDialog(
             alertContent: '문의가 접수되었습니다.\n상담사가 1~2일 후 연락드릴 예정입니다.',
-            alertConfirm: '확인',
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               initData();
               context.pop();
             },
-            alertTitle: '알림',
+            alertTitle: localization.notification,
           );
         },
       );
@@ -127,12 +127,12 @@ class _ThemeCreateScreenState extends ConsumerState<ThemeCreateScreen>
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertContent: '파일 업로드에 실패했습니다. 다시 시도해 주세요.',
-            alertConfirm: '확인',
+            alertContent: localization.fileUploadFailedRetry,
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop();
             },
-            alertTitle: '알림',
+            alertTitle: localization.notification,
           );
         },
       );
@@ -154,12 +154,12 @@ class _ThemeCreateScreenState extends ConsumerState<ThemeCreateScreen>
           builder: (BuildContext context) {
             return AlertConfirmDialog(
               alertContent: '문의가 접수되었습니다.\n상담사가 1~2일 후 연락드릴 예정입니다.',
-              alertConfirm: '확인',
+              alertConfirm: localization.confirm,
               confirmFunc: () {
                 initData();
                 context.pop();
               },
-              alertTitle: '알림',
+              alertTitle: localization.notification,
             );
           },
         );
@@ -172,17 +172,17 @@ class _ThemeCreateScreenState extends ConsumerState<ThemeCreateScreen>
           context: context,
           builder: (BuildContext context) {
             return AlertConfirmDialog(
-              alertContent: '운영자에 의하여 작성이 제한된 회원입니다.',
-              alertConfirm: '확인',
+              alertContent: localization.accountRestrictedByAdministrator,
+              alertConfirm: localization.confirm,
               confirmFunc: () {
                 context.pop();
               },
-              alertTitle: '알림',
+              alertTitle: localization.notification,
             );
           },
         );
       } else {
-        showDefaultToast('등록에 실패하였습니다.');
+        showDefaultToast(localization.152);
       }
     } else {
       if (!mounted) return null;
@@ -199,9 +199,9 @@ class _ThemeCreateScreenState extends ConsumerState<ThemeCreateScreen>
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertTitle: '알림',
+            alertTitle: localization.notification,
             alertContent: "금칙어 '" + keyword + "'가 포함되어 테마관 등록이 불가능합니다.",
-            alertConfirm: '확인',
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop(context);
             },
@@ -252,17 +252,17 @@ class _ThemeCreateScreenState extends ConsumerState<ThemeCreateScreen>
                 onTap: () {
                   getProfilePhoto('gallery');
                 },
-                text: '사진 보관함'),
+                text: localization.photoLibrary),
             BottomSheetButton(
                 onTap: () {
                   getProfilePhoto('camera');
                 },
-                text: '사진 찍기'),
+                text: localization.156),
             BottomSheetButton(
                 onTap: () {
                   getProfileFile();
                 },
-                text: '파일 선택'),
+                text: localization.157),
           ],
         );
       },
@@ -355,7 +355,7 @@ class _ThemeCreateScreenState extends ConsumerState<ThemeCreateScreen>
       },
       child: Scaffold(
         appBar: CommonAppbar(
-          title: '브랜드 테마관',
+          title: localization.brandThemeSection,
         ),
         body: !isLoading
             ? Stack(
@@ -389,7 +389,7 @@ class _ThemeCreateScreenState extends ConsumerState<ThemeCreateScreen>
                                         CrossAxisAlignment.stretch,
                                     children: [
                                       Text(
-                                        '브랜드 테마관 제공 (테마내 노출)',
+                                        localization.615,
                                         style: TextStyle(
                                           fontSize: 13.sp,
                                           color: CommonColors.gray4d,
@@ -399,7 +399,7 @@ class _ThemeCreateScreenState extends ConsumerState<ThemeCreateScreen>
                                         height: 4.w,
                                       ),
                                       Text(
-                                        '목록형 배너 노출',
+                                        localization.616,
                                         style: TextStyle(
                                           fontSize: 13.sp,
                                           color: CommonColors.gray4d,
@@ -416,7 +416,7 @@ class _ThemeCreateScreenState extends ConsumerState<ThemeCreateScreen>
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      '서비스 이용료',
+                                      localization.567,
                                       style: TextStyle(
                                         fontSize: 14.sp,
                                         fontWeight: FontWeight.w500,
@@ -449,7 +449,7 @@ class _ThemeCreateScreenState extends ConsumerState<ThemeCreateScreen>
                                       ),
                                     ),
                                     Text(
-                                      '3일',
+                                      localization.597,
                                       style: TextStyle(
                                         fontSize: 14.sp,
                                         fontWeight: FontWeight.w500,
@@ -465,14 +465,14 @@ class _ThemeCreateScreenState extends ConsumerState<ThemeCreateScreen>
                         SliverPadding(
                           padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 8.w),
                           sliver: const ApplyTitle(
-                            text: '브랜드 테마관 문의',
+                            text: localization.617,
                           ),
                         ),
                         SliverPadding(
                           padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 16.w),
                           sliver: SliverToBoxAdapter(
                             child: Text(
-                              '고객센터로 문의 주시면 상담원이 안내를 도와드리겠습니다.',
+                              localization.618,
                               style: TextStyle(
                                 fontSize: 13.sp,
                                 color: CommonColors.gray80,
@@ -486,7 +486,7 @@ class _ThemeCreateScreenState extends ConsumerState<ThemeCreateScreen>
                               child: TextFormField(
                             controller: titleController,
                             cursorColor: Colors.black,
-                            decoration: commonInput(hintText: '문의제목'),
+                            decoration: commonInput(hintText: localization.619),
                             style: commonInputText(),
                             onChanged: (value) {
                               setState(() {
@@ -522,7 +522,7 @@ class _ThemeCreateScreenState extends ConsumerState<ThemeCreateScreen>
                                   maxLength: 2000,
                                   textAlignVertical: TextAlignVertical.top,
                                   decoration:
-                                      areaInput(hintText: '문의 내용을 적어주세요'),
+                                      areaInput(hintText: localization.620),
                                   style: areaInputText(),
                                   onChanged: (value) {
                                     setState(() {
@@ -604,7 +604,7 @@ class _ThemeCreateScreenState extends ConsumerState<ThemeCreateScreen>
                                 ),
                                 Expanded(
                                   child: Text(
-                                    '최대 100MB까지 첨부 가능합니다.',
+                                    localization.174,
                                     style: TextStyle(
                                       fontSize: 11.sp,
                                       color: CommonColors.red,
@@ -632,7 +632,7 @@ class _ThemeCreateScreenState extends ConsumerState<ThemeCreateScreen>
                                 ),
                                 Expanded(
                                   child: Text(
-                                    '문의와 무관한 내용인 경우 통보없이 삭제될 수 있습니다.',
+                                    localization.621,
                                     style: TextStyle(
                                       fontSize: 11.sp,
                                       color: CommonColors.red,
@@ -652,13 +652,13 @@ class _ThemeCreateScreenState extends ConsumerState<ThemeCreateScreen>
                                 TermsItemWidget(
                                   isRequired: true,
                                   arrowNone: true,
-                                  text: '개인정보 수집 및 이용동의 안내',
+                                  text: localization.622,
                                   status: inputData['isInfoStatus'],
                                   checkString: 'isInfoStatus',
                                   termsType: checkUser(),
                                   termsDataIdx: 50,
                                   updateStatus: updateTermsStatus,
-                                  requireText: '(필수)',
+                                  requireText: localization.176,
                                   // isDetail: true,
                                 ),
                                 SizedBox(
@@ -675,7 +675,7 @@ class _ThemeCreateScreenState extends ConsumerState<ThemeCreateScreen>
                                       createQna();
                                     }
                                   },
-                                  text: "문의 보내기",
+                                  text: localization.178,
                                 )
                               ],
                             ),

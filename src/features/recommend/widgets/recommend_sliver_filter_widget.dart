@@ -94,7 +94,7 @@ class _AlbaFilterState extends ConsumerState<RecommendSilverFilterWidget> {
       useSafeArea: true,
       builder: (BuildContext context) {
         return const FilterBottomSheet(
-          type: '지역',
+          type: localization.region,
         );
       },
     );
@@ -310,7 +310,7 @@ class _AlbaFilterState extends ConsumerState<RecommendSilverFilterWidget> {
                 //직종
                 GestureDetector(
                   onTap: () {
-                    DefineDialog.showJobBottom(context, '직종', jobList,
+                    DefineDialog.showJobBottom(context, localization.jobCategory, jobList,
                         addWorkJob, selectedJobList, 10,DefineEnum.job);
                   },
                   child: Container(
@@ -332,7 +332,7 @@ class _AlbaFilterState extends ConsumerState<RecommendSilverFilterWidget> {
                     child: Row(
                       children: [
                         Text(
-                          '직종',
+                          localization.jobCategory,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: selectedJobList.isEmpty
@@ -371,7 +371,7 @@ class _AlbaFilterState extends ConsumerState<RecommendSilverFilterWidget> {
                 //성별
                 GestureDetector(
                   onTap: () {
-                    DefineDialog.showFilter(context, '성별', genderFilterList,
+                    DefineDialog.showFilter(context, localization.gender, genderFilterList,
                         applyGender, initialSelectedGender, 1);
                   },
                   child: Container(
@@ -393,7 +393,7 @@ class _AlbaFilterState extends ConsumerState<RecommendSilverFilterWidget> {
                     child: Row(
                       children: [
                         Text(
-                          '성별',
+                          localization.gender,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: initialSelectedGender.isEmpty
@@ -433,7 +433,7 @@ class _AlbaFilterState extends ConsumerState<RecommendSilverFilterWidget> {
                   onTap: () {
                     DefineDialog.showFilter(
                         context,
-                        '연령',
+                        localization.age,
                         FilterService.ageFilter,
                         applyAge,
                         initialSelectedAge,
@@ -458,7 +458,7 @@ class _AlbaFilterState extends ConsumerState<RecommendSilverFilterWidget> {
                     child: Row(
                       children: [
                         Text(
-                          '연령',
+                          localization.age,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: initialSelectedAge.isEmpty
@@ -498,7 +498,7 @@ class _AlbaFilterState extends ConsumerState<RecommendSilverFilterWidget> {
                   onTap: () {
                     DefineDialog.showFilter(
                         context,
-                        '근무형태',
+                        localization.employmentType,
                         workTypeFilterList,
                         applyWorkType,
                         initialSelectedWorkType,
@@ -522,7 +522,7 @@ class _AlbaFilterState extends ConsumerState<RecommendSilverFilterWidget> {
                     child: Row(
                       children: [
                         Text(
-                          '근무형태',
+                          localization.employmentType,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: initialSelectedWorkType.isEmpty
@@ -560,7 +560,7 @@ class _AlbaFilterState extends ConsumerState<RecommendSilverFilterWidget> {
                 //희망근무지
                 GestureDetector(
                   onTap: () {
-                    DefineDialog.showAreaBottom(context, '지역 선택', areaList,
+                    DefineDialog.showAreaBottom(context, localization.selectRegion, areaList,
                         applyArea, initialSelectedArea, 10);
                   },
                   child: Container(
@@ -581,7 +581,7 @@ class _AlbaFilterState extends ConsumerState<RecommendSilverFilterWidget> {
                     child: Row(
                       children: [
                         Text(
-                          '희망근무지',
+                          localization.desiredWorkLocation,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: initialSelectedArea.isEmpty
@@ -621,7 +621,7 @@ class _AlbaFilterState extends ConsumerState<RecommendSilverFilterWidget> {
                   onTap: () {
                     DefineDialog.showFilter(
                         context,
-                        '근무기간',
+                        localization.workDuration,
                         workPeriodFilterList,
                         applyWorkPeriod,
                         initialSelectedWorkPeriod,
@@ -646,7 +646,7 @@ class _AlbaFilterState extends ConsumerState<RecommendSilverFilterWidget> {
                     child: Row(
                       children: [
                         Text(
-                          '근무기간',
+                          localization.workDuration,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: initialSelectedWorkPeriod.isEmpty
@@ -686,7 +686,7 @@ class _AlbaFilterState extends ConsumerState<RecommendSilverFilterWidget> {
                   onTap: () {
                     DefineDialog.showFilter(
                         context,
-                        '경력',
+                        localization.experienced,
                         FilterService.careerFilter,
                         applyCareer,
                         initialSelectedCareer,
@@ -711,7 +711,7 @@ class _AlbaFilterState extends ConsumerState<RecommendSilverFilterWidget> {
                     child: Row(
                       children: [
                         Text(
-                          '경력',
+                          localization.experienced,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: initialSelectedCareer.isEmpty

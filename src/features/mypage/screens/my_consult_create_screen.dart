@@ -100,15 +100,15 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
             barrierDismissible: false,
             builder: (BuildContext context) {
               return AlertConfirmDialog(
-                alertContent: '등록되었습니다.',
-                alertConfirm: '확인',
+                alertContent: localization.254,
+                alertConfirm: localization.confirm,
                 confirmFunc: () {
                   isRunning = true;
                   initData();
                   context.pop();
                   context.pop();
                 },
-                alertTitle: '알림',
+                alertTitle: localization.notification,
               );
             });
       }
@@ -120,18 +120,18 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
           context: context,
           builder: (BuildContext context) {
             return AlertConfirmDialog(
-              alertContent: '운영자에 의하여 작성이 제한된 회원입니다.',
-              alertConfirm: '확인',
+              alertContent: localization.accountRestrictedByAdministrator,
+              alertConfirm: localization.confirm,
               confirmFunc: () {
                 context.pop();
               },
-              alertTitle: '알림',
+              alertTitle: localization.notification,
             );
           },
         );
       } else {
         if (!mounted) return null;
-        showDefaultToast('게시글 작성에 실패하였습니다.');
+        showDefaultToast(localization.255);
       }
     }
   }
@@ -141,9 +141,9 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertTitle: '알림',
+            alertTitle: localization.notification,
             alertContent: "금칙어 '" + keyword + "'가 포함되어 노무 상담 등록이 불가능합니다.",
-            alertConfirm: '확인',
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop(context);
             },
@@ -169,10 +169,10 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
         return ContentBottomSheet(
           contents: [
             BottomSheetButton(
-                onTap: () => getAttachedPhoto('gallery'), text: '사진 보관함'),
+                onTap: () => getAttachedPhoto('gallery'), text: localization.photoLibrary),
             BottomSheetButton(
-                onTap: () => getAttachedPhoto('camera'), text: '사진 찍기'),
-            BottomSheetButton(onTap: () => getAttachedFile(), text: '파일 선택'),
+                onTap: () => getAttachedPhoto('camera'), text: localization.156),
+            BottomSheetButton(onTap: () => getAttachedFile(), text: localization.157),
           ],
         );
       },
@@ -225,14 +225,14 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertContent: '등록되었습니다.',
-            alertConfirm: '확인',
+            alertContent: localization.254,
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               initData();
               context.pop();
               context.pop();
             },
-            alertTitle: '알림',
+            alertTitle: localization.notification,
           );
         },
       );
@@ -241,12 +241,12 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertContent: '파일 업로드에 실패했습니다. 다시 시도해 주세요.',
-            alertConfirm: '확인',
+            alertContent: localization.fileUploadFailedRetry,
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop();
             },
-            alertTitle: '알림',
+            alertTitle: localization.notification,
           );
         },
       );
@@ -258,10 +258,10 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
         context: context,
         builder: (BuildContext context) {
           return AlertTwoButtonDialog(
-            alertTitle: '작성 취소',
+            alertTitle: localization.cancelWriting,
             alertContent: '페이지를 이동하시겠어요?\n이동 시 작성된 내용은 저장되지 않아요',
-            alertConfirm: '확인',
-            alertCancel: '취소',
+            alertConfirm: localization.confirm,
+            alertCancel: localization.cancel,
             onConfirm: () {
               context.pop(context);
               context.pop(context);
@@ -310,10 +310,10 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
       context: context,
       builder: (BuildContext context) {
         return AlertTwoButtonDialog(
-          alertTitle: '작성 취소',
+          alertTitle: localization.cancelWriting,
           alertContent: '페이지를 이동하시겠어요?\n이동 시 작성된 내용은 저장되지 않아요.',
-          alertConfirm: '확인',
-          alertCancel: '취소',
+          alertConfirm: localization.confirm,
+          alertCancel: localization.cancel,
           onConfirm: () {
             Navigator.of(context).pop();
             Navigator.of(context).pop();
@@ -355,14 +355,14 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
             Scaffold(
 
               appBar: CommonAppbar(
-                title: '상담 작성',
+                title: localization.258,
                 backFunc: () {
                   showCancelDialog();
                 },
               ),
               body: CustomScrollView(
                 slivers: [
-                  const TitleItem(title: '상담 제목'),
+                  const TitleItem(title: localization.194),
                   SliverPadding(
                     padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 16.w),
                     sliver: SliverToBoxAdapter(
@@ -371,7 +371,7 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
                         cursorColor: Colors.black,
                         style: commonInputText(),
                         decoration: commonInput(
-                          hintText: '제목을 입력해주세요.',
+                          hintText: localization.170,
                         ),
                         onChanged: (value) {
                           setState(() {
@@ -391,7 +391,7 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
                       ),
                     ),
                   ),
-                  const TitleItem(title: '상담 내용'),
+                  const TitleItem(title: localization.195),
                   SliverPadding(
                     padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 16.w),
                     sliver: SliverToBoxAdapter(
@@ -415,7 +415,7 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
                             minLines: 3,
                             cursorColor: CommonColors.black,
                             style: areaInputText(),
-                            decoration: areaInput(hintText: '상담 내용을 작성해주세요.'),
+                            decoration: areaInput(hintText: localization.259),
                             textAlignVertical: TextAlignVertical.top,
                             onChanged: (value) {
                               setState(() {
@@ -441,7 +441,7 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
                       ),
                     ),
                   ),
-                  const TitleItem(title: '첨부파일'),
+                  const TitleItem(title: localization.172),
                   SliverPadding(
                     padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 16.w),
                     sliver: SliverToBoxAdapter(
@@ -500,7 +500,7 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
                               ),
                               Expanded(
                                 child: Text(
-                                  '최대 100MB까지 첨부 가능합니다.',
+                                  localization.174,
                                   style: TextStyle(
                                     fontSize: 11.sp,
                                     color: CommonColors.red,
@@ -536,7 +536,7 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
                       ),
                     ),
                   ),
-                  const TitleItem(title: '비밀글 설정'),
+                  const TitleItem(title: localization.260),
                   SliverPadding(
                     padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 4.w),
                     sliver: SliverToBoxAdapter(
@@ -584,7 +584,7 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
                                 width: 8.w,
                               ),
                               Text(
-                                "해당 문의글을",
+                                localization.261,
                                 style: TextStyle(
                                   fontSize: 14.sp,
                                   color: CommonColors.black2b,
@@ -599,7 +599,7 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
                                     fontWeight: FontWeight.w600),
                               ),
                               Text(
-                                "로 설정하시겠습니까?",
+                                localization.263,
                                 style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 14.sp,
@@ -624,7 +624,7 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
                         style: commonInputText(),
                         maxLength: null,
                         decoration: passwordInput(
-                          hintText: '비밀번호를 입력해주세요.',
+                          hintText: localization.264,
                           isVisible: !passwordVisible,
                           hasString: _passwordController.text.isNotEmpty,
                           hasClear: _passwordController.text.isNotEmpty,
@@ -674,7 +674,7 @@ class _MyConsultCreateScreenState extends ConsumerState<MyConsultCreateScreen>
                     }
                   }
                 },
-                text: '상담 신청하기',
+                text: localization.265,
                 confirm: setConfirm(),
               ),
             ),

@@ -58,7 +58,7 @@ class _QnaMediaWidgetState extends ConsumerState<QnaMediaWidget> with Files {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CommonAppbar(
-        title: '사진',
+        title: localization.200,
       ),
       body: Stack(
         children: [

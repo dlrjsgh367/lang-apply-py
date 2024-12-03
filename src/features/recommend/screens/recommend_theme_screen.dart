@@ -134,9 +134,9 @@ class _RecommendThemeScreenState extends ConsumerState<RecommendThemeScreen> {
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertTitle: '안내',
-            alertContent: '데이터 통신에 실패하였습니다.',
-            alertConfirm: '확인',
+            alertTitle: localization.guide,
+            alertContent: localization.dataCommunicationFailed,
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop();
               context.pop();
@@ -271,7 +271,7 @@ class _RecommendThemeScreenState extends ConsumerState<RecommendThemeScreen> {
                       ? SliverToBoxAdapter(
                           child: SizedBox(
                             height: 250.w,
-                            child: const CommonEmpty(text: '공고가 존재하지않습니다.'),
+                            child: const CommonEmpty(text: localization.638),
                           ),
                         )
                       : DecoratedSliver(

@@ -49,7 +49,7 @@ class WorkerProfileBottomWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
-                        '학력',
+                        localization.educationLevel,
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           color: CommonColors.black,
@@ -111,7 +111,7 @@ class WorkerProfileBottomWidget extends StatelessWidget {
                     children: [
                       Row(children: [
                         Text(
-                          '경력',
+                          localization.experienced,
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             color: CommonColors.black,
@@ -255,7 +255,7 @@ class WorkerProfileBottomWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                '희망조건',
+                localization.849,
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
                   color: CommonColors.black,
@@ -277,7 +277,7 @@ class WorkerProfileBottomWidget extends StatelessWidget {
                         SizedBox(
                           width: 100.w,
                           child: Text(
-                            '희망 근무지',
+                            localization.813,
                             style: TextStyle(
                               fontSize: 14.sp,
                               height: 1.4.sp,
@@ -310,7 +310,7 @@ class WorkerProfileBottomWidget extends StatelessWidget {
                         SizedBox(
                           width: 100.w,
                           child: Text(
-                            '희망 직종',
+                            localization.294,
                             style: TextStyle(
                               fontSize: 14.sp,
                               color: CommonColors.gray66,
@@ -342,7 +342,7 @@ class WorkerProfileBottomWidget extends StatelessWidget {
                         SizedBox(
                           width: 100.w,
                           child: Text(
-                            '고용형태',
+                            localization.817,
                             style: TextStyle(
                               fontSize: 14.sp,
                               color: CommonColors.gray66,
@@ -374,7 +374,7 @@ class WorkerProfileBottomWidget extends StatelessWidget {
                         SizedBox(
                           width: 100.w,
                           child: Text(
-                            '근무기간',
+                            localization.workDuration,
                             style: TextStyle(
                               fontSize: 14.sp,
                               color: CommonColors.gray66,
@@ -407,7 +407,7 @@ class WorkerProfileBottomWidget extends StatelessWidget {
                         SizedBox(
                           width: 100.w,
                           child: Text(
-                            '근무요일',
+                            localization.workingDays,
                             style: TextStyle(
                               fontSize: 14.sp,
                               height: 1.4.sp,
@@ -440,7 +440,7 @@ class WorkerProfileBottomWidget extends StatelessWidget {
                         SizedBox(
                           width: 100.w,
                           child: Text(
-                            '근무시간',
+                            localization.workingHours2,
                             style: TextStyle(
                               fontSize: 14.sp,
                               color: CommonColors.gray66,
@@ -470,7 +470,7 @@ class WorkerProfileBottomWidget extends StatelessWidget {
               ),
               SizedBox(height: 36.w),
               Text(
-                '자기소개서',
+                localization.850,
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
                   color: CommonColors.black,
@@ -549,7 +549,7 @@ class WorkerProfileBottomWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
-                        '첨부파일',
+                        localization.172,
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           color: CommonColors.black,
@@ -564,7 +564,7 @@ class WorkerProfileBottomWidget extends StatelessWidget {
                                 downloadFile(profileData.files[i].url,
                                     profileData.files[i].name);
                               } else {
-                                showDefaultToast('대화가 시작 된 후 확인 가능합니다.');
+                                showDefaultToast(localization.836);
                               }
                             },
                             child: Container(

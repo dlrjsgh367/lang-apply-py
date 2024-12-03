@@ -113,7 +113,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
         }
       });
     } else if (result.status != 200) {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -137,7 +137,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
         isLazeLoading = false;
       });
     } else if (result.status != 200) {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -181,7 +181,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
         isProductLazeLoading = false;
       });
     } else if (result.status != 200) {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -259,7 +259,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
   }
 
   paymentErrorAlert() {
-    showErrorAlert(context, '알림', '결제에 실패했습니다.');
+    showErrorAlert(context, localization.notification, localization.372);
     setState(() {
       isPaymentLoading = false;
     });
@@ -307,14 +307,14 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
 
   @override
   void cancelPurchase(purchaseDetails) {
-    showDefaultToast('결제 취소하였습니다.');
+    showDefaultToast(localization.373);
     setState(() {
       isPaymentLoading = false;
     });
   }
 
   void handleError(error) {
-    showDefaultToast('결제 취소하였습니다.');
+    showDefaultToast(localization.373);
     setState(() {
       isPaymentLoading = false;
     });
@@ -326,7 +326,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
       setState(() {
         isPaymentLoading = false;
       });
-      showDefaultToast('결제가 완료되었습니다..');
+      showDefaultToast(localization.374);
       getUserData();
       getChocoListData(page);
       getMyChoco();
@@ -342,7 +342,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
         ? const Loader()
         : Scaffold(
             appBar: const CommonAppbar(
-              title: '나의 초단 코인',
+              title: localization.375,
             ),
             body: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -352,7 +352,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                   child: CommonTab(
                     setTab: setTab,
                     activeTab: activeTab,
-                    tabTitleArr: const ['사용내역', '초단코인샵'],
+                    tabTitleArr: const [localization.376, localization.377],
                   ),
                 ),
                 Expanded(
@@ -382,7 +382,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                                                 child: Row(
                                                   children: [
                                                     Text(
-                                                      '보유 초단코인',
+                                                      localization.362,
                                                       style: TextStyle(
                                                           fontSize: 15.sp,
                                                           color: CommonColors
@@ -393,7 +393,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                                                     Expanded(
                                                       child: Text(
                                                         myChocoData == null
-                                                            ? '0 초코'
+                                                            ? localization.378
                                                             : '${ConvertService.returnStringWithCommaFormat(myChocoData!.totalChoco)} 초코',
                                                         textAlign:
                                                             TextAlign.end,
@@ -433,7 +433,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                                                   Row(
                                                     children: [
                                                       Text(
-                                                        '결제 초코',
+                                                        localization.379,
                                                         style: TextStyle(
                                                             fontSize: 13.sp,
                                                             color: CommonColors
@@ -445,7 +445,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                                                       Expanded(
                                                         child: Text(
                                                           myChocoData == null
-                                                              ? '0 초코'
+                                                              ? localization.378
                                                               : '${ConvertService.returnStringWithCommaFormat(myChocoData!.totalPaidChoco)} 초코',
                                                           textAlign:
                                                               TextAlign.end,
@@ -466,7 +466,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                                                   Row(
                                                     children: [
                                                       Text(
-                                                        '획득 초코',
+                                                        localization.380,
                                                         style: TextStyle(
                                                             fontSize: 13.sp,
                                                             color: CommonColors
@@ -478,7 +478,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                                                       Expanded(
                                                         child: Text(
                                                           myChocoData == null
-                                                              ? '0 초코'
+                                                              ? localization.378
                                                               : '${ConvertService.returnStringWithCommaFormat(myChocoData!.totalFreeChoco)} 초코',
                                                           textAlign:
                                                               TextAlign.end,
@@ -508,7 +508,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                                                   Row(
                                                     children: [
                                                       Text(
-                                                        '30일 이내 소멸 초단코인',
+                                                        localization.381,
                                                         style: TextStyle(
                                                             fontSize: 14.sp,
                                                             color: CommonColors
@@ -520,7 +520,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                                                       Expanded(
                                                         child: Text(
                                                           myChocoData == null
-                                                              ? '0 초코'
+                                                              ? localization.378
                                                               : '${ConvertService.returnStringWithCommaFormat(myChocoData!.toExpireChoco)} 초코',
                                                           textAlign:
                                                               TextAlign.end,
@@ -541,7 +541,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                                                   Row(
                                                     children: [
                                                       Text(
-                                                        '결제 초코',
+                                                        localization.379,
                                                         style: TextStyle(
                                                             fontSize: 13.sp,
                                                             color: CommonColors
@@ -553,7 +553,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                                                       Expanded(
                                                         child: Text(
                                                           myChocoData == null
-                                                              ? '0 초코'
+                                                              ? localization.378
                                                               : '${ConvertService.returnStringWithCommaFormat(myChocoData!.toExpirePaidChoco)} 초코',
                                                           textAlign:
                                                               TextAlign.end,
@@ -574,7 +574,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                                                   Row(
                                                     children: [
                                                       Text(
-                                                        '획득 초코',
+                                                        localization.380,
                                                         style: TextStyle(
                                                             fontSize: 13.sp,
                                                             color: CommonColors
@@ -586,7 +586,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                                                       Expanded(
                                                         child: Text(
                                                           myChocoData == null
-                                                              ? '0 초코'
+                                                              ? localization.378
                                                               : '${ConvertService.returnStringWithCommaFormat(myChocoData!.toExpireFreeChoco)} 초코',
                                                           textAlign:
                                                               TextAlign.end,
@@ -631,7 +631,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                                                     SizedBox(
                                                       width: 8.w,
                                                     ),
-                                                    Text('초코 사용 내역',
+                                                    Text(localization.382,
                                                         style: TextStyle(
                                                           fontSize: 15.sp,
                                                           color: CommonColors
@@ -654,7 +654,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                                                 ? const SliverToBoxAdapter(
                                                     child: CommonEmpty(
                                                         text:
-                                                            '초코 사용내역이 존재하지않습니다.'),
+                                                            localization.383),
                                                   )
                                                 : SliverList(
                                                     delegate:
@@ -784,7 +784,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                                                 child: Row(
                                                   children: [
                                                     Text(
-                                                      '보유 초단코인',
+                                                      localization.362,
                                                       style: TextStyle(
                                                           fontSize: 15.sp,
                                                           color: CommonColors
@@ -795,7 +795,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                                                     Expanded(
                                                       child: Text(
                                                         myChocoData == null
-                                                            ? '0 초코'
+                                                            ? localization.378
                                                             : '${ConvertService.returnStringWithCommaFormat(myChocoData!.totalChoco)} 초코',
                                                         textAlign:
                                                             TextAlign.end,
@@ -818,7 +818,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                                                   20.w, 5.w, 20.w, 0),
                                               sliver: SliverToBoxAdapter(
                                                 child: Text(
-                                                  '초단코인(초코)은 초단알바 내 결제 수단입니다.',
+                                                  localization.384,
                                                   style: TextStyle(
                                                     color: CommonColors.gray4d,
                                                     fontSize: 12.sp,
@@ -842,7 +842,7 @@ class _ChocoScreenState extends ConsumerState<ChocoScreen>
                                                 height: 48.w,
                                                 alignment: Alignment.centerLeft,
                                                 child: Text(
-                                                  '얼마 충전할까요?',
+                                                  localization.385,
                                                   style:
                                                       TextStyles.borderButton,
                                                 ),

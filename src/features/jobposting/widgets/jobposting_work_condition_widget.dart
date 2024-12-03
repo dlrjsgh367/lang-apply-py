@@ -382,7 +382,7 @@ class _JobpostingWorkConditionWidgetState
       builder: (BuildContext context) {
         return WorkTypeBottomSheet(
           dataArr: widget.workTypeList,
-          title: '근무 형태',
+          title: localization.83,
           initItem: selectedWorkTypeKey.toString(),
         );
       },
@@ -411,9 +411,9 @@ class _JobpostingWorkConditionWidgetState
       isScrollControlled: true,
       builder: (BuildContext context) {
         return WorkPeriodBottomSheet(
-          // CheckList: const ['하루 (1일)','1주일 이하','1주일 ~ 1개월','1개월 ~ 3개월','3개월 ~ 6개월','6개월 ~ 1년','1년 이상'],
+          // CheckList: const ['하루 (1일)',localization.481,localization.482,localization.483,localization.484,localization.485,localization.486],
           // selected: 1,
-          title: '근무 기간', dataArr: widget.workPeriodList,
+          title: localization.84, dataArr: widget.workPeriodList,
           initItem: selectedWorkPeriodKey.toString(),
         );
       },
@@ -450,13 +450,13 @@ class _JobpostingWorkConditionWidgetState
       isScrollControlled: true,
       builder: (BuildContext context) {
         return WorkTimeBottomSheet(
-          // CheckList: const ['하루 (1일)','1주일 이하','1주일 ~ 1개월','1개월 ~ 3개월','3개월 ~ 6개월','6개월 ~ 1년','1년 이상'],
+          // CheckList: const ['하루 (1일)',localization.481,localization.482,localization.483,localization.484,localization.485,localization.486],
           // selected: 1,
 
           initItem: type == 'start'
               ? workHour[i]['jphStartTime']
               : workHour[i]['jphEndTime'],
-          title: type == 'start' ? '시작 시간' : '종료 시간',
+          title: type == 'start' ? localization.startTime : localization.endTime,
           dataArr: ContractService.workTimeList,
         );
       },
@@ -599,12 +599,12 @@ class _JobpostingWorkConditionWidgetState
           children: [
             Scaffold(
               appBar: const CommonAppbar(
-                title: '근무 조건',
+                title: localization.workingConditions2,
               ),
               body: CustomScrollView(
                 slivers: [
                   ProfileTitle(
-                    title: '급여',
+                    title: localization.salary,
                     required: true,
                     text: '',
                     onTap: () {},
@@ -622,7 +622,7 @@ class _JobpostingWorkConditionWidgetState
                               },
                               groupValue: salaryType,
                               value: SalaryTypeEnum.time,
-                              label: '시급',
+                              label: localization.hourlyRate,
                             ),
                           ),
                           SizedBox(
@@ -635,7 +635,7 @@ class _JobpostingWorkConditionWidgetState
                               },
                               groupValue: salaryType,
                               value: SalaryTypeEnum.day,
-                              label: '일급',
+                              label: localization.dailyRate,
                             ),
                           ),
                           SizedBox(
@@ -648,7 +648,7 @@ class _JobpostingWorkConditionWidgetState
                               },
                               groupValue: salaryType,
                               value: SalaryTypeEnum.month,
-                              label: '월급',
+                              label: localization.monthlySalary,
                             ),
                           ),
                         ],
@@ -671,7 +671,7 @@ class _JobpostingWorkConditionWidgetState
                           FocusManager.instance.primaryFocus?.unfocus();
                         },
                         decoration: commonInput(
-                          hintText: '급여를 입력해주세요.',
+                          hintText: localization.92,
                         ),
                         onChanged: (value) {},
                         inputFormatters: [
@@ -689,11 +689,11 @@ class _JobpostingWorkConditionWidgetState
                     },
                     groupValue: isSalaryNegotiable,
                     value: NegotiableEnum.possible,
-                    label: '급여 협의 가능',
+                    label: localization.93,
                   ),
                   const SliverDivider(),
                   ProfileTitle(
-                    title: '근무형태',
+                    title: localization.employmentType,
                     required: true,
                     text: '',
                     onTap: () {},
@@ -710,7 +710,7 @@ class _JobpostingWorkConditionWidgetState
                         onTap: () {
                           showWorkType(context);
                         },
-                        hintText: '근무 형태를 선택해주세요.',
+                        hintText: localization.95,
                       ),
                     ),
                   ),
@@ -718,7 +718,7 @@ class _JobpostingWorkConditionWidgetState
                     big: true,
                   ),
                   ProfileTitle(
-                    title: '수습기간',
+                    title: localization.96,
                     required: false,
                     text: '',
                     onTap: () {},
@@ -738,7 +738,7 @@ class _JobpostingWorkConditionWidgetState
                               },
                               groupValue: hasProbation,
                               value: false,
-                              label: '수습기간 없음',
+                              label: localization.97,
                             ),
                           ),
                           const SizedBox(width: 8),
@@ -751,7 +751,7 @@ class _JobpostingWorkConditionWidgetState
                               },
                               groupValue: hasProbation,
                               value: true,
-                              label: '직접 입력',
+                              label: localization.manualInput,
                             ),
                           ),
                         ],
@@ -774,8 +774,8 @@ class _JobpostingWorkConditionWidgetState
                           decoration: suffixInput(
                             suffixSize: 14.sp,
                             suffixColor: CommonColors.grayB2,
-                            suffixText: '개월',
-                            hintText: '수습기간을 입력해주세요.',
+                            suffixText: localization.98,
+                            hintText: localization.99,
                           ),
                           minLines: 1,
                           maxLines: 1,
@@ -787,7 +787,7 @@ class _JobpostingWorkConditionWidgetState
                     sliver: const SliverDivider(),
                   ),
                   ProfileTitle(
-                    title: '근무기간',
+                    title: localization.workDuration,
                     required: true,
                     text: '',
                     onTap: () {},
@@ -799,7 +799,7 @@ class _JobpostingWorkConditionWidgetState
                     },
                     groupValue: isWorkPeriodNegotiable,
                     value: NegotiableEnum.possible,
-                    label: '근무기간 협의 가능',
+                    label: localization.101,
                   ),
                   SliverToBoxAdapter(
                     child: Padding(
@@ -813,14 +813,14 @@ class _JobpostingWorkConditionWidgetState
                         onTap: () {
                           showWorkPeriod(context);
                         },
-                        hintText: '근무 기간을 선택해주세요.',
+                        hintText: localization.102,
                       ),
                     ),
                   ),
                   const SliverDivider(),
                   ProfileTitle(
                     extraText: '${initialSelectedDayItem.length} / 6',
-                    title: '근무요일',
+                    title: localization.workingDays,
                     required: true,
                     text: '',
                     onTap: () {},
@@ -832,7 +832,7 @@ class _JobpostingWorkConditionWidgetState
                     },
                     groupValue: isWorkDayNegotiable,
                     value: NegotiableEnum.possible,
-                    label: '근무요일 협의 가능',
+                    label: localization.104,
                   ),
                   SliverPadding(
                     padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 0.w),
@@ -860,7 +860,7 @@ class _JobpostingWorkConditionWidgetState
                   ),
                   const SliverDivider(),
                   ProfileTitle(
-                    title: '근무시간',
+                    title: localization.workingHours2,
                     required: true,
                     text: '',
                     onTap: () {},
@@ -872,7 +872,7 @@ class _JobpostingWorkConditionWidgetState
                     },
                     groupValue: isWorkTimeNegotiable,
                     value: NegotiableEnum.possible,
-                    label: '근무시간 협의 가능',
+                    label: localization.106,
                   ),
                   SliverPadding(
                     padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 8.w),
@@ -884,7 +884,7 @@ class _JobpostingWorkConditionWidgetState
                             children: [
                               Expanded(
                                 child: TimeInput(
-                                  titleHint: '근무시작',
+                                  titleHint: localization.workStartTime,
                                   setFunc: (value) {
                                     workHour[0]['jphStartTime'] = value;
                                   },
@@ -903,7 +903,7 @@ class _JobpostingWorkConditionWidgetState
                               ),
                               Expanded(
                                 child: TimeInput(
-                                  titleHint: '근무종료',
+                                  titleHint: localization.workEndTime,
                                   setFunc: (value) {
                                     workHour[0]['jphEndTime'] = value;
                                   },
@@ -919,7 +919,7 @@ class _JobpostingWorkConditionWidgetState
                                 children: [
                                   Expanded(
                                     child: TimeInput(
-                                      titleHint: '근무시작',
+                                      titleHint: localization.workStartTime,
                                       setFunc: (value) {
                                         workHour[i]['jphStartTime'] = value;
                                       },
@@ -938,7 +938,7 @@ class _JobpostingWorkConditionWidgetState
                                   ),
                                   Expanded(
                                     child: TimeInput(
-                                      titleHint: '근무종료',
+                                      titleHint: localization.workEndTime,
                                       setFunc: (value) {
                                         workHour[i]['jphEndTime'] = value;
                                       },
@@ -1030,7 +1030,7 @@ class _JobpostingWorkConditionWidgetState
                                   width: 6.w,
                                 ),
                                 Text(
-                                  '항목 추가하기',
+                                  localization.addField,
                                   style: TextStyle(
                                     fontSize: 14.sp,
                                     color: CommonColors.red,
@@ -1048,14 +1048,14 @@ class _JobpostingWorkConditionWidgetState
                       padding: EdgeInsets.fromLTRB(20.w, 0.w, 20.w, 0.w),
                       sliver: SliverToBoxAdapter(
                         child: Text(
-                          '근무시간을 확인해주세요.',
+                          localization.112,
                           style: TextStyles.error,
                         ),
                       ),
                     ),
                   const SliverDivider(),
                   ProfileTitle(
-                    title: '휴게시간',
+                    title: localization.breakTime2,
                     required: true,
                     text: '',
                     onTap: () {},
@@ -1067,7 +1067,7 @@ class _JobpostingWorkConditionWidgetState
                     },
                     groupValue: isRestTimeNegotiable,
                     value: NegotiableEnum.possible,
-                    label: '휴게시간 협의 가능',
+                    label: localization.114,
                   ),
                   SliverPadding(
                     padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 0.w),
@@ -1088,7 +1088,7 @@ class _JobpostingWorkConditionWidgetState
                             FocusManager.instance.primaryFocus?.unfocus();
                           },
                           decoration: commonInput(
-                            hintText: '휴게 시간을 입력해주세요.',
+                            hintText: localization.breakTime,
                           ),
                           onChanged: (value) {
                             setState(() {
@@ -1109,7 +1109,7 @@ class _JobpostingWorkConditionWidgetState
                         SizedBox(
                           width: 5.w,
                         ),
-                        Text('분 제공',
+                        Text(localization.breakTimeMinutesProvided,
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 14.sp,
@@ -1120,7 +1120,7 @@ class _JobpostingWorkConditionWidgetState
                   ),
                   const SliverDivider(),
                   ProfileTitle(
-                    title: '소정근무시간',
+                    title: localization.117,
                     required: true,
                     text: '',
                     onTap: () {},
@@ -1139,11 +1139,11 @@ class _JobpostingWorkConditionWidgetState
                         maxLength: 3,
                         textAlign: TextAlign.end,
                         decoration: prefixInput(
-                          prefixText: '주',
+                          prefixText: localization.118,
                           prefixColor: CommonColors.grayB2,
                           prefixSize: 14.sp,
-                          hintText: '소정근무시간을 입력해주세요.',
-                          suffixText: '시간',
+                          hintText: localization.119,
+                          suffixText: localization.time,
                         ),
                         inputFormatters: [
                           CurrencyTextInputFormatter.currency(
@@ -1162,7 +1162,7 @@ class _JobpostingWorkConditionWidgetState
                     big: true,
                   ),
                   ProfileTitle(
-                    title: '근무지 주소',
+                    title: localization.121,
                     required: true,
                     text: '',
                     onTap: () {},
@@ -1237,7 +1237,7 @@ class _JobpostingWorkConditionWidgetState
                             }
                           },
                           confirm: confirm(),
-                          text: '입력하기',
+                          text: localization.32,
                           fontSize: 15,
                         ),
                       ],

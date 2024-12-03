@@ -217,7 +217,7 @@ class _RecommendSeekerThemeSwiperState
                                             ),
                                           ),
                                           Text(
-                                            '매칭',
+                                            localization.665,
                                             style: TextStyle(
                                               height: 0.6,
                                               fontSize: 10.sp,

@@ -217,7 +217,7 @@ class _DocumentJobSeekerScreenState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CommonAppbar(
-        title: '계약서/사직서',
+        title: localization.210,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -227,7 +227,7 @@ class _DocumentJobSeekerScreenState
             child: CommonTab(
               setTab: setTab,
               activeTab: activeTab,
-              tabTitleArr: const ['계약서', '사직서'],
+              tabTitleArr: const [localization.211, localization.212],
             ),
           ),
           if (activeTab == 0)
@@ -309,7 +309,7 @@ class _DocumentJobSeekerScreenState
                               ],
                             ),
                           )
-                        : const CommonEmpty(text: '작성된 계약서가 없습니다.'),
+                        : const CommonEmpty(text: localization.213),
                   )
                 : const Loader(),
           if (activeTab == 1)
@@ -396,7 +396,7 @@ class _DocumentJobSeekerScreenState
                               ],
                             ),
                           )
-                        : const CommonEmpty(text: '작성된 사직서가 없습니다.'),
+                        : const CommonEmpty(text: localization.214),
                   )
                 : const Loader()
         ],

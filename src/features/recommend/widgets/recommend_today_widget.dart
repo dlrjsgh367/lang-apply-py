@@ -88,7 +88,7 @@ class _RecommendTodayWidgetState extends ConsumerState<RecommendTodayWidget> {
   Widget build(BuildContext context) {
     return !isLoading
         ? recommendList.isEmpty
-            ? const CommonEmpty(text: '추천 알바가 없습니다.')
+            ? const CommonEmpty(text: localization.666)
             : CustomScrollView(
                 slivers: [
                   RecommendSwiper(

@@ -15,13 +15,15 @@ def read_doc(file_path: str) -> List[str]:
 
 
 class TextFinder:
-    pattern_x = re.compile(r"['\"]([^'\"]*?[가-힣]+[^'\"]*?)['\"]")
-    pattern_y = re.compile(r"[A-Za-z0-9가-힣~!@#$%^&*()_+\-={}\[\]:\";'<>?,./]+")
+    pattern_x = re.compile(r"['\"]([^'\"]*[가-힣]+[^'\"]*)['\"]")
+
+    pattern_y = re.compile(r"[A-Za-z0-9가-힣~!@#$%^&*()_+\-={}\[\]:\";'<>?,./\\\\]+")
 
     # 정규식 패턴 리스트
     exclude_patterns = [
         "\\$",
         "\\{",
+        # '\\" +', '\\+ "', '\\"+', '\\+"'
     ]
     # OR 연산자로 결합된 정규식 생성
     exclude_pattern_regex = "|".join(exclude_patterns)

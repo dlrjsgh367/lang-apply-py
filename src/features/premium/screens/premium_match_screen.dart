@@ -151,8 +151,8 @@ class _PremiumMatchScreenState extends ConsumerState<PremiumMatchScreen> {
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertTitle: '안내',
-            alertConfirm: '확인',
+            alertTitle: localization.guide,
+            alertConfirm: localization.confirm,
             alertContent: message,
             confirmFunc: () {
               context.pop();
@@ -167,8 +167,8 @@ class _PremiumMatchScreenState extends ConsumerState<PremiumMatchScreen> {
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertTitle: '안내',
-            alertConfirm: '확인',
+            alertTitle: localization.guide,
+            alertConfirm: localization.confirm,
             alertContent: message,
             confirmFunc: () {
               context.pop();
@@ -182,14 +182,14 @@ class _PremiumMatchScreenState extends ConsumerState<PremiumMatchScreen> {
         ConvertService.isNotEmptyValidate(newJobpostingController.text) &&
         isApplyExistingJobposting &&
         selectedJobposting.isEmpty) {
-      showErrorAlert('채용 요청 사항을 입력해주세요.');
+      showErrorAlert(localization.590);
     } else if (isApplyNewJobposting &&
         !ConvertService.isNotEmptyValidate(newJobpostingController.text)) {
-      showErrorAlert('채용 요청 사항을 입력해주세요.');
+      showErrorAlert(localization.590);
     } else if (isApplyExistingJobposting && selectedJobposting.isEmpty) {
-      showErrorAlert('서비스 적용 대상 공고를 선택해주세요.');
+      showErrorAlert(localization.591);
     } else if (!isApplyNewJobposting && !isApplyExistingJobposting) {
-      showErrorAlert('적용할 서비스를 선택해주세요.');
+      showErrorAlert(localization.592);
     } else {
       applyMatchJobposting();
     }
@@ -239,9 +239,9 @@ class _PremiumMatchScreenState extends ConsumerState<PremiumMatchScreen> {
       if (result.type == -1705 || result.type == -1706) {
         showPayError();
       } else if (result.type == -2404) {
-        showErrorAlert('일반 채용공고만 미친매칭 신청이 가능합니다.');
+        showErrorAlert(localization.593);
       } else {
-        showErrorAlert('미친매칭 신청에 실패하였습니다.');
+        showErrorAlert(localization.594);
       }
     }
   }
@@ -251,10 +251,10 @@ class _PremiumMatchScreenState extends ConsumerState<PremiumMatchScreen> {
         context: context,
         builder: (BuildContext context) {
           return AlertTwoButtonDialog(
-            alertTitle: '안내',
+            alertTitle: localization.guide,
             alertContent: '초코 잔액이 부족합니다.\n충전 페이지로 이동하시겠습니까?',
-            alertConfirm: '이동하기',
-            alertCancel: '취소',
+            alertConfirm: localization.564,
+            alertCancel: localization.cancel,
             onConfirm: () {
               context.pop();
               context.push('/my/choco');
@@ -354,7 +354,7 @@ class _PremiumMatchScreenState extends ConsumerState<PremiumMatchScreen> {
                                             CrossAxisAlignment.stretch,
                                         children: [
                                           Text(
-                                            '채용공고 등록대행',
+                                            localization.595,
                                             style: TextStyle(
                                               fontSize: 13.sp,
                                               color: CommonColors.gray4d,
@@ -364,7 +364,7 @@ class _PremiumMatchScreenState extends ConsumerState<PremiumMatchScreen> {
                                             height: 4.w,
                                           ),
                                           Text(
-                                            '인재추천 최소 3인/공고당',
+                                            localization.596,
                                             style: TextStyle(
                                               fontSize: 13.sp,
                                               color: CommonColors.gray4d,
@@ -381,7 +381,7 @@ class _PremiumMatchScreenState extends ConsumerState<PremiumMatchScreen> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          '서비스 이용료',
+                                          localization.567,
                                           style: TextStyle(
                                             fontSize: 14.sp,
                                             fontWeight: FontWeight.w500,
@@ -406,7 +406,7 @@ class _PremiumMatchScreenState extends ConsumerState<PremiumMatchScreen> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          '서비스 제공기간',
+                                          localization.568,
                                           style: TextStyle(
                                             fontSize: 14.sp,
                                             fontWeight: FontWeight.w500,
@@ -414,7 +414,7 @@ class _PremiumMatchScreenState extends ConsumerState<PremiumMatchScreen> {
                                           ),
                                         ),
                                         Text(
-                                          '3일',
+                                          localization.597,
                                           style: TextStyle(
                                             fontSize: 14.sp,
                                             fontWeight: FontWeight.w500,
@@ -437,8 +437,8 @@ class _PremiumMatchScreenState extends ConsumerState<PremiumMatchScreen> {
                               padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 0.w),
                               sliver: ApplyCheck(
                                 text:
-                                    '초단알바 잡 매니저가 공고 등록을 대신해드리고 등록된 공고에 맞는 인재를 추천해드려요.',
-                                title: '신규 공고에 적용 ( 공고 등록 대행 포함)',
+                                    localization.598,
+                                title: localization.599,
                                 onChanged: (value) {
                                   setState(() {
                                     isApplyNewJobposting =
@@ -477,7 +477,7 @@ class _PremiumMatchScreenState extends ConsumerState<PremiumMatchScreen> {
                                         decoration: areaInput(
                                           disable: !isApplyNewJobposting,
                                           hintText:
-                                              '채용하려는 직원이 어떤 업무를 해야하는지, 채용조건은 어떻게되는지 적어주세요.',
+                                              localization.600,
                                         ),
                                         minLines: 3,
                                         maxLines: 3,
@@ -509,8 +509,8 @@ class _PremiumMatchScreenState extends ConsumerState<PremiumMatchScreen> {
                                   EdgeInsets.fromLTRB(20.w, 20.w, 20.w, 0.w),
                               sliver: ApplyCheck(
                                 text:
-                                    '기존에 등록한 공고 목록을 선택해주시면 초단알바 잡매니저가 각 공고에 어울리는 인재를 추천해드려요',
-                                title: '기존 공고에 적용',
+                                    localization.601,
+                                title: localization.applyToExistingPostings,
                                 onChanged: (value) {
                                   if (jobpostList.isNotEmpty) {
                                     setState(() {
@@ -565,7 +565,7 @@ class _PremiumMatchScreenState extends ConsumerState<PremiumMatchScreen> {
                                     Row(
                                       children: [
                                         const Text(
-                                          '총 결제 금액',
+                                          localization.573,
                                           style: TextStyle(
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -600,8 +600,8 @@ class _PremiumMatchScreenState extends ConsumerState<PremiumMatchScreen> {
                                       child: TermsItemWidget(
                                         isRequired: true,
                                         isDetail: true,
-                                        requireText: '(필수)',
-                                        text: '서비스 이용약관',
+                                        requireText: localization.176,
+                                        text: localization.146,
                                         status: isAgree,
                                         checkString: 'isServiceStatus',
                                         termsType: 2,
@@ -615,7 +615,7 @@ class _PremiumMatchScreenState extends ConsumerState<PremiumMatchScreen> {
                                           tryApplyMatchJobposting();
                                         }
                                       },
-                                      text: '결제 및 상담 신청하기',
+                                      text: localization.603,
                                       fontSize: 15,
                                       confirm: isConfirm(),
                                     ),

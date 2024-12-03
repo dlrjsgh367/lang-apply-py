@@ -1,8 +1,0 @@
-,Key,Description,en,ko,origin
-0,,,,${defineData.name} 전체,//           ConvertService.removeParentheses('${defineData.name} 전체');
-1,,,,${widget.title} 선택,"//             TitleBottomSheet(title: '${widget.title} 선택'),"
-2,,,,${widget.title}을 검색해주세요,"//                   hintText: '${widget.title}을 검색해주세요',"
-3,,,,${oneDepthData.name} 전체,"//                                                           '${oneDepthData.name} 전체'),"
-4,,,,${twoDepthData.name} 전체,"//                                                                           '${twoDepthData.name} 전체',"
-5,,,,초기화,"//                     text: '초기화',"
-6,,,,적용,"//                       text: '적용',"

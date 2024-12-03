@@ -1,4 +1,0 @@
-,Key,Description,en,ko,origin
-0,,,,데이터 통신에 실패하였습니다.,showDefaultToast('데이터 통신에 실패하였습니다.');
-1,,,,공지사항,"title: '공지사항',"
-2,,,,총 $total건,"""총 $total건"","

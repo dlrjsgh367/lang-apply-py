@@ -60,13 +60,13 @@ class _TutorialAboutMeWidgetState extends ConsumerState<TutorialAboutMeWidget>
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertConfirmRedDialog(
-          alertContent: '입력하신 내용을 확인 후 다시 저장해주세요.',
+          alertContent: localization.77,
           redText: '금칙어: [$forbiddenWord]',
-          alertConfirm: '확인',
+          alertConfirm: localization.confirm,
           confirmFunc: () {
             context.pop();
           },
-          alertTitle: '금칙어가 감지되었어요.',
+          alertTitle: localization.78,
         );
       },
     );
@@ -202,7 +202,7 @@ class _TutorialAboutMeWidgetState extends ConsumerState<TutorialAboutMeWidget>
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Text(
-                          '자신만의 특별한 강점을 어필해보세요!',
+                          localization.301,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: CommonColors.gray80,
@@ -210,7 +210,7 @@ class _TutorialAboutMeWidgetState extends ConsumerState<TutorialAboutMeWidget>
                           ),
                         ),
                         Text(
-                          '자기소개 혹은 나의 키워드 영역 중 1개 영역 기입 필수',
+                          localization.489,
                           style: TextStyle(
                             fontSize: 12.sp,
                             color: CommonColors.gray80,
@@ -225,7 +225,7 @@ class _TutorialAboutMeWidgetState extends ConsumerState<TutorialAboutMeWidget>
                   padding: EdgeInsets.fromLTRB(20.w, 20.w, 20.w, 20.w),
                   sliver: const SliverToBoxAdapter(
                     child: Text(
-                      '자기소개',
+                      localization.300,
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                       ),
@@ -292,7 +292,7 @@ class _TutorialAboutMeWidgetState extends ConsumerState<TutorialAboutMeWidget>
                     child: Row(
                       children: [
                         const Text(
-                          '나의 키워드',
+                          localization.490,
                           style: TextStyle(fontWeight: FontWeight.w600),
                         ),
                         SizedBox(
@@ -386,7 +386,7 @@ class _TutorialAboutMeWidgetState extends ConsumerState<TutorialAboutMeWidget>
 
                 //   GestureDetector(
                 //     onTap: _loadMore,
-                //     child: const Text('더보기'),
+                //     child: const Text(localization.491),
                 //   ),
                 if (total > keywords.length)
                   SliverPadding(
@@ -405,7 +405,7 @@ class _TutorialAboutMeWidgetState extends ConsumerState<TutorialAboutMeWidget>
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                '더보기',
+                                localization.491,
                                 style: TextStyle(
                                   fontSize: 14.sp,
                                   fontWeight: FontWeight.w500,
@@ -443,7 +443,7 @@ class _TutorialAboutMeWidgetState extends ConsumerState<TutorialAboutMeWidget>
                 onPressed: () {
                   widget.onPress();
                 },
-                text: '건너뛰기',
+                text: localization.755,
                 width: 96.w,
               ),
               SizedBox(
@@ -451,7 +451,7 @@ class _TutorialAboutMeWidgetState extends ConsumerState<TutorialAboutMeWidget>
               ),
               Expanded(
                 child: CommonButton(
-                  text: '다음',
+                  text: localization.next,
                   fontSize: 15,
                   confirm: textController.text.isNotEmpty ||
                       selectedKeywordNumbers.isNotEmpty,

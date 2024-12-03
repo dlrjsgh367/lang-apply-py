@@ -67,7 +67,7 @@ class _MyConsultScreenState extends ConsumerState<MyConsultScreen> with Alerts {
         isLazeLoading = false;
       });
     } else if (result.status != 200) {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -127,7 +127,7 @@ class _MyConsultScreenState extends ConsumerState<MyConsultScreen> with Alerts {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CommonAppbar(
-        title: '노무 상담 하기',
+        title: localization.225,
       ),
       body: LazyLoadScrollView(
         onEndOfPage: () => _boardLoadMore(),
@@ -175,7 +175,7 @@ class _MyConsultScreenState extends ConsumerState<MyConsultScreen> with Alerts {
                                     width: 6.w,
                                   ),
                                   Text(
-                                    '상담 신청하기',
+                                    localization.265,
                                     style: TextStyle(
                                         color: CommonColors.red,
                                         fontWeight: FontWeight.w600,
@@ -193,7 +193,7 @@ class _MyConsultScreenState extends ConsumerState<MyConsultScreen> with Alerts {
                           child: Row(
                             children: [
                               Text(
-                                '상담 내역',
+                                localization.274,
                                 style: TextStyle(
                                     fontWeight: FontWeight.w600,
                                     color: CommonColors.black2b),
@@ -225,7 +225,7 @@ class _MyConsultScreenState extends ConsumerState<MyConsultScreen> with Alerts {
                                         child: Row(
                                           children: [
                                             Text(
-                                              "내 상담 내역",
+                                              localization.275,
                                               style: TextStyle(
                                                   fontSize: 14.sp,
                                                   fontWeight: FontWeight.w500,
@@ -326,7 +326,7 @@ class _MyConsultScreenState extends ConsumerState<MyConsultScreen> with Alerts {
                                                                         500.w),
                                                           ),
                                                           child: Text(
-                                                            '답변완료',
+                                                            localization.198,
                                                             style: TextStyle(
                                                               fontSize: 12.sp,
                                                               fontWeight:
@@ -353,7 +353,7 @@ class _MyConsultScreenState extends ConsumerState<MyConsultScreen> with Alerts {
                                                           width: 70.w,
                                                           height: 24.w,
                                                           child: Text(
-                                                            '답변 대기중',
+                                                            localization.199,
                                                             style: TextStyle(
                                                               fontSize: 12.sp,
                                                               color:
@@ -443,7 +443,7 @@ class _MyConsultScreenState extends ConsumerState<MyConsultScreen> with Alerts {
                                                     Expanded(
                                                       child: Text(
                                                         // '${boardList[index].title}',
-                                                        '문의에 대한 답변드립니다.',
+                                                        localization.276,
                                                         overflow: TextOverflow
                                                             .ellipsis,
                                                         style: TextStyle(
@@ -520,7 +520,7 @@ class _MyConsultScreenState extends ConsumerState<MyConsultScreen> with Alerts {
                                   width: CommonSize.vw,
                                   height: CommonSize.vw,
                                   child: Center(
-                                      child: CommonEmpty(text: '상담한 내역이 없어요'))),
+                                      child: CommonEmpty(text: localization.277))),
                             ),
                       const BottomPadding(),
                     ],

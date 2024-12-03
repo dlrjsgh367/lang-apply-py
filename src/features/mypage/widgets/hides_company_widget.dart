@@ -82,7 +82,7 @@ class _HidesCompanyWidgetState extends ConsumerState<HidesCompanyWidget> {
                   Row(
                     children: [
                       Text(
-                        '진행중인 공고',
+                        localization.530,
                         style: TextStyle(
                             color: CommonColors.gray80, fontSize: 13.sp),
                       ),
@@ -119,8 +119,8 @@ class _HidesCompanyWidgetState extends ConsumerState<HidesCompanyWidget> {
                     child: Text(
                       companyHidesKeyList
                               .contains(widget.companyItem.jobpostKey)
-                          ? '차단됨'
-                          : '차단해제',
+                          ? localization.531
+                          : localization.532,
                       style: TextStyle(
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w500,

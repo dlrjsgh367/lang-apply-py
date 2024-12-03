@@ -797,7 +797,7 @@ class _JobpostingUpdateScreenState extends ConsumerState<JobpostingUpdateScreen>
 
   List<String> mergeManagerInfoContent() {
     // if (!isManagerInfoDtoEverSaved) {
-    //   return '채용 담당자 정보를 확인해주세요!';
+    //   return localization.checkRecruiterContactInfo;
     // }
     List<String> stringList = [];
     bool managerNameDisplay = ConvertService.convertIntToBool(

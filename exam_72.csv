@@ -1,7 +1,0 @@
-,Key,Description,en,ko,origin
-0,,,,공유를 진행합니다.,"showDefaultToast(""공유를 진행합니다."");"
-1,,,,공유가 완료되었습니다.,"showDefaultToast(""공유가 완료되었습니다."");"
-2,,,,사진 및 동영상,"title: '사진 및 동영상',"
-3,,,,저장,"child: const Text('저장')),"
-4,,,,공유,"child: const Text('공유')),"
-5,,,,삭제,"child: const Text('삭제')),"

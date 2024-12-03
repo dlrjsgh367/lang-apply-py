@@ -110,7 +110,7 @@ class _WorkerHidesWidgetState extends ConsumerState<WorkerHidesWidget> {
                                     color: CommonColors.red,
                                   ),
                                   child: Text(
-                                    '차단됨',
+                                    localization.531,
                                     style: TextStyle(
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w500,
@@ -124,7 +124,7 @@ class _WorkerHidesWidgetState extends ConsumerState<WorkerHidesWidget> {
                                     color: CommonColors.grayF2,
                                   ),
                                   child: Text(
-                                    '차단해제',
+                                    localization.532,
                                     style: TextStyle(
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w500,
@@ -150,7 +150,7 @@ class _WorkerHidesWidgetState extends ConsumerState<WorkerHidesWidget> {
                       Row(
                         children: [
                           Text(
-                            '희망 근무 지역',
+                            localization.292,
                             style: TextStyle(
                               fontSize: 12.sp,
                               color: CommonColors.gray80,
@@ -206,7 +206,7 @@ class _WorkerHidesWidgetState extends ConsumerState<WorkerHidesWidget> {
                     color: CommonColors.grayF7,
                   ),
                   child: Text(
-                    '프로필',
+                    localization.848,
                     style: TextStyle(
                       fontSize: 13.sp,
                       color: CommonColors.gray80,

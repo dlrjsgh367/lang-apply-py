@@ -45,7 +45,7 @@ class _RecommendBottomState extends ConsumerState<RecommendBottom> {
   //     if(day != ''){
   //       day = '$day / 요일 협의';
   //     }else{
-  //       day = '요일 협의';
+  //       day = localization.462;
   //     }
   //   }
   //   return day;
@@ -55,7 +55,7 @@ class _RecommendBottomState extends ConsumerState<RecommendBottom> {
     String day = '';
 
     // 요일의 순서를 정의한 배열
-    List<String> dayOrder = ['월', '화', '수', '목', '금','토','일'];
+    List<String> dayOrder = [localization.month, localization.tuesday, localization.wednesday, localization.thursday, localization.friday,localization.saturday,localization.day];
 
     // 입력된 요일을 정의한 순서에 따라 정렬
     List sortedDays = widget.jobpostData.workDay;
@@ -74,7 +74,7 @@ class _RecommendBottomState extends ConsumerState<RecommendBottom> {
       if (day != '') {
         day = '$day / 요일 협의';
       } else {
-        day = '요일 협의';
+        day = localization.462;
       }
     }
 
@@ -171,7 +171,7 @@ class _RecommendBottomState extends ConsumerState<RecommendBottom> {
                       width: 4.w,
                     ),
                     Text(
-                      '근무형태',
+                      localization.employmentType,
                       style: TextStyle(
                         fontSize: 14.sp,
                         color: CommonColors.gray80,
@@ -207,7 +207,7 @@ class _RecommendBottomState extends ConsumerState<RecommendBottom> {
                       width: 4.w,
                     ),
                     Text(
-                      '시간',
+                      localization.time,
                       style: TextStyle(
                         fontSize: 14.sp,
                         color: CommonColors.gray80,
@@ -243,7 +243,7 @@ class _RecommendBottomState extends ConsumerState<RecommendBottom> {
                       width: 4.w,
                     ),
                     Text(
-                      '요일',
+                      localization.dayOfWeek,
                       style: TextStyle(
                         fontSize: 14.sp,
                         color: CommonColors.gray80,
@@ -279,7 +279,7 @@ class _RecommendBottomState extends ConsumerState<RecommendBottom> {
                       width: 4.w,
                     ),
                     Text(
-                      '위치',
+                      localization.659,
                       style: TextStyle(
                         fontSize: 14.sp,
                         color: CommonColors.gray80,
@@ -326,7 +326,7 @@ class _RecommendBottomState extends ConsumerState<RecommendBottom> {
                       width: 4.w,
                     ),
                     Text(
-                      '스크랩',
+                      localization.scrap,
                       style: TextStyle(
                           fontSize: 15.w,
                           color: CommonColors.gray4d,
@@ -346,10 +346,10 @@ class _RecommendBottomState extends ConsumerState<RecommendBottom> {
                   if(!applyOrProposedJobpostKeyList.contains(widget.jobpostData.key)){
                     widget.applyJobposting(widget.jobpostData.key);
                   }else{
-                    showDefaultToast('이미 지원한 채용공고입니다.');
+                    showDefaultToast(localization.alreadyAppliedPost);
                   }
                 },
-                text: '지원하기',
+                text: localization.applyForJob,
               ),
             ),
           ],

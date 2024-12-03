@@ -89,7 +89,7 @@ class _FaqScreenState extends ConsumerState<FaqScreen> with Alerts {
         isLazeLoading = false;
       });
     } else if (result.status != 200) {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -105,12 +105,12 @@ class _FaqScreenState extends ConsumerState<FaqScreen> with Alerts {
         List<BoardCategoryModel> data = result.data;
 
         boardCategoryList = [
-          BoardCategoryModel.fromParams(0, 0, 0, "전체", "전체"),
+          BoardCategoryModel.fromParams(0, 0, 0, localization.all, localization.all),
           ...data
         ];
       });
     } else if (result.status != 200) {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -169,7 +169,7 @@ class _FaqScreenState extends ConsumerState<FaqScreen> with Alerts {
   }
 
   BoardCategoryModel selectItem =
-      BoardCategoryModel.fromParams(0, 0, 0, "전체", "전체");
+      BoardCategoryModel.fromParams(0, 0, 0, localization.all, localization.all);
 
   @override
   Widget build(BuildContext context) {
@@ -187,7 +187,7 @@ class _FaqScreenState extends ConsumerState<FaqScreen> with Alerts {
                         showFaqCategory();
                       },
                       text: selectItem.bcName,
-                      hintText: '선택해주세요.'),
+                      hintText: localization.141),
                 ),
                 Expanded(
                   child:  boardList.isNotEmpty? 
@@ -218,7 +218,7 @@ class _FaqScreenState extends ConsumerState<FaqScreen> with Alerts {
                                 "[${boardList[index].boardTypeName}] ${boardList[index].title}");
                       },
                     ),
-                  ):CommonEmpty(text: 'FAQ가 없습니다.'),
+                  ):CommonEmpty(text: localization.142),
                 ),
               ],
             )

@@ -46,7 +46,7 @@ class _WithdrawalCompleteWidgetState extends ConsumerState<WithdrawalCompleteWid
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    '회원탈퇴가 완료되었어요.',
+                    localization.721,
                     style: TextStyles.withdrawalTitle,
                   ),
                   SizedBox(
@@ -63,7 +63,7 @@ class _WithdrawalCompleteWidgetState extends ConsumerState<WithdrawalCompleteWid
                       onPressed: () {
                         widget.onPress();
                       },
-                      text: '메인으로')
+                      text: localization.723)
                 ],
               ),
             ),

@@ -107,7 +107,7 @@ class _InputEducationWidgetState extends ConsumerState<InputEducationWidget> {
       },
       child: Scaffold(
         appBar: const CommonAppbar(
-          title: '학력',
+          title: localization.educationLevel,
         ),
         body: !isLoading
             ? Stack(children: [
@@ -123,7 +123,7 @@ class _InputEducationWidgetState extends ConsumerState<InputEducationWidget> {
                             children: [
                               Expanded(
                                 child: Text(
-                                  '자신의 학력을 소개해주세요!',
+                                  localization.539,
                                   style: TextStyle(
                                     fontSize: 20.sp,
                                     color: CommonColors.black2b,
@@ -152,7 +152,7 @@ class _InputEducationWidgetState extends ConsumerState<InputEducationWidget> {
                         padding: EdgeInsets.fromLTRB(20.w, 0.w, 20.w, 36.w),
                         sliver: SliverToBoxAdapter(
                           child: Text(
-                            '학력을 요구하는 업무 지원에 더욱 유리해요.',
+                            localization.540,
                             style: TextStyle(
                               fontSize: 14.sp,
                               color: CommonColors.gray80,
@@ -199,10 +199,10 @@ class _InputEducationWidgetState extends ConsumerState<InputEducationWidget> {
                                                         context: context,
                                                         builder: (context) {
                                                           return AlertTwoButtonDialog(
-                                                              alertTitle: '삭제',
-                                                              alertContent: '학력을 삭제하시겠습니까?',
-                                                              alertConfirm: '확인',
-                                                              alertCancel: '취소',
+                                                              alertTitle: localization.delete,
+                                                              alertContent: localization.541,
+                                                              alertConfirm: localization.confirm,
+                                                              alertCancel: localization.cancel,
                                                               onConfirm: () {
                                                                 setState(() {
                                                                   educationList.remove(item);
@@ -260,10 +260,10 @@ class _InputEducationWidgetState extends ConsumerState<InputEducationWidget> {
                                                   context: context,
                                                   builder: (context) {
                                                     return AlertTwoButtonDialog(
-                                                        alertTitle: '삭제',
-                                                        alertContent: '학력을 삭제하시겠습니까?',
-                                                        alertConfirm: '확인',
-                                                        alertCancel: '취소',
+                                                        alertTitle: localization.delete,
+                                                        alertContent: localization.541,
+                                                        alertConfirm: localization.confirm,
+                                                        alertCancel: localization.cancel,
                                                         onConfirm: () {
                                                           setState(() {
                                                             educationList.remove(item);
@@ -313,7 +313,7 @@ class _InputEducationWidgetState extends ConsumerState<InputEducationWidget> {
                                     width: 6.w,
                                   ),
                                   Text(
-                                    '학력 추가하기',
+                                    localization.542,
                                     style: TextStyle(
                                       fontSize: 14.sp,
                                       color: CommonColors.red,
@@ -344,7 +344,7 @@ class _InputEducationWidgetState extends ConsumerState<InputEducationWidget> {
                         context.pop();
                       }
                     },
-                    text: '입력하기',
+                    text: localization.32,
                   ),
                 ),
               ])

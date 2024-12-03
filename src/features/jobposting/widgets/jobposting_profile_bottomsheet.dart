@@ -94,7 +94,7 @@ class _JobpostingProfileBottomSheetState
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
         children: [
-          const TitleBottomSheet(title: '지원할 프로필'),
+          const TitleBottomSheet(title: localization.49),
           profileList.isNotEmpty
               ? Flexible(
                   child: CustomScrollView(
@@ -150,7 +150,7 @@ class _JobpostingProfileBottomSheetState
                                                             500.w),
                                                   ),
                                                   child: Text(
-                                                    '대표',
+                                                    localization.50,
                                                     style: TextStyle(
                                                       color: CommonColors.red,
                                                       fontSize: 12.sp,
@@ -202,7 +202,7 @@ class _JobpostingProfileBottomSheetState
                 )
               : Padding(
                   padding: EdgeInsets.fromLTRB(0, 32.w, 0, 32.w),
-                  child: const CommonEmpty(text: '지원할 프로필이 없어요'),
+                  child: const CommonEmpty(text: localization.51),
                 ),
           Padding(
             padding: EdgeInsets.fromLTRB(20.w, 12.w, 20.w, 0),
@@ -213,7 +213,7 @@ class _JobpostingProfileBottomSheetState
                       widget.apply(widget.jobpostKey, selectedProfileKey);
                       context.pop();
                     },
-                    text: '지원하기',
+                    text: localization.applyForJob,
                     confirm: true,
                   )
                 : CommonButton(

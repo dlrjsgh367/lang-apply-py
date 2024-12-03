@@ -82,22 +82,22 @@ class _SetAlarmSeekerScreenState extends ConsumerState<SetAlarmSeekerScreen> {
 
   List marketingArr = [
     {
-      'title': '문자 수신',
+      'title': localization.687,
       'key': 'maMarketingSms',
       'value': false,
-      'target': '휴대폰문자'
+      'target': localization.688
     },
     {
-      'title': '이메일 수신',
+      'title': localization.689,
       'key': 'maMarketingEmail',
       'value': false,
-      'target': '이메일'
+      'target': localization.email
     },
     {
-      'title': '푸시 수신',
+      'title': localization.691,
       'key': 'maMarketingPush',
       'value': false,
-      'target': '앱 푸시'
+      'target': localization.692
     },
     {'title': '야간 수신 동의 여부', 'key': 'maNightAlarm', 'value': false},
   ];
@@ -160,7 +160,7 @@ class _SetAlarmSeekerScreenState extends ConsumerState<SetAlarmSeekerScreen> {
 
   showMarketingConfirmAlert(bool isAgree, String target) {
     DateTime now = DateTime.now();
-    String agreeString = isAgree ? '동의' : '거부';
+    String agreeString = isAgree ? localization.671 : localization.672;
 
     showDialog(
       context: context,
@@ -168,8 +168,8 @@ class _SetAlarmSeekerScreenState extends ConsumerState<SetAlarmSeekerScreen> {
         return AlertConfirmDialog(
           alertTitle: '정보 수신 $agreeString 안내',
           alertContent:
-              '${DateFormat('yyyy년 MM월 dd일').format(now)}\n 마케팅 정보 수신 $agreeString($target) 처리되었어요.',
-          alertConfirm: '확인',
+              '${DateFormat(localization.239).format(now)}\n 마케팅 정보 수신 $agreeString($target) 처리되었어요.',
+          alertConfirm: localization.confirm,
           confirmFunc: () {
             context.pop();
           },
@@ -246,7 +246,7 @@ class _SetAlarmSeekerScreenState extends ConsumerState<SetAlarmSeekerScreen> {
         alarmData['maNightAlarm'] = result.data.marketingAlarm['maNightAlarm'];
       }
     } else {
-      showErrorAlert('회원정보', '회원정보를 가져오기에 실패하였습니다.');
+      showErrorAlert(localization.memberInfo, localization.694);
     }
   }
 
@@ -257,7 +257,7 @@ class _SetAlarmSeekerScreenState extends ConsumerState<SetAlarmSeekerScreen> {
           return AlertConfirmDialog(
             alertTitle: title,
             alertContent: content,
-            alertConfirm: '확인',
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop(context);
               context.pop(context);
@@ -285,10 +285,10 @@ class _SetAlarmSeekerScreenState extends ConsumerState<SetAlarmSeekerScreen> {
             slivers: [
               SliverPadding(
                 padding: EdgeInsets.fromLTRB(0, 16.w, 0, 8.w),
-                sliver: TitleMenu(title: '채용정보 알림'),
+                sliver: TitleMenu(title: localization.695),
               ),
               AlarmToggleRadioButton(
-                text: '채용정보 알림 전체',
+                text: localization.696,
                 isTop: true,
                 onChanged: (value) {
                   toggleAllValue('employmentInfo', employmentInfoArr);
@@ -307,10 +307,10 @@ class _SetAlarmSeekerScreenState extends ConsumerState<SetAlarmSeekerScreen> {
                 ),
               SliverPadding(
                 padding: EdgeInsets.fromLTRB(0, 42.w, 0, 8.w),
-                sliver: TitleMenu(title: '구직활동 알림'),
+                sliver: TitleMenu(title: localization.697),
               ),
               AlarmToggleRadioButton(
-                text: '구직 활동 알림 전체',
+                text: localization.698,
                 isTop: true,
                 onChanged: (value) {
                   toggleAllValue('jobSeeking', jobSeekingArr);
@@ -329,10 +329,10 @@ class _SetAlarmSeekerScreenState extends ConsumerState<SetAlarmSeekerScreen> {
                 ),
               SliverPadding(
                 padding: EdgeInsets.fromLTRB(0, 42.w, 0, 8.w),
-                sliver: TitleMenu(title: '매칭/대화 알림'),
+                sliver: TitleMenu(title: localization.677),
               ),
               AlarmToggleRadioButton(
-                text: '매칭/대화 알림 전체',
+                text: localization.678,
                 isTop: true,
                 onChanged: (value) {
                   toggleAllValue('chat', chatArr);
@@ -351,10 +351,10 @@ class _SetAlarmSeekerScreenState extends ConsumerState<SetAlarmSeekerScreen> {
                 ),
               SliverPadding(
                 padding: EdgeInsets.fromLTRB(0, 42.w, 0, 8.w),
-                sliver: TitleMenu(title: '기타 알림'),
+                sliver: TitleMenu(title: localization.681),
               ),
               AlarmToggleRadioButton(
-                text: '기타 알림 전체',
+                text: localization.682,
                 isTop: true,
                 onChanged: (value) {
                   toggleAllValue('etc', etcArr);
@@ -373,15 +373,15 @@ class _SetAlarmSeekerScreenState extends ConsumerState<SetAlarmSeekerScreen> {
                 ),
               SliverPadding(
                 padding: EdgeInsets.fromLTRB(0, 42.w, 0, 8.w),
-                sliver: TitleMenu(title: '마케팅 알림'),
+                sliver: TitleMenu(title: localization.683),
               ),
               AlarmToggleRadioButton(
-                text: '마케팅 알림 전체',
+                text: localization.684,
                 isTop: true,
                 onChanged: (value) {
                   toggleAllValue('marketing', marketingArr);
                   showMarketingConfirmAlert(
-                      notificationStatus['marketing']!, '전체');
+                      notificationStatus['marketing']!, localization.all);
                 },
                 groupValue: true,
                 value: marketingArr.every((item) => item['value'] == true),
@@ -390,7 +390,7 @@ class _SetAlarmSeekerScreenState extends ConsumerState<SetAlarmSeekerScreen> {
                 AlarmToggleRadioButton(
                   text: marketingArr[i]['title'],
                   caption: i == marketingArr.length - 1
-                      ? '오후 9시부터 다음날 오전 8시까지 마케팅 정보를 받습니다.'
+                      ? localization.685
                       : null,
                   onChanged: (value) {
                     setToggle(marketingArr[i], value);

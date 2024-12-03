@@ -183,7 +183,7 @@ class _WorkerLikesWidgetState extends ConsumerState<WorkerLikesWidget> {
                     color: CommonColors.grayF7,
                   ),
                   child: Text(
-                    '프로필',
+                    localization.848,
                     style: TextStyle(
                       fontSize: 13.sp,
                       color: CommonColors.gray80,

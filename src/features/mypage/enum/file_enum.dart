@@ -1,6 +1,6 @@
 enum File {
-  empty(value: 1, label: '없음'),
-  nonEmpty(value: 2, label: '있음');
+  empty(value: 1, label: localization.notExists),
+  nonEmpty(value: 2, label: localization.exists);
   const File({
     required this.value,
     required this.label,

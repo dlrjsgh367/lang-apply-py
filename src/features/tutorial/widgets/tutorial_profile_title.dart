@@ -123,7 +123,7 @@ class _TutorialProfileTitleWidgetState
             slivers: [
 
               ProfileTitle(
-                title: '프로필 제목',
+                title: localization.291,
                 required: false,
                 text: '',
                 onTap: () {},
@@ -153,7 +153,7 @@ class _TutorialProfileTitleWidgetState
                             child: Text(
                               profileTitle.isNotEmpty
                                 ? ProfileConstants.profileTitleList[selectedDirectInputData['index']]
-                                : '프로필 제목을 입력해 주세요.',
+                                : localization.545,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                 fontSize: 14.sp,
@@ -165,7 +165,7 @@ class _TutorialProfileTitleWidgetState
                             ),
                           ),
                           Text(
-                            '추천',
+                            localization.546,
                             style: TextStyle(
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w500,
@@ -251,7 +251,7 @@ class _TutorialProfileTitleWidgetState
                 onPressed: () {
                   context.pop();
                 },
-                text: '건너뛰기',
+                text: localization.755,
                 width: 96.w,
               ),
               SizedBox(
@@ -267,7 +267,7 @@ class _TutorialProfileTitleWidgetState
                       context.pop();
                     }
                   },
-                  text: '완성하기',
+                  text: localization.773,
                   fontSize: 15,
                 ),
               )

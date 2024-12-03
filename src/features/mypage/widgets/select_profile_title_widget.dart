@@ -86,7 +86,7 @@ class _SelectProfileTitleWidgetState extends State<SelectProfileTitleWidget> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisSize: MainAxisSize.min,
         children: [
-          const TitleBottomSheet(title: '추천 제목'),
+          const TitleBottomSheet(title: localization.552),
           Flexible(
             child: ListView.builder(
               padding: EdgeInsets.fromLTRB(20.w, 12.w, 20.w, 20.w),
@@ -122,7 +122,7 @@ class _SelectProfileTitleWidgetState extends State<SelectProfileTitleWidget> {
                   context.pop(selectedIndex);
                 }
               },
-              text: '선택하기',
+              text: localization.553,
               fontSize: 15,
               confirm: true,
             ),

@@ -106,12 +106,12 @@ class _EventScreenState extends ConsumerState<EventScreen> {
     List<AddressModel> areaList = ref.watch(areaListProvider);
     return Scaffold(
       appBar: const CommonAppbar(
-        title: '이벤트',
+        title: localization.event,
       ),
       body: isLoading
           ? const Loader()
           : eventList.isEmpty
-              ? const CommonEmpty(text: '이벤트가 없습니다.')
+              ? const CommonEmpty(text: localization.139)
               : Stack(
                   alignment: Alignment.center,
                   children: [

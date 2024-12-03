@@ -117,13 +117,13 @@ class _JobpostingRecruitInfoWidgetState
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmRedDialog(
-            alertContent: '입력하신 내용을 확인 후 다시 저장해주세요.',
+            alertContent: localization.77,
             redText: '금칙어: [$result]',
-            alertConfirm: '확인',
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop();
             },
-            alertTitle: '금칙어가 감지되었어요.',
+            alertTitle: localization.78,
           );
         },
       );
@@ -172,12 +172,12 @@ class _JobpostingRecruitInfoWidgetState
           children: [
             Scaffold(
               appBar: const CommonAppbar(
-                title: '업무 정보',
+                title: localization.jobDescription3,
               ),
               body: CustomScrollView(
                 slivers: [
                   ProfileTitle(
-                    title: '직종',
+                    title: localization.jobCategory,
                     required: true,
                     text: '',
                     onTap: () {},
@@ -237,7 +237,7 @@ class _JobpostingRecruitInfoWidgetState
                           onTap: () async {
                             await DefineDialog.showJobBottom(
                                 context,
-                                '직종',
+                                localization.jobCategory,
                                 jobList,
                                 apply,
                                 initialSelectedItem,
@@ -262,7 +262,7 @@ class _JobpostingRecruitInfoWidgetState
                                   width: 6.w,
                                 ),
                                 Text(
-                                  '직종 선택하기',
+                                  localization.81,
                                   style: TextStyle(
                                     fontSize: 14.sp,
                                     color: CommonColors.red,
@@ -276,7 +276,7 @@ class _JobpostingRecruitInfoWidgetState
                       ),
                     ),
                   ProfileTitle(
-                    title: '담당업무 상세',
+                    title: localization.detailedJobResponsibilities,
                     required: true,
                     text: '',
                     onTap: () {},
@@ -342,7 +342,7 @@ class _JobpostingRecruitInfoWidgetState
                   }
                 },
                 confirm: confirm(),
-                text: '입력하기',
+                text: localization.32,
                 width: CommonSize.vw,
               ),
             ),

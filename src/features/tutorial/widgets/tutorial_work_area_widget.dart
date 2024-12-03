@@ -127,7 +127,7 @@ class _TutorialWorkAreaWidgetState extends ConsumerState<TutorialWorkAreaWidget>
                 sliver: SliverToBoxAdapter(
                   child: GestureDetector(
                     onTap: () async {
-                      await DefineDialog.showAreaBottom(context, '지역 선택',
+                      await DefineDialog.showAreaBottom(context, localization.selectRegion,
                           areaList, addWorkArea, selectedAreaList, maxLength);
                     },
                     child: Container(
@@ -148,7 +148,7 @@ class _TutorialWorkAreaWidgetState extends ConsumerState<TutorialWorkAreaWidget>
                             width: 6.w,
                           ),
                           Text(
-                            '희망 근무지역 설정하기',
+                            localization.511,
                             style: TextStyle(
                               fontSize: 14.sp,
                               color: CommonColors.red,
@@ -167,7 +167,7 @@ class _TutorialWorkAreaWidgetState extends ConsumerState<TutorialWorkAreaWidget>
                   child: Row(
                     children: [
                       Text(
-                        '선택된 희망 근무지역',
+                        localization.512,
                         style: TextStyle(
                           fontSize: 14.sp,
                           color: CommonColors.gray80,
@@ -260,7 +260,7 @@ class _TutorialWorkAreaWidgetState extends ConsumerState<TutorialWorkAreaWidget>
                 onPressed: () {
                   widget.onPress();
                 },
-                text: '건너뛰기',
+                text: localization.755,
                 width: 96.w,
               ),
               SizedBox(
@@ -276,7 +276,7 @@ class _TutorialWorkAreaWidgetState extends ConsumerState<TutorialWorkAreaWidget>
                       widget.onPress();
                     }
                   },
-                  text: '다음',
+                  text: localization.next,
                   fontSize: 15,
                   confirm: selectedAreaList.isNotEmpty,
                 ),

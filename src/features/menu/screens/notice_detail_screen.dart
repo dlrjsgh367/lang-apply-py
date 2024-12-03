@@ -66,7 +66,7 @@ class _NoticeDetailScreenState extends ConsumerState<NoticeDetailScreen>
         noticeDetailData = result.data;
       });
     } else if (result.status != 200) {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -76,11 +76,11 @@ class _NoticeDetailScreenState extends ConsumerState<NoticeDetailScreen>
   String noticeType(int intValue){
     switch(intValue){
       case 2:
-        return '안내';
+        return localization.guide;
       case 3:
-        return '이벤트';
+        return localization.event;
         default:
-          return '안내';
+          return localization.guide;
     }
   }
 
@@ -94,7 +94,7 @@ class _NoticeDetailScreenState extends ConsumerState<NoticeDetailScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CommonAppbar(
-        title: '공지사항',
+        title: localization.144,
       ),
       body: !isLoading
           ? SingleChildScrollView(

@@ -17,7 +17,7 @@ class EventDetailBlockedCommentWidget extends StatelessWidget {
       ),
       padding: EdgeInsets.fromLTRB(0, 24.w, 0, 24.w),
       child: Text(
-        '숨긴 댓글입니다.',
+        localization.183,
         textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 14.sp,

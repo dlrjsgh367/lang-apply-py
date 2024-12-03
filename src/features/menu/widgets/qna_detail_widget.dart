@@ -69,7 +69,7 @@ class _QnaDetailScreenState extends ConsumerState<QnaDetailScreen>
         boardDetailData = result.data;
       });
     } else if (result.status != 200) {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -106,7 +106,7 @@ class _QnaDetailScreenState extends ConsumerState<QnaDetailScreen>
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: const ModalAppbar(
-          title: '문의내역',
+          title: localization.192,
         ),
         body: isLoading
             ? const Loader()
@@ -120,7 +120,7 @@ class _QnaDetailScreenState extends ConsumerState<QnaDetailScreen>
                       children: [
                         Expanded(
                           child: Text(
-                            "문의내용",
+                            localization.169,
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
                               color: CommonColors.black2b,
@@ -153,7 +153,7 @@ class _QnaDetailScreenState extends ConsumerState<QnaDetailScreen>
                         SizedBox(
                           width: 86.w,
                           child: Text(
-                            "유형",
+                            localization.193,
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
                               color: CommonColors.black2b,
@@ -179,7 +179,7 @@ class _QnaDetailScreenState extends ConsumerState<QnaDetailScreen>
                       height: 36.w,
                     ),
                     Text(
-                      "상담 제목",
+                      localization.194,
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         color: CommonColors.black2b,
@@ -210,7 +210,7 @@ class _QnaDetailScreenState extends ConsumerState<QnaDetailScreen>
                       height: 36.w,
                     ),
                     Text(
-                      "상담 내용",
+                      localization.195,
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         color: CommonColors.black2b,
@@ -241,7 +241,7 @@ class _QnaDetailScreenState extends ConsumerState<QnaDetailScreen>
                       height: 36.w,
                     ),
                     Text(
-                      "첨부파일",
+                      localization.172,
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
                         color: CommonColors.black2b,
@@ -345,7 +345,7 @@ class _QnaDetailScreenState extends ConsumerState<QnaDetailScreen>
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                "문의 답변",
+                                localization.196,
                                 style: TextStyle(
                                   fontWeight: FontWeight.w600,
                                   color: CommonColors.black2b,
@@ -377,7 +377,7 @@ class _QnaDetailScreenState extends ConsumerState<QnaDetailScreen>
                             child: Text(
                               boardDetailData.boStatus == "DONE"
                                   ? boardDetailData.relatedResList!.content
-                                  : '등록된 답변이 없습니다.',
+                                  : localization.197,
                               textAlign: boardDetailData.boStatus == "DONE"
                                   ? TextAlign.left
                                   : TextAlign.center,
@@ -391,7 +391,7 @@ class _QnaDetailScreenState extends ConsumerState<QnaDetailScreen>
                             height: 36.w,
                           ),
                           Text(
-                            "첨부파일",
+                            localization.172,
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
                               color: CommonColors.black2b,

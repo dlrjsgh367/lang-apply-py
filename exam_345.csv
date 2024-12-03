@@ -1,7 +1,0 @@
-,Key,Description,en,ko,origin
-0,,,,안내,"alertTitle: '안내',"
-1,,,,데이터 통신에 실패하였습니다.,"alertContent: '데이터 통신에 실패하였습니다.',"
-2,,,,확인,"alertConfirm: '확인',"
-3,,,,추천 테마가 없습니다.,? const CommonEmpty(text: '추천 테마가 없습니다.')
-4,,,,목록이 없습니다.,? const CommonEmpty(text: '목록이 없습니다.')
-5,,,,중년층테마관,"'중년층테마관',"

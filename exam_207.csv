@@ -1,9 +1,0 @@
-,Key,Description,en,ko,origin
-0,,,,데이터 통신에 실패하였습니다.,showDefaultToast('데이터 통신에 실패하였습니다.');
-1,,,,전체,"BoardCategoryModel.fromParams(0, 0, 0, ""전체"", ""전체""),"
-2,,,,전체,"BoardCategoryModel.fromParams(0, 0, 0, ""전체"", ""전체""),"
-3,,,,데이터 통신에 실패하였습니다.,showDefaultToast('데이터 통신에 실패하였습니다.');
-4,,,,전체,"BoardCategoryModel.fromParams(0, 0, 0, ""전체"", ""전체"");"
-5,,,,전체,"BoardCategoryModel.fromParams(0, 0, 0, ""전체"", ""전체"");"
-6,,,,선택해주세요.,"hintText: '선택해주세요.'),"
-7,,,,FAQ가 없습니다.,"):CommonEmpty(text: 'FAQ가 없습니다.'),"

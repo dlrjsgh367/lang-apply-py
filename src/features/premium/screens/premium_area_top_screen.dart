@@ -97,8 +97,8 @@ class _PremiumAreaTopScreenState extends ConsumerState<PremiumAreaTopScreen> {
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertTitle: '안내',
-            alertConfirm: '확인',
+            alertTitle: localization.guide,
+            alertConfirm: localization.confirm,
             alertContent: message,
             confirmFunc: () {
               context.pop();
@@ -113,10 +113,10 @@ class _PremiumAreaTopScreenState extends ConsumerState<PremiumAreaTopScreen> {
         context: context,
         builder: (BuildContext context) {
           return AlertTwoButtonDialog(
-            alertTitle: '안내',
+            alertTitle: localization.guide,
             alertContent: '초코 잔액이 부족합니다.\n충전 페이지로 이동하시겠습니까?',
-            alertConfirm: '이동하기',
-            alertCancel: '취소',
+            alertConfirm: localization.564,
+            alertCancel: localization.cancel,
             onConfirm: () {
               context.pop();
               context.push('/my/choco');
@@ -130,8 +130,8 @@ class _PremiumAreaTopScreenState extends ConsumerState<PremiumAreaTopScreen> {
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertTitle: '안내',
-            alertConfirm: '확인',
+            alertTitle: localization.guide,
+            alertConfirm: localization.confirm,
             alertContent: message,
             confirmFunc: () {
               context.pop();
@@ -161,7 +161,7 @@ class _PremiumAreaTopScreenState extends ConsumerState<PremiumAreaTopScreen> {
       if (result.type == -1705 || result.type == -1706) {
         showPayError();
       } else {
-        showErrorAlert('데이터 통신에 실패하였습니다.');
+        showErrorAlert(localization.dataCommunicationFailed);
       }
     }
   }
@@ -245,7 +245,7 @@ class _PremiumAreaTopScreenState extends ConsumerState<PremiumAreaTopScreen> {
       },
       child: Scaffold(
         appBar: const CommonAppbar(
-          title: '지역별 상위노출',
+          title: localization.topExposureByRegion,
         ),
         body: !isLoading
             ? Stack(
@@ -278,7 +278,7 @@ class _PremiumAreaTopScreenState extends ConsumerState<PremiumAreaTopScreen> {
                                       borderRadius: BorderRadius.circular(8.w),
                                     ),
                                     child: Text(
-                                      '선택한 5개 지역에서 채용공고 목록 상단 노출',
+                                      localization.566,
                                       style: TextStyle(
                                         fontSize: 13.sp,
                                         color: CommonColors.gray4d,
@@ -293,7 +293,7 @@ class _PremiumAreaTopScreenState extends ConsumerState<PremiumAreaTopScreen> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        '서비스 이용료',
+                                        localization.567,
                                         style: TextStyle(
                                           fontSize: 14.sp,
                                           fontWeight: FontWeight.w500,
@@ -318,7 +318,7 @@ class _PremiumAreaTopScreenState extends ConsumerState<PremiumAreaTopScreen> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        '서비스 제공기간',
+                                        localization.568,
                                         style: TextStyle(
                                           fontSize: 14.sp,
                                           fontWeight: FontWeight.w500,
@@ -342,7 +342,7 @@ class _PremiumAreaTopScreenState extends ConsumerState<PremiumAreaTopScreen> {
                           SliverPadding(
                             padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 8.w),
                             sliver: const ApplyTitle(
-                              text: '상위 노출 지역 선택',
+                              text: localization.569,
                             ),
                           ),
                           if (initialSelectedItem.length < 5)
@@ -350,7 +350,7 @@ class _PremiumAreaTopScreenState extends ConsumerState<PremiumAreaTopScreen> {
                               padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 8.w),
                               sliver: SliverToBoxAdapter(
                                 child: Text(
-                                  '아래 + 버튼을 눌러 상위노출 희망 지역 5개를 선정해주세요.',
+                                  localization.570,
                                   style: TextStyle(
                                     fontSize: 13.sp,
                                     color: CommonColors.gray80,
@@ -370,7 +370,7 @@ class _PremiumAreaTopScreenState extends ConsumerState<PremiumAreaTopScreen> {
                                         await DefineDialog
                                             .addressDialogThreeDepthOnly(
                                                 context,
-                                                '지역 선택',
+                                                localization.selectRegion,
                                                 areaList,
                                                 apply,
                                                 initialSelectedItem,
@@ -416,14 +416,14 @@ class _PremiumAreaTopScreenState extends ConsumerState<PremiumAreaTopScreen> {
                           SliverPadding(
                             padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 8.w),
                             sliver: const ApplyTitle(
-                              text: '적용 채용공고 선택',
+                              text: localization.571,
                             ),
                           ),
                           SliverPadding(
                             padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 16.w),
                             sliver: SliverToBoxAdapter(
                               child: Text(
-                                '기존에 등록한 공고 목록을 선택해주시면, 지역별 상위 노출이 반영됩니다.',
+                                localization.572,
                                 style: TextStyle(
                                     fontSize: 13.sp,
                                     color: CommonColors.gray80),
@@ -462,7 +462,7 @@ class _PremiumAreaTopScreenState extends ConsumerState<PremiumAreaTopScreen> {
                                   Row(
                                     children: [
                                       const Text(
-                                        '총 결제 금액',
+                                        localization.573,
                                         style: TextStyle(
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -494,8 +494,8 @@ class _PremiumAreaTopScreenState extends ConsumerState<PremiumAreaTopScreen> {
                                     child: TermsItemWidget(
                                       isRequired: true,
                                       isDetail: true,
-                                      requireText: '(필수)',
-                                      text: '서비스 이용약관',
+                                      requireText: localization.176,
+                                      text: localization.146,
                                       status: isAgree,
                                       checkString: 'isServiceStatus',
                                       termsType: 2,
@@ -511,7 +511,7 @@ class _PremiumAreaTopScreenState extends ConsumerState<PremiumAreaTopScreen> {
                                         applyAreaTopJobposting();
                                       }
                                     },
-                                    text: '결제하기',
+                                    text: localization.574,
                                     fontSize: 15,
                                     confirm: selectedAreaKey.isNotEmpty &&
                                         selectedJobposting.isNotEmpty &&

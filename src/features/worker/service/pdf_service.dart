@@ -38,21 +38,21 @@ class PdfService {
               crossAxisAlignment: pw.CrossAxisAlignment.stretch,
               children: [
                 pw.Text(
-                  '이력서 프로필',
+                  localization.804,
                   style: pw.TextStyle(font: customFont, fontSize: 20),
                 ),
                 pw.SizedBox(
                   height: 15,
                 ),
                 buildProfileRow(
-                    '제목',
+                    localization.805,
                     CommonProfileText(
                       profileData.profileTitle,
                       customFont,
                     ),
                     customFont),
                 buildProfileRow(
-                    '프로필 사진',
+                    localization.749,
                     pw.Row(
                       children: [
                         pw.SizedBox(
@@ -68,11 +68,11 @@ class PdfService {
                     customFont),
 
                 buildProfileRow(
-                    '이름',
+                    localization.701,
                     CommonProfileText(profileData.userInfo.name, customFont),
                     customFont),
                 buildProfileRow(
-                    '성별',
+                    localization.gender,
                     CommonProfileText(
                       returnConditionGenderNameFromParam(
                         profileData.userInfo.gender,
@@ -83,7 +83,7 @@ class PdfService {
                 //
                 // calculateAge
                 buildProfileRow(
-                    '연령',
+                    localization.age,
                     CommonProfileText(
                       '만 ${calculateAge(profileData.userInfo.birth)}세',
                       customFont,
@@ -91,7 +91,7 @@ class PdfService {
                     customFont),
                 //
                 buildProfileRow(
-                  '별점',
+                  localization.806,
                   CommonProfileText(
                     '${profileData.profileScore}',
                     customFont,
@@ -100,7 +100,7 @@ class PdfService {
                 ),
                 //
                 buildProfileRow(
-                  '주소',
+                  localization.address,
                   CommonProfileText(
                     '${profileData.userInfo.address} ${profileData.userInfo.addressDetail}',
                     customFont,
@@ -108,7 +108,7 @@ class PdfService {
                   customFont,
                 ),
                 buildProfileRow(
-                  '연락처',
+                  localization.233,
                   CommonProfileText(
                     profileData.userInfo.phoneNumber,
                     customFont,
@@ -116,7 +116,7 @@ class PdfService {
                   customFont,
                 ),
                 buildProfileRow(
-                  '이메일',
+                  localization.email,
                   CommonProfileText(
                     profileData.userInfo.userId,
                     customFont,
@@ -125,21 +125,21 @@ class PdfService {
                 ),
                 //
                 buildProfileRow(
-                  '학력 사항',
+                  localization.807,
                   CommonProfileText(
                     profileData.profileEducations.isNotEmpty
                         ? profileData.profileEducations
                             .map((edu) {
                             return '${edu.schoolType} ${edu.graduationStatus} ${edu.schoolName.isNotEmpty ? '(${edu.schoolName})' : ''} / ${edu.graduationDate}';
                           }).join('\n')
-                        : '미기재',
+                        : localization.206,
                     customFont,
                   ),
                   customFont,
                 ),
 
                 buildProfileRow(
-                  '경력',
+                  localization.experienced,
                   profileData.profileCareers.isNotEmpty
                       ? pw.Column(
                           crossAxisAlignment: pw.CrossAxisAlignment.stretch,
@@ -260,13 +260,13 @@ class PdfService {
                           }).toList(),
                         )
                       : CommonProfileText(
-                          '신입',
+                          localization.newGraduate,
                           customFont,
                         ),
                   customFont,
                 ),
                 buildProfileRow(
-                  '희망 근무지',
+                  localization.813,
                   CommonProfileText(
                     profileData.profileAreas.isNotEmpty
                         ? profileData.profileAreas.map((area) {
@@ -279,7 +279,7 @@ class PdfService {
                 ),
 
                 buildProfileRow(
-                  '희망 직종',
+                  localization.294,
                   CommonProfileText(
                     profileData.profileJobs.isNotEmpty
                         ? profileData.profileJobs.map((jobs) {
@@ -291,7 +291,7 @@ class PdfService {
                   customFont,
                 ),
                 buildProfileRow(
-                  '희망근무기간',
+                  localization.814,
                   CommonProfileText(
                     profileData.profileWorkPeriod.isNotEmpty
                         ? profileData.profileWorkPeriod.map((period) {
@@ -303,7 +303,7 @@ class PdfService {
                   customFont,
                 ),
                 buildProfileRow(
-                  '희망근무요일',
+                  localization.815,
                   CommonProfileText(
                     profileData.profileWorkDays.isNotEmpty
                         ? profileData.profileWorkDays.map((days) {
@@ -315,7 +315,7 @@ class PdfService {
                   customFont,
                 ),
                 buildProfileRow(
-                  '희망근무시간',
+                  localization.816,
                   CommonProfileText(
                     profileData.profileWorkTimes.isNotEmpty
                         ? profileData.profileWorkTimes.map((time) {
@@ -327,7 +327,7 @@ class PdfService {
                   customFont,
                 ),
                 buildProfileRow(
-                  '고용형태',
+                  localization.817,
                   CommonProfileText(
                     profileData.profileWorkType.isNotEmpty
                         ? profileData.profileWorkType.map((type) {
@@ -340,7 +340,7 @@ class PdfService {
                 ),
 
                 buildProfileRow(
-                  '자기소개',
+                  localization.300,
                   CommonProfileText(
                     profileData.introduce.isNotEmpty
                         ? profileData.introduce
@@ -350,7 +350,7 @@ class PdfService {
                   customFont,
                 ),
                 buildProfileRow(
-                  '첨부파일',
+                  localization.172,
                   profileData.files.isNotEmpty
                       ? pw.Column(
                           crossAxisAlignment: pw.CrossAxisAlignment.stretch,
@@ -385,7 +385,7 @@ class PdfService {
                   customFont,
                 ),
                 buildProfileRow(
-                  'AI 분석키워드',
+                  localization.818,
                   CommonProfileText(
                     profileData.profileKeywords.isNotEmpty
                         ? profileData.profileKeywords.map((keyword) {

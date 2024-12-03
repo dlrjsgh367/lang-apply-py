@@ -41,7 +41,7 @@ class _WithdrawalNoticeWidgetState extends State<WithdrawalNoticeWidget> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Text(
-                        '회원탈퇴전, 다음 내용을 확인해주세요',
+                        localization.737,
                         style: TextStyles.withdrawalTitle,
                       ),
                       SizedBox(
@@ -69,7 +69,7 @@ class _WithdrawalNoticeWidgetState extends State<WithdrawalNoticeWidget> {
                                 ),
                                 Expanded(
                                   child: Text(
-                                    '탈퇴시 기존 개인정보 및 서비스 이용 기록이 삭제돼요',
+                                    localization.738,
                                     style: TextStyle(
                                       fontSize: 13.sp,
                                       color: CommonColors.gray66,
@@ -95,7 +95,7 @@ class _WithdrawalNoticeWidgetState extends State<WithdrawalNoticeWidget> {
                                 ),
                                 Expanded(
                                   child: Text(
-                                    '회원탈퇴시 재가입에 제한이 있을 수 있어요.',
+                                    localization.739,
                                     style: TextStyle(
                                       fontSize: 13.sp,
                                       color: CommonColors.gray66,
@@ -125,7 +125,7 @@ class _WithdrawalNoticeWidgetState extends State<WithdrawalNoticeWidget> {
                                         CrossAxisAlignment.stretch,
                                     children: [
                                       Text(
-                                        '기업회원(구인회원)은 탈퇴시 보유중인 초단코인 환불요청을 할경우 환불 규정에 따라 환불돼요',
+                                        localization.740,
                                         style: TextStyle(
                                           fontSize: 13.sp,
                                           color: CommonColors.gray66,
@@ -148,7 +148,7 @@ class _WithdrawalNoticeWidgetState extends State<WithdrawalNoticeWidget> {
                                           ),
                                           Expanded(
                                             child: Text(
-                                              '무료지급된 초단 코인 환불 불가, 약관의 환불 규정 적용',
+                                              localization.741,
                                               style: TextStyle(
                                                 fontSize: 12.sp,
                                                 fontWeight: FontWeight.w500,
@@ -187,7 +187,7 @@ class _WithdrawalNoticeWidgetState extends State<WithdrawalNoticeWidget> {
                               ),
                               Expanded(
                                 child: Text(
-                                  '유의사항을 모두 확인했으며 회원을 탈퇴약관에 동의합니다.',
+                                  localization.742,
                                   style: TextStyle(
                                     fontSize: 13.sp,
                                     color: CommonColors.gray80,
@@ -219,7 +219,7 @@ class _WithdrawalNoticeWidgetState extends State<WithdrawalNoticeWidget> {
                       widget.onPress();
                     }
                   },
-                  text: '다음'),
+                  text: localization.next),
               SizedBox(
                 width: 8.w,
               ),
@@ -228,7 +228,7 @@ class _WithdrawalNoticeWidgetState extends State<WithdrawalNoticeWidget> {
                   onPressed: () {
                     widget.onCancel();
                   },
-                  text: '취소하기',
+                  text: localization.736,
                   confirm: true,
                   fontSize: 15,
                 ),

@@ -1,6 +1,0 @@
-,Key,Description,en,ko,origin
-0,,,,데이터 통신에 실패하였습니다.,showDefaultToast('데이터 통신에 실패하였습니다.');
-1,,,,안내,return '안내';
-2,,,,이벤트,return '이벤트';
-3,,,,안내,return '안내';
-4,,,,공지사항,"title: '공지사항',"

@@ -35,7 +35,7 @@ class _RecommendTabState extends State<RecommendTab> {
                     height: 46.w,
                     child: Center(
                       child: Text(
-                        '근무정보',
+                        localization.663,
                         style: TextStyle(
                             fontSize: 14.sp,
                             color: activeTab == 0
@@ -75,7 +75,7 @@ class _RecommendTabState extends State<RecommendTab> {
                     height: 46.w,
                     child: Center(
                       child: Text(
-                        '기업정보',
+                        localization.companyInformation,
                         style: TextStyle(
                             fontSize: 14.sp,
                             color: activeTab == 1

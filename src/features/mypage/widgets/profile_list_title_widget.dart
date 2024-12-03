@@ -94,7 +94,7 @@ class _ProfileListTitleWidgetState extends State<ProfileListTitleWidget> {
                       child: Text(
                         widget.data['mpTitle'].isNotEmpty
                             ? widget.data['mpTitle']
-                            : '프로필 제목을 입력해 주세요.',
+                            : localization.545,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontSize: 14.sp,
@@ -106,7 +106,7 @@ class _ProfileListTitleWidgetState extends State<ProfileListTitleWidget> {
                       ),
                     ),
                     Text(
-                      '추천',
+                      localization.546,
                       style: TextStyle(
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w500,

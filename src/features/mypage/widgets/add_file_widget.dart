@@ -51,9 +51,9 @@ class _AddFileWidgetState extends ConsumerState<AddFileWidget> with Files {
     {'category': 1, 'text': '포트폴리오'},
     {'category': 2, 'text': '자격증'},
     {'category': 3, 'text': '증명서'},
-    {'category': 4, 'text': '이력서'},
+    {'category': 4, 'text': localization.resume},
     {'category': 5, 'text': '경력기술서'},
-    {'category': 6, 'text': '기타'},
+    {'category': 6, 'text': localization.others},
     {'category': 7, 'text': '직접입력'},
   ];
 
@@ -75,10 +75,10 @@ class _AddFileWidgetState extends ConsumerState<AddFileWidget> with Files {
         return ContentBottomSheet(
           contents: [
             BottomSheetButton(
-                onTap: () => getAttachedPhoto('gallery'), text: '사진 보관함'),
+                onTap: () => getAttachedPhoto('gallery'), text: localization.photoLibrary),
             BottomSheetButton(
-                onTap: () => getAttachedPhoto('camera'), text: '사진 찍기'),
-            BottomSheetButton(onTap: () => getAttachedFile(), text: '파일 선택')
+                onTap: () => getAttachedPhoto('camera'), text: localization.156),
+            BottomSheetButton(onTap: () => getAttachedFile(), text: localization.157)
           ],
         );
       },
@@ -240,7 +240,7 @@ class _AddFileWidgetState extends ConsumerState<AddFileWidget> with Files {
       },
       child: Scaffold(
         appBar: const CommonAppbar(
-          title: '첨부',
+          title: localization.302,
         ),
         body: Stack(
           children: [
@@ -256,7 +256,7 @@ class _AddFileWidgetState extends ConsumerState<AddFileWidget> with Files {
                         children: [
                           Expanded(
                             child: Text(
-                              '마지막 단계예요!',
+                              localization.492,
                               style: TextStyle(
                                 fontSize: 20.sp,
                                 color: CommonColors.black2b,
@@ -285,7 +285,7 @@ class _AddFileWidgetState extends ConsumerState<AddFileWidget> with Files {
                     padding: EdgeInsets.fromLTRB(20.w, 0.w, 20.w, 28.w),
                     sliver: SliverToBoxAdapter(
                       child: Text(
-                        '사진, 자격증, 포트폴리오 등으로 내 자신을 PR해요!',
+                        localization.493,
                         style: TextStyle(
                           fontSize: 14.sp,
                           color: CommonColors.gray80,
@@ -386,7 +386,7 @@ class _AddFileWidgetState extends ConsumerState<AddFileWidget> with Files {
                                 width: 6.w,
                               ),
                               Text(
-                                '첨부파일 추가하기',
+                                localization.494,
                                 style: TextStyle(
                                   fontSize: 14.sp,
                                   color: fileList.length < 5
@@ -419,7 +419,7 @@ class _AddFileWidgetState extends ConsumerState<AddFileWidget> with Files {
                                       showFileType(index);
                                     },
                                     text: returnFileType(index),
-                                    hintText: '타입',
+                                    hintText: localization.495,
                                   ),
                                   SizedBox(
                                     height: 6.w,
@@ -434,7 +434,7 @@ class _AddFileWidgetState extends ConsumerState<AddFileWidget> with Files {
                                         style: commonInputText(),
                                         maxLength: 20,
                                         decoration: commonInput(
-                                          hintText: '제목을 입력해주세요',
+                                          hintText: localization.496,
                                         ),
                                         minLines: 1,
                                         maxLines: 1,
@@ -542,7 +542,7 @@ class _AddFileWidgetState extends ConsumerState<AddFileWidget> with Files {
                     context.pop();
                   }
                 },
-                text: '입력하기',
+                text: localization.32,
               ),
             ),
           ],

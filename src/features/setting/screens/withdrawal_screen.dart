@@ -102,7 +102,7 @@ class _WithdrawalScreenState extends ConsumerState<WithdrawalScreen> {
           movePage(3);
         }
       } else {
-        showDefaultToast('회원 탈퇴에 실패하였습니다.');
+        showDefaultToast(localization.720);
       }
     }
   }
@@ -162,7 +162,7 @@ class _WithdrawalScreenState extends ConsumerState<WithdrawalScreen> {
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: const CommonAppbar(
-          title: '회원탈퇴',
+          title: localization.415,
         ),
         body: !isLoading
             ? PageView.builder(

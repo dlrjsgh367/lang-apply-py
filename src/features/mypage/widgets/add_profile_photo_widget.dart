@@ -61,13 +61,13 @@ class _AddProfilePhotoWidgetState extends ConsumerState<AddProfilePhotoWidget>
               onTap: () {
                 getProfilePhoto('gallery');
               },
-              text: '사진 보관함',
+              text: localization.photoLibrary,
             ),
             BottomSheetButton(
               onTap: () {
                 getProfilePhoto('camera');
               },
-              text: '사진 촬영',
+              text: localization.takePhoto,
             ),
             if (selectedProfilePhoto['file'] != null)
               BottomSheetButton(
@@ -79,7 +79,7 @@ class _AddProfilePhotoWidgetState extends ConsumerState<AddProfilePhotoWidget>
                   });
                   context.pop();
                 },
-                text: '삭제',
+                text: localization.delete,
               ),
           ],
         );
@@ -139,7 +139,7 @@ class _AddProfilePhotoWidgetState extends ConsumerState<AddProfilePhotoWidget>
               context.pop();
             }
           },
-          title: '프로필 사진 등록',
+          title: localization.501,
         ),
         body: Stack(
           children: [
@@ -159,7 +159,7 @@ class _AddProfilePhotoWidgetState extends ConsumerState<AddProfilePhotoWidget>
                           ),
                           alignment: Alignment.center,
                           child: Text(
-                            '사진을 등록하면 일자리 제안 받을 확률이 올라가요!',
+                            localization.502,
                             style: TextStyle(
                               color: CommonColors.red,
                               fontWeight: FontWeight.w700,
@@ -215,7 +215,7 @@ class _AddProfilePhotoWidgetState extends ConsumerState<AddProfilePhotoWidget>
                                                 height: 4.w,
                                               ),
                                               Text(
-                                                '여기를 눌러 사진 업로드',
+                                                localization.503,
                                                 style: TextStyle(
                                                   color: CommonColors.grayD9,
                                                   fontWeight: FontWeight.w700,
@@ -253,7 +253,7 @@ class _AddProfilePhotoWidgetState extends ConsumerState<AddProfilePhotoWidget>
                                                     height: 4.w,
                                                   ),
                                                   Text(
-                                                    '여기를 눌러 사진 업로드',
+                                                    localization.503,
                                                     style: TextStyle(
                                                       color:
                                                           CommonColors.grayD9,
@@ -282,7 +282,7 @@ class _AddProfilePhotoWidgetState extends ConsumerState<AddProfilePhotoWidget>
                               ),
                               alignment: Alignment.center,
                               child: Text(
-                                '사진 등록 Guide',
+                                localization.42,
                                 style: TextStyle(
                                   color: CommonColors.red,
                                   fontWeight: FontWeight.w500,
@@ -307,7 +307,7 @@ class _AddProfilePhotoWidgetState extends ConsumerState<AddProfilePhotoWidget>
                               ),
                               Expanded(
                                 child: Text(
-                                  '사진 등록이 필수 사항은 아니지만 사진을 등록하면 사장님들에게 신뢰감을 줄 수 있습니다.',
+                                  localization.504,
                                   style: TextStyle(
                                       fontSize: 14.sp,
                                       fontWeight: FontWeight.w500,
@@ -332,7 +332,7 @@ class _AddProfilePhotoWidgetState extends ConsumerState<AddProfilePhotoWidget>
                               ),
                               Expanded(
                                 child: Text(
-                                  '5MB 이내 gif, jpg, jpeg, png 파일만 등록할 수 있습니다.',
+                                  localization.uploadFilesUnder5MB,
                                   style: TextStyle(
                                       fontSize: 14.sp,
                                       fontWeight: FontWeight.w500,
@@ -357,7 +357,7 @@ class _AddProfilePhotoWidgetState extends ConsumerState<AddProfilePhotoWidget>
                               ),
                               Expanded(
                                 child: Text(
-                                  '개인정보 보호를 위해 개인정보가 포함된 이미지는 가려주세요. (발견시 사전 동의 없이 삭제 될 수 있습니다.)',
+                                  localization.505,
                                   style: TextStyle(
                                       fontSize: 14.sp,
                                       fontWeight: FontWeight.w500,
@@ -382,7 +382,7 @@ class _AddProfilePhotoWidgetState extends ConsumerState<AddProfilePhotoWidget>
                               ),
                               Expanded(
                                 child: Text(
-                                  '단정한 모습의 사진을 권장합니다.',
+                                  localization.506,
                                   style: TextStyle(
                                       fontSize: 14.sp,
                                       fontWeight: FontWeight.w500,
@@ -440,7 +440,7 @@ class _AddProfilePhotoWidgetState extends ConsumerState<AddProfilePhotoWidget>
                           context.pop(selectedProfilePhoto['file']);
                         }
                       },
-                      text: '사진 등록하기',
+                      text: localization.48,
                       fontSize: 15,
                     ),
                   )

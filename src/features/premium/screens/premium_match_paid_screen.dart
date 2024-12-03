@@ -101,7 +101,7 @@ class _PremiumMatchPaidScreenState
 
   List<PremiumModel> premiumData = [];
 
-  DateFormat dateFormat = DateFormat("yyyy년 MM월 dd일");
+  DateFormat dateFormat = DateFormat(localization.239);
   bool isSameMonth(String date1, String date2){
 
     int date1Month = dateFormat.parse(date1).month;
@@ -143,7 +143,7 @@ class _PremiumMatchPaidScreenState
                                 ),
                               ),
                               child: Text(
-                                '신청 리스트',
+                                localization.589,
                                 style: TextStyle(
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
@@ -206,7 +206,7 @@ class _PremiumMatchPaidScreenState
                                                         color: temp[i]
                                                             .matchProcess
                                                             .label ==
-                                                            '반려'
+                                                            localization.declined
                                                             ? CommonColors.grayF2
                                                             : CommonColors.red,
                                                         borderRadius:
@@ -225,7 +225,7 @@ class _PremiumMatchPaidScreenState
                                                           color: temp[i]
                                                               .matchProcess
                                                               .label ==
-                                                              '반려'
+                                                              localization.declined
                                                               ? CommonColors
                                                               .grayB2
                                                               : CommonColors.white,

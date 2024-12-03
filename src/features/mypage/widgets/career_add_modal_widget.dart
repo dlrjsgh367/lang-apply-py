@@ -243,7 +243,7 @@ class _CareerAddModalWidgetState extends ConsumerState<CareerAddModalWidget> {
         return WorkTypeBottomSheet(
           dataArr: widget.workTypes,
           initItem: selectedWorkKey.toString(),
-          title: '근무 형태',
+          title: localization.83,
         );
       },
     ).then((value) {
@@ -303,7 +303,7 @@ class _CareerAddModalWidgetState extends ConsumerState<CareerAddModalWidget> {
           children: [
             Scaffold(
               appBar: const CommonAppbar(
-                title: '경력 추가',
+                title: localization.513,
               ),
               body: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -314,7 +314,7 @@ class _CareerAddModalWidgetState extends ConsumerState<CareerAddModalWidget> {
                         ProfileTitle(
                           onTap: () {},
                           hasArrow: false,
-                          title: '업체',
+                          title: localization.514,
                           required: true,
                           text: '',
                         ),
@@ -362,7 +362,7 @@ class _CareerAddModalWidgetState extends ConsumerState<CareerAddModalWidget> {
                         ProfileTitle(
                           onTap: () {},
                           hasArrow: false,
-                          title: '근무 형태',
+                          title: localization.83,
                           required: true,
                           text: '',
                         ),
@@ -378,7 +378,7 @@ class _CareerAddModalWidgetState extends ConsumerState<CareerAddModalWidget> {
                                       (e) => e.workTypeKey == selectedWorkKey)
                                   .map((e) => e.workTypeName)
                                   .join(),
-                              hintText: '근무 형태를 선택해주세요.',
+                              hintText: localization.95,
                             ),
                           ),
                         ),
@@ -394,7 +394,7 @@ class _CareerAddModalWidgetState extends ConsumerState<CareerAddModalWidget> {
                         ProfileTitle(
                           onTap: () {},
                           hasArrow: false,
-                          title: '직종',
+                          title: localization.jobCategory,
                           required: true,
                           text: '',
                         ),
@@ -405,7 +405,7 @@ class _CareerAddModalWidgetState extends ConsumerState<CareerAddModalWidget> {
                               onTap: () async {
                                 await DefineDialog.showOnlyOneJobBottom(
                                   context,
-                                  '직종',
+                                  localization.jobCategory,
                                   jobList,
                                   addWorkJob,
                                   selectedJobList,
@@ -433,7 +433,7 @@ class _CareerAddModalWidgetState extends ConsumerState<CareerAddModalWidget> {
                                       width: 6.w,
                                     ),
                                     Text(
-                                      '직종 추가하기',
+                                      localization.515,
                                       style: TextStyle(
                                         fontSize: 14.sp,
                                         color: CommonColors.red,
@@ -507,7 +507,7 @@ class _CareerAddModalWidgetState extends ConsumerState<CareerAddModalWidget> {
                         ProfileTitle(
                           onTap: () {},
                           hasArrow: false,
-                          title: '근무 기간',
+                          title: localization.84,
                           required: true,
                           text: '',
                         ),
@@ -515,7 +515,7 @@ class _CareerAddModalWidgetState extends ConsumerState<CareerAddModalWidget> {
                           padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 8.w),
                           sliver: SliverToBoxAdapter(
                             child: DatePickerDropdownWidget(
-                              extraText: '부터',
+                              extraText: localization.516,
                               initialYear: DateTime.now().year,
                               startYear: 1900,
                               endYear: DateTime.now().year,
@@ -531,7 +531,7 @@ class _CareerAddModalWidgetState extends ConsumerState<CareerAddModalWidget> {
                           padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 16.w),
                           sliver: SliverToBoxAdapter(
                             child: DatePickerDropdownWidget(
-                              extraText: '까지',
+                              extraText: localization.517,
                               initialYear: DateTime.now().year,
                               startYear: 1900,
                               endYear: DateTime.now().year,
@@ -554,7 +554,7 @@ class _CareerAddModalWidgetState extends ConsumerState<CareerAddModalWidget> {
                         ProfileTitle(
                           onTap: () {},
                           hasArrow: false,
-                          title: '담당 업무',
+                          title: localization.518,
                           required: true,
                           text: '',
                         ),
@@ -649,7 +649,7 @@ class _CareerAddModalWidgetState extends ConsumerState<CareerAddModalWidget> {
                     onPressed: () {
                       reset();
                     },
-                    text: '초기화',
+                    text: localization.reset,
                     width: 96.w,
                   ),
                   SizedBox(
@@ -677,7 +677,7 @@ class _CareerAddModalWidgetState extends ConsumerState<CareerAddModalWidget> {
                           context.pop(careerData);
                         }
                       },
-                      text: '추가하기',
+                      text: localization.520,
                     ),
                   ),
                 ],

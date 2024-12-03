@@ -51,12 +51,12 @@ class _ConsultPasswordWidgetState extends ConsumerState<ConsultPasswordWidget> {
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertContent: '본인이 작성한 글만 확인 가능합니다.',
-            alertConfirm: '확인',
+            alertContent: localization.521,
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop();
             },
-            alertTitle: '알림',
+            alertTitle: localization.notification,
           );
         },
       );
@@ -87,7 +87,7 @@ class _ConsultPasswordWidgetState extends ConsumerState<ConsultPasswordWidget> {
       titlePadding: EdgeInsets.fromLTRB(20.w, 24.w, 20.w, 12.w),
       actionsPadding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 16.w),
       title: Text(
-        '비밀번호입력',
+        localization.522,
         style: TextStyle(
           fontSize: 18.sp,
           fontWeight: FontWeight.w600,
@@ -104,7 +104,7 @@ class _ConsultPasswordWidgetState extends ConsumerState<ConsultPasswordWidget> {
           style: commonInputText(),
           maxLength: null,
           decoration: passwordInput(
-            hintText: '비밀번호를 입력해주세요',
+            hintText: localization.523,
             isVisible: !passwordVisible,
             hasString: passwordController.text.isNotEmpty,
             hasClear: passwordController.text.isNotEmpty,
@@ -135,7 +135,7 @@ class _ConsultPasswordWidgetState extends ConsumerState<ConsultPasswordWidget> {
             height: 20.w,
             child: Text(
               textAlign: TextAlign.center,
-              '비밀번호가 일치하지 않습니다.',
+              localization.524,
               style: commonErrorAuth(),
             ),
           ),
@@ -148,7 +148,7 @@ class _ConsultPasswordWidgetState extends ConsumerState<ConsultPasswordWidget> {
                   onPressed: () {
                     context.pop();
                   },
-                  text: '닫기'),
+                  text: localization.closed),
             ),
             SizedBox(width: 8.w),
             Expanded(
@@ -159,7 +159,7 @@ class _ConsultPasswordWidgetState extends ConsumerState<ConsultPasswordWidget> {
                       checkPassword();
                     }
                   },
-                  text: '확인'),
+                  text: localization.confirm),
             ),
           ],
         ),

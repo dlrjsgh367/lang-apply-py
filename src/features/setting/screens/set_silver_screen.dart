@@ -66,7 +66,7 @@ class _SetSilverScreenState extends ConsumerState<SetSilverScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CommonAppbar(
-        title: '실버벨',
+        title: localization.715,
       ),
       body: loading
           ? const Loader()
@@ -86,7 +86,7 @@ class _SetSilverScreenState extends ConsumerState<SetSilverScreen> {
                     children: [
                       Expanded(
                         child: Text(
-                          '실버벨 서비스',
+                          localization.716,
                           style: TextStyle(
                             fontSize: 18.sp,
                           ),
@@ -115,7 +115,7 @@ class _SetSilverScreenState extends ConsumerState<SetSilverScreen> {
                 ),
                 padding: EdgeInsets.fromLTRB(20.w, 16.w, 20.w, 16.w),
                 child: Text(
-                  '실버벨 서비스 이용 시 사용하는 앱의 글자 크기가 커지고, 중장년층 채용공고를 우선하여 추천해드려요.',
+                  localization.717,
                   style: TextStyle(
                     fontSize: 14.sp,
                     color: CommonColors.gray66,

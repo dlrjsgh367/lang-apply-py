@@ -87,15 +87,15 @@ class _MenuScreenState extends ConsumerState<MenuScreen> {
                 child: BannerMenuSwiperWidget(bannerList: menuBannerList),
               ),
             ),
-          TitleMenu(title: '공지/이벤트'),
+          TitleMenu(title: localization.143),
           BtnMenu(
-            text: '공지사항',
+            text: localization.144,
             tabFunc: () {
               context.push('/notice');
             },
           ),
           BtnMenu(
-            text: '이벤트',
+            text: localization.event,
             tabFunc: () {
               context.push('/event');
             },
@@ -105,9 +105,9 @@ class _MenuScreenState extends ConsumerState<MenuScreen> {
               height: 24.w,
             ),
           ),
-          TitleMenu(title: '고객센터'),
+          TitleMenu(title: localization.customerService),
           BtnMenu(
-            text: '고객센터',
+            text: localization.customerService,
             tabFunc: () {
               context.push('/qna');
             },
@@ -119,19 +119,19 @@ class _MenuScreenState extends ConsumerState<MenuScreen> {
             },
           ),
           BtnMenu(
-            text: '서비스 이용약관',
+            text: localization.146,
             tabFunc: () {
               context.push('/terms/26');
             },
           ),
           BtnMenu(
-            text: '개인정보 처리방침',
+            text: localization.147,
             tabFunc: () {
               context.push('/terms/27');
             },
           ),
           BtnMenu(
-            text: '위치기반 서비스 이용약관',
+            text: localization.148,
             tabFunc: () {
               context.push('/terms/28');
             },
@@ -141,7 +141,7 @@ class _MenuScreenState extends ConsumerState<MenuScreen> {
               height: 24.w,
             ),
           ),
-          TitleMenu(title: '앱 정보'),
+          TitleMenu(title: localization.149),
           VersionMenu(
             version: version,
             tabFunc: () {

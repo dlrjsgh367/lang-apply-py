@@ -10,7 +10,7 @@ index = -1
 def get_index():
     global index
     index += 1
-    return index
+    return "i" + str(index)
 
 
 def pl(dir_path, mode=None):
@@ -58,5 +58,6 @@ def pl(dir_path, mode=None):
 
 
 if __name__ == "__main__":
-    dir_path = r"C:\Users\HAMA\workspace\lang-apply-py\src\features"
+    # dir_path = r"C:\Users\HAMA\workspace\lang-apply-py\src\features"
+    dir_path = r"C:\Users\HAMA\workspace\chodan-flutter-app\lib"
     pl(dir_path, "m")

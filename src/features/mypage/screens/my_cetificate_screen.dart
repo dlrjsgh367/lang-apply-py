@@ -88,7 +88,7 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
             alignment: Alignment.center,
             children: [
               EmailBottomSheet(
-                title: '취업활동증명서 발급',
+                title: localization.224,
                 setData: setEmail,
                 onPressed: () {
                   bottomState(() {
@@ -150,7 +150,7 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
                 color: PdfColor.fromHex('#ededed'),
               ),
               pw.Text(
-                '취업활동 증명서',
+                localization.229,
                 textAlign: pw.TextAlign.center,
                 style: pw.TextStyle(font: customFont, fontSize: 25),
               ),
@@ -170,7 +170,7 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
                     ),
                     width: 150,
                     child: pw.Text(
-                      '성명',
+                      localization.fullName,
                       style: pw.TextStyle(
                         fontSize: 12,
                         font: customFont,
@@ -210,7 +210,7 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
                     ),
                     width: 150,
                     child: pw.Text(
-                      '생년월일',
+                      localization.231,
                       style: pw.TextStyle(
                         fontSize: 12,
                         font: customFont,
@@ -250,7 +250,7 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
                     ),
                     width: 150,
                     child: pw.Text(
-                      '주소',
+                      localization.address,
                       style: pw.TextStyle(
                         fontSize: 12,
                         font: customFont,
@@ -290,7 +290,7 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
                     ),
                     width: 150,
                     child: pw.Text(
-                      '연락처',
+                      localization.233,
                       style: pw.TextStyle(
                         fontSize: 12,
                         font: customFont,
@@ -342,7 +342,7 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
                       alignment: pw.Alignment.center,
                       height: 40,
                       child: pw.Text(
-                        '지원일',
+                        localization.234,
                         style: pw.TextStyle(
                           fontSize: 12,
                           font: customFont,
@@ -363,7 +363,7 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
                       alignment: pw.Alignment.center,
                       height: 40,
                       child: pw.Text(
-                        '기업명',
+                        localization.companyName,
                         style: pw.TextStyle(
                           fontSize: 12,
                           font: customFont,
@@ -384,7 +384,7 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
                       alignment: pw.Alignment.center,
                       height: 40,
                       child: pw.Text(
-                        '주소',
+                        localization.address,
                         style: pw.TextStyle(
                           fontSize: 12,
                           font: customFont,
@@ -405,7 +405,7 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
                       alignment: pw.Alignment.center,
                       height: 40,
                       child: pw.Text(
-                        '연락처',
+                        localization.233,
                         style: pw.TextStyle(
                           fontSize: 12,
                           font: customFont,
@@ -426,7 +426,7 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
                       alignment: pw.Alignment.center,
                       height: 40,
                       child: pw.Text(
-                        '활동결과',
+                        localization.236,
                         style: pw.TextStyle(
                           fontSize: 12,
                           font: customFont,
@@ -535,7 +535,7 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
                             alignment: pw.Alignment.center,
                             height: 40,
                             child: pw.Text(
-                              '지원',
+                              localization.237,
                               style: pw.TextStyle(
                                 fontSize: 12,
                                 font: customFont,
@@ -556,7 +556,7 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
                 ),
                 child: pw.Text(
                   '${userInfo!.name} 님은 ${userInfo!.createdAt} 부터 ${DateFormat('yyyy-MM-dd').format(DateTime.now())} 까지\n'
-                  '초단알바를 통해 위 기업에 입사지원 하였음을 증명합니다.',
+                  localization.238,
                   style: pw.TextStyle(
                     fontSize: 12,
                     font: customFont,
@@ -571,7 +571,7 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
                   0,
                 ),
                 child: pw.Text(
-                  DateFormat('yyyy년 MM월 dd일').format(DateTime.now()),
+                  DateFormat(localization.239).format(DateTime.now()),
                   textAlign: pw.TextAlign.end,
                   style: pw.TextStyle(
                     fontSize: 14,
@@ -585,7 +585,7 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
       ),
     );
 
-    return await PdfApi.saveDocumentMap(name: '취업활동증명서.pdf', pdf: pdf);
+    return await PdfApi.saveDocumentMap(name: localization.240, pdf: pdf);
   }
 
   saveFile(dynamic file, int key) async {
@@ -601,13 +601,13 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
           context: context,
           builder: (BuildContext context) {
             return AlertConfirmDialog(
-              alertContent: '이메일로 전송에 실패했습니다. 다시 시도해 주세요.',
-              alertConfirm: '확인',
+              alertContent: localization.241,
+              alertConfirm: localization.confirm,
               confirmFunc: () {
                 isRunning = false;
                 context.pop();
               },
-              alertTitle: '알림',
+              alertTitle: localization.notification,
             );
           },
         );
@@ -634,10 +634,10 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
       });
       if (mounted) {
         context.pop();
-        showDefaultToast('이메일로 전송되었어요!');
+        showDefaultToast(localization.emailSentSuccessfully);
       }
     } else {
-      showDefaultToast('이메일로 전송에 실패했습니다.');
+      showDefaultToast(localization.emailSendFailed);
     }
   }
 
@@ -705,7 +705,7 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CommonAppbar(
-        title: '취업활동증명서 발급',
+        title: localization.224,
       ),
       body: !isLoading
           ? appliedJobPosts.isNotEmpty
@@ -832,13 +832,13 @@ class _MyCertificateScreenState extends ConsumerState<MyCertificateScreen>
                           }
                         },
                         fontSize: 15,
-                        text: '발급하기',
+                        text: localization.244,
                       ),
                     ),
                   ],
                 )
               : const CommonEmpty(
-                  text: '최근 지원한 공고가 없습니다.',
+                  text: localization.245,
                 )
           : const Loader(),
     );

@@ -1,5 +1,0 @@
-,Key,Description,en,ko,origin
-0,,,,어제,return '어제';
-1,,,,종료,return '종료';
-2,,,,무제한,return '무제한';
-3,,,,탈퇴 회원,? '탈퇴 회원'

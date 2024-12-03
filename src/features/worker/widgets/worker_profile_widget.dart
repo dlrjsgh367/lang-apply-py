@@ -200,7 +200,7 @@ class WorkerProfileWidget extends StatelessWidget {
                     SizedBox(
                       width: 60.w,
                       child: Text(
-                        '주소',
+                        localization.address,
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w500,
@@ -237,7 +237,7 @@ class WorkerProfileWidget extends StatelessWidget {
                     SizedBox(
                       width: 60.w,
                       child: Text(
-                        '연락처',
+                        localization.233,
                         style: TextStyle(
                           fontSize: 14.sp,
                           height: 1.4.sp,
@@ -274,7 +274,7 @@ class WorkerProfileWidget extends StatelessWidget {
                     SizedBox(
                       width: 60.w,
                       child: Text(
-                        '이메일',
+                        localization.email,
                         style: TextStyle(
                           fontSize: 14.sp,
                           height: 1.4.sp,
@@ -314,7 +314,7 @@ class WorkerProfileWidget extends StatelessWidget {
                         SizedBox(
                           width: 60.w,
                           child: Text(
-                            '첨부파일',
+                            localization.172,
                             style: TextStyle(
                               fontSize: 14.sp,
                               height: 1.4.sp,
@@ -347,7 +347,7 @@ class WorkerProfileWidget extends StatelessWidget {
                                         name: profileData.files[0].name,
                                         files: profileData.files);
                                   } else {
-                                    showDefaultToast('대화가 시작 된 후 확인 가능합니다.');
+                                    showDefaultToast(localization.836);
                                   }
                                 },
                                 child: Row(
@@ -422,7 +422,7 @@ class WorkerProfileWidget extends StatelessWidget {
                                   width: 4.w,
                                 ),
                                 Text(
-                                  '학력',
+                                  localization.educationLevel,
                                   style: TextStyle(
                                     fontSize: 14.sp,
                                     color: CommonColors.gray80,
@@ -456,7 +456,7 @@ class WorkerProfileWidget extends StatelessWidget {
                                     ],
                                   )
                                 : Text(
-                                    '미기재',
+                                    localization.206,
                                     style: TextStyle(
                                       fontSize: 14.sp,
                                       color: CommonColors.black2b,
@@ -483,7 +483,7 @@ class WorkerProfileWidget extends StatelessWidget {
                                   width: 4.w,
                                 ),
                                 Text(
-                                  '경력',
+                                  localization.experienced,
                                   style: TextStyle(
                                     fontSize: 14.sp,
                                     color: CommonColors.gray80,
@@ -505,7 +505,7 @@ class WorkerProfileWidget extends StatelessWidget {
                                     ),
                                   )
                                 : Text(
-                                    '신입',
+                                    localization.newGraduate,
                                     style: TextStyle(
                                       fontSize: 14.sp,
                                       color: CommonColors.black2b,
@@ -537,7 +537,7 @@ class WorkerProfileWidget extends StatelessWidget {
                                 width: 4.w,
                               ),
                               Text(
-                                '요일',
+                                localization.dayOfWeek,
                                 style: TextStyle(
                                   fontSize: 14.sp,
                                   color: CommonColors.gray80,
@@ -597,7 +597,7 @@ class WorkerProfileWidget extends StatelessWidget {
                                   width: 4.w,
                                 ),
                                 Text(
-                                  '시간',
+                                  localization.time,
                                   style: TextStyle(
                                     fontSize: 14.sp,
                                     color: CommonColors.gray80,

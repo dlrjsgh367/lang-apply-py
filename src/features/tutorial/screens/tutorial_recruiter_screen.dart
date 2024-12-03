@@ -66,11 +66,11 @@ class _TutorialRecruiterScreenState
   };
 
   List<String> titleList = [
-    '기업 사진',
-    '기업 기본 정보',
-    '기업 추가 정보',
-    '기업 소개',
-    '채용 담당자 정보',
+    localization.750,
+    localization.751,
+    localization.752,
+    localization.753,
+    localization.754,
   ];
 
   int returnFirstVisiblePageIndex() {
@@ -145,11 +145,11 @@ class _TutorialRecruiterScreenState
           context: context,
           builder: (BuildContext context) {
             return AlertConfirmDialog(
-              alertContent: '파일 업로드에 실패했습니다. 다시 시도해 주세요.',
-              alertConfirm: '확인',
+              alertContent: localization.fileUploadFailedRetry,
+              alertConfirm: localization.confirm,
               confirmFunc: () {
                 context.pop();
-              }, alertTitle: '알림',
+              }, alertTitle: localization.notification,
             );
           },
         );

@@ -1,3 +1,0 @@
-,Key,Description,en,ko,origin
-0,,,,"${ConvertService.returnMaskingName(matchedProfileKeyList.contains(widget.workerItem.key), widget.workerItem.name)} (${ConvertService.calculateAge(widget.workerItem.birth)}세, ${widget.workerItem.gender.label})","'${ConvertService.returnMaskingName(matchedProfileKeyList.contains(widget.workerItem.key), widget.workerItem.name)} (${ConvertService.calculateAge(widget.workerItem.birth)}세, ${widget.workerItem.gender.label})',"
-1,,,,매칭,"'매칭',"

@@ -68,13 +68,13 @@ class _TutorialCompanyPhotoWidgetState
               onTap: () {
                 getCompanyPhoto('gallery');
               },
-              text: '사진 보관함',
+              text: localization.photoLibrary,
             ),
             BottomSheetButton(
               onTap: () {
                 getCompanyPhoto('camera');
               },
-              text: '사진 촬영',
+              text: localization.takePhoto,
             ),
             if (selectedCompanyPhoto['file'] != null)
               BottomSheetButton(
@@ -86,7 +86,7 @@ class _TutorialCompanyPhotoWidgetState
                   });
                   context.pop();
                 },
-                text: '삭제',
+                text: localization.delete,
               ),
           ],
         );
@@ -151,7 +151,7 @@ class _TutorialCompanyPhotoWidgetState
                         ),
                         alignment: Alignment.center,
                         child: Text(
-                          '사진을 등록하면 일자리 지원 받을 확률이 올라가요!',
+                          localization.photoBoostsJobApplications,
                           style: TextStyle(
                             color: CommonColors.red,
                             fontWeight: FontWeight.w700,
@@ -229,7 +229,7 @@ class _TutorialCompanyPhotoWidgetState
                                           height: 4.w,
                                         ),
                                         Text(
-                                          '사진 등록 하기',
+                                          localization.registerPhoto,
                                           style: TextStyle(
                                             color: CommonColors.grayD9,
                                             fontWeight: FontWeight.w700,
@@ -260,7 +260,7 @@ class _TutorialCompanyPhotoWidgetState
                                 ),
                                 alignment: Alignment.center,
                                 child: Text(
-                                  '사진 등록 Guide',
+                                  localization.42,
                                   style: TextStyle(
                                     color: CommonColors.red,
                                     fontWeight: FontWeight.w700,
@@ -283,7 +283,7 @@ class _TutorialCompanyPhotoWidgetState
                               SizedBox(width: 8.w),
                               Expanded(
                                 child: Text(
-                                  '사진 등록이 필수 사항은 아니지만 사진을 등록하면 알바님들에게 신뢰감을 줄 수 있습니다.',
+                                  localization.photoOptionalButIncreasesTrust,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: 14.sp,
@@ -306,7 +306,7 @@ class _TutorialCompanyPhotoWidgetState
                               SizedBox(width: 8.w),
                               Expanded(
                                 child: Text(
-                                  '5MB 이내 gif, jpg, jpeg, png 파일만 등록할 수 있습니다.',
+                                  localization.uploadFilesUnder5MB,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: 14.sp,
@@ -352,7 +352,7 @@ class _TutorialCompanyPhotoWidgetState
                               SizedBox(width: 8.w),
                               Expanded(
                                 child: Text(
-                                  '선명하고 깨끗한 사진을 권장합니다.',
+                                  localization.recommendClearPhotos,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: 14.sp,
@@ -375,7 +375,7 @@ class _TutorialCompanyPhotoWidgetState
                               SizedBox(width: 8.w),
                               Expanded(
                                 child: Text(
-                                  '개인정보 보호를 위해 개인정보가 포함된 이미지는 가려주세요. (발견 시 사전 동의 없이 삭제 될 수 있습니다.)',
+                                  localization.maskPersonalInfoInPhotos,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: 14.sp,
@@ -408,7 +408,7 @@ class _TutorialCompanyPhotoWidgetState
               onPressed: () {
                 widget.onPress();
               },
-              text: '건너뛰기',
+              text: localization.755,
               width: 96.w,
             ),
             SizedBox(
@@ -425,7 +425,7 @@ class _TutorialCompanyPhotoWidgetState
                     widget.writeFunc(widget.data['file']);
                   }
                 },
-                text: '다음',
+                text: localization.next,
                 fontSize: 15,
                 confirm: selectedCompanyPhoto['file'] != null,
               ),

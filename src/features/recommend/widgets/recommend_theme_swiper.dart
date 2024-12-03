@@ -233,7 +233,7 @@ class _RecommendThemeSwiperState extends State<RecommendThemeSwiper> {
                             Column(
                               children: [
                                 Text(
-                                  '매칭',
+                                  localization.665,
                                   style: TextStyle(
                                     fontSize: 10.sp,
                                     color: CommonColors.red,

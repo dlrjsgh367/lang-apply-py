@@ -67,10 +67,10 @@ class _SettingRecruiterState
       barrierColor: CommonColors.barrier,
       builder: (BuildContext context) {
         return AlertTwoButtonDialog(
-          alertTitle: '앱 로그아웃',
-          alertContent: '로그아웃 시 이 계정에 대한 모든 알림을 받을 수 없어요.',
-          alertConfirm: '로그아웃',
-          alertCancel: '취소',
+          alertTitle: localization.404,
+          alertContent: localization.405,
+          alertConfirm: localization.406,
+          alertCancel: localization.cancel,
           onConfirm: () {
             ref.read(applyOrProposedJobpostKeyListProvider.notifier).update((state) => []);
             logout(ref, context);
@@ -140,28 +140,28 @@ class _SettingRecruiterState
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     slivers: [
-                      TitleMenu(title: '정보수정'),
+                      TitleMenu(title: localization.407),
                       BtnMenu(
-                        text: '채용상태 변경',
+                        text: localization.408,
                         tabFunc: () {
                           context.push('/setting/status');
                         },
                       ),
                       BtnMenu(
-                        text: '회원정보 수정',
+                        text: localization.409,
                         tabFunc: () {
                           context.push('/setting/member');
                         },
                       ),
                       BtnMenu(
-                        text: '기업정보 수정',
+                        text: localization.editCompanyInformation,
                         tabFunc: () {
                           context.push('/my/company/update').then((_) => {getRecruiterProfileData()});
                         },
                       ),
                       BtnMenu(
                         noBorder: true,
-                        text: '비밀번호 변경',
+                        text: localization.411,
                         tabFunc: () {
                           context.push('/setting/password');
                         },
@@ -191,7 +191,7 @@ class _SettingRecruiterState
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 slivers: [
-                  TitleMenu(title: '기타 설정'),
+                  TitleMenu(title: localization.412),
                   SliverPadding(
                     padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 0),
                     sliver: SliverToBoxAdapter(
@@ -210,7 +210,7 @@ class _SettingRecruiterState
                           children: [
                             Expanded(
                               child: Text(
-                                '글자확대',
+                                localization.413,
                                 style: TextStyle(
                                   color: CommonColors.gray66,
                                   fontSize: 15.sp,
@@ -233,14 +233,14 @@ class _SettingRecruiterState
 
 
                   BtnMenu(
-                    text: '알림설정',
+                    text: localization.414,
                     tabFunc: () {
                       context.push('/setting/alarm');
                     },
                   ),
                   BtnMenu(
                     noBorder: true,
-                    text: '회원탈퇴',
+                    text: localization.415,
                     tabFunc: () {
                       context.push('/withdrawal');
                     },
@@ -261,7 +261,7 @@ class _SettingRecruiterState
               onPressed: () {
                 showLogout();
               },
-              text: '로그아웃',
+              text: localization.406,
             ),
           ),
         ),

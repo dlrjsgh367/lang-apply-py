@@ -8,50 +8,50 @@ class RecommendFilterService{
   static List<Map<String, dynamic>> ageFilter = [
   {
     'key' : 0,
-    'label' : '연령 무관',
+    'label' : localization.ageNotSpecified,
   },
     {
       'key' : 1,
-      'label' : '10대',
+      'label' : localization.640,
     },
     {
       'key' : 2,
-      'label' : '20대',
+      'label' : localization.641,
     },
     {
       'key' : 3,
-      'label' : '30대',
+      'label' : localization.642,
     },
     {
       'key' : 4,
-      'label' : '40대',
+      'label' : localization.643,
     },
     {
       'key' : 5,
-      'label' : '50대',
+      'label' : localization.644,
     },
     {
       'key' : 6,
-      'label' : '60대',
+      'label' : localization.645,
     },
     {
       'key' : 7,
-      'label' : '70대',
+      'label' : localization.646,
     },
   ];
 
   static List<Map<String, dynamic>> careerFilter = [
     {
       'key' : 0,
-      'label' : '경력무관',
+      'label' : localization.experienceNoRestriction,
     },
     {
       'key' : 1,
-      'label' : '신입',
+      'label' : localization.newGraduate,
     },
     {
       'key' : 2,
-      'label' : '경력',
+      'label' : localization.experienced,
     },
   ];
 
@@ -110,23 +110,23 @@ class RecommendFilterService{
   static List<Map<String, dynamic>> periodFilter = [
     {
       'key' : 0,
-      'label' : '3개월',
+      'label' : localization.580,
     },
     {
       'key' : 1,
-      'label' : '6개월',
+      'label' : localization.648,
     },
     {
       'key' : 2,
-      'label' : '1년',
+      'label' : localization.649,
     },
     {
       'key' : 3,
-      'label' : '2년',
+      'label' : localization.650,
     },
     {
       'key' : 4,
-      'label' : '직접 입력',
+      'label' : localization.manualInput,
     },
   ];
 
@@ -176,7 +176,7 @@ class RecommendFilterService{
   static List<Map<String, dynamic>> premiumServiceFilter = [
     {
       'key' : 0,
-      'label' : '전체',
+      'label' : localization.all,
     },
     {
       'key' : PremiumServiceEnum.areaTop.param,

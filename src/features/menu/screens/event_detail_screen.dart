@@ -92,9 +92,9 @@ class _EventDetailScreenState extends ConsumerState<EventDetailScreen> {
         barrierDismissible: false,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertTitle: '알림',
-            alertContent: '존재하지 않는 이벤트입니다.',
-            alertConfirm: '확인',
+            alertTitle: localization.notification,
+            alertContent: localization.125,
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop();
               context.pop();
@@ -152,7 +152,7 @@ class _EventDetailScreenState extends ConsumerState<EventDetailScreen> {
         evComment = commentController.text;
       } else {
         //TODO : EVENT '' 값일때 댓글 입력이 가능한지에 대해서 문의 중
-        showDefaultToast('댓글 내용을 입력해주세요.');
+        showDefaultToast(localization.126);
         commentController.text = '';
         isRunning = false;
         return false;
@@ -164,7 +164,7 @@ class _EventDetailScreenState extends ConsumerState<EventDetailScreen> {
     isRunning = false;
     if (result.status == 200) {
       if (result.type == 1) {
-        showDefaultToast('응모 완료했어요.');
+        showDefaultToast(localization.127);
         if (eventJoinType == EventJoinTypeEnum.comment) {
           commentController.text = '';
           page = 1;
@@ -175,13 +175,13 @@ class _EventDetailScreenState extends ConsumerState<EventDetailScreen> {
         return true;
       }
     } else if (result.status == 412) {
-      showDefaultToast('댓글 내용을 입력해주세요.');
+      showDefaultToast(localization.126);
       return false;
     } else if (result.status == 409) {
-      showDefaultToast('이벤트에 중복 응모할 수 없습니다.');
+      showDefaultToast(localization.128);
       return false;
     } else {
-      showDefaultToast('이벤트 응모에 실패하였습니다.');
+      showDefaultToast(localization.129);
       return false;
     }
   }
@@ -194,7 +194,7 @@ class _EventDetailScreenState extends ConsumerState<EventDetailScreen> {
     }
     if (reportReason == null) {
       isRunning = false;
-      showDefaultToast('신고 사유를 선택해주세요!');
+      showDefaultToast(localization.130);
       return;
     }
 
@@ -214,17 +214,17 @@ class _EventDetailScreenState extends ConsumerState<EventDetailScreen> {
     if (result.status == 200) {
       if (result.type == 1) {
         //TODO : EVENT 이벤트 신고 토스트 메세지 이미지 추가
-        showDefaultToast('신고가 완료되었어요!');
+        showDefaultToast(localization.reportSubmitted);
         if (mounted) {
           context.pop();
         }
       }
     } else if (result.status == 401) {
-      showDefaultToast('본인의 글은 신고할 수 없습니다.');
+      showDefaultToast(localization.cannotReportYourOwnPost);
     } else if (result.status == 409) {
-      showDefaultToast('동일한 댓글은 하루에 한 번만 신고 할 수 있습니다.');
+      showDefaultToast(localization.133);
     } else {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     }
   }
 
@@ -234,7 +234,7 @@ class _EventDetailScreenState extends ConsumerState<EventDetailScreen> {
     if (result.status == 200) {
       page = 1;
       getEventDetailComment(int.parse(widget.idx), page);
-      showDefaultToast('댓글이 삭제되었습니다.');
+      showDefaultToast(localization.135);
     }
   }
 
@@ -266,7 +266,7 @@ class _EventDetailScreenState extends ConsumerState<EventDetailScreen> {
     if (result.status == 200) {
       page = 1;
       getEventDetailComment(int.parse(widget.idx), page);
-      showDefaultToast('댓글이 수정되었습니다.');
+      showDefaultToast(localization.136);
       context.pop();
     }
   }
@@ -289,7 +289,7 @@ class _EventDetailScreenState extends ConsumerState<EventDetailScreen> {
           return StatefulBuilder(
               builder: (BuildContext context, StateSetter bottomState) {
             return ReportBottomSheet(
-              title: '신고하기',
+              title: localization.137,
               text: msg,
               afterFunc: afterFunc != null
                   ? () {
@@ -392,7 +392,7 @@ class _EventDetailScreenState extends ConsumerState<EventDetailScreen> {
       },
       child: Scaffold(
         appBar: CommonAppbar(
-          title: '이벤트',
+          title: localization.event,
           actions: [
             AppbarButton(
               onPressed: () {

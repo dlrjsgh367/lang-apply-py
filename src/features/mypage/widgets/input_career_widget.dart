@@ -138,7 +138,7 @@ class _InputCareerWidgetState extends ConsumerState<InputCareerWidget> {
         children: [
           Scaffold(
             appBar: const CommonAppbar(
-              title: '경력',
+              title: localization.experienced,
             ),
             body: !isLoading
                 ? CustomScrollView(
@@ -150,7 +150,7 @@ class _InputCareerWidgetState extends ConsumerState<InputCareerWidget> {
                             children: [
                               Expanded(
                                 child: Text(
-                                  '자신의 경력을 보여주세요!',
+                                  localization.533,
                                   style: TextStyle(
                                     fontSize: 20.sp,
                                     color: CommonColors.black2b,
@@ -179,7 +179,7 @@ class _InputCareerWidgetState extends ConsumerState<InputCareerWidget> {
                         padding: EdgeInsets.fromLTRB(20.w, 0.w, 20.w, 36.w),
                         sliver: SliverToBoxAdapter(
                           child: Text(
-                            '경력을 요구하는 업무 지원에 더욱 유리해요.',
+                            localization.534,
                             style: TextStyle(
                               fontSize: 14.sp,
                               color: CommonColors.gray80,
@@ -258,7 +258,7 @@ class _InputCareerWidgetState extends ConsumerState<InputCareerWidget> {
                                         color: CommonColors.red),
                                   ),
                                   TextSpan(
-                                    text: '개월',
+                                    text: localization.98,
                                     style: TextStyle(
                                         fontWeight: FontWeight.w500,
                                         color: CommonColors.black2b),
@@ -325,11 +325,11 @@ class _InputCareerWidgetState extends ConsumerState<InputCareerWidget> {
                                                   context: context,
                                                   builder: (context) {
                                                     return AlertTwoButtonDialog(
-                                                        alertTitle: '삭제',
+                                                        alertTitle: localization.delete,
                                                         alertContent:
-                                                            '경력을 삭제하시겠습니까?',
-                                                        alertConfirm: '확인',
-                                                        alertCancel: '취소',
+                                                            localization.537,
+                                                        alertConfirm: localization.confirm,
+                                                        alertCancel: localization.cancel,
                                                         onConfirm: () {
                                                           setState(() {
                                                             careerList.remove(
@@ -420,7 +420,7 @@ class _InputCareerWidgetState extends ConsumerState<InputCareerWidget> {
                                     width: 6.w,
                                   ),
                                   Text(
-                                    '경력 추가하기',
+                                    localization.538,
                                     style: TextStyle(
                                       fontSize: 14.sp,
                                       color: career.value != 0
@@ -463,7 +463,7 @@ class _InputCareerWidgetState extends ConsumerState<InputCareerWidget> {
                     context.pop();
                   }
                 },
-                text: '입력하기',
+                text: localization.32,
               ),
             ),
         ],

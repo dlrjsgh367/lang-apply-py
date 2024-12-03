@@ -59,13 +59,13 @@ class _AboutMeWidgetState extends ConsumerState<AboutMeWidget> {
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertConfirmRedDialog(
-          alertContent: '입력하신 내용을 확인 후 다시 저장해주세요.',
+          alertContent: localization.77,
           redText: '금칙어: [$forbiddenWord]',
-          alertConfirm: '확인',
+          alertConfirm: localization.confirm,
           confirmFunc: () {
             context.pop();
           },
-          alertTitle: '금칙어가 감지되었어요.',
+          alertTitle: localization.78,
         );
       },
     );
@@ -192,7 +192,7 @@ class _AboutMeWidgetState extends ConsumerState<AboutMeWidget> {
           children: [
             Scaffold(
               appBar: CommonAppbar(
-                title: '자기소개',
+                title: localization.300,
                 backFunc: () {
                   setState(() {
                     textController.text = '';
@@ -243,7 +243,7 @@ class _AboutMeWidgetState extends ConsumerState<AboutMeWidget> {
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 Text(
-                                  '자신만의 특별한 강점을 어필해보세요!',
+                                  localization.301,
                                   style: TextStyle(
                                     fontSize: 14.sp,
                                     color: CommonColors.gray80,
@@ -251,7 +251,7 @@ class _AboutMeWidgetState extends ConsumerState<AboutMeWidget> {
                                   ),
                                 ),
                                 Text(
-                                  '자기소개 혹은 나의 키워드 영역 중 1개 영역 기입 필수',
+                                  localization.489,
                                   style: TextStyle(
                                     fontSize: 12.sp,
                                     color: CommonColors.gray80,
@@ -263,7 +263,7 @@ class _AboutMeWidgetState extends ConsumerState<AboutMeWidget> {
                           ),
                         ),
                         ProfileTitle(
-                            title: '자기소개',
+                            title: localization.300,
                             required: false,
                             text: '',
                             hasArrow: false,
@@ -328,7 +328,7 @@ class _AboutMeWidgetState extends ConsumerState<AboutMeWidget> {
                             child: Row(
                               children: [
                                 const Text(
-                                  '나의 키워드',
+                                  localization.490,
                                   style: TextStyle(fontWeight: FontWeight.w600),
                                 ),
                                 SizedBox(
@@ -442,7 +442,7 @@ class _AboutMeWidgetState extends ConsumerState<AboutMeWidget> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        '더보기',
+                                        localization.491,
                                         style: TextStyle(
                                           fontSize: 14.sp,
                                           fontWeight: FontWeight.w500,
@@ -485,7 +485,7 @@ class _AboutMeWidgetState extends ConsumerState<AboutMeWidget> {
                       checkForbiddenWord(textController.text);
                     }
                   },
-                  text: '입력하기',
+                  text: localization.32,
                 ),
               ),
           ],

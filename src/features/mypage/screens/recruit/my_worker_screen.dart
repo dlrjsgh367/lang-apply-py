@@ -168,7 +168,7 @@ class _MyWorkerBlockScreenState extends ConsumerState<MyWorkerScreen>
         likeAfterHidesFunc(idx);
       }
     } else {
-      showDefaultToast('차단인재에서 추가에 실패하였습니다.');
+      showDefaultToast(localization.395);
     }
   }
 
@@ -181,7 +181,7 @@ class _MyWorkerBlockScreenState extends ConsumerState<MyWorkerScreen>
         likeAfterHidesFunc(idx);
       }
     } else {
-      showDefaultToast('차단인재에서 삭제에 실패하였습니다.');
+      showDefaultToast(localization.396);
     }
   }
 
@@ -195,7 +195,7 @@ class _MyWorkerBlockScreenState extends ConsumerState<MyWorkerScreen>
       }
     } else {
       if (result.type == -2801) {
-        showDefaultToast('이미 등록된 관심 인재입니다.');
+        showDefaultToast(localization.397);
       }
     }
   }
@@ -209,7 +209,7 @@ class _MyWorkerBlockScreenState extends ConsumerState<MyWorkerScreen>
         likeAfterLikesFunc(idx);
       }
     } else {
-      showDefaultToast('관심인재에서 삭제에 실패하였습니다.');
+      showDefaultToast(localization.398);
     }
   }
 
@@ -243,10 +243,10 @@ class _MyWorkerBlockScreenState extends ConsumerState<MyWorkerScreen>
     List hideList = ref.read(workerHidesKeyListProvider);
     if (hideList.contains(key)) {
       hideList.remove(key);
-      showDefaultToast('차단인재에서 삭제했어요!');
+      showDefaultToast(localization.399);
     } else {
       hideList.add(key);
-      showDefaultToast('차단인재로 저장했어요!');
+      showDefaultToast(localization.savedAsBlockedCandidate);
     }
     setState(() {
       ref
@@ -259,10 +259,10 @@ class _MyWorkerBlockScreenState extends ConsumerState<MyWorkerScreen>
     List likeList = ref.read(workerLikesKeyListProvider);
     if (likeList.contains(key)) {
       likeList.remove(key);
-      showDefaultToast('관심인재에서 삭제했어요!');
+      showDefaultToast(localization.392);
     } else {
       likeList.add(key);
-      showDefaultToast('관심인재로 저장했어요!');
+      showDefaultToast(localization.393);
     }
     setState(() {
       ref
@@ -292,7 +292,7 @@ class _MyWorkerBlockScreenState extends ConsumerState<MyWorkerScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CommonAppbar(
-        title: '관심/차단인재',
+        title: localization.401,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -302,7 +302,7 @@ class _MyWorkerBlockScreenState extends ConsumerState<MyWorkerScreen>
             child: CommonTab(
               setTab: setTab,
               activeTab: activeTab,
-              tabTitleArr: const ['관심인재', '차단인재'],
+              tabTitleArr: const [localization.interestedTalents, localization.blockedTalents],
             ),
           ),
           Expanded(
@@ -350,7 +350,7 @@ class _MyWorkerBlockScreenState extends ConsumerState<MyWorkerScreen>
                   ),
                 )
                     : CommonEmpty(
-                    text: activeTab == 0 ? '관심인재가 없습니다.' : '차단인재가 없습니다.')
+                    text: activeTab == 0 ? localization.402 : localization.403)
                     : const Loader(),
                 if (isLazeLoading)
                   Positioned(

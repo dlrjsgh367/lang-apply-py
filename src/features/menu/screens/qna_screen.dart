@@ -231,7 +231,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
         isLazeLoading = false;
       });
     } else if (result.status != 200) {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -251,7 +251,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
         selectCategory = boardCategoryList[0];
       });
     } else if (result.status != 200) {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -300,8 +300,8 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
           context: context,
           builder: (BuildContext context) {
             return AlertConfirmDialog(
-              alertContent: '작성하신 문의가 성공적으로 등록되었습니다.',
-              alertConfirm: '확인',
+              alertContent: localization.150,
+              alertConfirm: localization.confirm,
               confirmFunc: () {
                 initData();
                 setState(() {
@@ -310,7 +310,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                 });
                 context.pop();
               },
-              alertTitle: '안내',
+              alertTitle: localization.guide,
             );
           },
         );
@@ -323,17 +323,17 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
           context: context,
           builder: (BuildContext context) {
             return AlertConfirmDialog(
-              alertContent: '운영자에 의하여 작성이 제한된 회원입니다.',
-              alertConfirm: '확인',
+              alertContent: localization.accountRestrictedByAdministrator,
+              alertConfirm: localization.confirm,
               confirmFunc: () {
                 context.pop();
               },
-              alertTitle: '알림',
+              alertTitle: localization.notification,
             );
           },
         );
       } else {
-        showDefaultToast('등록에 실패하였습니다.');
+        showDefaultToast(localization.152);
       }
     } else {
       if (!mounted) return null;
@@ -350,9 +350,9 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertTitle: '알림',
+            alertTitle: localization.notification,
             alertContent: "금칙어 '" + keyword + "'가 포함되어 문의 등록이 불가능합니다.",
-            alertConfirm: '확인',
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop(context);
             },
@@ -376,14 +376,14 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertContent: '작성하신 문의가 성공적으로 등록되었습니다.',
-            alertConfirm: '확인',
+            alertContent: localization.150,
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               initData();
               context.pop();
               setTab(1);
             },
-            alertTitle: '알림',
+            alertTitle: localization.notification,
           );
         },
       );
@@ -392,12 +392,12 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertContent: '파일 업로드에 실패했습니다. 다시 시도해 주세요.',
-            alertConfirm: '확인',
+            alertContent: localization.fileUploadFailedRetry,
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop();
             },
-            alertTitle: '알림',
+            alertTitle: localization.notification,
           );
         },
       );
@@ -425,17 +425,17 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                 onTap: () {
                   getProfilePhoto('gallery');
                 },
-                text: '사진 보관함'),
+                text: localization.photoLibrary),
             BottomSheetButton(
                 onTap: () {
                   getProfilePhoto('camera');
                 },
-                text: '사진 찍기'),
+                text: localization.156),
             BottomSheetButton(
                 onTap: () {
                   getProfileFile();
                 },
-                text: '파일 선택'),
+                text: localization.157),
             if (fileData['file'] != null)
               BottomSheetButton(
                   onTap: () {
@@ -446,7 +446,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                     });
                   },
                   isRed: true,
-                  text: '삭제'),
+                  text: localization.delete),
           ],
         );
       },
@@ -499,10 +499,10 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
           context: context,
           builder: (BuildContext context) {
             return AlertTwoButtonDialog(
-              alertTitle: '작성 취소',
+              alertTitle: localization.cancelWriting,
               alertContent: '페이지를 이동하시겠어요?\n이동 시 작성된 내용은 저장되지 않아요',
-              alertConfirm: '확인',
-              alertCancel: '취소',
+              alertConfirm: localization.confirm,
+              alertCancel: localization.cancel,
               onConfirm: () {
                 context.pop(context);
                 context.pop(context);
@@ -553,7 +553,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
             },
             child: Scaffold(
               appBar: CommonAppbar(
-                title: '고객센터',
+                title: localization.customerService,
                 backFunc: backEvent,
               ),
               body: Column(
@@ -564,7 +564,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                     child: CommonTab(
                       setTab: setTab,
                       activeTab: activeTab,
-                      tabTitleArr: const ['문의하기', '내 문의 내역'],
+                      tabTitleArr: const [localization.161, localization.162],
                     ),
                   ),
                   Expanded(
@@ -590,7 +590,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                                         CrossAxisAlignment.stretch,
                                     children: [
                                       Text(
-                                        "문의하기 및 고객센터 이용안내",
+                                        localization.163,
                                         style: TextStyle(
                                           fontSize: 14.sp,
                                           color: CommonColors.gray80,
@@ -613,7 +613,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                                           ),
                                           Expanded(
                                             child: Text(
-                                              '서비스 이용 중 불편 사항 또는 궁금한 사항을 물어 보세요.',
+                                              localization.164,
                                               style: TextStyle(
                                                 fontSize: 12.sp,
                                                 color: CommonColors.gray80,
@@ -637,7 +637,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                                           ),
                                           Expanded(
                                             child: Text(
-                                              '평일 09:00~17:00까지 문의 하신 내용은 당일 답변 드립니다.',
+                                              localization.165,
                                               style: TextStyle(
                                                 fontSize: 12.sp,
                                                 color: CommonColors.gray80,
@@ -701,7 +701,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                                   height: 24.w,
                                 ),
                                 Text(
-                                  "문의유형",
+                                  localization.168,
                                   style: TextStyle(
                                     color: CommonColors.black2b,
                                     fontWeight: FontWeight.w600,
@@ -714,7 +714,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                                   onTap: () {
                                     showQnaType();
                                   },
-                                  hintText: '선택해주세요.',
+                                  hintText: localization.141,
                                   text: inputData['categoryKey'] == 7 ||
                                           inputData['categoryKey'] == -1
                                       ? ''
@@ -724,7 +724,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                                   height: 36.w,
                                 ),
                                 Text(
-                                  "문의내용",
+                                  localization.169,
                                   style: TextStyle(
                                     color: CommonColors.black2b,
                                     fontWeight: FontWeight.w600,
@@ -736,7 +736,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                                 TextFormField(
                                   maxLength: 50,
                                   decoration: commonInput(
-                                    hintText: '제목을 입력해주세요.',
+                                    hintText: localization.170,
                                   ),
                                   style: commonInputText(),
                                   onChanged: (value) {
@@ -765,7 +765,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                                         maxLength: 2000,
                                         style: areaInputText(),
                                         decoration: areaInput(
-                                          hintText: '내용을 작성해주세요.',
+                                          hintText: localization.171,
                                         ),
                                         textAlignVertical:
                                             TextAlignVertical.top,
@@ -796,7 +796,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                                   height: 36.w,
                                 ),
                                 Text(
-                                  "첨부파일",
+                                  localization.172,
                                   style: TextStyle(
                                     color: CommonColors.black2b,
                                     fontWeight: FontWeight.w600,
@@ -855,7 +855,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                                                     ],
                                                   )
                                                 : Text(
-                                                    '파일 선택하기',
+                                                    localization.173,
                                                     style: TextStyle(
                                                       fontSize: 14.sp,
                                                       color:
@@ -883,7 +883,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                                     ),
                                     Expanded(
                                       child: Text(
-                                        '최대 100MB까지 첨부 가능합니다.',
+                                        localization.174,
                                         style: TextStyle(
                                           fontSize: 11.sp,
                                           color: CommonColors.red,
@@ -943,7 +943,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                                                 CrossAxisAlignment.center,
                                             children: [
                                               Text(
-                                                '(필수)',
+                                                localization.176,
                                                 style: TextStyle(
                                                     fontSize: 12.sp,
                                                     fontWeight: FontWeight.w500,
@@ -952,7 +952,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                                               ),
                                               SizedBox(width: 4.w),
                                               Text(
-                                                '개인정보 수집 및 이용안내 동의',
+                                                localization.177,
                                                 style: TextStyle(
                                                   fontSize: 13.sp,
                                                   fontWeight: FontWeight.w400,
@@ -986,7 +986,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                                       }
                                     }
                                   },
-                                  text: "문의 보내기",
+                                  text: localization.178,
                                 )
                               ],
                             ),
@@ -1004,7 +1004,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Text(
-                                          "문의 내역",
+                                          localization.179,
                                           style: TextStyle(
                                             fontWeight: FontWeight.w600,
                                             color: CommonColors.black2b,
@@ -1024,7 +1024,7 @@ class _QnaScreenState extends ConsumerState<QnaScreen>
                                   Expanded(
                                     child: boardList.isEmpty
                                         ? const CommonEmpty(
-                                            text: '문의 내역이 없습니다.')
+                                            text: localization.180)
                                         : LazyLoadScrollView(
                                             onEndOfPage: _boardLoadMore,
                                             child: ListView.builder(

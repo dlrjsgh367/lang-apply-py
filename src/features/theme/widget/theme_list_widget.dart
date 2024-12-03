@@ -121,9 +121,9 @@ class _ThemeListWidgetState extends ConsumerState<ThemeListWidget> {
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertTitle: '안내',
-            alertContent: '데이터 통신에 실패하였습니다.',
-            alertConfirm: '확인',
+            alertTitle: localization.guide,
+            alertContent: localization.dataCommunicationFailed,
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop();
               context.pop();
@@ -173,7 +173,7 @@ class _ThemeListWidgetState extends ConsumerState<ThemeListWidget> {
     return isLoader
         ? const Loader()
         : themeList.isEmpty
-            ? const CommonEmpty(text: '추천 테마가 없습니다.')
+            ? const CommonEmpty(text: localization.746)
             : Stack(
                 clipBehavior: Clip.none,
                 children: [
@@ -181,7 +181,7 @@ class _ThemeListWidgetState extends ConsumerState<ThemeListWidget> {
                     extraHeight: 80,
                   ),
                   themeSettingList.isEmpty
-                      ? const CommonEmpty(text: '목록이 없습니다.')
+                      ? const CommonEmpty(text: localization.noListAvailable)
                       : Container(
                           height: double.infinity,
                           width: double.infinity,
@@ -234,7 +234,7 @@ class _ThemeListWidgetState extends ConsumerState<ThemeListWidget> {
                                               top: 16.w,
                                               left: 20.w,
                                               child: Text(
-                                                '중년층테마관',
+                                                localization.748,
                                                 style: TextStyle(
                                                   fontSize: 24.sp,
                                                   fontWeight: FontWeight.w600,

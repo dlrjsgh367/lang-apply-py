@@ -86,7 +86,7 @@ class _NoticeScreenState extends ConsumerState<NoticeScreen> with Alerts {
         isLazeLoading = false;
       });
     } else if (result.status != 200) {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -103,7 +103,7 @@ class _NoticeScreenState extends ConsumerState<NoticeScreen> with Alerts {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CommonAppbar(
-        title: '공지사항',
+        title: localization.144,
       ),
       body: !isLoading
           ? Column(

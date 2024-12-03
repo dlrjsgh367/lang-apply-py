@@ -1,3 +1,0 @@
-,Key,Description,en,ko,origin
-0,,,,${formatCurrency.format(jobpostData.salary)}원,"'${formatCurrency.format(jobpostData.salary)}원',"
-1,,,,매칭,"'매칭',"

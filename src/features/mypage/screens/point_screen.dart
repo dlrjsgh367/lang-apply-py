@@ -109,39 +109,39 @@ class _PointScreenState extends ConsumerState<PointScreen> {
   returnPointType(String type) {
     switch (type) {
       case 'LOGIN_JOBSEEKER':
-        return '로그인';
+        return localization.334;
       case 'PROFILE_JOBSEEKER':
-        return '프로필 등록';
+        return localization.335;
       case 'SCRAP_JOB_POSTING':
-        return '채용 공고 스크랩';
+        return localization.336;
       case 'ADD_COMPANY_LIKES':
-        return '관심 기업 추가';
+        return localization.337;
       case 'SHARE_JOB_POSTING':
-        return '채용 공고 공유';
+        return localization.338;
       case 'APPLY_JOB':
-        return '입사 지원';
+        return localization.339;
       case 'VIEW_JOB_POSTING':
-        return '채용 공고 보기';
+        return localization.viewJobPostings;
       case 'LOGIN_RECRUITER':
-        return '로그인';
+        return localization.334;
       case 'CREATE_COMPANY_INFO':
-        return '기업 정보 등록';
+        return localization.341;
       case 'CREATE_JOB_POSTING':
-        return '채용 공고 등록';
+        return localization.342;
       case 'VIEW_JOBSEEKER':
-        return '인재 살펴 보기';
+        return localization.343;
       case 'OFFER_JOB':
-        return '일자리 제안하기';
+        return localization.344;
       case 'ADD_JOBSEEKER_LIKES':
-        return '관심 인재 추가';
+        return localization.345;
       case 'INVITE':
-        return '초대';
+        return localization.346;
       case 'INVITE_SUCCESS':
-        return '초대 성공';
+        return localization.347;
       case 'COMPLETE_RATING':
-        return '별점 평가 완료';
+        return localization.348;
       case 'WRITE_LABOR_CONSULT':
-        return '노무 상담 글쓰기';
+        return localization.349;
     }
   }
 
@@ -149,7 +149,7 @@ class _PointScreenState extends ConsumerState<PointScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CommonAppbar(
-        title: '활동 포인트 관리',
+        title: localization.227,
       ),
       body: LazyLoadScrollView(
         onEndOfPage: () => _loadMore(),
@@ -168,7 +168,7 @@ class _PointScreenState extends ConsumerState<PointScreen> {
                         child: Row(
                           children: [
                             Text(
-                              '나의 활동 포인트',
+                              localization.350,
                               style: TextStyle(
                                   fontSize: 15.sp,
                                   color: CommonColors.gray66,
@@ -190,7 +190,7 @@ class _PointScreenState extends ConsumerState<PointScreen> {
                       ),
                     ),
                   ),
-                  TitleMenu(title: '활동 포인트 내역'),
+                  TitleMenu(title: localization.351),
                   SliverPadding(
                     padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 0),
                     sliver: pointList.isNotEmpty
@@ -258,7 +258,7 @@ class _PointScreenState extends ConsumerState<PointScreen> {
                         : SliverToBoxAdapter(
                             child: SizedBox(
                               height: CommonSize.vh / 2,
-                                child: const CommonEmpty(text: '활동한 내역이 없어요.')),
+                                child: const CommonEmpty(text: localization.352)),
                           ),
                   ),
                   const BottomPadding(),

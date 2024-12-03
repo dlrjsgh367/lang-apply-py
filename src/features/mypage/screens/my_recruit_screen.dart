@@ -190,7 +190,7 @@ class _MyRecruitScreenState extends ConsumerState<MyRecruitScreen>
         likeAfterScrapFunc(idx);
       }
     } else {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     }
   }
 
@@ -203,7 +203,7 @@ class _MyRecruitScreenState extends ConsumerState<MyRecruitScreen>
         likeAfterScrapFunc(idx);
       }
     } else {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     }
   }
 
@@ -211,10 +211,10 @@ class _MyRecruitScreenState extends ConsumerState<MyRecruitScreen>
     List likeList = ref.read(userClipAnnouncementListProvider);
     if (likeList.contains(key)) {
       likeList.remove(key);
-      showDefaultToast('스크랩공고에서 삭제했어요!');
+      showDefaultToast(localization.327);
     } else {
       likeList.add(key);
-      showDefaultToast('스크랩공고로 저장했어요!');
+      showDefaultToast(localization.328);
     }
     setState(() {
       ref
@@ -279,7 +279,7 @@ class _MyRecruitScreenState extends ConsumerState<MyRecruitScreen>
 
     return Scaffold(
       appBar: const CommonAppbar(
-        title: '스크랩/최근 본 공고',
+        title: localization.329,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -289,7 +289,7 @@ class _MyRecruitScreenState extends ConsumerState<MyRecruitScreen>
             child: CommonTab(
               setTab: setTab,
               activeTab: activeTab,
-              tabTitleArr: const ['스크랩 공고', '최근 본 공고'],
+              tabTitleArr: const [localization.scrapJobPosting, localization.recentJobPostings],
             ),
           ),
           Expanded(
@@ -298,8 +298,8 @@ class _MyRecruitScreenState extends ConsumerState<MyRecruitScreen>
                 : jobpostList.isEmpty
                     ? CommonEmpty(
                         text: activeTab == 0
-                            ? '스크랩한 공고가 없습니다.'
-                            : '촤근 본 공고가 없습니다.')
+                            ? localization.332
+                            : localization.333)
                     : Stack(
                         alignment: Alignment.center,
                         children: [

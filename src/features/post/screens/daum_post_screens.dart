@@ -35,7 +35,7 @@ class _DaumPostScreensState extends ConsumerState<DaumPostScreens> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: CommonAppbar(
-        title: '주소 선택',
+        title: localization.562,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

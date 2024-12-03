@@ -148,7 +148,7 @@ class _WithdrawalReasonWidgetState extends ConsumerState<WithdrawalReasonWidget>
 
                     decoration: areaInput(
                       disable: !selectedKeyList.contains(inputKey),
-                      hintText: '기타 사유를 입력해주세요',
+                      hintText: localization.744,
                     ),
                     onChanged: (value) {},
                   ),
@@ -177,7 +177,7 @@ class _WithdrawalReasonWidgetState extends ConsumerState<WithdrawalReasonWidget>
                       }
                     });
                   },
-                  text: '탈퇴하기'),
+                  text: localization.745),
               SizedBox(
                 width: 8.w,
               ),
@@ -186,7 +186,7 @@ class _WithdrawalReasonWidgetState extends ConsumerState<WithdrawalReasonWidget>
                   onPressed: () {
                     widget.onCancel();
                   },
-                  text: '취소하기',
+                  text: localization.736,
                   confirm: true,
                   fontSize: 15,
                 ),

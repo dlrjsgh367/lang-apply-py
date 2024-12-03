@@ -110,7 +110,7 @@ class _SelectWorkScheduleWidgetState
       builder: (BuildContext context) {
         return WorkScheduleBottomSheet(
           dataArr: workTimes, initItemArr: selectedWorkTimes,
-          // type: '직종',
+          // type: localization.jobCategory,
         );
       },
     ).then((value) {
@@ -133,7 +133,7 @@ class _SelectWorkScheduleWidgetState
       },
       child: Scaffold(
         appBar: const CommonAppbar(
-          title: '희망 근무 스케줄',
+          title: localization.296,
         ),
         body: !isLoading
             ? Stack(
@@ -176,7 +176,7 @@ class _SelectWorkScheduleWidgetState
                         padding: EdgeInsets.fromLTRB(20.w, 0.w, 20.w, 36.w),
                         sliver: SliverToBoxAdapter(
                           child: Text(
-                            '상세히 입력할수록 제안받을 확률이 높아져요!',
+                            localization.555,
                             style: TextStyle(
                               fontSize: 14.sp,
                               color: CommonColors.gray80,
@@ -195,7 +195,7 @@ class _SelectWorkScheduleWidgetState
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
-                                    '근무 요일',
+                                    localization.557,
                                     style: TextStyle(
                                       fontWeight: FontWeight.w600,
                                       color: CommonColors.black2b,
@@ -216,7 +216,7 @@ class _SelectWorkScheduleWidgetState
                                 width: 8.w,
                               ),
                               Text(
-                                '최대 3개 옵션 등록 가능합니다.',
+                                localization.558,
                                 style: TextStyle(
                                     fontWeight: FontWeight.w700,
                                     fontSize: 12.sp,
@@ -293,7 +293,7 @@ class _SelectWorkScheduleWidgetState
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Text(
-                                    '근무 시간',
+                                    localization.559,
                                     style: TextStyle(
                                       fontWeight: FontWeight.w600,
                                       color: CommonColors.black2b,
@@ -313,7 +313,7 @@ class _SelectWorkScheduleWidgetState
                                 width: 8.w,
                               ),
                               Text(
-                                '최대 3개 옵션 등록 가능합니다.',
+                                localization.558,
                                 style: TextStyle(
                                     fontWeight: FontWeight.w700,
                                     fontSize: 12.sp,
@@ -387,7 +387,7 @@ class _SelectWorkScheduleWidgetState
                               ),
                               alignment: Alignment.center,
                               child: Text(
-                                '동일한 근무 시간을 중복 선택이 불가능합니다.',
+                                localization.560,
                                 style: TextStyle(
                                   fontSize: 12.sp,
                                   fontWeight: FontWeight.w700,
@@ -421,7 +421,7 @@ class _SelectWorkScheduleWidgetState
                                   child: Row(
                                     children: [
                                       Text(
-                                        '근무 시간 추가하기',
+                                        localization.561,
                                         style: TextStyle(
                                           fontSize: 14.sp,
                                           fontWeight: FontWeight.w700,
@@ -465,7 +465,7 @@ class _SelectWorkScheduleWidgetState
                           context.pop();
                         }
                       },
-                      text: '입력하기',
+                      text: localization.32,
                     ),
                   ),
                 ],

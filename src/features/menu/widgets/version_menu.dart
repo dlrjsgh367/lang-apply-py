@@ -36,11 +36,11 @@ class VersionMenu extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Text(
-                      '앱버전',
+                      localization.201,
                       style: TextStyles.menuContent,
                     ),
                     Text(
-                      updateStatus ? '새로운 버전이 출시 되었어요.' : '최신버전을 사용중이에요',
+                      updateStatus ? localization.202 : localization.203,
                       style: TextStyles.commonButton(
                           color: CommonColors.gray4d, fontSize: 10),
                     ),
@@ -57,7 +57,7 @@ class VersionMenu extends StatelessWidget {
                       alignment: Alignment.center,
                       height: 20.w,
                       child: const Text(
-                        '업데이트',
+                        localization.204,
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 12,

@@ -334,7 +334,7 @@ class _JobpostingRecruitConditionWidgetState
         return EduLastBottomSheet(
           dataArr: widget.schoolTypes,
           initItem: selectedSchoolTypeKey ?? 15245,
-          title: '학력',
+          title: localization.educationLevel,
         );
       },
     ).then((value) {
@@ -504,7 +504,7 @@ class _JobpostingRecruitConditionWidgetState
           children: [
             Scaffold(
               appBar: const CommonAppbar(
-                title: '모집 조건',
+                title: localization.recruitmentRequirements2,
               ),
               body: Column(
                 children: [
@@ -512,7 +512,7 @@ class _JobpostingRecruitConditionWidgetState
                     child: CustomScrollView(
                       slivers: [
                         ProfileTitle(
-                          title: '모집분야',
+                          title: localization.recruitmentField,
                           required: true,
                           text: '',
                           onTap: () {},
@@ -541,7 +541,7 @@ class _JobpostingRecruitConditionWidgetState
                           ),
                         ),
                         ProfileTitle(
-                          title: '모집인원',
+                          title: localization.numberOfPositions,
                           required: true,
                           text: '',
                           onTap: () {},
@@ -561,7 +561,7 @@ class _JobpostingRecruitConditionWidgetState
                                     },
                                     groupValue: isRecruitmentNumberDetermined,
                                     value: false,
-                                    label: '인원 미정',
+                                    label: localization.62,
                                   ),
                                 ),
                                 SizedBox(width: 8.w),
@@ -574,7 +574,7 @@ class _JobpostingRecruitConditionWidgetState
                                     },
                                     groupValue: isRecruitmentNumberDetermined,
                                     value: true,
-                                    label: '직접 입력',
+                                    label: localization.manualInput,
                                   ),
                                 )
                               ],
@@ -595,10 +595,10 @@ class _JobpostingRecruitConditionWidgetState
                                 textAlign: TextAlign.end,
                                 maxLength: 2,
                                 decoration: suffixInput(
-                                  suffixText: '명',
+                                  suffixText: localization.64,
                                   suffixColor: CommonColors.grayB2,
                                   suffixSize: 14.sp,
-                                  hintText: '모집인원을 입력해주세요.',
+                                  hintText: localization.65,
                                 ),
                                 minLines: 1,
                                 maxLines: 1,
@@ -610,7 +610,7 @@ class _JobpostingRecruitConditionWidgetState
                         ),
 
                         ProfileTitle(
-                          title: '성별',
+                          title: localization.gender,
                           required: false,
                           text: '',
                           onTap: () {},
@@ -663,7 +663,7 @@ class _JobpostingRecruitConditionWidgetState
                         ),
                         const SliverDivider(),
                         ProfileTitle(
-                          title: '연령',
+                          title: localization.age,
                           required: false,
                           text: '',
                           onTap: () {},
@@ -684,7 +684,7 @@ class _JobpostingRecruitConditionWidgetState
                                     },
                                     groupValue: isCanApplyAnyAge,
                                     value: true,
-                                    label: '연령 무관',
+                                    label: localization.ageNotSpecified,
                                   ),
                                 ),
                                 SizedBox(
@@ -699,7 +699,7 @@ class _JobpostingRecruitConditionWidgetState
                                     },
                                     groupValue: isCanApplyAnyAge,
                                     value: false,
-                                    label: '직접 입력',
+                                    label: localization.manualInput,
                                   ),
                                 )
                               ],
@@ -724,7 +724,7 @@ class _JobpostingRecruitConditionWidgetState
                                       maxLength: 2,
                                       textAlign: TextAlign.center,
                                       decoration: suffixInput(
-                                        suffixText: '세 이상',
+                                        suffixText: localization.68,
                                         suffixColor: CommonColors.black2b,
                                         suffixSize: 14.sp,
                                         // hintText: ProfileMsgService.minAgeEnter,
@@ -763,7 +763,7 @@ class _JobpostingRecruitConditionWidgetState
                                       style: commonInputText(),
                                       maxLength: 2,
                                       decoration: suffixInput(
-                                        suffixText: '세 이하',
+                                        suffixText: localization.69,
                                         suffixColor: CommonColors.black2b,
                                         suffixSize: 14.sp,
                                         // hintText: ProfileMsgService.maxAgeEnter,
@@ -802,12 +802,12 @@ class _JobpostingRecruitConditionWidgetState
                           },
                           groupValue: isMiddleAgeHiring,
                           value: true,
-                          label: '중장년층 채용',
+                          label: localization.4,
                         ),
                         const SliverDivider(),
 
                         ProfileTitle(
-                          title: '학력',
+                          title: localization.educationLevel,
                           required: false,
                           text: '',
                           onTap: () {},
@@ -827,7 +827,7 @@ class _JobpostingRecruitConditionWidgetState
                                       .map((e) => e.schoolType)
                                       .join('')
                                   : '',
-                              hintText: '학력을 선택해주세요.',
+                              hintText: localization.70,
                             ),
                           ),
                         ),
@@ -839,12 +839,12 @@ class _JobpostingRecruitConditionWidgetState
                                 showEducationFinish();
                               },
                               text: selectedEducationStatus ?? '',
-                              hintText: '졸업 여부를 선택해 주세요.',
+                              hintText: localization.71,
                             ),
                           ),
                         ),
                         ProfileTitle(
-                          title: '경력',
+                          title: localization.experienced,
                           required: false,
                           text: '',
                           onTap: () {},
@@ -921,7 +921,7 @@ class _JobpostingRecruitConditionWidgetState
                                       maxLength: 2,
                                       textAlign: TextAlign.center,
                                       decoration: suffixInput(
-                                        suffixText: '년 이상',
+                                        suffixText: localization.72,
                                         suffixColor: CommonColors.black2b,
                                         suffixSize: 14.sp,
                                         hintText:
@@ -953,7 +953,7 @@ class _JobpostingRecruitConditionWidgetState
                                       maxLength: 2,
                                       textAlign: TextAlign.center,
                                       decoration: suffixInput(
-                                        suffixText: '년 이하',
+                                        suffixText: localization.73,
                                         suffixColor: CommonColors.black2b,
                                         suffixSize: 14.sp,
                                         hintText:
@@ -993,7 +993,7 @@ class _JobpostingRecruitConditionWidgetState
 
                         //TODO : 우대 조건
                         ProfileTitle(
-                          title: '우대조건',
+                          title: localization.preferredQualifications,
                           required: false,
                           text: '',
                           onTap: () {},
@@ -1049,7 +1049,7 @@ class _JobpostingRecruitConditionWidgetState
                                       width: 6.w,
                                     ),
                                     Text(
-                                      '우대조건 추가하기',
+                                      localization.75,
                                       style: TextStyle(
                                         fontSize: 14.sp,
                                         color: CommonColors.red,
@@ -1064,7 +1064,7 @@ class _JobpostingRecruitConditionWidgetState
                         ),
                         const SliverDivider(),
                         ProfileTitle(
-                          title: '지원자격',
+                          title: localization.applicationQualifications,
                           required: true,
                           text: '',
                           onTap: () {},
@@ -1139,7 +1139,7 @@ class _JobpostingRecruitConditionWidgetState
                   }
                 },
                 confirm: confirm(),
-                text: '입력하기',
+                text: localization.32,
                 width: CommonSize.vw,
               ),
             ),

@@ -24,7 +24,7 @@ class RecruiterBlockJobpostingBottomsheet extends StatelessWidget {
                   color: Colors.white, // 배경색
                   alignment: Alignment.centerLeft, // 정렬
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  child: const Text('사업자 인증을 받지 않으셨네요!'),
+                  child: const Text(localization.547),
                 ),
                 TextButton(
                   style: TextButton.styleFrom(
@@ -51,8 +51,8 @@ class RecruiterBlockJobpostingBottomsheet extends StatelessWidget {
         const SliverToBoxAdapter(
           child: Column(
             children: [
-              Text('직업안정법 개정으로 모집공고를 등록하려면'),
-              Text('사업자 인증이 꼭 필요해요!'),
+              Text(localization.548),
+              Text(localization.549),
             ],
           ),
         ),
@@ -65,7 +65,7 @@ class RecruiterBlockJobpostingBottomsheet extends StatelessWidget {
                     context.pop();
                   },
                   confirm: true,
-                  text: '나중에하기',
+                  text: localization.550,
                   width: CommonSize.vw / 2,
                 ),
                 CommonButton(
@@ -74,7 +74,7 @@ class RecruiterBlockJobpostingBottomsheet extends StatelessWidget {
                     context.pop();
                   },
                   confirm: true,
-                  text: '인증하러 가기',
+                  text: localization.551,
                   width: CommonSize.vw / 2,
                 ),
               ],

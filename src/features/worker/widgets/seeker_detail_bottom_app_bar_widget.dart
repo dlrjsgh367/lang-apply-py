@@ -94,10 +94,10 @@ class SeekerDetailBottomAppBarWidget extends StatelessWidget {
                                   savePageLog();
                                   generateDocument(profileData);
                                 } else {
-                                  showDefaultToast('대화가 시작 된 후 확인 가능합니다.');
+                                  showDefaultToast(localization.836);
                                 }
                               },
-                              text: '이력서 PDF',
+                              text: localization.837,
                             ),
                           ),
                         ),
@@ -113,7 +113,7 @@ class SeekerDetailBottomAppBarWidget extends StatelessWidget {
                                   chatRoomData,
                                   isMichinMatching);
                             },
-                            text: '대화하기',
+                            text: localization.838,
                           ),
                         ),
                       ],
@@ -160,7 +160,7 @@ class SeekerDetailBottomAppBarWidget extends StatelessWidget {
                                 ),
                                 SizedBox(width: 8.w),
                                 Text(
-                                  '관심인재',
+                                  localization.interestedTalents,
                                   style: TextStyle(
                                       fontSize: 15.sp,
                                       fontWeight: FontWeight.w500,
@@ -178,7 +178,7 @@ class SeekerDetailBottomAppBarWidget extends StatelessWidget {
                             onPressed: () {
                               showBottomSuggestJobposting(profileData.key);
                             },
-                            text: '일자리 제안하기',
+                            text: localization.344,
                           ),
                         ),
                       ],

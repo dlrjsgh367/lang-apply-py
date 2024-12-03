@@ -60,7 +60,7 @@ class _RecommendWorkerScreenState extends ConsumerState<RecommendWorkerScreen>
         workerList = result.data;
       }
     } else if (result.status != 200) {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -133,7 +133,7 @@ class _RecommendWorkerScreenState extends ConsumerState<RecommendWorkerScreen>
       appBar: RedAppbar(
         setTab: setTab,
         activeTab: activeTab,
-        tabTitleArr: const ['AI 추천 인재'],
+        tabTitleArr: const [localization.780],
       ),
       bottomNavigationBar: const CommonBottomAppbar(
         type: 'recommend',
@@ -147,7 +147,7 @@ class _RecommendWorkerScreenState extends ConsumerState<RecommendWorkerScreen>
                         currentPosition: currentPosition),
                   ],
                 )
-              : const CommonEmpty(text: '추천인재가 없습니다.')
+              : const CommonEmpty(text: localization.781)
           : const Loader(),
     );
   }

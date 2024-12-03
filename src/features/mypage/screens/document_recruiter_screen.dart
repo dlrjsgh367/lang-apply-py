@@ -129,9 +129,9 @@ class _DocumentRecruiterScreenState extends ConsumerState<DocumentRecruiterScree
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertTitle: '알림',
-            alertContent: '해당 계약을 한 대화방이 없습니다.',
-            alertConfirm: '확인',
+            alertTitle: localization.notification,
+            alertContent: localization.215,
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop(context);
             },
@@ -248,7 +248,7 @@ class _DocumentRecruiterScreenState extends ConsumerState<DocumentRecruiterScree
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CommonAppbar(
-        title: '계약서/사직서',
+        title: localization.210,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -257,7 +257,7 @@ class _DocumentRecruiterScreenState extends ConsumerState<DocumentRecruiterScree
             child: CommonTab(
               setTab: setTab,
               activeTab: activeTab,
-              tabTitleArr: const ['계약서', '사직서'],
+              tabTitleArr: const [localization.211, localization.212],
             ),
           ),
           if (activeTab == 0)
@@ -334,7 +334,7 @@ class _DocumentRecruiterScreenState extends ConsumerState<DocumentRecruiterScree
                 : Container(
                 width: CommonSize.vw,
                 height: (CommonSize.vh - CommonSize.commonBottom - 12.w)/ 3,
-                child: const CommonEmpty(text: '작성된 계약서가 없습니다.'))
+                child: const CommonEmpty(text: localization.213))
                 : SizedBox(
                 width: CommonSize.vw,
                 height: (CommonSize.vh - CommonSize.commonBottom - 12.w)/ 3,
@@ -413,7 +413,7 @@ class _DocumentRecruiterScreenState extends ConsumerState<DocumentRecruiterScree
                 : SizedBox(
                 width: CommonSize.vw,
                 height: CommonSize.vw / 3,
-                child: const CommonEmpty(text: '작성된 사직서가 없습니다.'))
+                child: const CommonEmpty(text: localization.214))
             : SizedBox(
                 width: CommonSize.vw,
                 height: CommonSize.vh,

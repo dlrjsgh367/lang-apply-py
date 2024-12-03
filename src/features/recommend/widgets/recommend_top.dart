@@ -448,7 +448,7 @@ class _RecommendTopState extends State<RecommendTop> {
                 Column(
                   children: [
                     Text(
-                      'AI 매칭',
+                      localization.667,
                       style: TextStyle(
                         fontSize: 11.sp,
                         color: CommonColors.red,

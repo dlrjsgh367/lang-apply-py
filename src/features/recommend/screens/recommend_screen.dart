@@ -142,20 +142,20 @@ class _RecommendScreenState extends ConsumerState<RecommendScreen>
     if (result.status == 200) {
       if (result.type == 1) {
         setState(() {
-          String msg = type == 'add' ? '공고를 스크랩했어요!' : '스크랩 목록에서 삭제했어요!';
+          String msg = type == 'add' ? localization.scrapedPost : localization.removedFromScrapedList;
           showScrapToast(msg, type);
           getUserClipAnnouncementList();
         });
       } else {
         setState(() {
           String msg =
-              type == 'add' ? '공고 스크랩에 실패하였습니다.' : '공고 스크랩 삭제에 실패하였습니다.';
+              type == 'add' ? localization.failedToScrapePost : localization.632;
           showScrapToast(msg, type);
         });
       }
     } else {
       setState(() {
-        String msg = type == 'add' ? '공고 스크랩에 실패하였습니다.' : '공고 스크랩 삭제에 실패하였습니다.';
+        String msg = type == 'add' ? localization.failedToScrapePost : localization.632;
         showScrapToast(msg, type);
       });
     }
@@ -165,7 +165,7 @@ class _RecommendScreenState extends ConsumerState<RecommendScreen>
     await getProfileList();
 
     if (userProfileList.isEmpty) {
-      showDefaultToast('프로필을 완성한 후에 지원해주세요!');
+      showDefaultToast(localization.633);
     } else {
       showModalBottomSheet(
           context: context,
@@ -213,7 +213,7 @@ class _RecommendScreenState extends ConsumerState<RecommendScreen>
 
   applyJobposting(int idx, int mpIdx) async {
     if (mpIdx == 0) {
-      showApplyToast('공고지원에 실패하였습니다.', 'delete');
+      showApplyToast(localization.634, 'delete');
       return null;
     }
     Map<String, dynamic> params = {"mpIdx": mpIdx, "jpIdx": idx};
@@ -225,11 +225,11 @@ class _RecommendScreenState extends ConsumerState<RecommendScreen>
       if (result.type == 1) {
         getApplyOrProposedJobpostKey();
         setState(() {
-          showApplyToast('공고에 지원하였습니다.', 'add');
+          showApplyToast(localization.635, 'add');
         });
       }
     } else {
-      showApplyToast('공고지원에 실패하였습니다.', 'delete');
+      showApplyToast(localization.634, 'delete');
     }
   }
 
@@ -246,7 +246,7 @@ class _RecommendScreenState extends ConsumerState<RecommendScreen>
             appBar: RedAppbar(
               setTab: setTab,
               activeTab: activeTab,
-              tabTitleArr: const ['추천 알바', '테마별 찾기'],
+              tabTitleArr: const [localization.636, localization.637],
             ),
             bottomNavigationBar: CommonBottomAppbar(
               type: 'recommend',

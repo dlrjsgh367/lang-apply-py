@@ -120,7 +120,7 @@ class _TutorialModalWidgetState extends ConsumerState<TutorialModalWidget> {
                     context.pop();
                   },
                   width: 96.w,
-                  text: '내일 다시 하기',
+                  text: localization.778,
                   fontSize: 13.sp,
                 ),
                 SizedBox(
@@ -136,7 +136,7 @@ class _TutorialModalWidgetState extends ConsumerState<TutorialModalWidget> {
                         context.push('/tutorial/recruiter/${widget.idx}');
                       }
                     },
-                    text: '시작하기',
+                    text: localization.779,
                     fontSize: 15,
                     confirm: true,
                   ),

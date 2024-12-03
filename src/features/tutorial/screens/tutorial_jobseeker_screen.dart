@@ -69,16 +69,16 @@ class _TutorialJobSeekerScreenState
   };
 
   List<String> titleList = [
-    '프로필 사진',
-    '희망 근무 지역',
-    '희망 직종',
-    '희망 근무 스케줄',
-    '희망 근무 조건',
-    '학력',
-    '경력',
-    '자기소개',
-    '첨부',
-    '프로필 제목',
+    localization.749,
+    localization.292,
+    localization.294,
+    localization.296,
+    localization.297,
+    localization.educationLevel,
+    localization.experienced,
+    localization.300,
+    localization.302,
+    localization.291,
   ];
 
   Map<String, dynamic> profilePhotoData = {
@@ -198,12 +198,12 @@ class _TutorialJobSeekerScreenState
           context: context,
           builder: (BuildContext context) {
             return AlertConfirmDialog(
-              alertContent: '파일 업로드에 실패했습니다. 다시 시도해 주세요.',
-              alertConfirm: '확인',
+              alertContent: localization.fileUploadFailedRetry,
+              alertConfirm: localization.confirm,
               confirmFunc: () {
                 context.pop();
               },
-              alertTitle: '알림',
+              alertTitle: localization.notification,
             );
           },
         );

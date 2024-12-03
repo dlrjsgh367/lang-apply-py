@@ -76,10 +76,10 @@ class _SettingSeekerScreenState extends ConsumerState<SettingSeekerScreen> {
       barrierColor: CommonColors.barrier,
       builder: (BuildContext context) {
         return AlertTwoButtonDialog(
-          alertTitle: '앱 로그아웃',
-          alertContent: '로그아웃 시 이 계정에 대한 모든 알림을 받을 수 없어요.',
-          alertConfirm: '로그아웃',
-          alertCancel: '취소',
+          alertTitle: localization.404,
+          alertContent: localization.405,
+          alertConfirm: localization.406,
+          alertCancel: localization.cancel,
           onConfirm: () {
             logout(ref, context);
             context.pop();
@@ -120,15 +120,15 @@ class _SettingSeekerScreenState extends ConsumerState<SettingSeekerScreen> {
                     physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     slivers: [
-                      TitleMenu(title: '정보수정'),
+                      TitleMenu(title: localization.407),
                       BtnMenu(
-                        text: '구직상태 변경',
+                        text: localization.669,
                         tabFunc: () {
                           context.push('/setting/status');
                         },
                       ),
                       BtnMenu(
-                        text: '회원정보 수정',
+                        text: localization.409,
                         tabFunc: () {
                           context.push('/setting/member');
                         },
@@ -136,7 +136,7 @@ class _SettingSeekerScreenState extends ConsumerState<SettingSeekerScreen> {
                       if (userInfo!.loginType == 'email')
                       BtnMenu(
                         noBorder: true,
-                        text: '비밀번호 변경',
+                        text: localization.411,
                         tabFunc: () {
                           context.push('/setting/password');
                         },
@@ -166,9 +166,9 @@ class _SettingSeekerScreenState extends ConsumerState<SettingSeekerScreen> {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 slivers: [
-                  TitleMenu(title: '기타 설정'),
+                  TitleMenu(title: localization.412),
                   // BtnMenu(
-                  //   text: '실버벨',
+                  //   text: localization.715,
                   //   tabFunc: () {
                   //     context
                   //         .push('/setting/silver')
@@ -194,7 +194,7 @@ class _SettingSeekerScreenState extends ConsumerState<SettingSeekerScreen> {
                             children: [
                               Expanded(
                                 child: Text(
-                                  '글자확대 + 중장년테마관',
+                                  localization.670,
                                   style: TextStyle(
                                     color: CommonColors.gray66,
                                     fontSize: 15.sp,
@@ -218,14 +218,14 @@ class _SettingSeekerScreenState extends ConsumerState<SettingSeekerScreen> {
 
 
                   BtnMenu(
-                    text: '알림설정',
+                    text: localization.414,
                     tabFunc: () {
                       context.push('/setting/alarm');
                     },
                   ),
                   BtnMenu(
                     noBorder: true,
-                    text: '회원탈퇴',
+                    text: localization.415,
                     tabFunc: () {
                       context.push('/withdrawal');
                     },
@@ -246,7 +246,7 @@ class _SettingSeekerScreenState extends ConsumerState<SettingSeekerScreen> {
               onPressed: () {
                 showLogout();
               },
-              text: '로그아웃',
+              text: localization.406,
             ),
           ),
         ),

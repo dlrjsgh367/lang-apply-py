@@ -105,9 +105,9 @@ class _SetPasswordScreenState extends ConsumerState<SetPasswordScreen> {
       barrierDismissible: false,
       builder: (BuildContext context) {
         return AlertConfirmDialog(
-          alertTitle: '비밀번호 변경',
-          alertContent: '소셜 계정으로 로그인 한 경우, 비밀번호는 그 소셜 계정에서 변경 가능해요.',
-          alertConfirm: '확인',
+          alertTitle: localization.411,
+          alertContent: localization.708,
+          alertConfirm: localization.confirm,
           confirmFunc: () {
             context.pop();
             FocusManager.instance.primaryFocus?.unfocus();
@@ -161,7 +161,7 @@ class _SetPasswordScreenState extends ConsumerState<SetPasswordScreen> {
     if (result.status == 200) {
       setState(() {
         context.pop();
-        showDefaultToast('변경이 완료 되었어요!');
+        showDefaultToast(localization.709);
       });
     }
   }
@@ -194,12 +194,12 @@ class _SetPasswordScreenState extends ConsumerState<SetPasswordScreen> {
             },
             child: Scaffold(
               appBar: const CommonAppbar(
-                title: '비밀번호 변경',
+                title: localization.411,
               ),
               body: CustomScrollView(
                 slivers: [
                   const ProfileTitle(
-                    title: '현재 비밀번호',
+                    title: localization.710,
                     required: false,
                     hasArrow: false,
                     text: '',
@@ -285,7 +285,7 @@ class _SetPasswordScreenState extends ConsumerState<SetPasswordScreen> {
                     ),
                   ),
                   ProfileTitle(
-                    title: '새 비밀번호',
+                    title: localization.711,
                     required: false,
                     text: '',
                     onTap: () {},
@@ -304,7 +304,7 @@ class _SetPasswordScreenState extends ConsumerState<SetPasswordScreen> {
                         style: commonInputText(),
                         maxLength: null,
                         decoration: passwordInput(
-                          hintText: '영문/숫자/특수문자 포함 8~16자',
+                          hintText: localization.712,
                           isVisible: !newPasswordVisible,
                           hasClear: newPasswordController.text.isNotEmpty,
                           clearFunc: () {
@@ -351,7 +351,7 @@ class _SetPasswordScreenState extends ConsumerState<SetPasswordScreen> {
                         style: commonInputText(),
                         maxLength: null,
                         decoration: passwordInput(
-                          hintText: '비밀번호를 한번 더 입력해주세요.',
+                          hintText: localization.713,
                           isVisible: !newPasswordConfirmVisible,
                           hasClear:
                               newPasswordConfirmController.text.isNotEmpty,
@@ -478,7 +478,7 @@ class _SetPasswordScreenState extends ConsumerState<SetPasswordScreen> {
                 }
               },
               fontSize: 15,
-              text: '변경하기',
+              text: localization.714,
             ),
           ),
         ],

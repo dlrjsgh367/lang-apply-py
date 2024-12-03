@@ -1,8 +1,0 @@
-,Key,Description,en,ko,origin
-0,,,,희망 직종,"title: '희망 직종',"
-1,,,,내가 원하는 직종을 n5종까지 선택할 수 있어요!,"'내가 원하는 직종을\n5종까지 선택할 수 있어요!',"
-2,,,,희망하는 직종을 제안받을 수 있어요.,"'희망하는 직종을 제안받을 수 있어요.',"
-3,,,,직종,"DefineDialog.showJobBottom(context, '직종', jobList, addWorkJob, selectedJobList, maxLength, DefineEnum.job);"
-4,,,,희망 직종 설정하기,"'희망 직종 설정하기',"
-5,,,,선택된 희망 직종,"'선택된 희망 직종',"
-6,,,,입력하기,"text: '입력하기',"

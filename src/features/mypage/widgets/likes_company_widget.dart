@@ -76,7 +76,7 @@ class _LikesCompanyWidgetState extends ConsumerState<LikesCompanyWidget> {
                   Row(
                     children: [
                       Text(
-                        '진행중인 공고',
+                        localization.530,
                         style: TextStyle(
                             color: CommonColors.gray80, fontSize: 13.sp),
                       ),

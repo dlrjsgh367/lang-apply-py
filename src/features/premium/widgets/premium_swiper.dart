@@ -76,7 +76,7 @@ class _PremiumSwiperState extends State<PremiumSwiper> {
                       height: 12.w,
                     ),
                     Text(
-                      '초단 알바 프리미엄 서비스',
+                      localization.624,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontSize: 15.sp,
@@ -92,7 +92,7 @@ class _PremiumSwiperState extends State<PremiumSwiper> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        '내가 올린 채용 공고를',
+                        localization.625,
                         style: TextStyle(
                             fontSize: 14.sp,
                             fontWeight: FontWeight.w600,
@@ -112,7 +112,7 @@ class _PremiumSwiperState extends State<PremiumSwiper> {
                             width: 8.w,
                           ),
                           Text(
-                            '더 많은 구직자들에게 노출 하고 싶다면?',
+                            localization.626,
                             style: TextStyle(
                               fontSize: 14.sp,
                             ),
@@ -133,7 +133,7 @@ class _PremiumSwiperState extends State<PremiumSwiper> {
                             width: 8.w,
                           ),
                           Text(
-                            '올릴 시간도 없고 인재 검색할 시간도 없다면?',
+                            localization.627,
                             style: TextStyle(
                               fontSize: 14.sp,
                             ),
@@ -154,7 +154,7 @@ class _PremiumSwiperState extends State<PremiumSwiper> {
                             width: 8.w,
                           ),
                           Text(
-                            '한번에 모아서 보이고 싶다면?',
+                            localization.628,
                             style: TextStyle(
                               fontSize: 14.sp,
                             ),

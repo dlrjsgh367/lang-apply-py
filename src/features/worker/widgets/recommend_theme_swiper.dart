@@ -77,7 +77,7 @@ class _RecommendThemeSwiperState extends State<RecommendThemeSwiper> {
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
                                   Text(
-                                    '비빌디파크 스노우월드',
+                                    localization.820,
                                     overflow: TextOverflow.ellipsis,
                                     maxLines: 1,
                                     style: TextStyle(
@@ -121,7 +121,7 @@ class _RecommendThemeSwiperState extends State<RecommendThemeSwiper> {
                                     ),
                                     Expanded(
                                       child: Text(
-                                        '이천시 이천동',
+                                        localization.icheonSiIcheonDong,
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 1,
                                         style: TextStyle(
@@ -138,7 +138,7 @@ class _RecommendThemeSwiperState extends State<RecommendThemeSwiper> {
                                 child: Row(
                                   children: [
                                     Text(
-                                      '월급',
+                                      localization.monthlySalary,
                                       style: TextStyle(
                                         fontWeight: FontWeight.w500,
                                         color: CommonColors.gray80,
@@ -150,7 +150,7 @@ class _RecommendThemeSwiperState extends State<RecommendThemeSwiper> {
                                     ),
                                     Expanded(
                                       child: Text(
-                                        '3,120,000원',
+                                        localization.823,
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 1,
                                         style: TextStyle(
@@ -188,7 +188,7 @@ class _RecommendThemeSwiperState extends State<RecommendThemeSwiper> {
                         Column(
                           children: [
                             Text(
-                              '매칭',
+                              localization.665,
                               style: TextStyle(
                                 fontSize: 10.sp,
                                 color: CommonColors.red,

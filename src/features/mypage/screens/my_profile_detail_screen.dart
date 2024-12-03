@@ -61,7 +61,7 @@ class _MyProfileDetailScreenState extends ConsumerState<MyProfileDetailScreen>
       // enableDrag: false,
       builder: (BuildContext context) {
         return AttachmentBottomSheet(
-          title: '첨부파일',
+          title: localization.172,
           files: files,
           downloadFunc: downloadFile,
         );
@@ -133,7 +133,7 @@ class _MyProfileDetailScreenState extends ConsumerState<MyProfileDetailScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CommonAppbar(
-        title: '내 프로필 보기',
+        title: localization.310,
         actions: [
           AppbarButton(
               onPressed: () {

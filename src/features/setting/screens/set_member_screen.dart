@@ -260,7 +260,7 @@ class _SetMemberScreenState extends ConsumerState<SetMemberScreen> {
       if (result.status == 200) {
         setState(() {
           context.pop();
-          showDefaultToast('수정이 완료되었어요!');
+          showDefaultToast(localization.699);
         });
       }
     }
@@ -319,7 +319,7 @@ class _SetMemberScreenState extends ConsumerState<SetMemberScreen> {
           children: [
             Scaffold(
                 appBar: const CommonAppbar(
-                  title: '회원정보 수정',
+                  title: localization.409,
                 ),
                 body: isLoading
                     ? const Loader()
@@ -336,7 +336,7 @@ class _SetMemberScreenState extends ConsumerState<SetMemberScreen> {
                                 padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 0),
                                 sliver: SliverToBoxAdapter(
                                   child: ReadOnlyUserInfoWidget(
-                                    title: '계정 아이디',
+                                    title: localization.700,
                                     content: userInfo.id,
                                     hasIcon: true,
                                   ),
@@ -352,7 +352,7 @@ class _SetMemberScreenState extends ConsumerState<SetMemberScreen> {
                                 padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 0),
                                 sliver: SliverToBoxAdapter(
                                   child: ReadOnlyUserInfoWidget(
-                                    title: '이름',
+                                    title: localization.701,
                                     content: userInfo.name,
                                   ),
                                 ),
@@ -371,7 +371,7 @@ class _SetMemberScreenState extends ConsumerState<SetMemberScreen> {
                                     children: [
                                       Expanded(
                                         child: ReadOnlyUserInfoWidget(
-                                          title: '생년월일',
+                                          title: localization.231,
                                           content: userInfo.birth,
                                         ),
                                       ),
@@ -440,7 +440,7 @@ class _SetMemberScreenState extends ConsumerState<SetMemberScreen> {
                                     children: [
                                       SizedBox(height: 36.w),
                                       Text(
-                                        '휴대폰번호',
+                                        localization.702,
                                         style: commonTitleAuth(),
                                       ),
                                       SizedBox(height: 12.w),
@@ -508,7 +508,7 @@ class _SetMemberScreenState extends ConsumerState<SetMemberScreen> {
                                                       }
                                                     });
                                                   },
-                                                  text: '인증 요청',
+                                                  text: localization.703,
                                                 )
                                               : BorderButton(
                                                   width: 90.w,
@@ -524,13 +524,13 @@ class _SetMemberScreenState extends ConsumerState<SetMemberScreen> {
                                                       }
                                                     });
                                                   },
-                                                  text: '재전송',
+                                                  text: localization.704,
                                                 ),
                                           ),
                                         ],
                                       ),
                                       if (phoneNumberErrorMessage != '')
-                                        phoneNumberErrorMessage == '휴대폰 인증이 완료되었습니다.'
+                                        phoneNumberErrorMessage == localization.705
                                             ? Row(
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
@@ -548,7 +548,7 @@ class _SetMemberScreenState extends ConsumerState<SetMemberScreen> {
                                                   width: 4.w,
                                                 ),
                                                 Text(
-                                                  '휴대폰 인증이 완료되었습니다.',
+                                                  localization.705,
                                                   style: TextStyles.confirm,
                                                 ),
                                               ],
@@ -635,7 +635,7 @@ class _SetMemberScreenState extends ConsumerState<SetMemberScreen> {
                                                     checkValidatePhoneNumber();
                                                   });
                                                 },
-                                                text: '인증',
+                                                text: localization.verify,
                                               ),
                                             ),
                                           ],
@@ -672,7 +672,7 @@ class _SetMemberScreenState extends ConsumerState<SetMemberScreen> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        '주소',
+                                        localization.address,
                                         style: commonTitleAuth(),
                                       ),
                                       SizedBox(height: 20.w),
@@ -760,7 +760,7 @@ class _SetMemberScreenState extends ConsumerState<SetMemberScreen> {
                                             child: CommonButton(
                                               confirm: true,
                                               onPressed: showPost,
-                                              text: '주소 검색',
+                                              text: localization.707,
                                             ),
                                           ),*/
                                         ],
@@ -788,7 +788,7 @@ class _SetMemberScreenState extends ConsumerState<SetMemberScreen> {
                       AuthService.phoneNumberEditUpdate(phoneNumberController.text) != userInfo.phoneNumber
                       && !isCertificationCodeSent) && !phoneNumberMatchRegex &&
                       phoneNumberController
-                          .text.isNotEmpty && phoneNumberErrorMessage.isEmpty || phoneNumberErrorMessage == '휴대폰 인증이 완료되었습니다.'),
+                          .text.isNotEmpty && phoneNumberErrorMessage.isEmpty || phoneNumberErrorMessage == localization.705),
                   onPressed: () {
                     if ((userData['meHp'].isNotEmpty &&
                             userData['meSex'] != 0 &&
@@ -799,12 +799,12 @@ class _SetMemberScreenState extends ConsumerState<SetMemberScreen> {
                         AuthService.phoneNumberEditUpdate(phoneNumberController.text) != userInfo.phoneNumber
                         && !isCertificationCodeSent) && !phoneNumberMatchRegex &&
                         phoneNumberController
-                            .text.isNotEmpty && (phoneNumberErrorMessage.isEmpty || phoneNumberErrorMessage == '휴대폰 인증이 완료되었습니다.') && !isConfirmLoading) {
+                            .text.isNotEmpty && (phoneNumberErrorMessage.isEmpty || phoneNumberErrorMessage == localization.705) && !isConfirmLoading) {
                       updateUserInfo();
                     }
                   },
                   fontSize: 15,
-                  text: '수정하기',
+                  text: localization.edit,
                 ),
               ),
           ],

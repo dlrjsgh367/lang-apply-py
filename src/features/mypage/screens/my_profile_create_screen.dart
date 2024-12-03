@@ -147,7 +147,7 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
 
         if (mounted) {
           context.pop();
-          showDefaultToast('프로필 등록이 완료 되었어요!');
+          showDefaultToast(localization.283);
         }
       });
     } else {
@@ -156,12 +156,12 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
           context: context,
           builder: (BuildContext context) {
             return AlertConfirmDialog(
-              alertContent: '파일 업로드에 실패했습니다. 다시 시도해 주세요.',
-              alertConfirm: '확인',
+              alertContent: localization.fileUploadFailedRetry,
+              alertConfirm: localization.confirm,
               confirmFunc: () {
                 context.pop();
               },
-              alertTitle: '알림',
+              alertTitle: localization.notification,
             );
           },
         );
@@ -374,7 +374,7 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
     } else if (rightString.isNotEmpty) {
       result = rightString;
     } else {
-      result = '상세히 입력할수록, 제안 받을 확률이 높아져요!';
+      result = localization.284;
     }
     return result;
   }
@@ -395,10 +395,10 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
       context: context,
       builder: (BuildContext context) {
         return AlertTwoButtonDialog(
-          alertTitle: '작성 취소',
+          alertTitle: localization.cancelWriting,
           alertContent: '페이지를 이동하시겠어요?\n이동 시 작성된 내용은 저장되지 않아요.',
-          alertConfirm: '확인',
-          alertCancel: '취소',
+          alertConfirm: localization.confirm,
+          alertCancel: localization.cancel,
           onConfirm: () {
             Navigator.of(context).pop();
             Navigator.of(context).pop();
@@ -416,10 +416,10 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
         context: context,
         builder: (BuildContext context) {
           return AlertTwoButtonDialog(
-            alertTitle: '대표 프로필 변경',
+            alertTitle: localization.285,
             alertContent: '대표 프로필은 1개만 설정 가능해요.\n기존 대표 프로필을 현재 프로필로 변경 하시겠어요?',
-            alertConfirm: '변경',
-            alertCancel: '취소',
+            alertConfirm: localization.287,
+            alertCancel: localization.cancel,
             onConfirm: () {
               context.pop(context);
               createProfile();
@@ -505,7 +505,7 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
       } else {
         if (mounted) {
           context.pop();
-          showDefaultToast('프로필 등록이 완료 되었어요!');
+          showDefaultToast(localization.283);
         }
       }
     } else {
@@ -515,11 +515,11 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
 
       if (mounted) {
         if (result.status == 401) {
-          showDefaultToast('금칙어가 감지되었어요.');
+          showDefaultToast(localization.78);
         } else if (result.status == 412) {
-          showDefaultToast('최대 프로필 등록 개수를 초과했습니다.');
+          showDefaultToast(localization.288);
         } else {
-          showDefaultToast('프로필 등록에 실패하였어요. 다시 시도해주세요.');
+          showDefaultToast(localization.289);
         }
       }
     }
@@ -548,7 +548,7 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
         },
         child: Scaffold(
           appBar: CommonAppbar(
-            title: '신규 프로필 등록',
+            title: localization.290,
             backFunc: () {
               showCancelDialog();
             },
@@ -612,17 +612,17 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
                     ),
                     ProfileListTitleWidget(
                       onTap: () => showProfileTitleSelection(context),
-                      title: '프로필 제목',
+                      title: localization.291,
                       data: profileData,
                       required: true,
                     ),
                     ProfileListItemWidget(
                       isRequire: true,
                       onTap: () => showWorkAreaAlert(),
-                      title: '희망 근무 지역',
+                      title: localization.292,
                       content: selectedAreaList.isNotEmpty
                           ? null
-                          : '희망 지역에서 제안을 받거나 공고를 찾아볼 수 있어요!',
+                          : localization.293,
                     ),
                     if (selectedAreaList.isNotEmpty)
                       SliverPadding(
@@ -642,10 +642,10 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
                     ProfileListItemWidget(
                       isRequire: true,
                       onTap: () => showJobAlert(),
-                      title: '희망 직종',
+                      title: localization.294,
                       content: selectedJobList.isNotEmpty
                           ? null
-                          : '희망하는 직종을 제안 받을 수 있어요!',
+                          : localization.295,
                     ),
                     if (selectedJobList.isNotEmpty)
                       SliverPadding(
@@ -666,12 +666,12 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
                       ),
                     ProfileListItemWidget(
                       onTap: () => showWorkScheduleAlert(),
-                      title: '희망 근무 스케줄',
+                      title: localization.296,
                       isRequire: true,
                       content: profileData['wdIdx'].isNotEmpty ||
                               profileData['whIdx'].isNotEmpty
                           ? null
-                          : '상세히 입력할수록, 제안 받을 확률이 높아져요!',
+                          : localization.284,
                     ),
                     if (profileData['wdIdx'].isNotEmpty ||
                         profileData['whIdx'].isNotEmpty)
@@ -716,12 +716,12 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
                       ),
                     ProfileListItemWidget(
                       onTap: () => showWorkConditionAlert(),
-                      title: '희망 근무 조건',
+                      title: localization.297,
                       isRequire: true,
                       content: profileData['wtIdx'].isNotEmpty ||
                               profileData['wpIdx'].isNotEmpty
                           ? null
-                          : '상세히 입력할수록, 제안 받을 확률이 높아져요!',
+                          : localization.284,
                     ),
                     if (profileData['wtIdx'].isNotEmpty ||
                         profileData['wpIdx'].isNotEmpty)
@@ -769,10 +769,10 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
                     ProfileListItemWidget(
                       isRequire: true,
                       onTap: () => showEducationAlert(),
-                      title: '학력',
+                      title: localization.educationLevel,
                       content: profileData['educationList'].isNotEmpty
                           ? null
-                          : '학력을 요구하는 업무지원에 훨씬 유리해요!',
+                          : localization.298,
                     ),
                     if (profileData['educationList'].isNotEmpty)
                       SliverPadding(
@@ -845,10 +845,10 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
                       ),
                     ProfileListItemWidget(
                       onTap: () => showCareerAlert(),
-                      title: '경력',
+                      title: localization.experienced,
                       content: profileData['careerList'].isNotEmpty
                           ? null
-                          : '경력을 요구하는 업무 지원에 훨씬 유리해요!',
+                          : localization.299,
                     ),
                     if (profileData['careerList'].isNotEmpty)
                       SliverPadding(
@@ -881,7 +881,7 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
                     ProfileListItemWidget(
                       isRequire: true,
                       onTap: () => showAboutMeAlert(),
-                      title: '자기소개',
+                      title: localization.300,
                       // isAboutMe: profileData['mpIntroduce'].isNotEmpty ||
                       //     profileData['keyword'].isNotEmpty,
                       // data: profileData,
@@ -889,7 +889,7 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
                       content: profileData['mpIntroduce'].isNotEmpty ||
                               keywordStringData['keywordName'].isNotEmpty
                           ? null
-                          : '자신만의 특별한 강점을 어필해보세요!',
+                          : localization.301,
                     ),
                     if (profileData['mpIntroduce'].isNotEmpty)
                       SliverPadding(
@@ -952,11 +952,11 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
                       ),
                     ProfileListItemWidget(
                       onTap: () => showFileAlert(),
-                      title: '첨부',
+                      title: localization.302,
                       content: fileData['file'] != null &&
                               fileData['file'].length > 0
                           ? null
-                          : '사진, 자격증, 포트폴리오 등으로 내 자신을 PR 해요!',
+                          : localization.303,
                     ),
                     if (fileData['file'] != null && fileData['file'].length > 0)
                       SliverPadding(
@@ -1013,7 +1013,7 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
                       child: Padding(
                         padding: EdgeInsets.fromLTRB(20.w, 16.w, 20.w, 16.w),
                         child: Text(
-                          '일자리 제안 받기',
+                          localization.304,
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                             color: CommonColors.black2b,
@@ -1034,7 +1034,7 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
                           groupValue: true,
                           value: profileData['mpGetOffer'] == 1 &&
                               profileData['mpOfferScope'] == 1,
-                          label: '전체 업무 제안 받음',
+                          label: localization.305,
                         ),
                       ),
                     ),
@@ -1051,7 +1051,7 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
                           groupValue: true,
                           value: profileData['mpGetOffer'] == 1 &&
                               profileData['mpOfferScope'] == 2,
-                          label: '희망 업무만 제안 받음',
+                          label: localization.306,
                         ),
                       ),
                     ),
@@ -1067,7 +1067,7 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
                           },
                           groupValue: true,
                           value: profileData['mpGetOffer'] == 0,
-                          label: '제안 받지 않음',
+                          label: localization.307,
                         ),
                       ),
                     ),
@@ -1114,7 +1114,7 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
                                   ),
                                   Expanded(
                                     child: Text(
-                                      '작성한 프로필을 대표 프로필로 설정하기',
+                                      localization.308,
                                       style: TextStyle(
                                         color: isBasicProfile
                                             ? CommonColors.red
@@ -1165,7 +1165,7 @@ class _MyProfileCreateScreenState extends ConsumerState<MyProfileCreateScreen>
                               }
                             }
                           },
-                          text: '등록하기',
+                          text: localization.register,
                         ),
                       ),
                     ),

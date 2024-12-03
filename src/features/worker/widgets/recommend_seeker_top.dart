@@ -460,7 +460,7 @@ class _RecommendSeekerTopState extends ConsumerState<RecommendSeekerTop> {
                             ),
                           ),
                           Text(
-                            '매칭',
+                            localization.665,
                             style: TextStyle(
                               fontSize: 11.sp,
                               color: CommonColors.red,

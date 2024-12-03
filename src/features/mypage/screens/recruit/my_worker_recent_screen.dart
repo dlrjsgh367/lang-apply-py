@@ -140,20 +140,20 @@ class _MyWorkerRecentScreenState extends ConsumerState<MyWorkerRecentScreen>
     isRunning = false;
     if (result.status == 200) {
       if (result.type == 1) {
-        showDefaultToast('제안이 완료 되었어요!');
+        showDefaultToast(localization.387);
       } else {
-        showDefaultToast('제안에 실패했습니다!');
+        showDefaultToast(localization.388);
       }
     } else if (result.status == 409) {
-      showDefaultToast('이미 제안하거나 지원받은 공고입니다.');
+      showDefaultToast(localization.389);
     } else if (result.status == 401) {
       if (result.type == -2504) {
-        showDefaultToast('일자리 제안을 받지 않는 회원입니다.');
+        showDefaultToast(localization.390);
       } else {
-        showDefaultToast('희망 직종의 일자리만 제안을 받은 회원입니다.');
+        showDefaultToast(localization.391);
       }
     } else if (result.status != 200) {
-      showDefaultToast('제안에 실패했습니다!');
+      showDefaultToast(localization.388);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -226,7 +226,7 @@ class _MyWorkerRecentScreenState extends ConsumerState<MyWorkerRecentScreen>
         likeAfterLikesFunc(idx);
       }
     } else {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     }
   }
 
@@ -240,7 +240,7 @@ class _MyWorkerRecentScreenState extends ConsumerState<MyWorkerRecentScreen>
       }
     } else {
       if (result.type == -2801) {
-        showDefaultToast('이미 등록된 관심 기업입니다.');
+        showDefaultToast(localization.alreadySavedAsInterestedCompany);
       }
     }
   }
@@ -249,10 +249,10 @@ class _MyWorkerRecentScreenState extends ConsumerState<MyWorkerRecentScreen>
     List likeList = ref.read(workerLikesKeyListProvider);
     if (likeList.contains(key)) {
       likeList.remove(key);
-      showDefaultToast('관심인재에서 삭제했어요!');
+      showDefaultToast(localization.392);
     } else {
       likeList.add(key);
-      showDefaultToast('관심인재로 저장했어요!');
+      showDefaultToast(localization.393);
     }
     setState(() {
       ref
@@ -279,7 +279,7 @@ class _MyWorkerRecentScreenState extends ConsumerState<MyWorkerRecentScreen>
     List<int> matchedProfileKeyList = ref.watch(matchingKeyListProvider);
     return Scaffold(
         appBar: const CommonAppbar(
-          title: '최근 본 인재',
+          title: localization.359,
         ),
         body: Stack(
           alignment: Alignment.center,
@@ -486,7 +486,7 @@ class _MyWorkerRecentScreenState extends ConsumerState<MyWorkerRecentScreen>
                                                                   workerItem!
                                                                       .key);
                                                             },
-                                                            text: '일자리 제안하기',
+                                                            text: localization.344,
                                                           ),
                                                         ),
                                                         SizedBox(
@@ -531,7 +531,7 @@ class _MyWorkerRecentScreenState extends ConsumerState<MyWorkerRecentScreen>
                         onTap: () {
                           showBottomSuggestJobposting(1);
                         },
-                        child: CommonEmpty(text: '최근 본 인재가 없습니다.'))
+                        child: CommonEmpty(text: localization.394))
                 : const Loader(),
             if (isLazeLoading)
               Positioned(

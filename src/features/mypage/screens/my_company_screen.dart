@@ -161,7 +161,7 @@ class _MyCompanyScreenState extends ConsumerState<MyCompanyScreen>
         likeAfterHidesFunc(idx);
       }
     } else {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     }
   }
 
@@ -174,7 +174,7 @@ class _MyCompanyScreenState extends ConsumerState<MyCompanyScreen>
         likeAfterHidesFunc(mcIdx);
       }
     } else {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     }
   }
 
@@ -188,7 +188,7 @@ class _MyCompanyScreenState extends ConsumerState<MyCompanyScreen>
       }
     } else {
       if (result.type == -2801) {
-        showDefaultToast('이미 등록된 관심 기업입니다.');
+        showDefaultToast(localization.alreadySavedAsInterestedCompany);
       }
     }
   }
@@ -202,7 +202,7 @@ class _MyCompanyScreenState extends ConsumerState<MyCompanyScreen>
         likeAfterLikesFunc(idx);
       }
     } else {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     }
   }
 
@@ -236,10 +236,10 @@ class _MyCompanyScreenState extends ConsumerState<MyCompanyScreen>
     List<int> hideList = ref.read(companyHidesKeyListProvider);
     if (hideList.contains(key)) {
       hideList.remove(key);
-      showDefaultToast('차단기업에서 삭제했어요!');
+      showDefaultToast(localization.247);
     } else {
       hideList.add(key);
-      showDefaultToast('차단기업으로 저장했어요!');
+      showDefaultToast(localization.savedAsBlockedCompany);
     }
     setState(() {
       ref
@@ -252,10 +252,10 @@ class _MyCompanyScreenState extends ConsumerState<MyCompanyScreen>
     List likeList = ref.read(companyLikesKeyListProvider);
     if (likeList.contains(key)) {
       likeList.remove(key);
-      showDefaultToast('관심기업에서 삭제했어요!');
+      showDefaultToast(localization.removedFromInterestedCompanies);
     } else {
       likeList.add(key);
-      showDefaultToast('관심기업으로 저장했어요!');
+      showDefaultToast(localization.savedAsInterestedCompany);
     }
     setState(() {
       ref
@@ -285,7 +285,7 @@ class _MyCompanyScreenState extends ConsumerState<MyCompanyScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CommonAppbar(
-        title: '관심/차단기업',
+        title: localization.251,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -295,13 +295,13 @@ class _MyCompanyScreenState extends ConsumerState<MyCompanyScreen>
             child: CommonTab(
               setTab: setTab,
               activeTab: activeTab,
-              tabTitleArr: const ['관심기업', '차단기업'],
+              tabTitleArr: const [localization.interestedCompanies, localization.blockedCompanies],
             ),
           ),
           Expanded(
             child: companyList.isEmpty
                 ? CommonEmpty(
-                    text: activeTab == 0 ? '관심 기업이 없습니다.' : '차단 기업이 없습니다.')
+                    text: activeTab == 0 ? localization.252 : localization.253)
                 : Stack(
                     alignment: Alignment.center,
                     children: [

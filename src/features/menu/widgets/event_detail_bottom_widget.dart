@@ -63,7 +63,7 @@ class _EventDetailBottomWidgetState
                   onPressed: () {
                     null;
                   },
-                  text: '응모 완료',
+                  text: localization.184,
                   confirm: false,
                 )
               : CommonButton(
@@ -71,7 +71,7 @@ class _EventDetailBottomWidgetState
                   onPressed: () {
                     _handleApplyEvent();
                   },
-                  text: '응모하기',
+                  text: localization.apply,
                   confirm: true,
                 ),
         );
@@ -101,7 +101,7 @@ class _EventDetailBottomWidgetState
                     controller: widget.commentController,
                     style: commonInputText(),
                     cursorColor: CommonColors.black,
-                    decoration: commonInput(hintText: '댓글을 남겨보세요.'),
+                    decoration: commonInput(hintText: localization.186),
                     onEditingComplete: () {
                       if (widget.commentController.text.isNotEmpty) {
                         widget.applyEvent(

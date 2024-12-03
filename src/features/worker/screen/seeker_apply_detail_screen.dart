@@ -254,7 +254,7 @@ class SeekerApplyDetailScreenState
         profileData = result.data;
       }
     } else {
-      showError('프로필 오류', '프로필 정보를 가져오는데 실패하였습니다.');
+      showError(localization.782, localization.783);
     }
   }
 
@@ -265,7 +265,7 @@ class SeekerApplyDetailScreenState
           return AlertConfirmDialog(
             alertTitle: title,
             alertContent: content,
-            alertConfirm: '확인',
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop(context);
               context.pop(context);
@@ -296,7 +296,7 @@ class SeekerApplyDetailScreenState
         likeAfterLikesFunc(idx);
       }
     } else {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     }
   }
 
@@ -310,9 +310,9 @@ class SeekerApplyDetailScreenState
       }
     } else {
       if (result.type == -2801) {
-        showDefaultToast('이미 등록된 관심 기업입니다.');
+        showDefaultToast(localization.alreadySavedAsInterestedCompany);
       } else if (mounted) {
-        showDefaultToast('데이터 통신에 실패하였습니다.');
+        showDefaultToast(localization.dataCommunicationFailed);
       }
     }
   }
@@ -321,10 +321,10 @@ class SeekerApplyDetailScreenState
     List likeList = ref.read(workerLikesKeyListProvider);
     if (likeList.contains(key)) {
       likeList.remove(key);
-      showDefaultToast('관심인재에서 삭제했어요!');
+      showDefaultToast(localization.392);
     } else {
       likeList.add(key);
-      showDefaultToast('관심인재로 저장했어요!');
+      showDefaultToast(localization.393);
     }
     setState(() {
       ref
@@ -369,20 +369,20 @@ class SeekerApplyDetailScreenState
     isRunning = false;
     if (result.status == 200) {
       if (result.type == 1) {
-        showDefaultToast('제안이 완료 되었어요!');
+        showDefaultToast(localization.387);
       } else {
-        showDefaultToast('제안에 실패했습니다!');
+        showDefaultToast(localization.388);
       }
     } else if (result.status == 409) {
-      showDefaultToast('이미 제안하거나 지원받은 공고입니다.');
+      showDefaultToast(localization.389);
     } else if (result.status == 401) {
       if (result.type == -2504) {
-        showDefaultToast('일자리 제안을 받지 않는 회원입니다.');
+        showDefaultToast(localization.390);
       } else {
-        showDefaultToast('희망 직종의 일자리만 제안을 받은 회원입니다.');
+        showDefaultToast(localization.391);
       }
     } else if (result.status != 200) {
-      showDefaultToast('제안에 실패했습니다!');
+      showDefaultToast(localization.388);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -434,7 +434,7 @@ class SeekerApplyDetailScreenState
         applyData = result.data[0];
       });
     } else if (result.status != 200) {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -526,7 +526,7 @@ class SeekerApplyDetailScreenState
       // enableDrag: false,
       builder: (BuildContext context) {
         return WorkerEvaluateWidget(
-          title: '개인평가',
+          title: localization.personalEvaluation,
           evaluateData: data,
         );
       },
@@ -546,11 +546,11 @@ class SeekerApplyDetailScreenState
     }
     if (reportReason == null) {
       isRunning = false;
-      showDefaultToast('신고 사유를 선택해주세요!');
+      showDefaultToast(localization.130);
       return;
     } else if (reportReason?.key == 5 && reportDetail == '') {
       isRunning = false;
-      showDefaultToast('신고 사유를 입력해주세요!');
+      showDefaultToast(localization.enterReportReason);
       return;
     }
 
@@ -569,17 +569,17 @@ class SeekerApplyDetailScreenState
     isRunning = false;
     if (result.status == 200) {
       if (result.type == 1) {
-        showDefaultToast('신고가 완료되었어요!');
+        showDefaultToast(localization.reportSubmitted);
         if (mounted) {
           context.pop();
         }
       }
     } else if (result.status == 401) {
-      showDefaultToast('본인 프로필은 신고할 수 없습니다.');
+      showDefaultToast(localization.786);
     } else if (result.status == 409) {
-      showDefaultToast('동일한 프로필은 하루에 한 번만 신고 할 수 있습니다.');
+      showDefaultToast(localization.787);
     } else {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     }
   }
 
@@ -622,8 +622,8 @@ class SeekerApplyDetailScreenState
         return StatefulBuilder(
             builder: (BuildContext context, StateSetter bottomState) {
           return ReportBottomSheet(
-            title: '프로필 신고',
-            text: '프로필에 부적합한 내용 있는 경우 신고해주시면 관리자의 확인을 거쳐 신속하게 조치를 쥐하도 하겠습니다.',
+            title: localization.788,
+            text: localization.789,
             afterFunc: afterFunc != null
                 ? () {
                     afterFunc();
@@ -662,19 +662,19 @@ class SeekerApplyDetailScreenState
     ApiResultModel result =
         await ref.read(applyControllerProvider.notifier).createHide(key, 2);
     if (result.type == 1) {
-      showDefaultToast('차단인재로 저장했어요!');
+      showDefaultToast(localization.savedAsBlockedCandidate);
       context.pop();
     } else {
       showDialog(
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertContent: '차단에 실패하였습니다.',
-            alertConfirm: '확인',
+            alertContent: localization.blockFailure,
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop();
             },
-            alertTitle: '알림',
+            alertTitle: localization.notification,
           );
         },
       );
@@ -692,12 +692,12 @@ class SeekerApplyDetailScreenState
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertContent: '지원 거절에 실패하였습니다.',
-            alertConfirm: '확인',
+            alertContent: localization.applicationRejectionFailure,
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop();
             },
-            alertTitle: '알림',
+            alertTitle: localization.notification,
           );
         },
       );
@@ -741,7 +741,7 @@ class SeekerApplyDetailScreenState
                 height: 20.w,
               ),
               Text(
-                '매칭되었습니다!!',
+                localization.matchedSuccessfully,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18.sp,
@@ -770,7 +770,7 @@ class SeekerApplyDetailScreenState
                         onPressed: () {
                           context.pop();
                         },
-                        text: '닫기',
+                        text: localization.closed,
                         confirm: false,
                       ),
                     ),
@@ -783,7 +783,7 @@ class SeekerApplyDetailScreenState
                           context.pop();
                           context.push('/chat?tab=matching');
                         },
-                        text: '매칭목록이동',
+                        text: localization.goToMatchingList,
                         confirm: true,
                       ),
                     ),
@@ -799,12 +799,12 @@ class SeekerApplyDetailScreenState
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertContent: '지원 수락에 실패하였습니다.',
-            alertConfirm: '확인',
+            alertContent: localization.applicationAcceptanceFailure,
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop();
             },
-            alertTitle: '알림',
+            alertTitle: localization.notification,
           );
         },
       );
@@ -819,18 +819,18 @@ class SeekerApplyDetailScreenState
       getApplyOrProposedJobpostKey();
       context.pop(context);
       context.pop(context);
-      showDefaultToast('제안을 취소하였습니다.');
+      showDefaultToast(localization.proposalCancelled);
     } else {
       showDialog(
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertContent: '제안 취소에 실패하였습니다.',
-            alertConfirm: '확인',
+            alertContent: localization.proposalCancelFailed,
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop();
             },
-            alertTitle: '알림',
+            alertTitle: localization.notification,
           );
         },
       );
@@ -879,12 +879,12 @@ class SeekerApplyDetailScreenState
       setState(() {
         isPdfDownload = false;
       });
-      showDefaultToast('이력서가 저장되었습니다.');
+      showDefaultToast(localization.resumeSaved);
     } else {
       setState(() {
         isPdfDownload = false;
       });
-      showDefaultToast('이력서가 저장에 실패했습니다.');
+      showDefaultToast(localization.799);
     }
   }
 
@@ -896,7 +896,7 @@ class SeekerApplyDetailScreenState
       appBar: CommonAppbar(
         title: _showProfileTitle && !isLoading
             ? profileData!.profileTitle
-            : '인재정보',
+            : localization.candidateInformation,
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 10.0),

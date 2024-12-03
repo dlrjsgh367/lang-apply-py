@@ -88,7 +88,7 @@ class JobpostingPublishingWidget extends StatelessWidget {
                 SizedBox(
                   width: 60.w,
                   child: Text(
-                    '공고 종류',
+                    localization.jobPostType,
                     style: TextStyle(
                       fontSize: 13.sp,
                       color: CommonColors.gray80,
@@ -117,7 +117,7 @@ class JobpostingPublishingWidget extends StatelessWidget {
                 SizedBox(
                   width: 60.w,
                   child: Text(
-                    '적용상품',
+                    localization.appliedProduct,
                     style: TextStyle(
                       fontSize: 13.sp,
                       color: CommonColors.gray80,
@@ -148,7 +148,7 @@ class JobpostingPublishingWidget extends StatelessWidget {
                 SizedBox(
                   width: 60.w,
                   child: Text(
-                    '등록일',
+                    localization.registrationDate,
                     style: TextStyle(
                       fontSize: 13.sp,
                       color: CommonColors.gray80,

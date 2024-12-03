@@ -101,7 +101,7 @@ class _TutorialJobWidgetState extends ConsumerState<TutorialJobWidget> with Auto
                 padding: EdgeInsets.fromLTRB(20.w, 0.w, 20.w, 36.w),
                 sliver: SliverToBoxAdapter(
                   child: Text(
-                    '희망하는 직종을 제안받을 수 있어요.',
+                    localization.498,
                     style: TextStyle(
                       fontSize: 14.sp,
                       color: CommonColors.gray80,
@@ -115,7 +115,7 @@ class _TutorialJobWidgetState extends ConsumerState<TutorialJobWidget> with Auto
                 sliver: SliverToBoxAdapter(
                   child: GestureDetector(
                     onTap: () async {
-                      await DefineDialog.showJobBottom(context, '직종', jobList, addWorkJob, selectedJobList, maxLength, DefineEnum.job);
+                      await DefineDialog.showJobBottom(context, localization.jobCategory, jobList, addWorkJob, selectedJobList, maxLength, DefineEnum.job);
                     },
                     child: Container(
                       height: 48.w,
@@ -135,7 +135,7 @@ class _TutorialJobWidgetState extends ConsumerState<TutorialJobWidget> with Auto
                             width: 6.w,
                           ),
                           Text(
-                            '희망 직종 설정하기',
+                            localization.499,
                             style: TextStyle(
                               fontSize: 14.sp,
                               color: CommonColors.red,
@@ -154,7 +154,7 @@ class _TutorialJobWidgetState extends ConsumerState<TutorialJobWidget> with Auto
                   child: Row(
                     children: [
                       Text(
-                        '선택된 희망 직종',
+                        localization.500,
                         style: TextStyle(
                           fontSize: 14.sp,
                           color: CommonColors.gray80,
@@ -247,7 +247,7 @@ class _TutorialJobWidgetState extends ConsumerState<TutorialJobWidget> with Auto
                 onPressed: () {
                   widget.onPress();
                 },
-                text: '건너뛰기',
+                text: localization.755,
                 width: 96.w,
               ),
               SizedBox(
@@ -263,7 +263,7 @@ class _TutorialJobWidgetState extends ConsumerState<TutorialJobWidget> with Auto
                     }
 
                   },
-                  text: '다음',
+                  text: localization.next,
                   fontSize: 15,
                   confirm: selectedJobList.isNotEmpty,
                 ),

@@ -128,7 +128,7 @@ class _TutorialCareerWidgetState extends ConsumerState<TutorialCareerWidget> wit
                       children: [
                         Expanded(
                           child: Text(
-                            '자신의 경력을 보여주세요!',
+                            localization.533,
                             style: TextStyle(
                               fontSize: 20.sp,
                               color: CommonColors.black2b,
@@ -156,7 +156,7 @@ class _TutorialCareerWidgetState extends ConsumerState<TutorialCareerWidget> wit
                   padding: EdgeInsets.fromLTRB(20.w, 0.w, 20.w, 36.w),
                   sliver: SliverToBoxAdapter(
                     child: Text(
-                      '경력을 요구하는 업무 지원에 더욱 유리해요.',
+                      localization.534,
                       style: TextStyle(
                         fontSize: 14.sp,
                         color: CommonColors.gray80,
@@ -234,7 +234,7 @@ class _TutorialCareerWidgetState extends ConsumerState<TutorialCareerWidget> wit
                                 color: CommonColors.red),
                           ),
                           TextSpan(
-                            text: '개월',
+                            text: localization.98,
                             style: TextStyle(
                                 fontWeight: FontWeight.w500,
                                 color: CommonColors.black2b),
@@ -295,11 +295,11 @@ class _TutorialCareerWidgetState extends ConsumerState<TutorialCareerWidget> wit
                                             context: context,
                                             builder: (context) {
                                               return AlertTwoButtonDialog(
-                                                      alertTitle: '삭제',
+                                                      alertTitle: localization.delete,
                                                       alertContent:
-                                                      '경력을 삭제하시겠습니까?',
-                                                      alertConfirm: '확인',
-                                                      alertCancel: '취소',
+                                                      localization.537,
+                                                      alertConfirm: localization.confirm,
+                                                      alertCancel: localization.cancel,
                                                       onConfirm: () {
                                                         setState(() {
                                                           careerList.remove(careerData);
@@ -384,7 +384,7 @@ class _TutorialCareerWidgetState extends ConsumerState<TutorialCareerWidget> wit
                               width: 6.w,
                             ),
                             Text(
-                              '경력 추가하기',
+                              localization.538,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 color: career.value != 0
@@ -417,7 +417,7 @@ class _TutorialCareerWidgetState extends ConsumerState<TutorialCareerWidget> wit
                   onPressed: () {
                     widget.onPress();
                   },
-                  text: '건너뛰기',
+                  text: localization.755,
                   width: 96.w,
                 ),
                 SizedBox(
@@ -437,7 +437,7 @@ class _TutorialCareerWidgetState extends ConsumerState<TutorialCareerWidget> wit
                         widget.onPress();
                       }
                     },
-                    text: '다음',
+                    text: localization.next,
                     fontSize: 15,
                   ),
                 )

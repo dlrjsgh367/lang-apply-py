@@ -62,7 +62,7 @@ class _TutorialCompanyIntroduceWidgetState
                         ),
                         alignment: Alignment.center,
                         child: Text(
-                          '우리 기업의 상세 소개 및 자랑을 입력해주세요!',
+                          localization.767,
                           style: TextStyle(
                             color: CommonColors.red,
                             fontWeight: FontWeight.w700,
@@ -72,7 +72,7 @@ class _TutorialCompanyIntroduceWidgetState
                       ),
                       SizedBox(height: 20.w),
                       Text(
-                        '소개글',
+                        localization.companyIntroduction,
                         style: TextStyle(
                           fontWeight: FontWeight.w600,
                           fontSize: 16.sp,
@@ -95,7 +95,7 @@ class _TutorialCompanyIntroduceWidgetState
                               cursorColor: Colors.black,
                               controller: companyIntroduceController,
                               decoration: areaInput(
-                                hintText: '내용을 입력해주세요.',
+                                hintText: localization.enterContent,
                               ),
                               maxLength: 1000,
                               maxLines: 4,
@@ -143,7 +143,7 @@ class _TutorialCompanyIntroduceWidgetState
                 onPressed: () {
                   widget.onPress();
                 },
-                text: '건너뛰기',
+                text: localization.755,
                 width: 96.w,
               ),
               SizedBox(
@@ -157,7 +157,7 @@ class _TutorialCompanyIntroduceWidgetState
                       widget.onPress();
                     }
                   },
-                  text: '다음',
+                  text: localization.next,
                   fontSize: 15,
                   confirm: companyIntroduceController.text.isNotEmpty,
                 ),

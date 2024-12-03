@@ -92,7 +92,7 @@ class _SeekerViewerWidgetState extends ConsumerState<SeekerViewerWidget>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const ModalAppbar(
-        title: 'PDF 미리보기',
+        title: localization.839,
       ),
       body: isLoading
           ? const Loader()
@@ -207,7 +207,7 @@ class _SeekerViewerWidgetState extends ConsumerState<SeekerViewerWidget>
                                 onPressed: () {
                                   fileDownload(pdfUrl, fileName);
                                 },
-                                text: 'PDF 다운로드',
+                                text: localization.840,
                               ),
                             ),
                           ],

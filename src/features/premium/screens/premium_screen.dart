@@ -181,7 +181,7 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
           backgroundColor: Colors.transparent,
           appBar: const CommonAppbar(
             backColor: Colors.transparent,
-            title: '프리미엄 서비스',
+            title: localization.364,
           ),
           body: Stack(
             children: [
@@ -204,7 +204,7 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
                                   children: [
                                     Expanded(
                                       child: Text(
-                                        '서비스 목록',
+                                        localization.604,
                                         style: TextStyle(
                                             color: CommonColors.black2b,
                                             fontWeight: FontWeight.w600),
@@ -217,7 +217,7 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
                                       child: Row(
                                         children: [
                                           Text(
-                                            '나의 신청 내역',
+                                            localization.583,
                                             style: TextStyle(
                                                 fontSize: 14.sp,
                                                 color: CommonColors.gray66,
@@ -261,7 +261,7 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        '미친매칭',
+                                        localization.17,
                                         style: TextStyle(
                                           fontSize: 15.sp,
                                           fontWeight: FontWeight.w600,
@@ -288,14 +288,14 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
                                     height: 8.w,
                                   ),
                                   Text(
-                                    '채용공고 등록&인재검색 및 추천을 모두 대신 하는 미친듯 편한 인재 매칭!',
+                                    localization.605,
                                     style: TextStyle(
                                       fontSize: 13.sp,
                                       color: CommonColors.gray66,
                                     ),
                                   ),
                                   Text(
-                                    '이제 초저가로 HR컨설팅을 경험하세요.',
+                                    localization.606,
                                     style: TextStyle(
                                       fontSize: 13.sp,
                                       color: CommonColors.gray66,
@@ -314,7 +314,7 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
                                             showPremiumMatchSAlert();
                                           },
                                           height: 32,
-                                          text: '신청 바로가기',
+                                          text: localization.607,
                                           confirm: true)
                                     ],
                                   ),
@@ -345,7 +345,7 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        '지역별 상위 노출',
+                                        localization.19,
                                         style: TextStyle(
                                           fontSize: 15.sp,
                                           fontWeight: FontWeight.w600,
@@ -371,14 +371,14 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
                                     height: 8.w,
                                   ),
                                   Text(
-                                    '지역별 채용공고목록 상단에 회원님의 공고를 배치해서',
+                                    localization.608,
                                     style: TextStyle(
                                       fontSize: 13.sp,
                                       color: CommonColors.gray66,
                                     ),
                                   ),
                                   Text(
-                                    '더 많은 구직자에게 채용 공고를 노출하고 관심을 높이세요.',
+                                    localization.609,
                                     style: TextStyle(
                                       fontSize: 13.sp,
                                       color: CommonColors.gray66,
@@ -397,7 +397,7 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
                                             showPremiumAreaTopAlert();
                                           },
                                           height: 32,
-                                          text: '신청 바로가기',
+                                          text: localization.607,
                                           confirm: true)
                                     ],
                                   ),
@@ -428,7 +428,7 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        '브랜드 테마관',
+                                        localization.brandThemeSection,
                                         style: TextStyle(
                                           fontSize: 15.sp,
                                           fontWeight: FontWeight.w600,
@@ -454,14 +454,14 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
                                     height: 8.w,
                                   ),
                                   Text(
-                                    '앱 내 배너링크 제공! 기업정보 및 채용소식을 웹진처럼 제공하는 스페셜 채용관 페이지 생성!',
+                                    localization.611,
                                     style: TextStyle(
                                       fontSize: 13.sp,
                                       color: CommonColors.gray66,
                                     ),
                                   ),
                                   Text(
-                                    '지금 즉시 문의 주세요.',
+                                    localization.612,
                                     style: TextStyle(
                                       fontSize: 13.sp,
                                       color: CommonColors.gray66,
@@ -480,7 +480,7 @@ class _PremiumScreenState extends ConsumerState<PremiumScreen> {
                                             context.push('/my/theme/create');
                                           },
                                           height: 32,
-                                          text: '신청 바로가기',
+                                          text: localization.607,
                                           confirm: true)
                                     ],
                                   ),

@@ -79,7 +79,7 @@ class _MyConsultDetailScreenState extends ConsumerState<MyConsultDetailScreen>
         boardDetailData = result.data;
       });
     } else if (result.status != 200) {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -94,18 +94,18 @@ class _MyConsultDetailScreenState extends ConsumerState<MyConsultDetailScreen>
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertContent: '상담 삭제되었습니다.',
-            alertConfirm: '확인',
+            alertContent: localization.266,
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop();
               context.pop();
             },
-            alertTitle: '알림',
+            alertTitle: localization.notification,
           );
         },
       );
     } else if (result.status != 200) {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -117,10 +117,10 @@ class _MyConsultDetailScreenState extends ConsumerState<MyConsultDetailScreen>
       context: context,
       builder: (BuildContext context) {
         return AlertTwoButtonDialog(
-          alertTitle: '상담 삭제',
+          alertTitle: localization.267,
           alertContent: '작성하신 상담을 삭제하시겠습니까?\n삭제된 내역은 복구되지 않습니다.',
-          alertConfirm: '확인',
-          alertCancel: '취소',
+          alertConfirm: localization.confirm,
+          alertCancel: localization.cancel,
           onConfirm: () {
             deleteBoard();
             context.pop();
@@ -141,7 +141,7 @@ class _MyConsultDetailScreenState extends ConsumerState<MyConsultDetailScreen>
     UserModel? userInfo = ref.read(userProvider);
     return Scaffold(
       appBar: const CommonAppbar(
-        title: '상담 신청서',
+        title: localization.269,
       ),
       body: !isLoading
           ? Stack(
@@ -154,7 +154,7 @@ class _MyConsultDetailScreenState extends ConsumerState<MyConsultDetailScreen>
                         child: Row(
                           children: [
                             Text(
-                              '상담 제목',
+                              localization.194,
                               style: TextStyle(
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w600,
@@ -201,7 +201,7 @@ class _MyConsultDetailScreenState extends ConsumerState<MyConsultDetailScreen>
                         ),
                       ),
                     ),
-                    const TitleItem(title: '상담 내용'),
+                    const TitleItem(title: localization.195),
                     SliverPadding(
                       padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 16.w),
                       sliver: SliverToBoxAdapter(
@@ -226,7 +226,7 @@ class _MyConsultDetailScreenState extends ConsumerState<MyConsultDetailScreen>
                         ),
                       ),
                     ),
-                    const TitleItem(title: '첨부파일'),
+                    const TitleItem(title: localization.172),
                     SliverPadding(
                       padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 36.w),
                       sliver: SliverToBoxAdapter(
@@ -270,7 +270,7 @@ class _MyConsultDetailScreenState extends ConsumerState<MyConsultDetailScreen>
                         child: Row(
                           children: [
                             Text(
-                              '상담 답변',
+                              localization.270,
                               style: TextStyle(
                                   fontSize: 16.sp,
                                   fontWeight: FontWeight.w600,
@@ -307,7 +307,7 @@ class _MyConsultDetailScreenState extends ConsumerState<MyConsultDetailScreen>
                           child: Text(
                             boardDetailData.boStatus == "DONE"
                                 ? boardDetailData.relatedResList!.content
-                                : '등록된 답변이 없습니다.',
+                                : localization.197,
                             textAlign: boardDetailData.boStatus == "DONE"
                                 ? TextAlign.left
                                 : TextAlign.center,
@@ -322,7 +322,7 @@ class _MyConsultDetailScreenState extends ConsumerState<MyConsultDetailScreen>
                     if (boardDetailData.boStatus == "DONE" &&
                         boardDetailData.relatedResList != null &&
                         boardDetailData.relatedResList!.files.isNotEmpty)
-                      const TitleItem(title: '첨부파일'),
+                      const TitleItem(title: localization.172),
                     if (boardDetailData.boStatus == "DONE" &&
                         boardDetailData.relatedResList != null &&
                         boardDetailData.relatedResList!.files.isNotEmpty)
@@ -382,7 +382,7 @@ class _MyConsultDetailScreenState extends ConsumerState<MyConsultDetailScreen>
                                 onPressed: () {
                                   askDelete();
                                 },
-                                text: "삭제",
+                                text: localization.delete,
                               ),
                               SizedBox(
                                 width: 8.w,
@@ -398,7 +398,7 @@ class _MyConsultDetailScreenState extends ConsumerState<MyConsultDetailScreen>
                                               {getNoticeDetailData(widget.idx)},
                                         );
                                   },
-                                  text: "수정하기",
+                                  text: localization.edit,
                                   confirm: true,
                                 ),
                               ),
@@ -409,7 +409,7 @@ class _MyConsultDetailScreenState extends ConsumerState<MyConsultDetailScreen>
                             onPressed: () {
                               askDelete();
                             },
-                            text: '삭제하기',
+                            text: localization.272,
                             confirm: true),
                   ),
               ],

@@ -145,7 +145,7 @@ class _EducationAddModalWidgetState extends State<EducationAddModalWidget> {
         return EduLastBottomSheet(
           dataArr: widget.schoolTypes,
           initItem: selectedEducationTypeKey ?? 15245,
-          title: '학력',
+          title: localization.educationLevel,
         );
       },
     ).then((value) {
@@ -212,14 +212,14 @@ class _EducationAddModalWidgetState extends State<EducationAddModalWidget> {
           children: [
             Scaffold(
               appBar: const CommonAppbar(
-                title: '학력 추가',
+                title: localization.527,
               ),
               body: CustomScrollView(
                 slivers: [
                   ProfileTitle(
                     onTap: () {},
                     hasArrow: false,
-                    title: '학력',
+                    title: localization.educationLevel,
                     required: true,
                     text: '',
                   ),
@@ -237,7 +237,7 @@ class _EducationAddModalWidgetState extends State<EducationAddModalWidget> {
                                 .map((e) => e.schoolType)
                                 .join('')
                             : '',
-                        hintText: '학력을 선택해주세요.',
+                        hintText: localization.70,
                       ),
                     ),
 
@@ -245,7 +245,7 @@ class _EducationAddModalWidgetState extends State<EducationAddModalWidget> {
                     //   child: DropdownButton2(
                     //     isExpanded: true,
                     //     hint: Text(
-                    //       '선택',
+                    //       localization.choice,
                     //       style: TextStyle(
                     //         fontSize: 14,
                     //         color: Theme.of(context).hintColor,
@@ -300,20 +300,20 @@ class _EducationAddModalWidgetState extends State<EducationAddModalWidget> {
                           showEducationFinish();
                         },
                         text: selectedEducationStatus ?? '',
-                        hintText: '졸업 여부를 선택해 주세요.',
+                        hintText: localization.71,
                       ),
                     ),
                   ),
 
-                  if (selectedEducationStatus == '졸업')
+                  if (selectedEducationStatus == localization.427)
                     ProfileTitle(
                       onTap: () {},
                       hasArrow: false,
-                      title: '졸업 연월',
+                      title: localization.528,
                       required: false,
                       text: '',
                     ),
-                  if (selectedEducationStatus == '졸업')
+                  if (selectedEducationStatus == localization.427)
                     SliverPadding(
                       padding: EdgeInsets.fromLTRB(20.w, 0, 20.w, 16.w),
                       sliver: SliverToBoxAdapter(
@@ -333,7 +333,7 @@ class _EducationAddModalWidgetState extends State<EducationAddModalWidget> {
                   ProfileTitle(
                     onTap: () {},
                     hasArrow: false,
-                    title: '학교',
+                    title: localization.529,
                     required: false,
                     text: '',
                   ),
@@ -383,7 +383,7 @@ class _EducationAddModalWidgetState extends State<EducationAddModalWidget> {
                     onPressed: () {
                       context.pop();
                     },
-                    text: '닫기',
+                    text: localization.closed,
                     width: 96.w,
                   ),
                   SizedBox(
@@ -416,7 +416,7 @@ class _EducationAddModalWidgetState extends State<EducationAddModalWidget> {
                           }
                         }
                       },
-                      text: '추가하기',
+                      text: localization.520,
                     ),
                   ),
                 ],

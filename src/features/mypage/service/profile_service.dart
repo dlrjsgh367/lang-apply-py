@@ -16,9 +16,9 @@ class ProfileService {
   static String identifyGender(int genderNumber) {
     switch(genderNumber) {
       case 1:
-        return '여자';
+        return localization.female2;
       case 2:
-        return '남자';
+        return localization.male2;
       default:
         return '';
     }
@@ -46,56 +46,56 @@ class ProfileService {
   static String convertWorkDay(int workDay) {
     switch(workDay) {
       case 1:
-        return '월~금';
+        return localization.451;
       case 2:
-        return '월~토';
+        return localization.452;
       case 3:
-        return '월~일';
+        return localization.453;
       case 4:
-        return '주말';
+        return localization.454;
       case 5:
-        return '월~토(격주)';
+        return localization.455;
       case 6:
-        return '주 6일';
+        return localization.456;
       case 7:
-        return '주 5일';
+        return localization.457;
       case 8:
-        return '주 4일';
+        return localization.458;
       case 9:
-        return '주 3일';
+        return localization.459;
       case 10:
-        return '주 2일';
+        return localization.460;
       case 11:
-        return '주 1일';
+        return localization.461;
       case 12:
-        return '요일 협의';
+        return localization.462;
       default:
-        return '요일 협의';
+        return localization.462;
     }
   }
 
   static String convertWorkTime(int workTime) {
     switch(workTime) {
       case 1:
-        return '오전';
+        return localization.463;
       case 2:
-        return '오후';
+        return localization.464;
       case 3:
-        return '저녁';
+        return localization.465;
       case 4:
-        return '종일';
+        return localization.466;
       case 5:
-        return '새벽';
+        return localization.467;
       case 6:
-        return '오전~오후';
+        return localization.468;
       case 7:
-        return '오후~저녁';
+        return localization.469;
       case 8:
-        return '저녁~새벽';
+        return localization.470;
       case 9:
-        return '새벽~오전';
+        return localization.471;
       default:
-        return '시간 협의';
+        return localization.472;
     }
   }
 
@@ -103,42 +103,42 @@ class ProfileService {
   static String convertWorkType(int workType) { // 경력에서도 사용
     switch(workType) {
       case 1:
-        return '정규직';
+        return localization.473;
       case 2:
-        return '아르바이트';
+        return localization.474;
       case 3:
-        return '계약직';
+        return localization.475;
       case 4:
-        return '파견직';
+        return localization.476;
       case 5:
-        return '인턴직';
+        return localization.477;
       case 6:
-        return '프리랜서';
+        return localization.478;
       case 7:
-        return '기타';
+        return localization.others;
       default:
-        return '기타';
+        return localization.others;
     }
   }
 
   static String convertWorkPeriod(int workPeriod) {
     switch(workPeriod) {
       case 1:
-        return '하루(1일)';
+        return localization.480;
       case 2:
-        return '1주일 이하';
+        return localization.481;
       case 3:
-        return '1주일 ~ 1개월';
+        return localization.482;
       case 4:
-        return '1개월 ~ 3개월';
+        return localization.483;
       case 5:
-        return '3개월 ~ 6개월';
+        return localization.484;
       case 6:
-        return '6개월 ~ 1년';
+        return localization.485;
       case 7:
-        return '1년 이상';
+        return localization.486;
       default:
-        return '1년 이상';
+        return localization.486;
     }
   }
 
@@ -214,7 +214,7 @@ class ProfileService {
 
 
   static String totalMonthsToDurationString(int totalMonths) {
-    if (totalMonths == 0) return '0개월';
+    if (totalMonths == 0) return localization.487;
 
     int years = totalMonths ~/ 12;
     int months = totalMonths % 12;

@@ -52,7 +52,7 @@ class QnaList extends StatelessWidget {
                     width: 54.w,
                     height: 24.w,
                     child: Text(
-                      '답변완료',
+                      localization.198,
                       style: TextStyle(
                         fontSize: 12.sp,
                         color: CommonColors.red,
@@ -68,7 +68,7 @@ class QnaList extends StatelessWidget {
                     width: 70.w,
                     height: 24.w,
                     child: Text(
-                      '답변 대기중',
+                      localization.199,
                       style: TextStyle(
                         fontSize: 12.sp,
                         color: CommonColors.grayB2,

@@ -19,9 +19,9 @@ class PostingTag extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(
           width: 1.w,
-          color: type == '마감' || type == '반려' ?CommonColors.grayF2: CommonColors.red,
+          color: type == localization.closed || type == localization.declined ?CommonColors.grayF2: CommonColors.red,
         ),
-        color: type == '마감' || type == '반려' ?CommonColors.grayF2:  CommonColors.white,
+        color: type == localization.closed || type == localization.declined ?CommonColors.grayF2:  CommonColors.white,
         borderRadius: BorderRadius.circular(
           500.w,
         ),
@@ -30,7 +30,7 @@ class PostingTag extends StatelessWidget {
         type,
         style: TextStyle(
             fontSize: 12.sp,
-            color: type == '마감' || type == '반려' ?CommonColors.grayB2 : CommonColors.red,
+            color: type == localization.closed || type == localization.declined ?CommonColors.grayB2 : CommonColors.red,
             fontWeight: FontWeight.w500),
       ),
     );

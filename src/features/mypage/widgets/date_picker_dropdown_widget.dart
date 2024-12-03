@@ -77,7 +77,7 @@ class _DatePickerDropdownWidgetState extends State<DatePickerDropdownWidget> {
       useSafeArea: true,
       builder: (BuildContext context) {
         return DateSelectBottomSheet(
-          title: '연도 선택',
+          title: localization.525,
           dataArr: _yearList,
           initItem: selectedYear,
         );
@@ -110,7 +110,7 @@ class _DatePickerDropdownWidgetState extends State<DatePickerDropdownWidget> {
       useSafeArea: true,
       builder: (BuildContext context) {
         return DateSelectBottomSheet(
-          title: '월 선택',
+          title: localization.526,
           dataArr: _monthList,
           initItem: selectedMonth,
         );
@@ -138,7 +138,7 @@ class _DatePickerDropdownWidgetState extends State<DatePickerDropdownWidget> {
             showYear();
           },
           text: widget.isStart ? widget.workDateInfo!['startYear'] : widget.workDateInfo!['endYear'],
-          hintText: '연도 선택',
+          hintText: localization.525,
         )),
         SizedBox(
           width: 8.w,
@@ -149,7 +149,7 @@ class _DatePickerDropdownWidgetState extends State<DatePickerDropdownWidget> {
               showMonth();
             },
             text: widget.isStart ? widget.workDateInfo!['startMonth'] : widget.workDateInfo!['endMonth'],
-            hintText: '월 선택',
+            hintText: localization.526,
           ),
         ),
         if(widget.extraText != null)

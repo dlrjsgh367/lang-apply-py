@@ -24,7 +24,7 @@ spreadsheet_url = "https://docs.google.com/spreadsheets/d/1ZybrYhGOaH4OgzVJ1PDCJ
 spreadsheet = client.open_by_url(spreadsheet_url)
 
 # 특정 시트 선택
-sheet = spreadsheet.worksheet("시트1")
+sheet = spreadsheet.worksheet("시트3")
 
 
 def add_multiple_rows_to_sheet(rows: list):

@@ -95,9 +95,9 @@ class _SetAlarmRecruiterScreenState extends ConsumerState<SetAlarmRecruiterScree
   ];
 
   List marketingArr = [
-    {'title': '문자 수신', 'key': 'maMarketingSms', 'value': false, 'target': '휴대폰문자'},
-    {'title': '이메일 수신', 'key': 'maMarketingEmail', 'value': false, 'target': '이메일'},
-    {'title': '푸시 수신', 'key': 'maMarketingPush', 'value': false, 'target': '앱 푸시'},
+    {'title': localization.687, 'key': 'maMarketingSms', 'value': false, 'target': localization.688},
+    {'title': localization.689, 'key': 'maMarketingEmail', 'value': false, 'target': localization.email},
+    {'title': localization.691, 'key': 'maMarketingPush', 'value': false, 'target': localization.692},
     {'title': '야간 수신 동의 여부', 'key': 'maNightAlarm', 'value': false},
   ];
 
@@ -156,15 +156,15 @@ class _SetAlarmRecruiterScreenState extends ConsumerState<SetAlarmRecruiterScree
 
   showMarketingConfirmAlert(bool isAgree, String target) {
     DateTime now = DateTime.now();
-    String agreeString = isAgree ? '동의' : '거부';
+    String agreeString = isAgree ? localization.671 : localization.672;
 
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertConfirmDialog(
           alertTitle: '정보 수신 $agreeString 안내',
-          alertContent: '${DateFormat('yyyy년 MM월 dd일').format(now)}\n 마케팅 정보 수신 $agreeString($target) 처리되었어요.',
-          alertConfirm: '확인',
+          alertContent: '${DateFormat(localization.239).format(now)}\n 마케팅 정보 수신 $agreeString($target) 처리되었어요.',
+          alertConfirm: localization.confirm,
           confirmFunc: () {
             context.pop();
           },
@@ -260,10 +260,10 @@ class _SetAlarmRecruiterScreenState extends ConsumerState<SetAlarmRecruiterScree
         slivers: [
           SliverPadding(
             padding: EdgeInsets.fromLTRB(0, 16.w, 0, 8.w),
-            sliver: TitleMenu(title: '공고알림'),
+            sliver: TitleMenu(title: localization.673),
           ),
           AlarmToggleRadioButton(
-            text: '공고알림 전체',
+            text: localization.674,
             isTop: true,
             onChanged: (value) {
               toggleAllValue('post', postArr);
@@ -282,10 +282,10 @@ class _SetAlarmRecruiterScreenState extends ConsumerState<SetAlarmRecruiterScree
             ),
           SliverPadding(
             padding: EdgeInsets.fromLTRB(0, 42.w, 0, 8.w),
-            sliver: TitleMenu(title: '구인활동 알림'),
+            sliver: TitleMenu(title: localization.675),
           ),
           AlarmToggleRadioButton(
-            text: '구인활동 알림 전체',
+            text: localization.676,
             isTop: true,
             onChanged: (value) {
               toggleAllValue('recruitment', recruitmentArr);
@@ -304,10 +304,10 @@ class _SetAlarmRecruiterScreenState extends ConsumerState<SetAlarmRecruiterScree
             ),
           SliverPadding(
             padding: EdgeInsets.fromLTRB(0, 42.w, 0, 8.w),
-            sliver: TitleMenu(title: '매칭/대화 알림'),
+            sliver: TitleMenu(title: localization.677),
           ),
           AlarmToggleRadioButton(
-            text: '매칭/대화 알림 전체',
+            text: localization.678,
             isTop: true,
             onChanged: (value) {
               toggleAllValue('chat', chatArr);
@@ -326,10 +326,10 @@ class _SetAlarmRecruiterScreenState extends ConsumerState<SetAlarmRecruiterScree
             ),
           SliverPadding(
             padding: EdgeInsets.fromLTRB(0, 42.w, 0, 8.w),
-            sliver: TitleMenu(title: '프리미엄/초단 코인'),
+            sliver: TitleMenu(title: localization.679),
           ),
           AlarmToggleRadioButton(
-            text: '프리미엄/초단 코인 전체',
+            text: localization.680,
             isTop: true,
             onChanged: (value) {
               toggleAllValue('premium', premiumArr);
@@ -348,10 +348,10 @@ class _SetAlarmRecruiterScreenState extends ConsumerState<SetAlarmRecruiterScree
             ),
           SliverPadding(
             padding: EdgeInsets.fromLTRB(0, 42.w, 0, 8.w),
-            sliver: TitleMenu(title: '기타 알림'),
+            sliver: TitleMenu(title: localization.681),
           ),
           AlarmToggleRadioButton(
-            text: '기타 알림 전체',
+            text: localization.682,
             isTop: true,
             onChanged: (value) {
               toggleAllValue('etc', etcArr);
@@ -370,10 +370,10 @@ class _SetAlarmRecruiterScreenState extends ConsumerState<SetAlarmRecruiterScree
             ),
           SliverPadding(
             padding: EdgeInsets.fromLTRB(0, 42.w, 0, 8.w),
-            sliver: TitleMenu(title: '마케팅 알림'),
+            sliver: TitleMenu(title: localization.683),
           ),
           AlarmToggleRadioButton(
-            text: '마케팅 알림 전체',
+            text: localization.684,
             isTop: true,
             onChanged: (value) {
               toggleAllValue('marketing', marketingArr);
@@ -385,7 +385,7 @@ class _SetAlarmRecruiterScreenState extends ConsumerState<SetAlarmRecruiterScree
             AlarmToggleRadioButton(
               text: marketingArr[i]['title'],
               caption: i == marketingArr.length - 1
-                  ? '오후 9시부터 다음날 오전 8시까지 마케팅 정보를 받습니다.'
+                  ? localization.685
                   : null,
               onChanged: (value) {
                 setToggle(marketingArr[i], value);

@@ -55,9 +55,9 @@ class _SetStatusScreenState extends ConsumerState<SetStatusScreen> {
   String checkMemberString() {
     UserModel? userInfo = ref.read(userProvider);
     if (userInfo!.memberType == MemberTypeEnum.jobSeeker) {
-      return '구직';
+      return localization.718;
     } else {
-      return '채용';
+      return localization.719;
     }
   }
 
@@ -110,7 +110,7 @@ class _SetStatusScreenState extends ConsumerState<SetStatusScreen> {
           if (mounted) {
             context.pop();
             getUserData();
-            showDefaultToast('변경이 완료 되었어요!');
+            showDefaultToast(localization.709);
           }
         }
       }
@@ -176,7 +176,7 @@ class _SetStatusScreenState extends ConsumerState<SetStatusScreen> {
                       updateStatus();
                     },
                     fontSize: 15,
-                    text: '변경하기',
+                    text: localization.714,
                   ),
                 ),
               ],

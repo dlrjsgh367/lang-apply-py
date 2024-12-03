@@ -45,7 +45,7 @@ class _EventDetailCommentListWidgetState
   }
 
   String maskName(String name) {
-    if (name.isEmpty || name == '탈퇴 회원') return name;
+    if (name.isEmpty || name == localization.withdrawnMember) return name;
 
     String masked = name[0] + '*' * (name.length - 1);
     return masked;
@@ -73,7 +73,7 @@ class _EventDetailCommentListWidgetState
                 widget.updateEventComment(widget.eventCommentItem.key);
 
               },
-              text: '수정'),
+              text: localization.188),
           BottomSheetButton(
               onTap: () {
                 context.pop();
@@ -81,10 +81,10 @@ class _EventDetailCommentListWidgetState
                     context: context,
                     builder: (BuildContext context) {
                       return AlertTwoButtonDialog(
-                        alertTitle: '댓글 삭제',
-                        alertContent: '이벤트 댓글을 삭제하시겠어요?',
-                        alertConfirm: '삭제',
-                        alertCancel: '닫기',
+                        alertTitle: localization.189,
+                        alertContent: localization.190,
+                        alertConfirm: localization.delete,
+                        alertCancel: localization.closed,
                         onConfirm: () {
                           widget
                               .deleteEventComment(widget.eventCommentItem.key);
@@ -93,7 +93,7 @@ class _EventDetailCommentListWidgetState
                       );
                     });
               },
-              text: '삭제'),
+              text: localization.delete),
         ]);
       },
     );

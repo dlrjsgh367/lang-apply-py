@@ -69,20 +69,20 @@ class _RecommendSeekerBottomState extends ConsumerState<RecommendSeekerBottom>
     isRunning = false;
     if (result.status == 200) {
       if (result.type == 1) {
-        showDefaultToast('제안이 완료 되었어요!');
+        showDefaultToast(localization.387);
       } else {
-        showDefaultToast('제안에 실패했습니다!');
+        showDefaultToast(localization.388);
       }
     } else if (result.status == 409) {
-      showDefaultToast('이미 제안하거나 지원받은 공고입니다.');
+      showDefaultToast(localization.389);
     } else if (result.status == 401) {
       if(result.type == -2504){
-        showDefaultToast('일자리 제안을 받지 않는 회원입니다.');
+        showDefaultToast(localization.390);
       }else{
-        showDefaultToast('희망 직종의 일자리만 제안을 받은 회원입니다.');
+        showDefaultToast(localization.391);
       }
     } else if (result.status != 200) {
-      showDefaultToast('제안에 실패했습니다!');
+      showDefaultToast(localization.388);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -112,9 +112,9 @@ class _RecommendSeekerBottomState extends ConsumerState<RecommendSeekerBottom>
       }
     } else {
       if (result.type == -2801) {
-        showDefaultToast('이미 등록된 관심 기업입니다.');
+        showDefaultToast(localization.alreadySavedAsInterestedCompany);
       } else if (mounted) {
-        showDefaultToast('데이터 통신에 실패하였습니다.');
+        showDefaultToast(localization.dataCommunicationFailed);
       }
     }
   }
@@ -129,7 +129,7 @@ class _RecommendSeekerBottomState extends ConsumerState<RecommendSeekerBottom>
       }
     } else {
       if (mounted) {
-        showDefaultToast('데이터 통신에 실패하였습니다.');
+        showDefaultToast(localization.dataCommunicationFailed);
       }
     }
   }
@@ -138,10 +138,10 @@ class _RecommendSeekerBottomState extends ConsumerState<RecommendSeekerBottom>
     List likeList = ref.read(workerLikesKeyListProvider);
     if (likeList.contains(key)) {
       likeList.remove(key);
-      showDefaultToast('관심인재에서 삭제했어요!');
+      showDefaultToast(localization.392);
     } else {
       likeList.add(key);
-      showDefaultToast('관심인재로 저장했어요!');
+      showDefaultToast(localization.393);
     }
     setState(() {
       ref
@@ -206,7 +206,7 @@ class _RecommendSeekerBottomState extends ConsumerState<RecommendSeekerBottom>
                                 width: 4.w,
                               ),
                               Text(
-                                '학력',
+                                localization.educationLevel,
                                 style: TextStyle(
                                   fontSize: 14.sp,
                                   color: CommonColors.gray80,
@@ -220,7 +220,7 @@ class _RecommendSeekerBottomState extends ConsumerState<RecommendSeekerBottom>
                           ),
                           Text(
                             widget.workerItem.finalEducation.schoolName.isEmpty
-                                ? '미기재'
+                                ? localization.206
                                 : '${widget.workerItem.finalEducation.schoolType} ${widget.workerItem.finalEducation.status}',
                             style: TextStyle(
                               fontSize: 14.sp,
@@ -248,7 +248,7 @@ class _RecommendSeekerBottomState extends ConsumerState<RecommendSeekerBottom>
                                 width: 4.w,
                               ),
                               Text(
-                                '경력',
+                                localization.experienced,
                                 style: TextStyle(
                                   fontSize: 14.sp,
                                   color: CommonColors.gray80,
@@ -294,7 +294,7 @@ class _RecommendSeekerBottomState extends ConsumerState<RecommendSeekerBottom>
                               width: 4.w,
                             ),
                             Text(
-                              '요일',
+                              localization.dayOfWeek,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 color: CommonColors.gray80,
@@ -327,7 +327,7 @@ class _RecommendSeekerBottomState extends ConsumerState<RecommendSeekerBottom>
                                   ],
                                 )
                               : Text(
-                                  '미기재',
+                                  localization.206,
                                   style: TextStyle(
                                     fontSize: 14.sp,
                                     color: CommonColors.black2b,
@@ -354,7 +354,7 @@ class _RecommendSeekerBottomState extends ConsumerState<RecommendSeekerBottom>
                                 width: 4.w,
                               ),
                               Text(
-                                '시간',
+                                localization.time,
                                 style: TextStyle(
                                   fontSize: 14.sp,
                                   color: CommonColors.gray80,
@@ -418,7 +418,7 @@ class _RecommendSeekerBottomState extends ConsumerState<RecommendSeekerBottom>
                     width: 4.w,
                   ),
                   Text(
-                    '관심인재',
+                    localization.interestedTalents,
                     style: TextStyle(
                         fontSize: 15.w,
                         color: CommonColors.gray4d,
@@ -437,7 +437,7 @@ class _RecommendSeekerBottomState extends ConsumerState<RecommendSeekerBottom>
                 onPressed: () {
                   showBottomSuggestJobposting(widget.workerItem.key);
                 },
-                text: '일자리 제안',
+                text: localization.819,
               ),
             ),
           ],

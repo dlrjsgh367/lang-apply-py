@@ -105,7 +105,7 @@ class _SelectWorkConditionWidgetState
       },
       child: Scaffold(
         appBar: const CommonAppbar(
-          title: '희망 근무 조건',
+          title: localization.297,
         ),
         body: !isLoading
             ? Stack(
@@ -119,7 +119,7 @@ class _SelectWorkConditionWidgetState
                             children: [
                               Expanded(
                                 child: Text(
-                                  '희망 근무 조건을 제시해주세요!',
+                                  localization.554,
                                   style: TextStyle(
                                     fontSize: 20.sp,
                                     color: CommonColors.black2b,
@@ -148,7 +148,7 @@ class _SelectWorkConditionWidgetState
                         padding: EdgeInsets.fromLTRB(20.w, 0.w, 20.w, 36.w),
                         sliver: SliverToBoxAdapter(
                           child: Text(
-                            '상세히 입력할수록 제안받을 확률이 높아져요!',
+                            localization.555,
                             style: TextStyle(
                               fontSize: 14.sp,
                               color: CommonColors.gray80,
@@ -163,7 +163,7 @@ class _SelectWorkConditionWidgetState
                           child: Row(
                             children: [
                               Text(
-                                '근무 형태',
+                                localization.83,
                                 style: TextStyle(
                                     fontWeight: FontWeight.w700,
                                     color: CommonColors.black2b),
@@ -256,7 +256,7 @@ class _SelectWorkConditionWidgetState
                           child: Row(
                             children: [
                               Text(
-                                '근무 기간',
+                                localization.84,
                                 style: TextStyle(
                                     fontWeight: FontWeight.w700,
                                     color: CommonColors.black2b),
@@ -374,7 +374,7 @@ class _SelectWorkConditionWidgetState
                           context.pop();
                         }
                       },
-                      text: '입력하기',
+                      text: localization.32,
                     ),
                   ),
                 ],

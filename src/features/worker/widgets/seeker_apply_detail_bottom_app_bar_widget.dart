@@ -64,10 +64,10 @@ class SeekerApplyDetailBottomAppBarWidget extends StatelessWidget {
                               context: context,
                               builder: (BuildContext context) {
                                 return AlertTwoButtonDialog(
-                                  alertTitle: '제안 취소',
-                                  alertContent: '선택하신 공고 제안을 취소하시겠어요?',
-                                  alertConfirm: '제안 취소',
-                                  alertCancel: '닫기',
+                                  alertTitle: localization.cancelProposal,
+                                  alertContent: localization.825,
+                                  alertConfirm: localization.cancelProposal,
+                                  alertCancel: localization.closed,
                                   onConfirm: () {
                                     cancelJobPosting(applyData.key);
                                   },
@@ -75,7 +75,7 @@ class SeekerApplyDetailBottomAppBarWidget extends StatelessWidget {
                               });
                         }
                       },
-                      text: '제안 취소',
+                      text: localization.cancelProposal,
                       confirm: applyData.postingRequiredStatus == 1)
                   : Row(
                       children: [
@@ -85,11 +85,11 @@ class SeekerApplyDetailBottomAppBarWidget extends StatelessWidget {
                                 context: context,
                                 builder: (BuildContext context) {
                                   return AlertTwoButtonDialog(
-                                    alertTitle: '지원자 차단',
+                                    alertTitle: localization.blockApplicant,
                                     alertContent:
                                         '선택하신 지원자를 차단하시겠어요?\n차단 후에는 이 지원자의 프로필을 보거나, 지원을 받을 수 없어요.',
-                                    alertConfirm: '차단',
-                                    alertCancel: '취소',
+                                    alertConfirm: localization.blockUser,
+                                    alertCancel: localization.cancel,
                                     onConfirm: () {
                                       blockCompany(applyData.profileKey);
                                       context.pop(context);
@@ -102,7 +102,7 @@ class SeekerApplyDetailBottomAppBarWidget extends StatelessWidget {
                               ? 115.w
                               : 55.w,
                           child: Text(
-                            '차단',
+                            localization.blockUser,
                             style: TextStyle(
                                 fontSize: 15.w,
                                 color: CommonColors.gray4d,
@@ -122,10 +122,10 @@ class SeekerApplyDetailBottomAppBarWidget extends StatelessWidget {
                                       context: context,
                                       builder: (BuildContext context) {
                                         return AlertTwoButtonDialog(
-                                          alertTitle: '지원 거절하기',
-                                          alertContent: '선택한 지원을 거절 하시겠어요?',
-                                          alertConfirm: '거절',
-                                          alertCancel: '취소',
+                                          alertTitle: localization.rejectApplication,
+                                          alertContent: localization.confirmRejectSelectedApplication,
+                                          alertConfirm: localization.575,
+                                          alertCancel: localization.cancel,
                                           onConfirm: () {
                                             deAcceptJobPosting(applyData.key);
                                             context.pop(context);
@@ -142,7 +142,7 @@ class SeekerApplyDetailBottomAppBarWidget extends StatelessWidget {
                                     ? CommonColors.grayE6
                                     : const Color(0xffffffff),
                                 child: Text(
-                                  '거절',
+                                  localization.575,
                                   style: TextStyle(
                                       fontSize: 15.w,
                                       color: false
@@ -167,10 +167,10 @@ class SeekerApplyDetailBottomAppBarWidget extends StatelessWidget {
                                       context: context,
                                       builder: (BuildContext context) {
                                         return AlertTwoButtonDialog(
-                                          alertTitle: '지원 수락하기',
-                                          alertContent: '선택한 지원을 수락 하시겠어요?',
-                                          alertConfirm: '수락',
-                                          alertCancel: '취소',
+                                          alertTitle: localization.acceptApplication,
+                                          alertContent: localization.confirmAcceptSelectedApplication,
+                                          alertConfirm: localization.confirmAcceptance,
+                                          alertCancel: localization.cancel,
                                           onConfirm: () {
                                             acceptJobPosting(applyData.key);
                                             context.pop(context);
@@ -180,8 +180,8 @@ class SeekerApplyDetailBottomAppBarWidget extends StatelessWidget {
                                 }
                               },
                               text: applyData.postingRequiredStatus == 3
-                                  ? '거절함'
-                                  : '지원 수락',
+                                  ? localization.proposalRejected
+                                  : localization.835,
                               confirm: (applyData.postingRequiredStatus == 1 ||
                                   applyData.postingRequiredStatus == 4),
                             ),
@@ -195,10 +195,10 @@ class SeekerApplyDetailBottomAppBarWidget extends StatelessWidget {
                                   savePageLog();
                                   generateDocument(profileData);
                                 } else {
-                                  showDefaultToast('대화가 시작 된 후 확인 가능합니다.');
+                                  showDefaultToast(localization.836);
                                 }
                               },
-                              text: '이력서 PDF',
+                              text: localization.837,
                               confirm: true,
                             ),
                           ),

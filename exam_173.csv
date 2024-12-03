@@ -1,5 +1,0 @@
-,Key,Description,en,ko,origin
-0,,,,${ConvertService.returnStringWithCommaFormat(jobpostData!.workCondition.salary)}원,"'${ConvertService.returnStringWithCommaFormat(jobpostData!.workCondition.salary)}원',"
-1,,,,${jobpostData!.workCondition.salaryType.label} ${ConvertService.returnStringWithCommaFormat(jobpostData!.workCondition.salary)}원 / ${ConvertService.returnNegotiable(jobpostData!.workCondition.salaryNegotiable)},? '${jobpostData!.workCondition.salaryType.label} ${ConvertService.returnStringWithCommaFormat(jobpostData!.workCondition.salary)}원 / ${ConvertService.returnNegotiable(jobpostData!.workCondition.salaryNegotiable)}'
-2,,,,${jobpostData!.workCondition.salaryType.label} ${ConvertService.returnStringWithCommaFormat(jobpostData!.workCondition.salary)}원,": '${jobpostData!.workCondition.salaryType.label} ${ConvertService.returnStringWithCommaFormat(jobpostData!.workCondition.salary)}원',"
-3,,,,${jobpostData!.recruitmentCondition.recruitCount}명,"'${jobpostData!.recruitmentCondition.recruitCount}명',"

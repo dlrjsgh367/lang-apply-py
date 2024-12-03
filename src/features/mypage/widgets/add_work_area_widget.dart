@@ -82,7 +82,7 @@ class _AddWorkAreaWidgetState extends ConsumerState<AddWorkAreaWidget> {
             },
             child: Scaffold(
               appBar: const CommonAppbar(
-                title: '희망 근무 지역',
+                title: localization.292,
               ),
               body: Stack(
                 children: [
@@ -143,7 +143,7 @@ class _AddWorkAreaWidgetState extends ConsumerState<AddWorkAreaWidget> {
                               onTap: () async {
                                 await DefineDialog.showAreaBottom(
                                     context,
-                                    '지역 선택',
+                                    localization.selectRegion,
                                     areaList,
                                     addWorkArea,
                                     selectedAreaList,
@@ -167,7 +167,7 @@ class _AddWorkAreaWidgetState extends ConsumerState<AddWorkAreaWidget> {
                                       width: 6.w,
                                     ),
                                     Text(
-                                      '희망 근무지역 설정하기',
+                                      localization.511,
                                       style: TextStyle(
                                         fontSize: 14.sp,
                                         color: CommonColors.red,
@@ -186,7 +186,7 @@ class _AddWorkAreaWidgetState extends ConsumerState<AddWorkAreaWidget> {
                             child: Row(
                               children: [
                                 Text(
-                                  '선택된 희망 근무지역',
+                                  localization.512,
                                   style: TextStyle(
                                     fontSize: 14.sp,
                                     color: CommonColors.gray80,
@@ -287,7 +287,7 @@ class _AddWorkAreaWidgetState extends ConsumerState<AddWorkAreaWidget> {
                           context.pop();
                         }
                       },
-                      text: '입력하기',
+                      text: localization.32,
                     ),
                   )
                 ],

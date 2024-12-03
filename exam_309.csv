@@ -1,5 +1,0 @@
-,Key,Description,en,ko,origin
-0,,,,안내,"alertTitle: '안내',"
-1,,,,데이터 통신에 실패하였습니다.,"alertContent: '데이터 통신에 실패하였습니다.',"
-2,,,,확인,"alertConfirm: '확인',"
-3,,,,공고가 존재하지않습니다.,"child: const CommonEmpty(text: '공고가 존재하지않습니다.'),"

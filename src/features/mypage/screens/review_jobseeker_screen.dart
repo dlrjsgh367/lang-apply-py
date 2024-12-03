@@ -219,7 +219,7 @@ class _ReviewJobSeekerScreenState extends ConsumerState<ReviewJobSeekerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CommonAppbar(
-        title: '별점관리',
+        title: localization.368,
       ),
       body: !isLoading
           ? Column(
@@ -230,7 +230,7 @@ class _ReviewJobSeekerScreenState extends ConsumerState<ReviewJobSeekerScreen> {
                   child: CommonTab(
                     setTab: setTab,
                     activeTab: activeTab,
-                    tabTitleArr: const ['미평가', '평가완료'],
+                    tabTitleArr: const [localization.369, localization.370],
                   ),
                 ),
                 activeTab == 0
@@ -338,7 +338,7 @@ class _ReviewJobSeekerScreenState extends ConsumerState<ReviewJobSeekerScreen> {
                                   ],
                                 ),
                               )
-                            : const CommonEmpty(text: '데이터가 없습니다.'))
+                            : const CommonEmpty(text: localization.371))
                     : Expanded(
                         child: ratedList.isNotEmpty
                             ? LazyLoadScrollView(
@@ -441,7 +441,7 @@ class _ReviewJobSeekerScreenState extends ConsumerState<ReviewJobSeekerScreen> {
                                   ],
                                 ),
                               )
-                            : const CommonEmpty(text: '데이터가 없습니다.'),
+                            : const CommonEmpty(text: localization.371),
                       ),
               ],
             )

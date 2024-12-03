@@ -69,12 +69,12 @@ class _InputProfileTitleWidgetState extends State<InputProfileTitleWidget> {
           children: [
             Scaffold(
               appBar: const CommonAppbar(
-                title: '프로필 제목',
+                title: localization.291,
               ),
               body: CustomScrollView(
                 slivers: [
                   const ProfileTitle(
-                    title: '프로필 제목 입력',
+                    title: localization.543,
                     required: false,
                     text: '',
                     hasArrow: false,
@@ -105,7 +105,7 @@ class _InputProfileTitleWidgetState extends State<InputProfileTitleWidget> {
                             maxLength: 100,
                             textAlignVertical: TextAlignVertical.top,
                             decoration: areaInput(
-                              hintText: '프로필 제목을 입력해주세요.',
+                              hintText: localization.544,
                             ),
                             minLines: 3,
                             maxLines: 3,
@@ -145,7 +145,7 @@ class _InputProfileTitleWidgetState extends State<InputProfileTitleWidget> {
                     context.pop(titleController.text);
                   }
                 },
-                text: '입력하기',
+                text: localization.32,
               ),
             ),
           ],

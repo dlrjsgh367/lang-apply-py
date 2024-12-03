@@ -1,8 +1,0 @@
-,Key,Description,en,ko,origin
-0,,,,탈퇴 회원,if (name.isEmpty || name == '탈퇴 회원') return name;
-1,,,,수정,"text: '수정'),"
-2,,,,댓글 삭제,"alertTitle: '댓글 삭제',"
-3,,,,이벤트 댓글을 삭제하시겠어요?,"alertContent: '이벤트 댓글을 삭제하시겠어요?',"
-4,,,,삭제,"alertConfirm: '삭제',"
-5,,,,닫기,"alertCancel: '닫기',"
-6,,,,삭제,"text: '삭제'),"

@@ -69,7 +69,7 @@ class _EventCommentUpdateWidgetState extends State<EventCommentUpdateWidget> {
                 ),
                 Expanded(
                   child: Text(
-                    '댓글 수정',
+                    localization.181,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 16.sp,
@@ -98,7 +98,7 @@ class _EventCommentUpdateWidgetState extends State<EventCommentUpdateWidget> {
                       controller: commentController,
                       style: commonInputText(),
                       cursorColor: CommonColors.black,
-                      decoration: commonInput(hintText: '댓글을 입력해주세요.'),
+                      decoration: commonInput(hintText: localization.182),
                       onEditingComplete: () {},
                     ),
                   ),

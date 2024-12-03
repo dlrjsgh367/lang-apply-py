@@ -95,7 +95,7 @@ class SeekerDetailScreenState extends ConsumerState<SeekerDetailScreen>
       useSafeArea: true,
       builder: (BuildContext context) {
         return AttachmentBottomSheet(
-          title: '첨부파일',
+          title: localization.172,
           files: files,
           downloadFunc: downloadFile,
         );
@@ -219,10 +219,10 @@ class SeekerDetailScreenState extends ConsumerState<SeekerDetailScreen>
       }
     } else if (result.status == 409) {
       if (result.type == -1303) {
-        showError('프로필 오류', '비노출 설정된 프로필입니다.');
+        showError(localization.782, localization.801);
       }
     } else {
-      showError('프로필 오류', '프로필 정보를 가져오는데 실패하였습니다.');
+      showError(localization.782, localization.783);
     }
   }
 
@@ -233,7 +233,7 @@ class SeekerDetailScreenState extends ConsumerState<SeekerDetailScreen>
           return AlertConfirmDialog(
             alertTitle: title,
             alertContent: content,
-            alertConfirm: '확인',
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop(context);
               context.pop(context);
@@ -264,7 +264,7 @@ class SeekerDetailScreenState extends ConsumerState<SeekerDetailScreen>
         likeAfterLikesFunc(idx);
       }
     } else {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     }
   }
 
@@ -278,9 +278,9 @@ class SeekerDetailScreenState extends ConsumerState<SeekerDetailScreen>
       }
     } else {
       if (result.type == -2801) {
-        showDefaultToast('이미 등록된 관심 기업입니다.');
+        showDefaultToast(localization.alreadySavedAsInterestedCompany);
       } else if (mounted) {
-        showDefaultToast('데이터 통신에 실패하였습니다.');
+        showDefaultToast(localization.dataCommunicationFailed);
       }
     }
   }
@@ -289,10 +289,10 @@ class SeekerDetailScreenState extends ConsumerState<SeekerDetailScreen>
     List likeList = ref.read(workerLikesKeyListProvider);
     if (likeList.contains(key)) {
       likeList.remove(key);
-      showDefaultToast('관심인재에서 삭제했어요!');
+      showDefaultToast(localization.392);
     } else {
       likeList.add(key);
-      showDefaultToast('관심인재로 저장했어요!');
+      showDefaultToast(localization.393);
     }
     setState(() {
       ref
@@ -317,20 +317,20 @@ class SeekerDetailScreenState extends ConsumerState<SeekerDetailScreen>
     isRunning = false;
     if (result.status == 200) {
       if (result.type == 1) {
-        showDefaultToast('제안이 완료 되었어요!');
+        showDefaultToast(localization.387);
       } else {
-        showDefaultToast('제안에 실패했습니다!');
+        showDefaultToast(localization.388);
       }
     } else if (result.status == 409) {
-      showDefaultToast('이미 제안하거나 지원받은 공고입니다.');
+      showDefaultToast(localization.389);
     } else if (result.status == 401) {
       if (result.type == -2504) {
-        showDefaultToast('일자리 제안을 받지 않는 회원입니다.');
+        showDefaultToast(localization.390);
       } else {
-        showDefaultToast('희망 직종의 일자리만 제안을 받은 회원입니다.');
+        showDefaultToast(localization.391);
       }
     } else if (result.status != 200) {
-      showDefaultToast('제안에 실패했습니다!');
+      showDefaultToast(localization.388);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -478,7 +478,7 @@ class SeekerDetailScreenState extends ConsumerState<SeekerDetailScreen>
                 onTap: () {
                   context.push('/jobpost/${data.jpIdx}');
                 },
-                text: '매칭된 공고'),
+                text: localization.matchedJobPostings),
             BottomSheetButton(
                 isRed: true,
                 last: true,
@@ -490,7 +490,7 @@ class SeekerDetailScreenState extends ConsumerState<SeekerDetailScreen>
                     context.push('/chat/detail/${chatRoomData!.id}');
                   }
                 },
-                text: '대화 시작하기'),
+                text: localization.startConversation),
           ],
         );
       },
@@ -537,7 +537,7 @@ class SeekerDetailScreenState extends ConsumerState<SeekerDetailScreen>
       useSafeArea: true,
       builder: (BuildContext context) {
         return WorkerEvaluateWidget(
-          title: '개인평가',
+          title: localization.personalEvaluation,
           evaluateData: data,
         );
       },
@@ -571,12 +571,12 @@ class SeekerDetailScreenState extends ConsumerState<SeekerDetailScreen>
       setState(() {
         isPdfDownload = false;
       });
-      showDefaultToast('이력서가 저장되었습니다.');
+      showDefaultToast(localization.resumeSaved);
     } else {
       setState(() {
         isPdfDownload = false;
       });
-      showDefaultToast('이력서가 저장에 실패했습니다.');
+      showDefaultToast(localization.799);
     }
   }
 
@@ -593,11 +593,11 @@ class SeekerDetailScreenState extends ConsumerState<SeekerDetailScreen>
     }
     if (reportReason == null) {
       isRunning = false;
-      showDefaultToast('신고 사유를 선택해주세요!');
+      showDefaultToast(localization.130);
       return;
     } else if (reportReason?.key == 5 && reportDetail == '') {
       isRunning = false;
-      showDefaultToast('신고 사유를 입력해주세요!');
+      showDefaultToast(localization.enterReportReason);
       return;
     }
 
@@ -616,17 +616,17 @@ class SeekerDetailScreenState extends ConsumerState<SeekerDetailScreen>
     isRunning = false;
     if (result.status == 200) {
       if (result.type == 1) {
-        showDefaultToast('신고가 완료되었어요!');
+        showDefaultToast(localization.reportSubmitted);
         if (mounted) {
           context.pop();
         }
       }
     } else if (result.status == 401) {
-      showDefaultToast('본인 프로필은 신고할 수 없습니다.');
+      showDefaultToast(localization.786);
     } else if (result.status == 409) {
-      showDefaultToast('동일한 프로필은 하루에 한 번만 신고 할 수 있습니다.');
+      showDefaultToast(localization.787);
     } else {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     }
   }
 
@@ -669,8 +669,8 @@ class SeekerDetailScreenState extends ConsumerState<SeekerDetailScreen>
         return StatefulBuilder(
             builder: (BuildContext context, StateSetter bottomState) {
           return ReportBottomSheet(
-            title: '프로필 신고',
-            text: '프로필에 부적합한 내용 있는 경우 신고해주시면 관리자의 확인을 거쳐 신속하게 조치를 쥐하도 하겠습니다.',
+            title: localization.788,
+            text: localization.789,
             afterFunc: afterFunc != null
                 ? () {
                     afterFunc();
@@ -731,7 +731,7 @@ class SeekerDetailScreenState extends ConsumerState<SeekerDetailScreen>
       appBar: CommonAppbar(
         title: _showProfileTitle && !isLoading
             ? profileData!.profileTitle
-            : '인재정보',
+            : localization.candidateInformation,
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 10.0),

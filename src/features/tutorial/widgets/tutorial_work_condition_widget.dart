@@ -107,7 +107,7 @@ class _TutorialWorkConditionWidgetState
                           children: [
                             Expanded(
                               child: Text(
-                                '희망 근무 조건을 제시해주세요!',
+                                localization.554,
                                 style: TextStyle(
                                   fontSize: 20.sp,
                                   color: CommonColors.black2b,
@@ -136,7 +136,7 @@ class _TutorialWorkConditionWidgetState
                       padding: EdgeInsets.fromLTRB(20.w, 0.w, 20.w, 36.w),
                       sliver: SliverToBoxAdapter(
                         child: Text(
-                          '상세히 입력할수록 제안받을 확률이 높아져요!',
+                          localization.555,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: CommonColors.gray80,
@@ -151,7 +151,7 @@ class _TutorialWorkConditionWidgetState
                         child: Row(
                           children: [
                             Text(
-                              '근무 형태',
+                              localization.83,
                               style: TextStyle(
                                   fontWeight: FontWeight.w700,
                                   color: CommonColors.black2b),
@@ -235,7 +235,7 @@ class _TutorialWorkConditionWidgetState
                         child: Row(
                           children: [
                             Text(
-                              '근무 기간',
+                              localization.84,
                               style: TextStyle(
                                   fontWeight: FontWeight.w700,
                                   color: CommonColors.black2b),
@@ -339,7 +339,7 @@ class _TutorialWorkConditionWidgetState
                       onPressed: () {
                         widget.onPress();
                       },
-                      text: '건너뛰기',
+                      text: localization.755,
                       width: 96.w,
                     ),
                     SizedBox(
@@ -359,7 +359,7 @@ class _TutorialWorkConditionWidgetState
                             widget.onPress();
                           }
                         },
-                        text: '다음',
+                        text: localization.next,
                         fontSize: 15,
                         confirm: selectedWorkTypes.isNotEmpty &&
                             selectedWorkPeriodList.isNotEmpty,

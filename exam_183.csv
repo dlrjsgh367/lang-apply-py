@@ -1,6 +1,0 @@
-,Key,Description,en,ko,origin
-0,,,,지원할 프로필,"const TitleBottomSheet(title: '지원할 프로필'),"
-1,,,,대표,"'대표',"
-2,,,,지원할 프로필이 없어요,"child: const CommonEmpty(text: '지원할 프로필이 없어요'),"
-3,,,,지원하기,"text: '지원하기',"
-4,,,,프로필 만들기,"text: '프로필 만들기',"

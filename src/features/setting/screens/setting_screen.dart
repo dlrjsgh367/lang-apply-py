@@ -35,7 +35,7 @@ class _SettingScreenState extends ConsumerState<SettingScreen> {
     UserModel? userInfo = ref.watch(userProvider);
     return Scaffold(
       appBar: CommonAppbar(
-        title: '설정',
+        title: localization.217,
       ),
       // body: userInfo!.memberType == MemberTypeEnum.jobSeeker
       //     ? const SettingSeekerScreen()

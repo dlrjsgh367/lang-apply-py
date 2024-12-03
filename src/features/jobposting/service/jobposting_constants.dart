@@ -1,28 +1,28 @@
 class JobpostingConstants {
 
-  static String anyAge = '연령 무관';
+  static String anyAge = localization.ageNotSpecified;
 
-  static String maxAge = '최대 연령';
+  static String maxAge = localization.2;
 
-  static String minAge = '최소 연령';
+  static String minAge = localization.3;
 
-  static String middleAgeHiring = '중장년층 채용';
+  static String middleAgeHiring = localization.4;
 
-  static String noMiddleAgeHiring = '중장년층 미채용';
+  static String noMiddleAgeHiring = localization.5;
 
-  static String career = '경력';
+  static String career = localization.experienced;
 
-  static String noProbationPeriod = '수습 없음';
+  static String noProbationPeriod = localization.7;
 
   static String WORKHOUR = "WORKHOUR";
 
   static String RESTHOUR = "RESTHOUR";
 
-  static String noWorkHour = "근무시간 없음";
+  static String noWorkHour = localization.8;
 
-  static String noRestHour = "휴게시간 없음";
+  static String noRestHour = localization.9;
 
-  static String noMatter = "무관";
+  static String noMatter = localization.10;
 
 
   static String ADD = "add";

@@ -35,9 +35,9 @@ class _MyProfileScreenState extends ConsumerState<MyProfileScreen> {
 
   String formatOfferStatus(int offerValue, int? offerScope) {
     if (offerValue == 1) {
-      return offerScope == 1 ? '전체 업무 제안 받음' : '희망 업무만 받음';
+      return offerScope == 1 ? localization.305 : localization.311;
     } else {
-      return '제안 받지 않음';
+      return localization.307;
     }
   }
 
@@ -46,10 +46,10 @@ class _MyProfileScreenState extends ConsumerState<MyProfileScreen> {
         context: context,
         builder: (BuildContext context) {
           return AlertTwoButtonDialog(
-            alertTitle: '프로필 삭제',
+            alertTitle: localization.312,
             alertContent: '선택한 프로필을 삭제하시겠어요?\n삭제한 프로필은 되돌릴 수 없어요.',
-            alertConfirm: '삭제',
-            alertCancel: '닫기',
+            alertConfirm: localization.delete,
+            alertCancel: localization.closed,
             onConfirm: () {
               deleteProfile(profileKey);
               getApplyOrProposedJobpostKey();
@@ -156,13 +156,13 @@ class _MyProfileScreenState extends ConsumerState<MyProfileScreen> {
                       await getProfileList();
                     });
                   },
-                  text: '프로필 수정'),
+                  text: localization.314),
             BottomSheetButton(
                 onTap: () {
                   context.pop();
                   showProfileDeleteAlert(context, userProfileData.key);
                 },
-                text: '삭제',
+                text: localization.delete,
                 last: true,
                 isRed: true),
           ],
@@ -175,7 +175,7 @@ class _MyProfileScreenState extends ConsumerState<MyProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CommonAppbar(
-        title: '프로필 관리',
+        title: localization.219,
       ),
       body: !isLoading
           ? Stack(
@@ -243,7 +243,7 @@ class _MyProfileScreenState extends ConsumerState<MyProfileScreen> {
                                                   ),
                                                   alignment: Alignment.center,
                                                   child: Text(
-                                                    '대표',
+                                                    localization.50,
                                                     style: TextStyle(
                                                         color: CommonColors.red,
                                                         fontSize: 11.sp,
@@ -274,7 +274,7 @@ class _MyProfileScreenState extends ConsumerState<MyProfileScreen> {
                                                   ),
                                                   alignment: Alignment.center,
                                                   child: Text(
-                                                    '노출',
+                                                    localization.315,
                                                     style: TextStyle(
                                                         color: CommonColors.red,
                                                         fontSize: 11.sp,
@@ -304,7 +304,7 @@ class _MyProfileScreenState extends ConsumerState<MyProfileScreen> {
                                                   ),
                                                   alignment: Alignment.center,
                                                   child: Text(
-                                                    '비노출',
+                                                    localization.316,
                                                     style: TextStyle(
                                                         color:
                                                             CommonColors.gray,
@@ -358,7 +358,7 @@ class _MyProfileScreenState extends ConsumerState<MyProfileScreen> {
                                                     SizedBox(
                                                       width: 84.w,
                                                       child: Text(
-                                                        '희망지역',
+                                                        localization.317,
                                                         overflow: TextOverflow
                                                             .ellipsis,
                                                         style: TextStyle(
@@ -399,7 +399,7 @@ class _MyProfileScreenState extends ConsumerState<MyProfileScreen> {
                                                     SizedBox(
                                                       width: 84.w,
                                                       child: Text(
-                                                        '희망업무',
+                                                        localization.318,
                                                         overflow: TextOverflow
                                                             .ellipsis,
                                                         style: TextStyle(
@@ -439,7 +439,7 @@ class _MyProfileScreenState extends ConsumerState<MyProfileScreen> {
                                                     SizedBox(
                                                       width: 84.w,
                                                       child: Text(
-                                                        '포지션 제안',
+                                                        localization.319,
                                                         overflow: TextOverflow
                                                             .ellipsis,
                                                         style: TextStyle(
@@ -479,7 +479,7 @@ class _MyProfileScreenState extends ConsumerState<MyProfileScreen> {
                                                     SizedBox(
                                                       width: 84.w,
                                                       child: Text(
-                                                        '최근 수정일',
+                                                        localization.320,
                                                         overflow: TextOverflow
                                                             .ellipsis,
                                                         style: TextStyle(
@@ -529,7 +529,7 @@ class _MyProfileScreenState extends ConsumerState<MyProfileScreen> {
                       )
                     : Padding(
                         padding: EdgeInsets.only(bottom: 100.w),
-                        child: const CommonEmpty(text: '등록된 프로필이 없어요.'),
+                        child: const CommonEmpty(text: localization.321),
                       ),
                 Positioned(
                   left: 20.w,
@@ -542,7 +542,7 @@ class _MyProfileScreenState extends ConsumerState<MyProfileScreen> {
                               await getProfileList();
                             });
                           },
-                          text: '신규 프로필 추가',
+                          text: localization.322,
                           fontSize: 15,
                           confirm: true,
                         )
@@ -559,7 +559,7 @@ class _MyProfileScreenState extends ConsumerState<MyProfileScreen> {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               Text(
-                                '신규 프로필 추가',
+                                localization.322,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontSize: 15.sp,
@@ -568,7 +568,7 @@ class _MyProfileScreenState extends ConsumerState<MyProfileScreen> {
                                 ),
                               ),
                               Text(
-                                '프로필은 최대 3개 등록할 수 있어요!',
+                                localization.323,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   fontSize: 11.sp,

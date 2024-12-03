@@ -259,12 +259,12 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
   }
 
   void openShare(String url) async {
-    showDefaultToast('복사되었습니다.');
+    showDefaultToast(localization.353);
     final result = await Share.share(
         await dynamicLink.generateLink(context, url),
-        subject: '초단알바');
+        subject: localization.chodanAlba);
     if (result.status == ShareResultStatus.success) {
-      showDefaultToast("공유가 완료되었습니다.");
+      showDefaultToast(localization.355);
     }
   }
 
@@ -296,7 +296,7 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
             },
             setTab: setTab,
             activeTab: activeTab,
-            tabTitleArr: const ['마이페이지', '설정'],
+            tabTitleArr: const [localization.216, localization.217],
           ),
           bottomNavigationBar: CommonBottomAppbar(type: 'mypage'),
           body: !isLoading
@@ -441,7 +441,7 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
                                                   width: 24.w,
                                                 ),
                                                 Text(
-                                                  '포인트',
+                                                  localization.218,
                                                   style: TextStyle(
                                                       fontSize: 13.sp,
                                                       color:
@@ -522,7 +522,7 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
                                             // iconRedClock.png
 
                                             Text(
-                                              '게재 중 공고',
+                                              localization.356,
                                               style: TextStyle(
                                                   fontSize: 12.sp,
                                                   fontWeight: FontWeight.w500,
@@ -562,7 +562,7 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
                                             // iconRedClock.png
 
                                             Text(
-                                              '관심인재',
+                                              localization.interestedTalents,
                                               style: TextStyle(
                                                   fontSize: 12.sp,
                                                   fontWeight: FontWeight.w500,
@@ -602,7 +602,7 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
                                             // iconRedClock.png
 
                                             Text(
-                                              '차단인재',
+                                              localization.blockedTalents,
                                               style: TextStyle(
                                                   fontSize: 12.sp,
                                                   fontWeight: FontWeight.w500,
@@ -637,7 +637,7 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
                                               height: 8.w,
                                             ),
                                             Text(
-                                              '최근 본 인재',
+                                              localization.359,
                                               style: TextStyle(
                                                   fontSize: 12.sp,
                                                   fontWeight: FontWeight.w500,
@@ -693,7 +693,7 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
                                           width: 6.w,
                                         ),
                                         Text(
-                                          '신규 공고 등록',
+                                          localization.newJobPostRegistration,
                                           style: TextStyle(
                                               fontSize: 14.sp,
                                               fontWeight: FontWeight.w600,
@@ -717,7 +717,7 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
                                           MainAxisAlignment.center,
                                       children: [
                                         Text(
-                                          '긴급구인',
+                                          localization.361,
                                           style: TextStyle(
                                             fontSize: 12.sp,
                                             color: CommonColors.white,
@@ -770,7 +770,7 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
                                     ),
                                     Expanded(
                                       child: Text(
-                                        '보유 초단코인',
+                                        localization.362,
                                         style: TextStyle(
                                           fontSize: 14.sp,
                                           fontWeight: FontWeight.w700,
@@ -796,7 +796,7 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
                             onTap: () {
                               context.push('/jobpostingmanage');
                             },
-                            text: '공고 관리',
+                            text: localization.363,
                           ),
                         ),
                         SliverToBoxAdapter(
@@ -806,7 +806,7 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
                                 pushAfterFunc();
                               });
                             },
-                            text: '프리미엄 서비스',
+                            text: localization.364,
                           ),
                         ),
                         SliverToBoxAdapter(
@@ -814,7 +814,7 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
                             onTap: () {
                               context.push('/my/consult');
                             },
-                            text: '노무 상담 하기',
+                            text: localization.225,
                           ),
                         ),
                         SliverToBoxAdapter(
@@ -822,7 +822,7 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
                             onTap: () {
                               context.push('/my/document');
                             },
-                            text: '계약서/사직서',
+                            text: localization.210,
                           ),
                         ),
                         SliverToBoxAdapter(
@@ -830,7 +830,7 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
                             onTap: () {
                               context.push('/review');
                             },
-                            text: '별점 관리',
+                            text: localization.226,
                           ),
                         ),
                         SliverToBoxAdapter(
@@ -838,7 +838,7 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
                             onTap: () {
                               context.push('/point');
                             },
-                            text: '활동 포인트 관리',
+                            text: localization.227,
                           ),
                         ),
                         SliverPadding(
@@ -852,7 +852,7 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
                                     saveInviteLog();
                                     openShare('?id=${userInfo.id}');
                                   },
-                                  text: '친구 초대하기',
+                                  text: localization.228,
                                   confirm: true,
                                   childWidget: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -866,7 +866,7 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
                                         width: 4.w,
                                       ),
                                       Text(
-                                        '사장님 초대하기 (10,000초코 지급)',
+                                        localization.365,
                                         style: TextStyles.commonButton(
                                             color: CommonColors.white,
                                             fontSize: 15),
@@ -883,7 +883,7 @@ class _RecruiterMypageScreenState extends ConsumerState<RecruiterMypageScreen>
                                       color: CommonColors.gray4d, fontSize: 10),
                                 ),
                                 Text(
-                                  '(가입 30일 이후 지급, 단 초대 받은 회원이 탈퇴, 재가입 할 경우 지급 안됨)',
+                                  localization.367,
                                   style: TextStyles.commonButton(
                                       color: CommonColors.red, fontSize: 10),
                                 ),

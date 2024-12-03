@@ -83,7 +83,7 @@ class _TutorialCompanyManagerWidgetState extends ConsumerState<TutorialCompanyMa
                         ),
                         alignment: Alignment.center,
                         child: Text(
-                          '채용 담당자님의 정보를 입력해주세요!',
+                          localization.769,
                           style: TextStyle(
                             color: CommonColors.red,
                             fontWeight: FontWeight.w700,
@@ -93,7 +93,7 @@ class _TutorialCompanyManagerWidgetState extends ConsumerState<TutorialCompanyMa
                       ),
                       SizedBox(height: 20.w),
                       Text(
-                        '담당자명',
+                        localization.contactPersonName,
                         style: commonTitleAuth(),
                       ),
                       SizedBox(height: 20.w),
@@ -103,7 +103,7 @@ class _TutorialCompanyManagerWidgetState extends ConsumerState<TutorialCompanyMa
                         key: const Key('update-manager-name-input'),
                         keyboardType: TextInputType.text,
                         decoration: commonInput(
-                          hintText: '담당자명을 입력해주세요.',
+                          hintText: localization.enterContactPersonName,
                         ),
                         style: commonInputText(),
                         onChanged: (value) {
@@ -122,7 +122,7 @@ class _TutorialCompanyManagerWidgetState extends ConsumerState<TutorialCompanyMa
                         },
                       ),
                       /*CheckboxListTile(
-                        title: const Text('담당자명 비공개'),
+                        title: const Text(localization.contactPersonNamePrivate),
                         controlAffinity: ListTileControlAffinity.leading,
                         value: isNameChecked,
                         onChanged: (value) {
@@ -134,7 +134,7 @@ class _TutorialCompanyManagerWidgetState extends ConsumerState<TutorialCompanyMa
                       ),*/
                       SizedBox(height:36.w),
                       Text(
-                        '담당자 연락처',
+                        localization.contactPersonPhone,
                         style: commonTitleAuth(),
                       ),
                       SizedBox(height: 20.w),
@@ -146,7 +146,7 @@ class _TutorialCompanyManagerWidgetState extends ConsumerState<TutorialCompanyMa
                         keyboardType: TextInputType.number,
                         inputFormatters: [PhoneNumberTextInputFormatter()],
                         decoration: commonInput(
-                          hintText: '담당자 연락처를 입력해주세요.',
+                          hintText: localization.enterContactNumber,
                         ),
                         style: commonInputText(),
                         // maxLength 11이지만 하이픈 때문에 + 2
@@ -163,7 +163,7 @@ class _TutorialCompanyManagerWidgetState extends ConsumerState<TutorialCompanyMa
                         },
                       ),
                       /*CheckboxListTile(
-                        title: const Text('담당자 연락처 비공개'),
+                        title: const Text(localization.contactNumberPrivate),
                         controlAffinity: ListTileControlAffinity.leading,
                         value: isPhoneNumberChecked,
                         onChanged: (value) {
@@ -175,7 +175,7 @@ class _TutorialCompanyManagerWidgetState extends ConsumerState<TutorialCompanyMa
                       ),*/
                       SizedBox(height:36.w),
                       Text(
-                        '담당자 이메일',
+                        localization.contactPersonEmail,
                         style: commonTitleAuth(),
                       ),
                       SizedBox(height: 20.w),
@@ -188,7 +188,7 @@ class _TutorialCompanyManagerWidgetState extends ConsumerState<TutorialCompanyMa
                         style: commonInputText(),
                         maxLength: null,
                         decoration: suffixInput(
-                          hintText: '담당자 이메일을 입력해주세요.',
+                          hintText: localization.enterEmail,
                         ),
                         minLines: 1,
                         maxLines: 1,
@@ -203,7 +203,7 @@ class _TutorialCompanyManagerWidgetState extends ConsumerState<TutorialCompanyMa
                         },
                       ),
                       /*CheckboxListTile(
-                        title: const Text('담당자 이메일 비공개'),
+                        title: const Text(localization.emailPrivate),
                         controlAffinity: ListTileControlAffinity.leading,
                         value: isEmailChecked,
                         onChanged: (value) {
@@ -234,7 +234,7 @@ class _TutorialCompanyManagerWidgetState extends ConsumerState<TutorialCompanyMa
                 onPressed: () {
                   context.pop();
                 },
-                text: '건너뛰기',
+                text: localization.755,
                 width: 96.w,
               ),
               SizedBox(
@@ -251,7 +251,7 @@ class _TutorialCompanyManagerWidgetState extends ConsumerState<TutorialCompanyMa
                       context.pop();
                     }
                   },
-                  text: '완성하기',
+                  text: localization.773,
                   fontSize: 15,
                   confirm: managerNameController.text.isNotEmpty &&
                       managerPhoneNumberController.text.isNotEmpty &&

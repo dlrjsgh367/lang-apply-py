@@ -153,7 +153,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
         });
       }
     } else if (result.status != 200) {
-      showDefaultToast('데이터 통신에 실패하였습니다.');
+      showDefaultToast(localization.dataCommunicationFailed);
     } else {
       if (!mounted) return null;
       showNetworkErrorAlert(context);
@@ -185,7 +185,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
           ),
           alignment: Alignment.center,
           child: Text(
-            '거절',
+            localization.575,
             style: TextStyle(
               fontSize: 12.sp,
               color: CommonColors.blue03,
@@ -203,7 +203,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
           ),
           alignment: Alignment.center,
           child: Text(
-            '예정',
+            localization.scheduled,
             style: TextStyle(
               fontSize: 12.sp,
               color: CommonColors.brown03,
@@ -221,7 +221,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
           ),
           alignment: Alignment.center,
           child: Text(
-            '진행중',
+            localization.inProgress2,
             style: TextStyle(
               fontSize: 12.sp,
               color: CommonColors.red,
@@ -239,7 +239,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
           ),
           alignment: Alignment.center,
           child: Text(
-            '종료',
+            localization.terminated,
             style: TextStyle(
               fontSize: 12.sp,
               color: CommonColors.gray80,
@@ -283,7 +283,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
       return '거절사유 : ${premiumHistoryItem.rejectionReason}';
     } else {
       return premiumHistoryItem.jobpostingTitle == ''
-          ? '공고 등록 중'
+          ? localization.579
           : premiumHistoryItem.jobpostingTitle;
     }
   }
@@ -303,7 +303,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
   List<Map<String, dynamic>> initialSelectedPeriod = [
     {
       'key': 0,
-      'label': '3개월',
+      'label': localization.580,
     }
   ];
 
@@ -346,7 +346,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
   List<Map<String, dynamic>> initialSelectedPremium = [
     {
       'key': 0,
-      'label': '전체',
+      'label': localization.all,
     }
   ];
 
@@ -416,7 +416,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
         useSafeArea: true,
         builder: (BuildContext context) {
           return CalendarBottomSheet(
-              title: '시작날짜',
+              title: localization.581,
               selectedDay: selectedPeriod[CRSD] != null
                   ? DateTime.parse(selectedPeriod[CRSD])
                   : null,
@@ -454,7 +454,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
               selectedDay: selectedPeriod[CRED] != null
                   ? DateTime.parse(selectedPeriod[CRED])
                   : null,
-              title: '종료날짜',
+              title: localization.582,
               setSelectDate: (value) {
                 setState(() {
                   selectDate(false, DateFormat('yyyy-MM-dd').format(value));
@@ -469,7 +469,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: CommonAppbar(
-          title: '나의 신청 내역',
+          title: localization.583,
         ),
         body: isLoading
             ? const Loader()
@@ -507,7 +507,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
                                     onTap: () {
                                       DefineDialog.showFilter(
                                           context,
-                                          '기간',
+                                          localization.584,
                                           FilterService.periodFilter,
                                           applyPeriod,
                                           initialSelectedPeriod,
@@ -571,7 +571,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
                                                     DateTime.parse(
                                                         selectedPeriod[CRSD]))
                                                 : '',
-                                            hintText: '시작날짜',
+                                            hintText: localization.581,
                                           ),
                                         ),
                                         Text(
@@ -598,7 +598,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
                                                     DateTime.parse(
                                                         selectedPeriod[CRED]))
                                                 : '',
-                                            hintText: '종료날짜',
+                                            hintText: localization.582,
                                           ),
                                         ),
                                       ],
@@ -628,7 +628,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
                                       onTap: () {
                                         DefineDialog.showFilter(
                                             context,
-                                            '서비스',
+                                            localization.585,
                                             FilterService.premiumServiceFilter,
                                             applyPremium,
                                             initialSelectedPremium,
@@ -846,7 +846,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
                                                     Row(
                                                       children: [
                                                         Text(
-                                                          '신청일',
+                                                          localization.586,
                                                           textAlign:
                                                               TextAlign.center,
                                                           style: TextStyle(
@@ -878,7 +878,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
                                                       Row(
                                                         children: [
                                                           Text(
-                                                            '종료일',
+                                                            localization.587,
                                                             textAlign: TextAlign.center,
                                                             style: TextStyle(
                                                               fontSize: 11.sp,
@@ -959,7 +959,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
                                               MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              '더보기',
+                                              localization.491,
                                               style: TextStyle(
                                                 fontSize: 14.sp,
                                                 fontWeight: FontWeight.w500,
@@ -988,7 +988,7 @@ class _PremiumHistoryScreenState extends ConsumerState<PremiumHistoryScreen>
                         Expanded(
                             child: Center(
                                 child:
-                                    const CommonEmpty(text: '신청 내역이 없습니다.'))),
+                                    const CommonEmpty(text: localization.588))),
                       if (!isLoading && isGetLoading)
                         const Expanded(child: Center(child: Loader())),
                     ],

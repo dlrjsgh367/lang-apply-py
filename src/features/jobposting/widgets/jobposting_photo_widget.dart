@@ -75,9 +75,9 @@ class _JobpostingPhotoWidgetState extends ConsumerState<JobpostingPhotoWidget>
         context: context,
         builder: (BuildContext context) {
           return AlertConfirmDialog(
-            alertTitle: '안내',
-            alertContent: '공고 사진은 최대 3장까지 등록할 수 있습니다.',
-            alertConfirm: '확인',
+            alertTitle: localization.guide,
+            alertContent: localization.34,
+            alertConfirm: localization.confirm,
             confirmFunc: () {
               context.pop(context);
               context.pop(context);
@@ -115,7 +115,7 @@ class _JobpostingPhotoWidgetState extends ConsumerState<JobpostingPhotoWidget>
                     showErrorAlert();
                   }
                 },
-                text: '사진 보관함'),
+                text: localization.photoLibrary),
             BottomSheetButton(
                 onTap: () {
                   if (selectedJobpostingPhoto.length < 3) {
@@ -128,7 +128,7 @@ class _JobpostingPhotoWidgetState extends ConsumerState<JobpostingPhotoWidget>
                     showErrorAlert();
                   }
                 },
-                text: '사진 촬영'),
+                text: localization.takePhoto),
             if (photoIndex != null)
               BottomSheetButton(
                   isRed: true,
@@ -142,7 +142,7 @@ class _JobpostingPhotoWidgetState extends ConsumerState<JobpostingPhotoWidget>
                     });
                     context.pop();
                   },
-                  text: '삭제'),
+                  text: localization.delete),
           ],
         );
       },
@@ -183,7 +183,7 @@ class _JobpostingPhotoWidgetState extends ConsumerState<JobpostingPhotoWidget>
       },
       child: Scaffold(
         appBar: const CommonAppbar(
-          title: '공고 사진',
+          title: localization.39,
         ),
         body: CustomScrollView(
           slivers: [
@@ -198,7 +198,7 @@ class _JobpostingPhotoWidgetState extends ConsumerState<JobpostingPhotoWidget>
                   ),
                   alignment: Alignment.center,
                   child: Text(
-                    '공고 사진은 최소 1장 이상 등록해주세요!',
+                    localization.40,
                     style: TextStyle(
                       color: CommonColors.red,
                       fontWeight: FontWeight.w700,
@@ -260,7 +260,7 @@ class _JobpostingPhotoWidgetState extends ConsumerState<JobpostingPhotoWidget>
                                             height: 4.w,
                                           ),
                                           Text(
-                                            '사진 등록 하기',
+                                            localization.registerPhoto,
                                             style: TextStyle(
                                               color: CommonColors.grayD9,
                                               fontWeight: FontWeight.w700,
@@ -357,7 +357,7 @@ class _JobpostingPhotoWidgetState extends ConsumerState<JobpostingPhotoWidget>
                                     height: 4.w,
                                   ),
                                   Text(
-                                    '사진 등록 하기',
+                                    localization.registerPhoto,
                                     style: TextStyle(
                                       color: CommonColors.grayD9,
                                       fontWeight: FontWeight.w700,
@@ -389,7 +389,7 @@ class _JobpostingPhotoWidgetState extends ConsumerState<JobpostingPhotoWidget>
                           ),
                           alignment: Alignment.center,
                           child: Text(
-                            '사진 등록 Guide',
+                            localization.42,
                             style: TextStyle(
                               color: CommonColors.red,
                               fontWeight: FontWeight.w700,
@@ -412,7 +412,7 @@ class _JobpostingPhotoWidgetState extends ConsumerState<JobpostingPhotoWidget>
                         SizedBox(width: 8.w),
                         Expanded(
                           child: Text(
-                            '사진 등록이 필수 사항은 아니지만 사진을 등록하면 알바님들에게 신뢰감을 줄 수 있습니다.',
+                            localization.photoOptionalButIncreasesTrust,
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 14.sp,
@@ -435,7 +435,7 @@ class _JobpostingPhotoWidgetState extends ConsumerState<JobpostingPhotoWidget>
                         SizedBox(width: 8.w),
                         Expanded(
                           child: Text(
-                            '5MB 이내 gif, jpg, jpeg, png 파일만 등록할 수 있습니다.',
+                            localization.uploadFilesUnder5MB,
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 14.sp,
@@ -458,7 +458,7 @@ class _JobpostingPhotoWidgetState extends ConsumerState<JobpostingPhotoWidget>
                         SizedBox(width: 8.w),
                         Expanded(
                           child: Text(
-                            '근무지의 실내 외 사진 또는 근무지 간판이나 로고를 올려주세요.',
+                            localization.uploadWorkplaceOrLogoPhotos,
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 14.sp,
@@ -481,7 +481,7 @@ class _JobpostingPhotoWidgetState extends ConsumerState<JobpostingPhotoWidget>
                         SizedBox(width: 8.w),
                         Expanded(
                           child: Text(
-                            '선명하고 깨끗한 사진을 권장합니다.',
+                            localization.recommendClearPhotos,
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 14.sp,
@@ -504,7 +504,7 @@ class _JobpostingPhotoWidgetState extends ConsumerState<JobpostingPhotoWidget>
                         SizedBox(width: 8.w),
                         Expanded(
                           child: Text(
-                            '개인정보 보호를 위해 개인정보가 포함된 이미지는 가려주세요. (발견 시 사전 동의 없이 삭제 될 수 있습니다.)',
+                            localization.maskPersonalInfoInPhotos,
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 14.sp,
@@ -525,7 +525,7 @@ class _JobpostingPhotoWidgetState extends ConsumerState<JobpostingPhotoWidget>
                         }
                       },
                       fontSize: 15,
-                      text: '사진 등록하기',
+                      text: localization.48,
                     ),
                   ],
                 ),

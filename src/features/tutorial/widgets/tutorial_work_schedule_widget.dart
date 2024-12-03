@@ -110,7 +110,7 @@ class _TutorialWorkScheduleWidgetState
       builder: (BuildContext context) {
         return WorkScheduleBottomSheet(
           dataArr: workTimes, initItemArr: selectedWorkTimes,
-          // type: '직종',
+          // type: localization.jobCategory,
         );
       },
     ).then((value) {
@@ -166,7 +166,7 @@ class _TutorialWorkScheduleWidgetState
                       padding: EdgeInsets.fromLTRB(20.w, 0.w, 20.w, 36.w),
                       sliver: SliverToBoxAdapter(
                         child: Text(
-                          '상세히 입력할수록 제안받을 확률이 높아져요!',
+                          localization.555,
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: CommonColors.gray80,
@@ -179,7 +179,7 @@ class _TutorialWorkScheduleWidgetState
                       padding: EdgeInsets.fromLTRB(20.w, 20.w, 20.w, 20.w),
                       sliver: const SliverToBoxAdapter(
                         child: Text(
-                          '근무 요일',
+                          localization.557,
                           style: TextStyle(
                             fontWeight: FontWeight.w600,
                           ),
@@ -248,14 +248,14 @@ class _TutorialWorkScheduleWidgetState
                         child: Row(
                           children: [
                             const Text(
-                              '근무 시간',
+                              localization.559,
                               style: TextStyle(fontWeight: FontWeight.w600),
                             ),
                             SizedBox(
                               width: 8.w,
                             ),
                             Text(
-                              '최대 3개 옵션 등록 가능합니다.',
+                              localization.558,
                               style: TextStyle(
                                   fontWeight: FontWeight.w700,
                                   fontSize: 12.sp,
@@ -328,7 +328,7 @@ class _TutorialWorkScheduleWidgetState
                             ),
                             alignment: Alignment.center,
                             child: Text(
-                              '동일한 근무 시간을 중복 선택이 불가능합니다.',
+                              localization.560,
                               style: TextStyle(
                                 fontSize: 12.sp,
                                 fontWeight: FontWeight.w700,
@@ -361,7 +361,7 @@ class _TutorialWorkScheduleWidgetState
                                 child: Row(
                                   children: [
                                     Text(
-                                      '근무 시간 추가하기',
+                                      localization.561,
                                       style: TextStyle(
                                         fontSize: 14.sp,
                                         fontWeight: FontWeight.w700,
@@ -400,7 +400,7 @@ class _TutorialWorkScheduleWidgetState
                       onPressed: () {
                         widget.onPress();
                       },
-                      text: '건너뛰기',
+                      text: localization.755,
                       width: 96.w,
                     ),
                     SizedBox(
@@ -422,7 +422,7 @@ class _TutorialWorkScheduleWidgetState
                             widget.onPress();
                           }
                         },
-                        text: '다음',
+                        text: localization.next,
                         fontSize: 15,
                       ),
                     )

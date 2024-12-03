@@ -62,14 +62,14 @@ class _WithdrawalConfirmationWidgetState
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 Text(
-                                  '프로필에 포지션 제안 OFF를 하면 , 제안이 오지 않아요',
+                                  localization.725,
                                   style: TextStyles.withdrawalError,
                                 ),
                                 SizedBox(
                                   height: 6.w,
                                 ),
                                 Text(
-                                  '일자리를 구했거나, 구직을 쉬고 있다면 프로필을 잠시 닫아둘 수 있어요',
+                                  localization.726,
                                   style: TextStyle(
                                     color: CommonColors.gray4d,
                                     fontSize: 13.sp,
@@ -99,14 +99,14 @@ class _WithdrawalConfirmationWidgetState
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 Text(
-                                  '탈퇴하면, 소중한 정보가 사라지게 돼요.',
+                                  localization.727,
                                   style: TextStyles.withdrawalError,
                                 ),
                                 SizedBox(
                                   height: 6.w,
                                 ),
                                 Text(
-                                  '지금까지 작성한 근로계약서 및 사직서 등 서류가 삭제되고, 알바님은 등록했던 이력서, 사장님은 등록했던 채용공고도, 힘들게 모은 포인트도, 긍정적인 별점 평가도 모두 사라져요.',
+                                  localization.728,
                                   style: TextStyle(
                                     color: CommonColors.gray4d,
                                     fontSize: 13.sp,
@@ -136,7 +136,7 @@ class _WithdrawalConfirmationWidgetState
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 Text(
-                                  '누군가 불편하게 하나요? 차단과 신고를 활용하세요.',
+                                  localization.729,
                                   style: TextStyles.withdrawalError,
                                 ),
                                 SizedBox(
@@ -180,7 +180,7 @@ class _WithdrawalConfirmationWidgetState
                                   height: 6.w,
                                 ),
                                 Text(
-                                  '기존에 사용했던 이메일 또는 소셜 아이디로는 일정기간 재가입에 제한이 있을 수 있어요.',
+                                  localization.732,
                                   style: TextStyle(
                                     color: CommonColors.gray4d,
                                     fontSize: 13.sp,
@@ -210,7 +210,7 @@ class _WithdrawalConfirmationWidgetState
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 Text(
-                                  '혹시 이사 했거나 전화번호가 바뀌었나요?',
+                                  localization.733,
                                   style: TextStyles.withdrawalError,
                                 ),
                                 SizedBox(
@@ -238,7 +238,7 @@ class _WithdrawalConfirmationWidgetState
                               onPressed: () {
                                 widget.onPress();
                               },
-                              text: '다음'),
+                              text: localization.next),
                           SizedBox(
                             width: 8.w,
                           ),
@@ -247,7 +247,7 @@ class _WithdrawalConfirmationWidgetState
                               onPressed: () {
                                 widget.onCancel();
                               },
-                              text: '취소하기',
+                              text: localization.736,
                               confirm: true,
                               fontSize: 15,
                             ),

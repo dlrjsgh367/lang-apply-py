@@ -97,7 +97,7 @@ class _TutorialCompanyAdditionalInfoWidgetState extends ConsumerState<TutorialCo
                           ),
                           alignment: Alignment.center,
                           child: Text(
-                            '우리 기업의 업종과 임직원수를 입력해주세요!',
+                            localization.756,
                             style: TextStyle(
                               color: CommonColors.red,
                               fontWeight: FontWeight.w700,
@@ -108,14 +108,14 @@ class _TutorialCompanyAdditionalInfoWidgetState extends ConsumerState<TutorialCo
                         SizedBox(height: 20.w),
                         SelectButton(
                           onTap: () async {
-                            await DefineDialog.showIndustryBottom2(context, '업종 선택', industryList, addIndustry, selectedIndustry, industryMaxLength);
+                            await DefineDialog.showIndustryBottom2(context, localization.757, industryList, addIndustry, selectedIndustry, industryMaxLength);
                             widget.setData('inIdx', selectedIndustryKey[0]);
                           },
-                          text: industryName, hintText: '업종을 선택해주세요.',
+                          text: industryName, hintText: localization.selectIndustry,
                         ),
                         SizedBox(height: 36.w),
                         Text(
-                          '직원수',
+                          localization.numberOfEmployees,
                           style: commonTitleAuth(),
                         ),
                         SizedBox(height: 12.w),
@@ -127,7 +127,7 @@ class _TutorialCompanyAdditionalInfoWidgetState extends ConsumerState<TutorialCo
                                 keyboardType: TextInputType.number,
                                 key: const Key('tutorial-number-of-employees-input'),
                                 decoration: commonInput(
-                                  hintText: '직원수를 입력해주세요.',
+                                  hintText: localization.enterNumberOfEmployees,
                                 ),
                                 cursorColor: Colors.black,
                                 style: commonInputText(),
@@ -146,7 +146,7 @@ class _TutorialCompanyAdditionalInfoWidgetState extends ConsumerState<TutorialCo
                             ),
                             SizedBox(width: 16.w),
                             Text(
-                              '명',
+                              localization.64,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w500,
@@ -176,7 +176,7 @@ class _TutorialCompanyAdditionalInfoWidgetState extends ConsumerState<TutorialCo
                 onPressed: () {
                   widget.onPress();
                 },
-                text: '건너뛰기',
+                text: localization.755,
                 width: 96.w,
               ),
               SizedBox(
@@ -192,7 +192,7 @@ class _TutorialCompanyAdditionalInfoWidgetState extends ConsumerState<TutorialCo
                       widget.onPress();
                     }
                   },
-                  text: '다음',
+                  text: localization.next,
                   fontSize: 15,
                   confirm: selectedIndustryKey.isNotEmpty &&
                       numberOfEmployeesController.text.isNotEmpty &&

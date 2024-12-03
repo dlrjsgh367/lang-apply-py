@@ -80,7 +80,7 @@ class _AddJobWidgetState extends ConsumerState<AddJobWidget> {
       },
       child: Scaffold(
         appBar: const CommonAppbar(
-          title: '희망 직종',
+          title: localization.294,
         ),
         body: Stack(
           children: [
@@ -125,7 +125,7 @@ class _AddJobWidgetState extends ConsumerState<AddJobWidget> {
                     padding: EdgeInsets.fromLTRB(20.w, 0.w, 20.w, 36.w),
                     sliver: SliverToBoxAdapter(
                       child: Text(
-                        '희망하는 직종을 제안받을 수 있어요.',
+                        localization.498,
                         style: TextStyle(
                           fontSize: 14.sp,
                           color: CommonColors.gray80,
@@ -139,7 +139,7 @@ class _AddJobWidgetState extends ConsumerState<AddJobWidget> {
                     sliver: SliverToBoxAdapter(
                       child: GestureDetector(
                         onTap: () {
-                          DefineDialog.showJobBottom(context, '직종', jobList, addWorkJob, selectedJobList, maxLength, DefineEnum.job);
+                          DefineDialog.showJobBottom(context, localization.jobCategory, jobList, addWorkJob, selectedJobList, maxLength, DefineEnum.job);
                         },
                         child: Container(
                           height: 48.w,
@@ -159,7 +159,7 @@ class _AddJobWidgetState extends ConsumerState<AddJobWidget> {
                                 width: 6.w,
                               ),
                               Text(
-                                '희망 직종 설정하기',
+                                localization.499,
                                 style: TextStyle(
                                   fontSize: 14.sp,
                                   color: CommonColors.red,
@@ -178,7 +178,7 @@ class _AddJobWidgetState extends ConsumerState<AddJobWidget> {
                       child: Row(
                         children: [
                           Text(
-                            '선택된 희망 직종',
+                            localization.500,
                             style: TextStyle(
                               fontSize: 14.sp,
                               color: CommonColors.gray80,
@@ -275,7 +275,7 @@ class _AddJobWidgetState extends ConsumerState<AddJobWidget> {
                     context.pop();
                   }
                 },
-                text: '입력하기',
+                text: localization.32,
               ),
             ),
           ],

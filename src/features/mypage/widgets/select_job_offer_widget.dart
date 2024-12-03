@@ -47,7 +47,7 @@ class _SelectJobOfferWidgetState extends State<SelectJobOfferWidget> {
               context.pop(selectedOption);
             },
             child: Text(
-              '전체 업무 제안 받음',
+              localization.305,
             style: TextStyle(color: selectedOption == 1 ? CommonColors.red : CommonColors.black),
             ),
           ),
@@ -57,7 +57,7 @@ class _SelectJobOfferWidgetState extends State<SelectJobOfferWidget> {
               context.pop(selectedOption);
             },
             child: Text(
-              '희망 업무만 제안 받음',
+              localization.306,
               style: TextStyle(color: selectedOption == 2 ? CommonColors.red : CommonColors.black),
             ),
           ),
@@ -67,7 +67,7 @@ class _SelectJobOfferWidgetState extends State<SelectJobOfferWidget> {
               context.pop(selectedOption);
             },
             child: Text(
-              '제안 받지 않음',
+              localization.307,
               style: TextStyle(color: selectedOption == 0 ? CommonColors.red : CommonColors.black),
             ),
           ),

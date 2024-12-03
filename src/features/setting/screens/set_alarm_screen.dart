@@ -20,7 +20,7 @@ class _SetAlarmScreenState extends ConsumerState<SetAlarmScreen> {
     UserModel? userInfo = ref.watch(userProvider);
     return Scaffold(
         appBar: const CommonAppbar(
-          title: '알림 설정',
+          title: localization.686,
         ),
         body: userInfo!.memberType == MemberTypeEnum.jobSeeker
             ? const SetAlarmSeekerScreen()

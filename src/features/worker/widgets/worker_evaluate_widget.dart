@@ -61,7 +61,7 @@ class WorkerEvaluateWidget extends StatelessWidget {
               ),
               SizedBox(height: 32.w),
               Text(
-                '근무했던 업체 사장님들의 주관적 평가 의견입니다.',
+                localization.841,
                 style: TextStyle(
                   fontSize: 13.sp,
                   fontWeight: FontWeight.w500,
@@ -77,7 +77,7 @@ class WorkerEvaluateWidget extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                            '업무 역량',
+                            localization.842,
                             style: TextStyle(
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w500,
@@ -121,7 +121,7 @@ class WorkerEvaluateWidget extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                            '책임감',
+                            localization.responsibility,
                             style: TextStyle(
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w500,
@@ -165,7 +165,7 @@ class WorkerEvaluateWidget extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                            '팀워크',
+                            localization.teamwork,
                             style: TextStyle(
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w500,
@@ -209,7 +209,7 @@ class WorkerEvaluateWidget extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                            '친절 / 배려',
+                            localization.845,
                             style: TextStyle(
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w500,
@@ -253,7 +253,7 @@ class WorkerEvaluateWidget extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                            '성실 / 도덕성',
+                            localization.846,
                             style: TextStyle(
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w500,
@@ -337,7 +337,7 @@ class WorkerEvaluateWidget extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                text: '닫기',
+                text: localization.closed,
               ),
               SizedBox(height: CommonSize.footerBottom),
             ],

@@ -28,15 +28,15 @@ class JobpostingCompleteCreateBottomsheet extends StatelessWidget {
 
   String messageContent(String type) {
     if (type == JobpostingEditEnum.create.path) {
-      return '공고 등록이 완료되었어요!';
+      return localization.11;
     }
     if (type == JobpostingEditEnum.update.path) {
-      return '공고 수정이 완료되었어요!';
+      return localization.12;
     }
     if (type == JobpostingEditEnum.reregister.path) {
-      return '공고 재등록이 완료되었어요!';
+      return localization.13;
     }
-    return '네트워크 연결이 원활하지 않습니다.';
+    return localization.14;
   }
 
   @override
@@ -96,7 +96,7 @@ class JobpostingCompleteCreateBottomsheet extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                '미친매칭',
+                                localization.17,
                                 style: TextStyle(
                                   fontSize: 17.sp,
                                   fontWeight: FontWeight.w700,
@@ -143,7 +143,7 @@ class JobpostingCompleteCreateBottomsheet extends StatelessWidget {
                                 ),
                               ),
                               Text(
-                                '지역별 상위 노출',
+                                localization.19,
                                 style: TextStyle(
                                   fontSize: 17.sp,
                                   fontWeight: FontWeight.w700,
@@ -182,7 +182,7 @@ class JobpostingCompleteCreateBottomsheet extends StatelessWidget {
                       context.push('/my/premium');
                     },
                     confirm: true,
-                    text: '프리미엄 바로가기',
+                    text: localization.20,
                     width: CommonSize.vw,
                   )
                 ],
