@@ -205,9 +205,3 @@ if __name__ == "__main__":
     print(tc.series_manual)
     print("\nAutomatic Series:")
     print(tc.series_automatic)
-
-# C:\Users\HAMA\workspace\chodan-flutter-app\lib\features\chat\widgets\dialog\attendance_select_dialog_widget.dart, 244 line
-#
-
-# return 사라짐
-# C:\Users\HAMA\workspace\chodan-flutter-app\lib\features\home\widgets\alba_filter_jobseeker.dart

@@ -71,6 +71,7 @@ def main(target_dir, mode=None):
         raise ValueError("mode 인자 값이 올바르지 않습니다.")
 
 
+# TODO: 정규표현식 수집 안하게 수정
 if __name__ == "__main__":
     target_dir = r"C:\Users\HAMA\workspace\chodan-flutter-app\lib"
     main(target_dir=target_dir, mode="map")
