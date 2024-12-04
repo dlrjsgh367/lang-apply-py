@@ -15,6 +15,7 @@ def main(target_dir, mode=None):
 
                 # 파일 경로
                 file = os.path.join(folder, filename)
+                file = r"C:\Users\HAMA\workspace\chodan-flutter-app\lib\features\apply\screens\apply_list_screen.dart"
 
                 worker = TextEditor(file=file)
                 worker.collect_data()
@@ -25,7 +26,8 @@ def main(target_dir, mode=None):
 
                 results_manual.extend(data_manual)
                 results_automatic.extend(data_automatic)
-
+                break
+            break
         results_manual = set(results_manual)
         results_automatic = set(results_automatic)
 
@@ -50,12 +52,13 @@ def main(target_dir, mode=None):
 
                 # 파일 경로
                 file = os.path.join(folder, filename)
+                file = r"C:\Users\HAMA\workspace\chodan-flutter-app\lib\features\apply\screens\apply_list_screen.dart"
 
                 worker = TextEditor(file=file)
                 worker.map_data(sheet_records=automatic_records, prefix="localization")
 
                 file_count += 1
-
+                quit()
         print(file_count, "개의 파일을 처리했습니다.")
 
     else:

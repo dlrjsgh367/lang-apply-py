@@ -119,11 +119,12 @@ class TextEditor:
 
                         korean_text = "".join(korean_texts)
                         if korean_text == ko:
+                            after_text = f"{prefix}.{key}"
+
                             if "'" in line:
                                 before_text = f"'{korean_text}'"
                             elif '"' in line:
                                 before_text = f'"{korean_text}"'
-                            after_text = f"{prefix}.{key}"
 
                             line = line.replace(before_text, after_text)
                             self.__list.append(line)
@@ -135,12 +136,13 @@ class TextEditor:
                             ko = sheet_record.get("ko")
 
                             if korean_text == ko:
-                                if "'" in line:
-                                    before_text = f"'{korean_text}'"
-                                elif '"' in line:
-                                    before_text = f'"{korean_text}"'
                                 after_text = f"{prefix}.{key}"
 
+                                # 한 line에 각 다른 따옴표를 사용한 경우의 처리 -> e.g:  text: keyWord == '' ? '목록이 없습니다.' : "검색 결과가 없어요.")
+                                before_text = f"'{korean_text}'"
+                                line = line.replace(before_text, after_text)
+
+                                before_text = f'"{korean_text}"'
                                 line = line.replace(before_text, after_text)
                     self.__list.append(line)
             else:

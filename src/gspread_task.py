@@ -44,7 +44,7 @@ def add_multiple_rows_to_sheet(sheet_name: str, rows: list):
     else:
         ValueError("sheet_name 의 값이 올바르지 않습니다.")
 
-    existing_texts = set(sheet.col_values(5))  # 5번 열 데이터 가져오기
+    existing_texts = set(sheet.col_values(4))  # 5번 열 데이터 가져오기
 
     # 중복되지 않은 데이터 필터링
     new_rows = [row for row in rows if row[3] not in existing_texts]
