@@ -149,6 +149,17 @@ class TextEditor:
             else:
                 self.__list.append(line)
 
+        # 프로젝트 별로 경로 수정 필요할 수 있음
+        if (
+            "import 'package:chodan_flutter_app/utils/app_localizations.dart';\n"
+            not in self.__list
+        ):
+            # 언어팩 모듈 import line 추가
+            self.__list.insert(
+                0,
+                "import 'package:chodan_flutter_app/utils/app_localizations.dart';\n",
+            )
+
         try:
             lines = save_file(self.__file, self.__list)
         except Exception as e:

@@ -58,7 +58,7 @@ def main(target_dir, mode=None):
                 worker.map_data(sheet_records=automatic_records, prefix="localization")
 
                 file_count += 1
-            quit()
+                quit()
         print(file_count, "개의 파일을 처리했습니다.")
 
     else:
