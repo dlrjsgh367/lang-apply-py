@@ -6,6 +6,7 @@ from util import read_file, save_file
 
 
 class TextEditor:
+
     # 정규식 패턴 정의
     non_comment_pattern = re.compile(r"^(?!\/\/).*")  # 주석이 아닌 줄만 매칭
     inside_quotes_pattern = re.compile(r'(["\'])(.*?)\1')  # 따옴표 안 텍스트 추출
@@ -13,12 +14,20 @@ class TextEditor:
     variable_pattern = re.compile(r"\$\{?")  # $ 또는 ${
     plus_wrapped_pattern = re.compile(r"\+(.*?)\+")  # +로 양쪽이 감싸진 텍스트를 탐지
 
-    def __init__(self, file: str):
+    def __init__(
+        self,
+        file: str,
+        localization_import_text: str = "import 'package:chodan_flutter_app/utils/app_localizations.dart';\n",
+    ):
         self.__file = file
         self.__list: List[str] = []  # 수집된 텍스트 리스트
         self.__series = pd.Series(dtype="object")  # 전체 Series
         self.__series_manual = pd.Series(dtype="object")  # 수동 매칭 데이터
         self.__series_automatic = pd.Series(dtype="object")  # 자동 매칭 데이터
+        self.localization_import_text = (
+            localization_import_text  #  로컬라이제이션 임포트 텍스트
+        )
+        self.__has_korean = False
 
     @property
     def list(self) -> List[str]:
@@ -106,6 +115,8 @@ class TextEditor:
 
             if matches:
 
+                self.__has_korean = True
+
                 # 한글이 포함된 텍스트만 추가
                 korean_texts = [
                     text for _, text in matches if self.korean_only_pattern.search(text)
@@ -149,16 +160,15 @@ class TextEditor:
             else:
                 self.__list.append(line)
 
-        # 프로젝트 별로 경로 수정 필요할 수 있음
-        if (
-            "import 'package:chodan_flutter_app/utils/app_localizations.dart';\n"
-            not in self.__list
-        ):
-            # 언어팩 모듈 import line 추가
-            self.__list.insert(
-                0,
-                "import 'package:chodan_flutter_app/utils/app_localizations.dart';\n",
-            )
+        # 문서에 한국어 존재?
+        if self.__has_korean:
+            if self.localization_import_text not in self.__list:
+
+                # 로컬라이제이션 임포트 텍스트 추가
+                self.__list.insert(
+                    0,
+                    self.localization_import_text,
+                )
 
         try:
             lines = save_file(self.__file, self.__list)

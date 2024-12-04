@@ -9,7 +9,7 @@ SCOPES = [
 ]
 
 # 서비스 계정 JSON 파일 경로
-CREDENTIALS_PATH = r"auth/spreadsheets-insert-py-443103-5e33c277f11a.json"
+CREDENTIALS_PATH = os.getenv("CREDENTIALS_PATH")
 
 # 인증 정보 생성
 credentials = Credentials.from_service_account_file(
@@ -21,7 +21,7 @@ credentials = Credentials.from_service_account_file(
 client = gspread.authorize(credentials)
 
 # 스프레드시트 URL 및 시트 설정
-SPREADSHEET_URL = "https://docs.google.com/spreadsheets/d/1ZybrYhGOaH4OgzVJ1PDCJ3CIfkXpSYlkOnmH05SjKak/edit?usp=sharing"
+SPREADSHEET_URL = os.getenv("SPREADSHEET_URL")
 
 # 스프레드시트 및 시트 열기
 spreadsheet = client.open_by_url(SPREADSHEET_URL)
