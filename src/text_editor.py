@@ -66,7 +66,7 @@ class TextEditor:
                 korean_texts = [
                     text for _, text in matches if self.korean_only_pattern.search(text)
                 ]
-                # korean_text = ", ".join(korean_texts)
+
                 self.__list.extend(korean_texts)
 
     def map_data(self, sheet_records: dict, prefix: str = "localization") -> None:
@@ -119,8 +119,13 @@ class TextEditor:
 
                         korean_text = "".join(korean_texts)
                         if korean_text == ko:
-                            replacement = f"{prefix}.{key}"
-                            line = line.replace(f"'{korean_text}'", replacement)
+                            if "'" in line:
+                                before_text = f"'{korean_text}'"
+                            elif '"' in line:
+                                before_text = f'"{korean_text}"'
+                            after_text = f"{prefix}.{key}"
+
+                            line = line.replace(before_text, after_text)
                             self.__list.append(line)
                             break
                 else:
@@ -130,8 +135,13 @@ class TextEditor:
                             ko = sheet_record.get("ko")
 
                             if korean_text == ko:
-                                replacement = f"{prefix}.{key}"
-                                line = line.replace(f"'{korean_text}'", replacement)
+                                if "'" in line:
+                                    before_text = f"'{korean_text}'"
+                                elif '"' in line:
+                                    before_text = f'"{korean_text}"'
+                                after_text = f"{prefix}.{key}"
+
+                                line = line.replace(before_text, after_text)
                     self.__list.append(line)
             else:
                 self.__list.append(line)

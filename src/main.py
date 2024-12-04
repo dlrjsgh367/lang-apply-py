@@ -15,6 +15,7 @@ def main(target_dir, mode=None):
 
                 # 파일 경로
                 file = os.path.join(folder, filename)
+                file = r"C:\Users\HAMA\workspace\chodan-flutter-app\lib\features\chat\widgets\dialog\parent_agree_dialog_widget.dart"
 
                 worker = TextEditor(file=file)
                 worker.collect_data()
@@ -50,6 +51,7 @@ def main(target_dir, mode=None):
 
                 # 파일 경로
                 file = os.path.join(folder, filename)
+                file = r"C:\Users\HAMA\workspace\chodan-flutter-app\lib\features\chat\widgets\dialog\parent_agree_dialog_widget.dart"
 
                 worker = TextEditor(file=file)
                 worker.map_data(sheet_records=automatic_records, prefix="localization")
