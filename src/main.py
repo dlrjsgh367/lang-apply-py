@@ -15,7 +15,6 @@ def main(target_dir, mode=None):
 
                 # 파일 경로
                 file = os.path.join(folder, filename)
-                file = r"C:\Users\HAMA\workspace\chodan-flutter-app\lib\features\chat\widgets\dialog\parent_agree_dialog_widget.dart"
 
                 worker = TextEditor(file=file)
                 worker.collect_data()
@@ -51,7 +50,6 @@ def main(target_dir, mode=None):
 
                 # 파일 경로
                 file = os.path.join(folder, filename)
-                file = r"C:\Users\HAMA\workspace\chodan-flutter-app\lib\features\chat\widgets\dialog\parent_agree_dialog_widget.dart"
 
                 worker = TextEditor(file=file)
                 worker.map_data(sheet_records=automatic_records, prefix="localization")
@@ -66,7 +64,4 @@ def main(target_dir, mode=None):
 
 if __name__ == "__main__":
     target_dir = r"C:\Users\HAMA\workspace\chodan-flutter-app\lib"
-    # C:\Users\HAMA\workspace\chodan-flutter-app\lib\enum\premium_service_enum.dart
-    # C:\Users\HAMA\workspace\chodan-flutter-app\lib\features\chat\widgets\dialog\attendance_select_dialog_widget.dart
-    # target_dir = r"C:\Users\HAMA\workspace\chodan-flutter-app\lib\features\auth\service"
     main(target_dir=target_dir, mode="map")
