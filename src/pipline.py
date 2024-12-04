@@ -2,7 +2,7 @@ import os
 
 from task_collect import TextFinder
 from task_mapping import map_to_string
-from task_gspread import add_multiple_rows_to_sheet, sheet
+from gspread_task import add_multiple_rows_to_sheet, sheet
 
 index = -1
 

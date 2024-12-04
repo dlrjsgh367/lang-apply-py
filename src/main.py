@@ -1,41 +1,61 @@
 import os
 import itertools
-from task_gspread import add_multiple_rows_to_sheet
+
 from text_collector import TextCollector
+from text_mapper import map_to_string
+from gspread_task import sheet, add_multiple_rows_to_sheet
 
 
 def main(target_dir, mode=None):
 
-    # collect
-    if mode == "c":
-        results = []
+    if mode == "collect":
+        results_manual = []
+        results_automatic = []
         for folder, _, filenames in os.walk(target_dir):
             for filename in filenames:
 
                 # 파일 경로
                 file = os.path.join(folder, filename)
+
                 text_collector = TextCollector(file=file)
-                text_collector.run()
-                texts = text_collector.results
-                results.append(texts)
+                text_collector.collect_data()
+                text_collector.split_collected_data()
 
-        # 2차원 리스트 -> 1차원 리스트
-        results = list(itertools.chain(*results))
-        results = set(results)
-        results = [[result] for result in results]
-        add_multiple_rows_to_sheet(results)
+                data_manual = text_collector.series_manual.tolist()
+                data_automatic = text_collector.series_automatic.tolist()
 
-    # mapping
-    elif mode == "m":
+                results_manual.extend(data_manual)
+                results_automatic.extend(data_automatic)
+
+        results_manual = set(results_manual)
+        results_automatic = set(results_automatic)
+
+        results_manual = [
+            [f"manual{index}", "", "", result]
+            for index, result in enumerate(results_manual)
+        ]
+        results_automatic = [
+            [f"automatic{index}", "", "", result]
+            for index, result in enumerate(results_automatic)
+        ]
+
+        add_multiple_rows_to_sheet(results_automatic)
+        add_multiple_rows_to_sheet(results_manual)
+
+    elif mode == "map":
+        sheet_records = sheet.get_all_records()
         for folder, _, filenames in os.walk(target_dir):
             for filename in filenames:
 
                 # 파일 경로
                 file = os.path.join(folder, filename)
+
+                map_to_string(file=file, sheet_records=sheet_records)
+
     else:
         raise ValueError("mode 인자 값이 올바르지 않습니다.")
 
 
 if __name__ == "__main__":
     target_dir = r"C:\Users\HAMA\workspace\chodan-flutter-app\lib"
-    main(target_dir=target_dir, mode="c")
+    main(target_dir=target_dir, mode="map")

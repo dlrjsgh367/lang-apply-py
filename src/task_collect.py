@@ -5,7 +5,7 @@ from typing import List, Tuple
 import numpy as np
 import pandas as pd
 
-from task_gspread import add_multiple_rows_to_sheet, sheet
+from gspread_task import add_multiple_rows_to_sheet, sheet
 
 
 def read_doc(file_path: str) -> List[str]:

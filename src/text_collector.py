@@ -1,53 +1,163 @@
+from typing import List
 import re
-from util import read_file
+import pandas as pd
+from util import read_file, save_file
 
 
 class TextCollector:
-
-    non_comment_pattern = re.compile(r"^(?!\/\/).*")
-    inside_quotes_pattern = re.compile(r'(["\'])(.*?)\1')
-    korean_only_pattern = re.compile(r"[가-힣]")
+    # 정규식 패턴 정의
+    non_comment_pattern = re.compile(r"^(?!\/\/).*")  # 주석이 아닌 줄만 매칭
+    inside_quotes_pattern = re.compile(r'(["\'])(.*?)\1')  # 따옴표 안 텍스트 추출
+    korean_only_pattern = re.compile(r"[가-힣]")  # 한글만 매칭
+    variable_pattern = re.compile(r"\$\{?")  # $ 또는 ${
+    plus_wrapped_pattern = re.compile(r"\+(.*?)\+")  # +로 양쪽이 감싸진 텍스트를 탐지
 
     def __init__(self, file: str):
         self.__file = file
-        self.__results = []
+        self.__list: List[str] = []  # 수집된 텍스트 리스트
+        self.__series = pd.Series(dtype="object")  # 전체 Series
+        self.__series_manual = pd.Series(dtype="object")  # 수동 매칭 데이터
+        self.__series_automatic = pd.Series(dtype="object")  # 자동 매칭 데이터
 
     @property
-    def file(self):
-        return self.__file
+    def list(self) -> List[str]:
+        return self.__list
 
     @property
-    def results(self):
-        return self.__results
+    def series_manual(self) -> pd.Series:
+        return self.__series_manual
 
-    def run(self):
+    @property
+    def series_automatic(self) -> pd.Series:
+        return self.__series_automatic
 
-        lines = read_file(self.__file)
+    def collect_data(self) -> None:
+        """파일에서 텍스트 데이터를 수집하고 필터링"""
+        try:
+            lines = read_file(self.__file)
+        except Exception as e:
+            raise FileNotFoundError(f"파일을 읽는 데 실패했습니다: {e}")
+
         for line in lines:
-
             stripped_line = line.strip()
-            if not self.non_comment_pattern.match(stripped_line):
+
+            match_non_comment = self.non_comment_pattern.match(stripped_line)
+            match_variable = self.variable_pattern.search(stripped_line)
+            match_only_korean = self.korean_only_pattern.search(stripped_line)
+            match_plus_wrapped = self.plus_wrapped_pattern.search(stripped_line)
+
+            # 주석
+            if not match_non_comment:
                 continue
 
+            if (
+                match_variable  # $ 또는 ${
+                and match_only_korean  # 한국어
+                or (match_only_korean and match_plus_wrapped)  # 한국어, + 로 감싼
+            ):
+                self.__list.append(stripped_line)
+                continue
+
+            # 따옴표 내부의 텍스트 추출
             matches = self.inside_quotes_pattern.findall(line)
-            if not matches:
+            if matches:
+                # 한글이 포함된 텍스트만 추가
+                korean_texts = [
+                    text for _, text in matches if self.korean_only_pattern.search(text)
+                ]
+                self.__list.extend(korean_texts)
+
+    def map_data(self, sheet_records: dict, prefix: str = "localization") -> None:
+        """파일에서 텍스트 데이터를 수집하고 필터링"""
+        try:
+            lines = read_file(self.__file)
+        except Exception as e:
+            raise FileNotFoundError(f"파일을 읽는 데 실패했습니다: {e}")
+
+        for line in lines:
+            stripped_line = line.strip()
+
+            match_non_comment = self.non_comment_pattern.match(stripped_line)
+            match_variable = self.variable_pattern.search(stripped_line)
+            match_only_korean = self.korean_only_pattern.search(stripped_line)
+            match_plus_wrapped = self.plus_wrapped_pattern.search(stripped_line)
+
+            # 주석
+            if not match_non_comment:
                 continue
 
-            extracted_texts = [match[1] for match in matches]
+            if (
+                match_variable  # $ 또는 ${
+                and match_only_korean  # 한국어
+                or (match_only_korean and match_plus_wrapped)  # 한국어, + 로 감싼
+            ):
+                for sheet_record in sheet_records:
+                    key = sheet_record.get("key")
+                    ko = sheet_record.get("ko")
+                    if stripped_line == ko:
+                        replacement = f"{prefix}.{key}"
+                        if "'" in line:
+                            line = line.replace(f"'{stripped_line}'", replacement)
+                        elif '"' in line:
+                            line = line.replace(f'"{stripped_line}"', replacement)
 
-            korean_texts = [
-                text
-                for text in extracted_texts
-                # if self.korean_only_pattern.search(text)
-            ]
+                        self.__list.append(line)
+                        break
+                continue
 
-            self.__results.extend(korean_texts)
+            # 따옴표 내부의 텍스트 추출
+            matches = self.inside_quotes_pattern.findall(line)
+            if matches:
+                # 한글이 포함된 텍스트만 추가
+                korean_texts = [
+                    text for _, text in matches if self.korean_only_pattern.search(text)
+                ]
+                for korean_text in korean_texts:
+                    for sheet_record in sheet_records:
+                        key = sheet_record.get("key")
+                        ko = sheet_record.get("ko")
+
+                        if korean_text == ko:
+                            replacement = f"{prefix}.{key}"
+                            if "'" in line:
+                                line = line.replace(f"'{stripped_line}'", replacement)
+                            elif '"' in line:
+                                line = line.replace(f'"{stripped_line}"', replacement)
+
+                            self.__list.append(line)
+                            break
+        try:
+            lines = save_file(self.__file, self.__list)
+        except Exception as e:
+            raise FileNotFoundError(f"파일을 저장하는 데 실패했습니다: {e}")
+
+    def split_collected_data(self) -> None:
+        """수집된 데이터를 $ 또는 ${ 포함 여부로 분리"""
+        self.__series = pd.Series(self.__list, dtype="object")
+
+        self.__series_manual = self.__series[
+            self.__series.str.contains(r"\$\{?|\+(?:.*?)\+", regex=True, na=False)
+        ]
+
+        # 나머지 데이터
+        self.__series_automatic = self.__series[
+            ~self.__series.str.contains(r"\$\{?|\+(?:.*?)\+", regex=True, na=False)
+        ]
 
 
 if __name__ == "__main__":
+    # 실제 파일 경로에 맞게 변경
     file = r"C:\Users\HAMA\workspace\chodan-flutter-app\lib\features\mypage\screens\my_consult_create_screen.dart"
     tc = TextCollector(file=file)
 
-    tc.run()
+    # 데이터 수집 및 출력
+    tc.collect_data()
+    print("Collected Data:")
+    print(tc.list)
 
-    print(tc.results)
+    # 데이터 분리 및 출력
+    tc.split_collected_data()
+    print("\nManual Series:")
+    print(tc.series_manual)
+    print("\nAutomatic Series:")
+    print(tc.series_automatic)
