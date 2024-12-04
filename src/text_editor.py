@@ -119,6 +119,7 @@ class TextEditor:
 
                         korean_text = "".join(korean_texts)
                         if korean_text == ko:
+
                             after_text = f"{prefix}.{key}"
 
                             if "'" in line:
@@ -128,7 +129,7 @@ class TextEditor:
 
                             line = line.replace(before_text, after_text)
                             self.__list.append(line)
-                            break
+
                 else:
                     for korean_text in korean_texts:
                         for sheet_record in sheet_records:
