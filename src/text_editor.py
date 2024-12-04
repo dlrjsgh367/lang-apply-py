@@ -1,5 +1,6 @@
 from typing import List
 import re
+
 import pandas as pd
 from util import read_file, save_file
 
@@ -65,6 +66,7 @@ class TextEditor:
                 korean_texts = [
                     text for _, text in matches if self.korean_only_pattern.search(text)
                 ]
+                # korean_text = ", ".join(korean_texts)
                 self.__list.extend(korean_texts)
 
     def map_data(self, sheet_records: dict, prefix: str = "localization") -> None:
@@ -101,26 +103,36 @@ class TextEditor:
 
             # 따옴표 내부의 텍스트 추출
             matches = self.inside_quotes_pattern.findall(line)
+
             if matches:
+
                 # 한글이 포함된 텍스트만 추가
                 korean_texts = [
                     text for _, text in matches if self.korean_only_pattern.search(text)
                 ]
-                for korean_text in korean_texts:
+
+                if len(korean_texts) == 1:
+                    korean_text = "".join(korean_texts)
                     for sheet_record in sheet_records:
                         key = sheet_record.get("key")
                         ko = sheet_record.get("ko")
 
+                        korean_text = "".join(korean_texts)
                         if korean_text == ko:
                             replacement = f"{prefix}.{key}"
-
-                            if "'" in line:
-                                line = line.replace(f"'{korean_text}'", replacement)
-                            elif '"' in line:
-                                line = line.replace(f'"{korean_text}"', replacement)
-
+                            line = line.replace(f"'{korean_text}'", replacement)
                             self.__list.append(line)
                             break
+                else:
+                    for korean_text in korean_texts:
+                        for sheet_record in sheet_records:
+                            key = sheet_record.get("key")
+                            ko = sheet_record.get("ko")
+
+                            if korean_text == ko:
+                                replacement = f"{prefix}.{key}"
+                                line = line.replace(f"'{korean_text}'", replacement)
+                    self.__list.append(line)
             else:
                 self.__list.append(line)
 
@@ -159,3 +171,9 @@ if __name__ == "__main__":
     print(tc.series_manual)
     print("\nAutomatic Series:")
     print(tc.series_automatic)
+
+# C:\Users\HAMA\workspace\chodan-flutter-app\lib\features\chat\widgets\dialog\attendance_select_dialog_widget.dart, 244 line
+#
+
+# return 사라짐
+# C:\Users\HAMA\workspace\chodan-flutter-app\lib\features\home\widgets\alba_filter_jobseeker.dart
