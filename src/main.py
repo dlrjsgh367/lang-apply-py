@@ -58,6 +58,5 @@ def main(target_dir, mode=None):
 
 
 if __name__ == "__main__":
-    target_dir = r"C:\Users\HAMA\workspace\chodan-flutter-app\lib\features"
-    # target_dir = r"C:\Users\HAMA\workspace\chodan-flutter-app\lib\features\chat\screens"
+    target_dir = r"C:\Users\HAMA\workspace\chodan-flutter-app\lib"
     main(target_dir=target_dir, mode="map")
