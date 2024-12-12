@@ -13,6 +13,7 @@ class TextEditor:
     korean_only_pattern = re.compile(r"[가-힣]")  # 한글만 매칭
     variable_pattern = re.compile(r"\$\{?")  # $ 또는 ${
     plus_wrapped_pattern = re.compile(r"\+(.*?)\+")  # +로 양쪽이 감싸진 텍스트를 탐지
+    regex_pattern = re.compile(r"RegExp")  # 정규표현식 텍스트 탐지
 
     def __init__(
         self,
@@ -55,9 +56,14 @@ class TextEditor:
             match_variable = self.variable_pattern.search(stripped_line)
             match_only_korean = self.korean_only_pattern.search(stripped_line)
             match_plus_wrapped = self.plus_wrapped_pattern.search(stripped_line)
+            match_regex = self.regex_pattern.search(stripped_line)
 
-            # 주석
+            # 주석이 아닌 line
             if not match_non_comment:
+                continue
+
+            # 정규표현식 line
+            if match_regex:
                 continue
 
             if (
@@ -80,6 +86,7 @@ class TextEditor:
 
     def map_data(self, sheet_records: dict, prefix: str = "localization") -> None:
         """파일에서 텍스트 데이터를 수집하고 필터링"""
+
         try:
             lines = read_file(self.__file)
         except Exception as e:
@@ -92,6 +99,7 @@ class TextEditor:
             match_variable = self.variable_pattern.search(stripped_line)
             match_only_korean = self.korean_only_pattern.search(stripped_line)
             match_plus_wrapped = self.plus_wrapped_pattern.search(stripped_line)
+            match_regex = self.regex_pattern.search(stripped_line)
 
             # //로 시작하는 line
             if not match_non_comment:
@@ -109,6 +117,8 @@ class TextEditor:
             elif match_plus_wrapped:
                 self.__list.append(line)
                 continue
+            elif match_regex:
+                self.__list.append(line)
 
             # 따옴표 내부의 텍스트 추출
             matches = self.inside_quotes_pattern.findall(line)
@@ -121,15 +131,17 @@ class TextEditor:
                 korean_texts = [
                     text for _, text in matches if self.korean_only_pattern.search(text)
                 ]
-
+                # print(korean_texts)
                 if len(korean_texts) == 1:
                     korean_text = "".join(korean_texts)
+                    # print(korean_text)
                     for sheet_record in sheet_records:
                         key = sheet_record.get("key")
                         ko = sheet_record.get("ko")
-
                         korean_text = "".join(korean_texts)
-                        if korean_text == ko:
+
+                        # 시트 데이터를 raw 문자열로 변환, 따옴표 제거 (비교 연산을 위한)
+                        if korean_text == repr(ko).replace("'", "").replace('"', ""):
 
                             after_text = f"{prefix}.{key}"
 
@@ -172,6 +184,7 @@ class TextEditor:
 
         try:
             lines = save_file(self.__file, self.__list)
+            pass
         except Exception as e:
             raise FileNotFoundError(f"파일을 저장하는 데 실패했습니다: {e}")
 
