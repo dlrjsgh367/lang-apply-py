@@ -64,9 +64,7 @@ def main(target_dir, mode=None):
 
                 # 파일 경로
                 file = os.path.join(folder, filename)
-
-                file = r"C:\Users\HAMA\workspace\fortest\chodan-flutter-app\lib\mixins\Files.dart"
-
+                
                 worker = TextEditor(file=file)
                 worker.map_data(sheet_records=automatic_records, prefix="localization")
                 quit()
