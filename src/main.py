@@ -50,11 +50,8 @@ def main(target_dir, mode=None):
     elif mode == "map":
         file_count = 0
 
+        # collect 된 언어팩 데이터
         automatic_records = sheet_automatic.get_all_records()
-        # for record in automatic_records:
-        #     print(record)
-
-        # quit()
         for folder, _, filenames in os.walk(target_dir):
             for filename in filenames:
 
@@ -76,5 +73,5 @@ def main(target_dir, mode=None):
 
 # TODO: 정규표현식 수집 안하게 수정
 if __name__ == "__main__":
-    target_dir = r"C:\Users\HAMA\workspace\chodan-flutter-app\lib"
+    target_dir = r"C:\Users\HAMA\workspace\chodan-flutter-app\lib" # 이곳에 dart 폴더 경로 입력
     main(target_dir=target_dir, mode="map")
