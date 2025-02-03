@@ -1,4 +1,3 @@
-from operator import itemgetter
 import os
 from dotenv import load_dotenv
 
@@ -61,10 +60,10 @@ def main(target_dir, mode=None):
 
                 # 파일 경로
                 file = os.path.join(folder, filename)
-                
+
                 worker = TextEditor(file=file)
                 worker.map_data(sheet_records=automatic_records, prefix="localization")
-                quit()
+
                 file_count += 1
         print(file_count, "개의 파일을 처리했습니다.")
     else:
@@ -73,5 +72,5 @@ def main(target_dir, mode=None):
 
 # TODO: 정규표현식 수집 안하게 수정
 if __name__ == "__main__":
-    target_dir = r"C:\Users\HAMA\workspace\chodan-flutter-app\lib" # 이곳에 dart 폴더 경로 입력
-    main(target_dir=target_dir, mode="map")
+    target_dir = r"C:\Users\HAMA\ws\2025\초단알바\chodan-flutter-app"  # 이곳에 dart 폴더 경로 입력
+    main(target_dir=target_dir, mode="collect")
